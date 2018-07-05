@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     let pollutantsConfig : Dictionary<String,ModelConfiguration> = [
         "pm10" : ModelConfiguration(title: "pm10", fontSize: 3.0, text: "PM10", yOffset: 0.07),
         "pm25" : ModelConfiguration(title: "pm25", fontSize: 2.5, text: "PM2.5", yOffset: 0.05),
-        "co" : ModelConfiguration(title: "co", fontSize: 3.0, text: "CO", yOffset: 0.05)
+        "co" : ModelConfiguration(title: "co", fontSize: 4.0, text: "CO", yOffset: 0.06)
     ]
 
     override func viewDidLoad() {
@@ -174,6 +174,13 @@ class ViewController: UIViewController {
                      addPollutant(pollutantModelName: key, index:i)
                 }
             }
+        }
+    }
+    
+    // remove all nodes from scene view
+    func cleanseSceneView(){
+        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+                node.removeFromParentNode()
         }
     }
 
