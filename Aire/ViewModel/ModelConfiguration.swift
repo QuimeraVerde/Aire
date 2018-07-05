@@ -10,14 +10,16 @@ struct ModelConfiguration {
     var fontSize : Float = 0.0
     var title : String = ""
     var text : String = ""
+    var fullName: String = ""
     var yOffset: Float = 0.0
     init(title : String) {
         self.title = title
     }
-    init(title : String, fontSize: Float, text: String, yOffset: Float) {
+    init(title : String, fontSize: Float, text: String, fullName: String, yOffset: Float) {
         self.title = title
         self.fontSize = fontSize
         self.text = text
         self.yOffset = yOffset
+        self.fullName = fullName
     }
 }

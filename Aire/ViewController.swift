@@ -13,11 +13,31 @@ import ARKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var sceneView: ARSCNView!
+    @IBOutlet var pollutantLabel: UILabel!
+    @IBOutlet var pollutantCard: UIView!
+    @IBOutlet var SegmentedMenu: UISegmentedControl!
+    
+    @IBAction func closeCard(_ sender: UIButton) {
+        // hide card
+        hideCard()
+    }
     
     let pollutantsConfig : Dictionary<String,ModelConfiguration> = [
-        "pm10" : ModelConfiguration(title: "pm10", fontSize: 3.0, text: "PM10", yOffset: 0.07),
-        "pm25" : ModelConfiguration(title: "pm25", fontSize: 2.5, text: "PM2.5", yOffset: 0.05),
-        "co" : ModelConfiguration(title: "co", fontSize: 4.0, text: "CO", yOffset: 0.06)
+        "pm10" : ModelConfiguration(title: "pm10",
+                                    fontSize: 3.0,
+                                    text: "PM10",
+                                    fullName: "Partículas PM10",
+                                    yOffset: 0.07),
+        "pm25" : ModelConfiguration(title: "pm25",
+                                    fontSize: 2.5,
+                                    text: "PM2.5",
+                                    fullName: "Partículas PM2.5",
+                                    yOffset: 0.05),
+        "co" : ModelConfiguration(title: "co",
+                                    fontSize: 4.0,
+                                    text: "CO",
+                                    fullName: "Monóxido de Carbono",
+                                    yOffset: 0.06)
     ]
 
     override func viewDidLoad() {
@@ -52,6 +72,11 @@ class ViewController: UIViewController {
     }
     
     func setupConfiguration() {
+        // UI for card
+        pollutantCard.layer.cornerRadius = 10
+        pollutantCard.layer.masksToBounds = true
+        SegmentedMenu.selectedSegmentIndex = 0
+        
         let configuration = ARWorldTrackingConfiguration()
         configuration.isLightEstimationEnabled = true
         sceneView.session.run(configuration)
@@ -59,55 +84,99 @@ class ViewController: UIViewController {
         addTapGesture()
     }
     
-    func addTapGesture() {
-        //Create TapGesture Recognizer
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(rec:)))
-        
-        //Add recognizer to sceneview
-        sceneView.addGestureRecognizer(tap)
+    // load data on pollutant card and show
+    func showCard(){
+        pollutantCard.isHidden = false
     }
     
-    //Method called when tap
-    @objc func handleTap(rec: UITapGestureRecognizer){
+    // reset data on pollutant card and hide
+    func hideCard(){
+        pollutantCard.isHidden = true
+        SegmentedMenu.selectedSegmentIndex = 0
+    }
+    
+    func addTapGesture() {
+        //Create TapGesture Recognizer
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap(rec:)))
+        singleTap.numberOfTapsRequired = 1
+        
+        //Create TapGesture Recognizer
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(rec:)))
+        doubleTap.numberOfTapsRequired = 2
+        
+        //Add recognizer to sceneview
+        sceneView.addGestureRecognizer(singleTap)
+        sceneView.addGestureRecognizer(doubleTap)
+        singleTap.require(toFail: doubleTap)
+    }
+    
+    //Method called when single tap
+    @objc func handleSingleTap(rec: UITapGestureRecognizer){
         if rec.state == .ended {
             let location: CGPoint = rec.location(in: sceneView)
             let hits = self.sceneView.hitTest(location, options: nil)
             if !hits.isEmpty{
                 let tappedNode = hits.first?.node
-                handleTap(node:tappedNode!)
+                handleTapSingleNode(node:tappedNode!)
             }
         }
     }
     
-    func handleTap(node: SCNNode){
+    //Method called when double tap
+    @objc func handleDoubleTap(rec: UITapGestureRecognizer){
+        if rec.state == .ended {
+            let location: CGPoint = rec.location(in: sceneView)
+            let hits = self.sceneView.hitTest(location, options: nil)
+            if !hits.isEmpty{
+                let tappedNode = hits.first?.node
+                // show label the same as a single tap
+                handleTapSingleNode(node:tappedNode!)
+                
+                // show card as shortcut
+                showPollutantInfo(pollutantName: getNodePollutantName(node: tappedNode!))
+            }
+        }
+    }
+
+    func handleTapSingleNode(node: SCNNode){
         // animate tap
         animateTap(node:node)
         
-        // show information
-        showLabel(node:node)
-    }
-    
-    func showLabel(node: SCNNode){
-        let pollutantLabel = PollutantLabel()
-        var pollutantText: String = ""
-        var pollutantYOffset: Float = 0.0
-        var pollutantFont: Float = 0.0
-        var pollutantKey: String = ""
+        // grab name of node for identification purposes
+        let nodeName: String = node.name ?? "none"
         
-        let nameNode = node.name
-        
-        switch(nameNode){
-        case "pm10":
-            pollutantKey = "pm10"
-        case "pm25":
-            pollutantKey = "pm25"
-        case "co":
-            pollutantKey = "co"
-        case "label":
-            print("show info")
-        default: break
+        if (nodeName == "label") {
+            // show info card for pollutant, name of pollutant in geometry
+            let pollutantId = node.geometry?.name ?? "none"
+            showPollutantInfo(pollutantName: pollutantId)
         }
         
+        else {
+            // hide card
+            hideCard()
+            
+            // show label for pollutant
+            showLabel(pollutantKey: nodeName, node: node)
+        }
+    }
+    
+    func showPollutantInfo(pollutantName: String){
+        if (pollutantsConfig[pollutantName] != nil) {
+            let pollutantConfig: ModelConfiguration = pollutantsConfig[pollutantName]!
+            pollutantLabel.text = pollutantConfig.fullName
+            
+            // unhide card
+            showCard()
+        }
+    }
+    
+    func showLabel(pollutantKey: String, node: SCNNode){
+        let pollutantLabel = PollutantLabel()
+        var pollutantText: String = ""
+        var pollutantTitle: String = ""
+        var pollutantYOffset: Float = 0.0
+        var pollutantFont: Float = 0.0
+ 
         // if key is found
         if (pollutantsConfig[pollutantKey] != nil) {
             // remove other labels
@@ -118,9 +187,10 @@ class ViewController: UIViewController {
             pollutantText = pollutantConfig.text
             pollutantYOffset = pollutantConfig.yOffset
             pollutantFont = pollutantConfig.fontSize
+            pollutantTitle = pollutantConfig.title
             
             // create label model
-            pollutantLabel.loadModel(text:pollutantText, fontSize: CGFloat(pollutantFont))
+            pollutantLabel.loadModel(text:pollutantText, fontSize: CGFloat(pollutantFont), title: pollutantTitle)
             sceneView.scene.rootNode.addChildNode(pollutantLabel)
             
             // identifier for cleaning labels
@@ -135,7 +205,6 @@ class ViewController: UIViewController {
     func cleanseLabels(){
         sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
             if node.name == "label" {
-                print("label *")
                 node.removeFromParentNode()
             }
         }
@@ -186,6 +255,19 @@ class ViewController: UIViewController {
         sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
                 node.removeFromParentNode()
         }
+    }
+    
+    // shortcuts to getting the pollutant name that is hidden
+    func getNodePollutantName(node: SCNNode) -> String{
+        // grab name of node for identification purposes
+        let nodeName: String = node.name ?? "none"
+        
+        // check if label
+        if (nodeName == "label") {
+            return node.geometry?.name ?? "none"
+        }
+        
+        return nodeName
     }
 
     // add individual node pollutant
