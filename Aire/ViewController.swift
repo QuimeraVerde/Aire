@@ -30,7 +30,6 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setupConfiguration()
-        
         // Right now static, later receive from API
         let pollutants : Dictionary<String,Pollutant> = [
             "pm10" : Pollutant(title: "pm10", value: Int(88*1.5)),
@@ -95,13 +94,17 @@ class ViewController: UIViewController {
         var pollutantFont: Float = 0.0
         var pollutantKey: String = ""
         
-        switch(node.name){
+        let nameNode = node.name
+        
+        switch(nameNode){
         case "pm10":
             pollutantKey = "pm10"
         case "pm25":
             pollutantKey = "pm25"
         case "co":
             pollutantKey = "co"
+        case "label":
+            print("show info")
         default: break
         }
         
@@ -132,6 +135,7 @@ class ViewController: UIViewController {
     func cleanseLabels(){
         sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
             if node.name == "label" {
+                print("label *")
                 node.removeFromParentNode()
             }
         }

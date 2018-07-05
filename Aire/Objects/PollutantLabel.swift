@@ -26,6 +26,7 @@ class PollutantLabel: SCNNode {
         
         // node to handle text
         let wrapperNode = SCNNode()
+        wrapperNode.name = "label"
         wrapperNode.geometry = textLabel
         addChildNode(wrapperNode)
     }
