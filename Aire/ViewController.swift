@@ -17,6 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet var pollutantCard: UIView!
     @IBOutlet var SegmentedMenu: UISegmentedControl!
     
+    @IBOutlet var pollutantCircleImage: UIImageView!
+    @IBOutlet var labelAQILevelPollutant: UILabel!
+    
+    let particleMultiplier: Double = 1.5
+    
     @IBAction func closeCard(_ sender: UIButton) {
         // hide card
         hideCard()
@@ -27,17 +32,27 @@ class ViewController: UIViewController {
                                     fontSize: 3.0,
                                     text: "PM10",
                                     fullName: "Partículas PM10",
-                                    yOffset: 0.07),
+                                    yOffset: 0.07,
+                                    ranges: [0,51,101,151,201,301]),
         "pm25" : ModelConfiguration(title: "pm25",
                                     fontSize: 2.5,
                                     text: "PM2.5",
                                     fullName: "Partículas PM2.5",
-                                    yOffset: 0.05),
+                                    yOffset: 0.05,
+                                    ranges: [0,51,101,151,201,301]),
         "co" : ModelConfiguration(title: "co",
                                     fontSize: 4.0,
                                     text: "CO",
                                     fullName: "Monóxido de Carbono",
-                                    yOffset: 0.06)
+                                    yOffset: 0.06,
+                                    ranges: [0,51,101,151,201,301]),
+    ]
+    
+    // Right now static, later receive from API
+    let pollutants : Dictionary<String,Pollutant> = [
+        "pm10" : Pollutant(title: "pm10", value: Int(155*1.5)),
+        "co" : Pollutant(title: "co", value: Int(20*1.5)),
+        "pm25" : Pollutant(title: "pm25", value: Int(95*1.5))
     ]
 
     override func viewDidLoad() {
@@ -50,12 +65,6 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setupConfiguration()
-        // Right now static, later receive from API
-        let pollutants : Dictionary<String,Pollutant> = [
-            "pm10" : Pollutant(title: "pm10", value: Int(88*1.5)),
-            "co" : Pollutant(title: "co", value: Int(24*1.5)),
-            "pm25" : Pollutant(title: "pm25", value: Int(168*1.5))
-        ]
         
         createPollutants(pollutants: pollutants)
     }
@@ -85,7 +94,15 @@ class ViewController: UIViewController {
     }
     
     // load data on pollutant card and show
-    func showCard(){
+    func showCard(pollutant: ModelConfiguration){
+        // show correct data
+        pollutantLabel.text = pollutant.fullName
+        
+        let aqiLevel: Int = Int(Double(pollutants[pollutant.title]!.count) / particleMultiplier)
+        labelAQILevelPollutant.text = String(aqiLevel)
+        
+        pollutantCircleImage.image = UIImage(imageLiteralResourceName: "range" + pollutant.getRange(aqiValue: aqiLevel) + ".png")
+        
         pollutantCard.isHidden = false
     }
     
@@ -163,10 +180,9 @@ class ViewController: UIViewController {
     func showPollutantInfo(pollutantName: String){
         if (pollutantsConfig[pollutantName] != nil) {
             let pollutantConfig: ModelConfiguration = pollutantsConfig[pollutantName]!
-            pollutantLabel.text = pollutantConfig.fullName
-            
+
             // unhide card
-            showCard()
+            showCard(pollutant: pollutantConfig)
         }
     }
     

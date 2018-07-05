@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B7CF68520EEB0AF002A4C93 /* range4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B7CF67F20EEB0AF002A4C93 /* range4.png */; };
+		2B7CF68620EEB0AF002A4C93 /* range5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B7CF68020EEB0AF002A4C93 /* range5.png */; };
+		2B7CF68720EEB0AF002A4C93 /* range1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B7CF68120EEB0AF002A4C93 /* range1.png */; };
+		2B7CF68820EEB0AF002A4C93 /* range3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B7CF68220EEB0AF002A4C93 /* range3.png */; };
+		2B7CF68920EEB0AF002A4C93 /* range2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B7CF68320EEB0AF002A4C93 /* range2.png */; };
+		2B7CF68A20EEB0AF002A4C93 /* range6.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B7CF68420EEB0AF002A4C93 /* range6.png */; };
 		2B97266A20EC4AA40005EA69 /* PollutantLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97266920EC4AA40005EA69 /* PollutantLabel.swift */; };
 		2B97267120ED84390005EA69 /* Pollutant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97267020ED84390005EA69 /* Pollutant.swift */; };
 		2B97267320ED945E0005EA69 /* ModelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97267220ED945E0005EA69 /* ModelConfiguration.swift */; };
@@ -27,6 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B7CF67F20EEB0AF002A4C93 /* range4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = range4.png; path = ../../../../../../Media/Elements/range4.png; sourceTree = "<group>"; };
+		2B7CF68020EEB0AF002A4C93 /* range5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = range5.png; path = ../../../../../../Media/Elements/range5.png; sourceTree = "<group>"; };
+		2B7CF68120EEB0AF002A4C93 /* range1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = range1.png; path = ../../../../../../Media/Elements/range1.png; sourceTree = "<group>"; };
+		2B7CF68220EEB0AF002A4C93 /* range3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = range3.png; path = ../../../../../../Media/Elements/range3.png; sourceTree = "<group>"; };
+		2B7CF68320EEB0AF002A4C93 /* range2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = range2.png; path = ../../../../../../Media/Elements/range2.png; sourceTree = "<group>"; };
+		2B7CF68420EEB0AF002A4C93 /* range6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = range6.png; path = ../../../../../../Media/Elements/range6.png; sourceTree = "<group>"; };
 		2B97266920EC4AA40005EA69 /* PollutantLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantLabel.swift; sourceTree = "<group>"; };
 		2B97267020ED84390005EA69 /* Pollutant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pollutant.swift; sourceTree = "<group>"; };
 		2B97267220ED945E0005EA69 /* ModelConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConfiguration.swift; sourceTree = "<group>"; };
@@ -59,7 +71,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B97266820EC45680005EA69 /* Media */ = {
+		2B7CF67D20EEB089002A4C93 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				2B97267820EDAED40005EA69 /* co.dae */,
@@ -70,6 +82,28 @@
 				2B97267620EDAA730005EA69 /* pm25.scn */,
 				2BC83D1220EAEE3400777995 /* pm10.scn */,
 				2BC83D1520EBF4D500777995 /* pm25.jpg */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B7CF67E20EEB09A002A4C93 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2B7CF68120EEB0AF002A4C93 /* range1.png */,
+				2B7CF68320EEB0AF002A4C93 /* range2.png */,
+				2B7CF68220EEB0AF002A4C93 /* range3.png */,
+				2B7CF67F20EEB0AF002A4C93 /* range4.png */,
+				2B7CF68020EEB0AF002A4C93 /* range5.png */,
+				2B7CF68420EEB0AF002A4C93 /* range6.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		2B97266820EC45680005EA69 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				2B7CF67E20EEB09A002A4C93 /* Images */,
+				2B7CF67D20EEB089002A4C93 /* Models */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -182,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B7CF68A20EEB0AF002A4C93 /* range6.png in Resources */,
 				2BC83D1320EAEE3400777995 /* pm10.scn in Resources */,
 				2B97267520EDAA680005EA69 /* pm25.dae in Resources */,
 				2BC83CEC20DC2DB300777995 /* LaunchScreen.storyboard in Resources */,
@@ -192,7 +227,12 @@
 				2BC83D0F20EAEDB200777995 /* pm10.dae in Resources */,
 				2BC83CE920DC2DB300777995 /* Assets.xcassets in Resources */,
 				2BC83CE720DC2DB200777995 /* Main.storyboard in Resources */,
+				2B7CF68520EEB0AF002A4C93 /* range4.png in Resources */,
 				2B97267720EDAA730005EA69 /* pm25.scn in Resources */,
+				2B7CF68920EEB0AF002A4C93 /* range2.png in Resources */,
+				2B7CF68620EEB0AF002A4C93 /* range5.png in Resources */,
+				2B7CF68720EEB0AF002A4C93 /* range1.png in Resources */,
+				2B7CF68820EEB0AF002A4C93 /* range3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
