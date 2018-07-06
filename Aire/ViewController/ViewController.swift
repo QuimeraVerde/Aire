@@ -18,6 +18,10 @@ class ViewController: UIViewController {
 	@IBOutlet weak var aqiLabel: UILabel!
 	@IBOutlet weak var airPollutionLevelLabel: UILabel!
 	@IBOutlet weak var ringView: UICircularProgressRing!
+	@IBOutlet var pollutantLabel: UILabel!
+	@IBOutlet var pollutantCard: UIView!
+	@IBOutlet var SegmentedMenu: UISegmentedControl!
+	
 	let locationManager = CLLocationManager()
 	
     override func viewDidLoad() {
@@ -30,6 +34,7 @@ class ViewController: UIViewController {
         setupARConfiguration()
 		setupProgressRing()
 		setupCoordinateSubscription()
+		setupPollutantCard()
     }
 
     override func didReceiveMemoryWarning() {

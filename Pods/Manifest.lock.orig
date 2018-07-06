@@ -1,0 +1,37 @@
+PODS:
+<<<<<<< HEAD
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.2.0)
+  - UICircularProgressRing (3.0.0)
+
+DEPENDENCIES:
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
+  - UICircularProgressRing (~> 3.0)
+
+SPEC CHECKSUMS:
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  UICircularProgressRing: 3b472692ffca84060fd444ea5c0b387161067c54
+
+PODFILE CHECKSUM: f93050dc9495505b529212e960779bff33d161e6
+
+COCOAPODS: 1.4.0
+=======
+  - SwiftGifOrigin (1.6.1)
+
+DEPENDENCIES:
+  - SwiftGifOrigin (~> 1.6.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftGifOrigin
+
+SPEC CHECKSUMS:
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+
+PODFILE CHECKSUM: 0ebb1a0912ea54536a96309c2ae695afd5bd92f2
+
+COCOAPODS: 1.5.3
+>>>>>>> 1dc5c202201eb5f0eaeedfe2193ea9bfd946817d

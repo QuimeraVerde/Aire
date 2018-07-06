@@ -25,6 +25,39 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ezh-4D-thy"/>
                                 </connections>
                             </arscnView>
+                            <view hidden="YES" alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VaY-en-uqg" userLabel="PollutantCard">
+                                <rect key="frame" x="34" y="32" width="493" height="716"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pollutant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXe-vx-zS7">
+                                        <rect key="frame" x="0.0" y="15" width="493" height="68"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdr-hi-Fl7">
+                                        <rect key="frame" x="218" y="668" width="57" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
+                                        <state key="normal" title="Cerrar"/>
+                                        <connections>
+                                            <action selector="closeCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fPv-wN-621"/>
+                                        </connections>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eDD-go-Sq4">
+                                        <rect key="frame" x="53" y="91" width="387" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Qué es"/>
+                                            <segment title="Causas"/>
+                                            <segment title="Peligros"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.33464898003472221" green="0.33464898003472221" blue="0.33464898003472221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aq_meter" translatesAutoresizingMaskIntoConstraints="NO" id="cM3-Ez-pH6">
                                 <rect key="frame" x="763" y="543" width="177" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
@@ -105,12 +138,15 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.4431372549" green="0.65098039220000004" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="SegmentedMenu" destination="eDD-go-Sq4" id="K0e-TG-w1E"/>
                         <outlet property="airPollutionLevelLabel" destination="iJf-BT-6ey" id="hE3-Kf-9bO"/>
                         <outlet property="aqiLabel" destination="lSF-h4-DVJ" id="CMd-Ag-2Lg"/>
+                        <outlet property="pollutantCard" destination="VaY-en-uqg" id="tO9-WW-DSJ"/>
+                        <outlet property="pollutantLabel" destination="lXe-vx-zS7" id="3uY-qU-Dg1"/>
                         <outlet property="ringView" destination="r2W-JR-KYy" id="W5V-G9-l1j"/>
                         <outlet property="sceneView" destination="bIC-1w-QeW" id="Tef-vu-OZG"/>
                     </connections>
