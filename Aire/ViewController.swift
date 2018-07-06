@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import SwiftGifOrigin
 
 class ViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet var pollutantCard: UIView!
     @IBOutlet var SegmentedMenu: UISegmentedControl!
     
+    @IBOutlet var pollutantGif: UIImageView!
     @IBOutlet var pollutantCircleImage: UIImageView!
     @IBOutlet var labelAQILevelPollutant: UILabel!
     
@@ -26,34 +28,6 @@ class ViewController: UIViewController {
         // hide card
         hideCard()
     }
-    
-    let pollutantsConfig : Dictionary<String,ModelConfiguration> = [
-        "pm10" : ModelConfiguration(title: "pm10",
-                                    fontSize: 3.0,
-                                    text: "PM10",
-                                    fullName: "Partículas PM10",
-                                    yOffset: 0.07,
-                                    ranges: [0,51,101,151,201,301]),
-        "pm25" : ModelConfiguration(title: "pm25",
-                                    fontSize: 2.5,
-                                    text: "PM2.5",
-                                    fullName: "Partículas PM2.5",
-                                    yOffset: 0.05,
-                                    ranges: [0,51,101,151,201,301]),
-        "co" : ModelConfiguration(title: "co",
-                                    fontSize: 4.0,
-                                    text: "CO",
-                                    fullName: "Monóxido de Carbono",
-                                    yOffset: 0.06,
-                                    ranges: [0,51,101,151,201,301]),
-    ]
-    
-    // Right now static, later receive from API
-    let pollutants : Dictionary<String,Pollutant> = [
-        "pm10" : Pollutant(title: "pm10", value: Int(155*1.5)),
-        "co" : Pollutant(title: "co", value: Int(20*1.5)),
-        "pm25" : Pollutant(title: "pm25", value: Int(95*1.5))
-    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,15 +69,31 @@ class ViewController: UIViewController {
     
     // load data on pollutant card and show
     func showCard(pollutant: ModelConfiguration){
-        // show correct data
+        // show correct title
         pollutantLabel.text = pollutant.fullName
         
+        // get aqi level
         let aqiLevel: Int = Int(Double(pollutants[pollutant.title]!.count) / particleMultiplier)
         labelAQILevelPollutant.text = String(aqiLevel)
         
-        pollutantCircleImage.image = UIImage(imageLiteralResourceName: "range" + pollutant.getRange(aqiValue: aqiLevel) + ".png")
+        // create animation for range
+        let animatedImage = AnimatedImage(title: "range" + pollutant.getRange(aqiValue: aqiLevel),
+                                          count:20)
+        pollutantCircleImage.animationImages = animatedImage.createImageArray()
+        pollutantCircleImage.animationDuration = animatedImage.duration
         
+        // loops forever
+        pollutantCircleImage.animationRepeatCount = 0
+        
+        // content
+        pollutantGif.image = UIImage.gif(name: "molecule")
+        
+        // show
         pollutantCard.isHidden = false
+        
+        // animate circle
+        pollutantCircleImage.startAnimating()
+
     }
     
     // reset data on pollutant card and hide
