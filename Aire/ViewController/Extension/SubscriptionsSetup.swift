@@ -19,6 +19,7 @@ extension ViewController {
 			.map { $0 }
 			.bind(onNext: { (aqReport) in
 				self.setAQIMeter(aqi: aqReport.aqi)
+				print(aqReport.pollutants)
 				self.createPollutants(pollutants: aqReport.pollutants)
 			})
 	}
