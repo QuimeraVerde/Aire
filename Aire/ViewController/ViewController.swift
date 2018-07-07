@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     @IBOutlet var pollutantGif: UIImageView!
     @IBOutlet var pollutantCircleImage: UIImageView!
     @IBOutlet var labelAQILevelPollutant: UILabel!
+    
+    var pollutantsInfo: Dictionary<String, Pollutant> = Dictionary<String,Pollutant>()
 	
 	let locationManager = CLLocationManager()
 	

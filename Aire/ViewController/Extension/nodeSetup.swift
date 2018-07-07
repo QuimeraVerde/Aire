@@ -16,6 +16,9 @@ extension ViewController {
     // creates multiple nodes
     func createPollutants(pollutants: Dictionary<String,Pollutant>){
         
+        // Store pollutants in global variable
+        pollutantsInfo = pollutants
+        
         // iterate through dictionary of pollutants
         for (key, value) in pollutants {
             // make sure there is data in pollutant
@@ -34,6 +37,9 @@ extension ViewController {
         sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
             node.removeFromParentNode()
         }
+        
+        // Clean dictionary for pollutants in global variable
+        pollutantsInfo = Dictionary<String,Pollutant>()
     }
     
     // add individual node pollutant

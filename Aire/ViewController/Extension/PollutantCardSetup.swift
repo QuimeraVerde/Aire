@@ -29,7 +29,7 @@ extension ViewController {
         
         // get aqi level from global variable
         // TODO
-        let aqiLevel: Int = 45
+        let aqiLevel: Int = Int(ceil(pollutantsInfo[pollutant.title]!.aqi))
         labelAQILevelPollutant.text = String(aqiLevel)
         
         // create animation for range
