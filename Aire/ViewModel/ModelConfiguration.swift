@@ -12,14 +12,27 @@ struct ModelConfiguration {
 	var text : String = ""
 	var fullName: String = ""
 	var yOffset: Float = 0.0
+	var ranges = [Int]()
 	init(title : String) {
 		self.title = title
 	}
-	init(title : String, fontSize: Float, text: String, fullName: String, yOffset: Float) {
+	init(title : String, fontSize: Float, text: String, fullName: String, yOffset: Float, ranges: [Int]) {
 		self.title = title
 		self.fontSize = fontSize
 		self.text = text
 		self.yOffset = yOffset
 		self.fullName = fullName
+		self.ranges = ranges
+	}
+	// gets range of color level for visualization of aqi
+	func getRange(aqiValue: Int) -> String{
+		// aqiValue is not negative
+		for i in 0..<ranges.count {
+			if aqiValue < ranges[i] {
+				return String(i)
+			}
+		}
+		// reached end of array and did not find a situable range (out of range)
+		return String(ranges.count)
 	}
 }
