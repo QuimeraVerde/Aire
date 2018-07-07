@@ -42,6 +42,10 @@ extension ViewController {
         pollutantsInfo = Dictionary<String,Pollutant>()
     }
     
+    func addTimestamp(timestamp: Date){
+        lastUpdated.text = "Última actualización: " + timestamp.description
+    }
+    
     // add individual node pollutant
     func addPollutant(pollutantModelName: String, index: Int) {
         let pollutantModel = PollutantModel()

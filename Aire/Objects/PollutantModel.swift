@@ -66,7 +66,12 @@ class PollutantModel: SCNNode {
     
     // rotate in axis
     func rotatePollutant(yRotationDirection: CGFloat, xRotationDirection: CGFloat){
-        let actionRotate = SCNAction.rotateBy(x: 0,
+        // rotate on euler
+        eulerAngles = SCNVector3((eulerAngles.x * Float(xRotationDirection)),
+                                 (eulerAngles.y * Float(yRotationDirection)),
+                                 eulerAngles.x)
+        
+        let actionRotate = SCNAction.rotateBy(x: (xRotationDirection*kRotationRadianPerLoop),
                                         y: (yRotationDirection*kRotationRadianPerLoop),
                                         z: 0, duration: kAnimationDurationMoving)
         let hoverUp = SCNAction.moveBy(x: 0, y: 0.02, z: 0, duration: 2.5)
@@ -76,7 +81,12 @@ class PollutantModel: SCNNode {
         let rotateAndHover = SCNAction.group([actionRotate, hoverSequence])
         
         let loopAction = SCNAction.repeatForever(rotateAndHover)
-        runAction(loopAction)
+        
+        let randomDelay: Int = Int(Float.random(min: 0.00, max: 1.50) * 1000)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.milliseconds(randomDelay), execute: {
+            self.runAction(loopAction)
+        })
     }
     
     func addLabel(){

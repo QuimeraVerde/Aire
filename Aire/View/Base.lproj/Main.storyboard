@@ -26,7 +26,7 @@
                                 </connections>
                             </arscnView>
                             <view hidden="YES" alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VaY-en-uqg" userLabel="PollutantCard">
-                                <rect key="frame" x="34" y="32" width="493" height="716"/>
+                                <rect key="frame" x="20" y="42" width="481" height="684"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdr-hi-Fl7">
@@ -71,7 +71,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F9t-Q4-6pQ">
-                                        <rect key="frame" x="49" y="485" width="380" height="199"/>
+                                        <rect key="frame" x="49" y="485" width="380" height="173"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -82,11 +82,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aq_meter" translatesAutoresizingMaskIntoConstraints="NO" id="cM3-Ez-pH6">
-                                <rect key="frame" x="816" y="567" width="177" height="177"/>
+                                <rect key="frame" x="833" y="576" width="177" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r2W-JR-KYy" customClass="UICircularProgressRing" customModule="UICircularProgressRing">
-                                <rect key="frame" x="812" y="563" width="333" height="333"/>
+                                <rect key="frame" x="830" y="567" width="333" height="333"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSF-h4-DVJ">
@@ -160,6 +160,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Última actualizacion:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tx0-SU-hSE">
+                                <rect key="frame" x="20" y="734" width="481" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.4431372549" green="0.65098039220000004" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -169,6 +176,7 @@
                         <outlet property="airPollutionLevelLabel" destination="iJf-BT-6ey" id="l8D-y3-As1"/>
                         <outlet property="aqiLabel" destination="lSF-h4-DVJ" id="kyS-TQ-kBP"/>
                         <outlet property="labelAQILevelPollutant" destination="WIG-0u-0Pn" id="kp9-fg-y6A"/>
+                        <outlet property="lastUpdated" destination="tx0-SU-hSE" id="Eg5-Nc-XqJ"/>
                         <outlet property="pollutantCard" destination="VaY-en-uqg" id="tO9-WW-DSJ"/>
                         <outlet property="pollutantCircleImage" destination="pps-Pi-f3Z" id="rK4-D0-c8O"/>
                         <outlet property="pollutantGif" destination="m7f-Tc-sGb" id="Ox5-1K-rtJ"/>

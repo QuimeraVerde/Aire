@@ -52,6 +52,7 @@ class PollutantLabel: SCNNode {
 										z: 0, duration: kAnimationDurationMoving)
 		
 		let loopAction = SCNAction.repeatForever(action)
-		runAction(loopAction)
+
+        self.runAction(loopAction)
 	}
 }
