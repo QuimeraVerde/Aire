@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftGifOrigin
 
 extension ViewController {
 	func setupPollutantCard() {
@@ -21,10 +22,34 @@ extension ViewController {
 		hideCard()
 	}
 	
-	// load data on pollutant card and show
-	func showCard(){
-		pollutantCard.isHidden = false
-	}
+    // load data on pollutant card and show
+    func showCard(pollutant: ModelConfiguration){
+        // show correct title
+        pollutantLabel.text = pollutant.fullName
+        
+        // get aqi level from global variable
+        // TODO
+        let aqiLevel: Int = 45
+        labelAQILevelPollutant.text = String(aqiLevel)
+        
+        // create animation for range
+        let animatedImage = AnimatedImage(title: "range" + pollutant.getRange(aqiValue: aqiLevel),
+                                          count:20)
+        pollutantCircleImage.animationImages = animatedImage.createImageArray()
+        pollutantCircleImage.animationDuration = animatedImage.duration
+        
+        // loops forever
+        pollutantCircleImage.animationRepeatCount = 0
+        
+        // content
+        pollutantGif.image = UIImage.gif(name: "molecule")
+        
+        // show
+        pollutantCard.isHidden = false
+        
+        // animate circle
+        pollutantCircleImage.startAnimating()
+    }
 	
 	// reset data on pollutant card and hide
 	func hideCard(){
@@ -38,7 +63,7 @@ extension ViewController {
 			pollutantLabel.text = pollutantConfig.fullName
 			
 			// unhide card
-			showCard()
+			showCard(pollutant: pollutantConfig)
 		}
 	}
 	

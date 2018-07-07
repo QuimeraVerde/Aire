@@ -100,46 +100,4 @@ extension ViewController {
 		let result = pow(2.0, -10.0 * t) * sin(sinValue) + 1.0
 		return result
 	}
-	
-	// creates multiple nodes
-	func createPollutants(pollutants: Dictionary<String,Pollutant>){
-		
-		// iterate through dictionary of pollutants
-		for (key, value) in pollutants {
-			// make sure there is data in pollutant
-			if (value.count > 0){
-				
-				// iterate through count of pollutants to add them to sceneview
-				for i in 1...value.count {
-					addPollutant(pollutantModelName: key, index:i)
-				}
-			}
-		}
-	}
-	
-	// add individual node pollutant
-	func addPollutant(pollutantModelName: String, index: Int) {
-		let pollutantModel = PollutantModel()
-		pollutantModel.loadModel(modelName:pollutantModelName)
-		sceneView.scene.rootNode.addChildNode(pollutantModel)
-		
-		// animate pollutant
-		pollutantModel.animate(objectCount:index)
-		
-		// randomize position
-		pollutantModel.randomPosition(objectCount:index)
-	}
-	
-	// shortcuts to getting the pollutant name that is hidden
-	func getNodePollutantName(node: SCNNode) -> String{
-		// grab name of node for identification purposes
-		let nodeName: String = node.name ?? "none"
-		
-		// check if label
-		if (nodeName == "label") {
-			return node.geometry?.name ?? "none"
-		}
-		
-		return nodeName
-	}
 }

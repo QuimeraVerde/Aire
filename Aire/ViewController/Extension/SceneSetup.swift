@@ -18,6 +18,11 @@ extension ViewController {
 	}
 	
 	func setupARConfiguration() {
+        // UI for card
+        pollutantCard.layer.cornerRadius = 10
+        pollutantCard.layer.masksToBounds = true
+        SegmentedMenu.selectedSegmentIndex = 0
+        
 		let configuration = ARWorldTrackingConfiguration()
 		configuration.isLightEstimationEnabled = true
 		sceneView.session.run(configuration)

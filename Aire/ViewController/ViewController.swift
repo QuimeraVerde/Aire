@@ -21,6 +21,10 @@ class ViewController: UIViewController {
 	@IBOutlet var pollutantLabel: UILabel!
 	@IBOutlet var pollutantCard: UIView!
 	@IBOutlet var SegmentedMenu: UISegmentedControl!
+    
+    @IBOutlet var pollutantGif: UIImageView!
+    @IBOutlet var pollutantCircleImage: UIImageView!
+    @IBOutlet var labelAQILevelPollutant: UILabel!
 	
 	let locationManager = CLLocationManager()
 	

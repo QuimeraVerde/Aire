@@ -168,7 +168,10 @@
                         <outlet property="SegmentedMenu" destination="eDD-go-Sq4" id="K0e-TG-w1E"/>
                         <outlet property="airPollutionLevelLabel" destination="iJf-BT-6ey" id="l8D-y3-As1"/>
                         <outlet property="aqiLabel" destination="lSF-h4-DVJ" id="kyS-TQ-kBP"/>
+                        <outlet property="labelAQILevelPollutant" destination="WIG-0u-0Pn" id="kp9-fg-y6A"/>
                         <outlet property="pollutantCard" destination="VaY-en-uqg" id="tO9-WW-DSJ"/>
+                        <outlet property="pollutantCircleImage" destination="pps-Pi-f3Z" id="rK4-D0-c8O"/>
+                        <outlet property="pollutantGif" destination="m7f-Tc-sGb" id="Ox5-1K-rtJ"/>
                         <outlet property="pollutantLabel" destination="lXe-vx-zS7" id="3uY-qU-Dg1"/>
                         <outlet property="ringView" destination="r2W-JR-KYy" id="jTn-yn-c8Q"/>
                         <outlet property="sceneView" destination="bIC-1w-QeW" id="Tef-vu-OZG"/>
