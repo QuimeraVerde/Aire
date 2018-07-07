@@ -43,7 +43,10 @@ extension ViewController {
     }
     
     func addTimestamp(timestamp: Date){
-        lastUpdated.text = "Última actualización: " + timestamp.description
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm a"
+        
+        lastUpdated.text = "Última actualización: " + dateFormatterGet.string(from: timestamp)
     }
     
     // add individual node pollutant
