@@ -158,7 +158,7 @@
 		FF83C5A320EE985A00CA68BC /* AirQualityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5A020EE985900CA68BC /* AirQualityAPI.swift */; };
 		FF83C5A720EE996200CA68BC /* HandleTapsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5A620EE996200CA68BC /* HandleTapsSetup.swift */; };
 		FF83C5A920EE9A8B00CA68BC /* SubscriptionsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5A820EE9A8B00CA68BC /* SubscriptionsSetup.swift */; };
-		FF83C5AB20EE9B4C00CA68BC /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5AA20EE9B4C00CA68BC /* Coordinate.swift */; };
+		FF83C5AB20EE9B4C00CA68BC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5AA20EE9B4C00CA68BC /* Location.swift */; };
 		FF83C5AD20EE9BF400CA68BC /* GeoLocationSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5AC20EE9BF400CA68BC /* GeoLocationSetup.swift */; };
 		FF83C5B020EEA00300CA68BC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5AF20EEA00300CA68BC /* Request.swift */; };
 		FF83C5B220EEA01A00CA68BC /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5B120EEA01A00CA68BC /* APIKeys.swift */; };
@@ -322,7 +322,7 @@
 		FF83C5A020EE985900CA68BC /* AirQualityAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityAPI.swift; sourceTree = "<group>"; };
 		FF83C5A620EE996200CA68BC /* HandleTapsSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleTapsSetup.swift; sourceTree = "<group>"; };
 		FF83C5A820EE9A8B00CA68BC /* SubscriptionsSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsSetup.swift; sourceTree = "<group>"; };
-		FF83C5AA20EE9B4C00CA68BC /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		FF83C5AA20EE9B4C00CA68BC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FF83C5AC20EE9BF400CA68BC /* GeoLocationSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationSetup.swift; sourceTree = "<group>"; };
 		FF83C5AF20EEA00300CA68BC /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		FF83C5B120EEA01A00CA68BC /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
@@ -539,7 +539,7 @@
 			isa = PBXGroup;
 			children = (
 				2B97267220ED945E0005EA69 /* ModelConfiguration.swift */,
-				FF83C5AA20EE9B4C00CA68BC /* Coordinate.swift */,
+				FF83C5AA20EE9B4C00CA68BC /* Location.swift */,
 				2B701EFB20F141E70087106A /* AnimatedImage.swift */,
 			);
 			path = ViewModel;
@@ -674,6 +674,7 @@
 				2BC83CDB20DC2DB200777995 /* Frameworks */,
 				2BC83CDC20DC2DB200777995 /* Resources */,
 				EAA97FF9263428896E3538C7 /* [CP] Embed Pods Frameworks */,
+				65F9249444DFCF9DC3C63C95 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -879,6 +880,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		65F9249444DFCF9DC3C63C95 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aire/Pods-Aire-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EAA97FF9263428896E3538C7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -922,7 +938,7 @@
 				2B701EFA20F140A20087106A /* nodeSetup.swift in Sources */,
 				2BC83CE220DC2DB200777995 /* AppDelegate.swift in Sources */,
 				2B97266A20EC4AA40005EA69 /* PollutantLabel.swift in Sources */,
-				FF83C5AB20EE9B4C00CA68BC /* Coordinate.swift in Sources */,
+				FF83C5AB20EE9B4C00CA68BC /* Location.swift in Sources */,
 				FF83C5A120EE985A00CA68BC /* AirQualityReport.swift in Sources */,
 				2B701EFC20F141E70087106A /* AnimatedImage.swift in Sources */,
 				FF83C5A220EE985A00CA68BC /* Pollutant.swift in Sources */,

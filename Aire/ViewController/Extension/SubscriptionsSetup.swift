@@ -14,7 +14,7 @@ import RxCocoa
 extension ViewController {
 	func setupCoordinateSubscription() {
 		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
-		let _ = Coordinate.sharedCoordinate.observable.map{ coord in AirQualityAPI.report(coord) }
+		let _ = Location.sharedCoordinate.observable.map{ coord in AirQualityAPI.report(coord) }
 			.concat()
 			.map { $0 }
 			.bind(onNext: { (aqReport) in

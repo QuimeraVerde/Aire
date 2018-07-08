@@ -42,6 +42,7 @@ class ViewController: UIViewController {
 		setupProgressRing()
 		setupCoordinateSubscription()
 		setupPollutantCard()
+		setupGeoLocation()
     }
 
     override func didReceiveMemoryWarning() {
