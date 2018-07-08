@@ -27,13 +27,35 @@ class PollutantModel: SCNNode {
     let yNearRadius: Float = 1
     let zNearRadius: Float = 2
     
+    override init(){
+        super.init()
+        self.opacity = 0.0
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func loadModel(modelName: String){
         guard let virtualObjectScene = SCNScene(named: modelName + ".scn") else { return }
         let wrapperNode = SCNNode()
         for child in virtualObjectScene.rootNode.childNodes {
             wrapperNode.addChildNode(child)
         }
+        
         addChildNode(wrapperNode)
+    }
+    
+    func fadeInAction(){
+        if self.opacity == 0.0 {
+            runAction(SCNAction.fadeIn(duration: 0.5))
+        }
+    }
+    
+    func fadeOutAction(){
+        if self.opacity == 1.0 {
+            runAction(SCNAction.fadeOut(duration: 0.5))
+        }
     }
     
     func animate(objectCount: Int) {
@@ -76,6 +98,7 @@ class PollutantModel: SCNNode {
                                         z: 0, duration: kAnimationDurationMoving)
         let hoverUp = SCNAction.moveBy(x: 0, y: 0.02, z: 0, duration: 2.5)
         let hoverDown = SCNAction.moveBy(x: 0, y: -0.02, z: 0, duration: 2.5)
+        
         
         let hoverSequence = SCNAction.sequence([hoverUp, hoverDown])
         let rotateAndHover = SCNAction.group([actionRotate, hoverSequence])
