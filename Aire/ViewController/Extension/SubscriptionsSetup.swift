@@ -39,8 +39,6 @@ extension ViewController {
 		self.setAQIMeter(aqi: aqReport.aqi)
 		self.addTimestamp(timestamp: aqReport.timestamp)
         
-        print(aqReport.location)
-        
 		self.createPollutants(pollutants: aqReport.pollutants, dominant: aqReport.dominentPollutant)
 
 	}

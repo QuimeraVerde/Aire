@@ -18,13 +18,8 @@ extension ViewController {
         // redraw
         cleanseLabels()
         removePollutants()
-        
-        print("************")
-        print("************")
-        print(pollutants)
-        print("************")
-        print("************")
-        
+		hideCard()
+
         // Store pollutants in global variable
         pollutantsInfo = pollutants
         dominantPollutant = dominant
