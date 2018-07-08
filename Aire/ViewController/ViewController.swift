@@ -28,7 +28,37 @@ class ViewController: UIViewController {
 	@IBOutlet var addressLabel: UILabel!
 	@IBOutlet var mapButton: UIButton!
     
+    @IBOutlet var mainPollutantLabel: UILabel!
+    @IBOutlet var mainPollutantLevel: UILabel!
+    @IBOutlet var mainPollutantRange: UIImageView!
+    
+    @IBOutlet var pollutantLabel1: UILabel!
+    @IBOutlet var pollutantLevel1: UILabel!
+    @IBOutlet var pollutantRange1: UIImageView!
+    
+    @IBOutlet var pollutantLabel2: UILabel!
+    @IBOutlet var pollutantLevel2: UILabel!
+    @IBOutlet var pollutantRange2: UIImageView!
+    
+    @IBOutlet var pollutantLabel3: UILabel!
+    @IBOutlet var pollutantLevel3: UILabel!
+    @IBOutlet var pollutantRange3: UIImageView!
+    
+    @IBOutlet var pollutantLabel4: UILabel!
+    @IBOutlet var pollutantLevel4: UILabel!
+    @IBOutlet var pollutantRange4: UIImageView!
+    
+    @IBOutlet var pollutantLabel5: UILabel!
+    @IBOutlet var pollutantLevel5: UILabel!
+    @IBOutlet var pollutantRange5: UIImageView!
+    
+    @IBOutlet var blurEffect: UIVisualEffectView!
+    
+    @IBOutlet var fullReportAlert: UIView!
+    
     var pollutantsInfo: Dictionary<String, Pollutant> = Dictionary<String,Pollutant>()
+    var dominantPollutant: String = ""
+
 	let disposeBag = DisposeBag()
 	
     override func viewDidLoad() {
@@ -40,6 +70,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupFullReportView()
         setupARConfiguration()
 		setupProgressRing()
 		setupPollutantCard()
