@@ -7,7 +7,6 @@
 //
 
 import ARKit
-import CoreLocation
 import UIKit
 import UICircularProgressRing
 import SceneKit
@@ -30,12 +29,12 @@ class ViewController: UIViewController {
 	@IBOutlet var mapButton: UIButton!
     
     var pollutantsInfo: Dictionary<String, Pollutant> = Dictionary<String,Pollutant>()
-	let locationManager = CLLocationManager()
 	let disposeBag = DisposeBag()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
         self.becomeFirstResponder() // To get shake gesture
+		self.setupLocationSubscription()
 		self.setupScene()
     }
     
@@ -43,9 +42,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         setupARConfiguration()
 		setupProgressRing()
-		setupLocationSubscription()
 		setupPollutantCard()
-		setupGeoLocation()
     }
 
     override func didReceiveMemoryWarning() {

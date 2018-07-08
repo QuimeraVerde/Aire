@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ghJ-R6-Xq0">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Aire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Home" storyboardIdentifier="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="Aire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,6 +177,9 @@
                                 <state key="normal">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="mapButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WrJ-wb-zZk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3t-jd-vni">
                                 <rect key="frame" x="596" y="20" width="350" height="50"/>
@@ -218,6 +221,72 @@
                 <customObject id="oMW-2f-Wvm" customClass="SCNScene"/>
             </objects>
             <point key="canvasLocation" x="136.5234375" y="132.03125"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="gtZ-OQ-BUt">
+            <objects>
+                <viewController storyboardIdentifier="Map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="etZ-r8-ZYo" customClass="MapViewController" customModule="Aire" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t4n-gU-DHG">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnn-22-Jd7">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <connections>
+                                    <outlet property="delegate" destination="etZ-r8-ZYo" id="qWh-f4-AwU"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1X-Vx-0QZ">
+                                <rect key="frame" x="73" y="81" width="229" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.57772469049999997" blue="0.12914114830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Elegir">
+                                            <attributes>
+                                                <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="24" name="HelveticaNeue-Medium"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectCoordinateButtonTapped:" destination="etZ-r8-ZYo" eventType="touchUpInside" id="3UZ-Rm-306"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mnn-22-Jd7" firstAttribute="trailing" secondItem="0UI-q5-d3h" secondAttribute="trailing" id="5An-6i-thL"/>
+                            <constraint firstItem="mnn-22-Jd7" firstAttribute="top" secondItem="t4n-gU-DHG" secondAttribute="top" id="abq-aJ-efo"/>
+                            <constraint firstItem="mnn-22-Jd7" firstAttribute="bottom" secondItem="0UI-q5-d3h" secondAttribute="bottom" id="vZT-PB-QIB"/>
+                            <constraint firstItem="mnn-22-Jd7" firstAttribute="leading" secondItem="0UI-q5-d3h" secondAttribute="leading" id="xQ8-Eu-57r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0UI-q5-d3h"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="mnn-22-Jd7" id="JAY-aa-Raj"/>
+                        <outlet property="selectCoordinateButton" destination="h1X-Vx-0QZ" id="Gyg-3i-nmF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7e-EX-4Rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1191" y="132"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Gc9-xS-vgg">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ghJ-R6-Xq0" customClass="PageViewController" customModule="Aire" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iM8-X8-zuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-814" y="131"/>
         </scene>
     </scenes>
     <resources>

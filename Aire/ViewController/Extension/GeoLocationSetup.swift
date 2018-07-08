@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-extension ViewController: CLLocationManagerDelegate {
+extension PageViewController: CLLocationManagerDelegate {
 	func setupGeoLocation() {
 		locationManager.delegate = self
 		locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -27,40 +27,12 @@ extension ViewController: CLLocationManagerDelegate {
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		if let location = locations.first {
-			locationManager.stopUpdatingLocation()
-			if !Location.sharedCoordinate.isEqual(to: location.coordinate) {
+		if Location.sharedCoordinate.isEmpty() {
+			if let location = locations.first {
+				locationManager.stopUpdatingLocation()
 				Location.sharedCoordinate.set(coordinate: location.coordinate)
-				lookUpCurrentLocation(completionHandler: {
-					placemark in
-					Location.sharedAddress.set(address: (placemark)!)
-				})
+				Location.sharedAddress.set(coordinate: location.coordinate)
 			}
-		}
-	}
-	
-	func lookUpCurrentLocation(completionHandler: @escaping (CLPlacemark?)
-		-> Void ) {
-		// Use the last reported location.
-		if let lastLocation = self.locationManager.location {
-			let geocoder = CLGeocoder()
-			
-			// Look up the location and pass it to the completion handler
-			geocoder.reverseGeocodeLocation(lastLocation,
-											completionHandler: { (placemarks, error) in
-												if error == nil {
-													let firstLocation = placemarks?[0]
-													completionHandler(firstLocation)
-												}
-												else {
-													// An error occurred during geocoding.
-													completionHandler(nil)
-												}
-			})
-		}
-		else {
-			// No location was available.
-			completionHandler(nil)
 		}
 	}
 	
