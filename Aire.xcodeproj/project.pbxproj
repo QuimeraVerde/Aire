@@ -10,7 +10,7 @@
 		2B3FE79720F157240075D727 /* co.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE79420F157240075D727 /* co.scn */; };
 		2B3FE79820F157240075D727 /* no2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE79520F157240075D727 /* no2.scn */; };
 		2B3FE79920F157240075D727 /* so2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE79620F157240075D727 /* so2.scn */; };
-		2B3FE79D20F158B20075D727 /* o3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE79C20F158B20075D727 /* o3.scn */; };
+		2B3FE7A120F1888B0075D727 /* o3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7A020F1888B0075D727 /* o3.scn */; };
 		2B503E7920F143EC00E7FF53 /* molecule.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2B503E7820F143EB00E7FF53 /* molecule.gif */; };
 		2B701E8120F13D9F0087106A /* range1-9.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B701E0420F13D9F0087106A /* range1-9.png */; };
 		2B701E8220F13DA00087106A /* range1-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B701E0520F13D9F0087106A /* range1-8.png */; };
@@ -171,7 +171,7 @@
 		2B3FE79420F157240075D727 /* co.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = co.scn; sourceTree = "<group>"; };
 		2B3FE79520F157240075D727 /* no2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = no2.scn; sourceTree = "<group>"; };
 		2B3FE79620F157240075D727 /* so2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = so2.scn; sourceTree = "<group>"; };
-		2B3FE79C20F158B20075D727 /* o3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = o3.scn; sourceTree = "<group>"; };
+		2B3FE7A020F1888B0075D727 /* o3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = o3.scn; sourceTree = "<group>"; };
 		2B503E7820F143EB00E7FF53 /* molecule.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = molecule.gif; sourceTree = "<group>"; };
 		2B701E0420F13D9F0087106A /* range1-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "range1-9.png"; sourceTree = "<group>"; };
 		2B701E0520F13D9F0087106A /* range1-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "range1-8.png"; sourceTree = "<group>"; };
@@ -529,7 +529,7 @@
 				2BC83D1220EAEE3400777995 /* pm10.scn */,
 				2B3FE79420F157240075D727 /* co.scn */,
 				2B3FE79520F157240075D727 /* no2.scn */,
-				2B3FE79C20F158B20075D727 /* o3.scn */,
+				2B3FE7A020F1888B0075D727 /* o3.scn */,
 				2B3FE79620F157240075D727 /* so2.scn */,
 			);
 			path = Media;
@@ -758,7 +758,7 @@
 				2B701EE720F13DA00087106A /* range5-8.png in Resources */,
 				2B701ED420F13DA00087106A /* range4-18.png in Resources */,
 				2B701E8520F13DA00087106A /* range1-13.png in Resources */,
-				2B3FE79D20F158B20075D727 /* o3.scn in Resources */,
+				2B3FE7A120F1888B0075D727 /* o3.scn in Resources */,
 				2B701EE320F13DA00087106A /* range4-5.png in Resources */,
 				2B3FE79820F157240075D727 /* no2.scn in Resources */,
 				2B701E9220F13DA00087106A /* range1-1.png in Resources */,
