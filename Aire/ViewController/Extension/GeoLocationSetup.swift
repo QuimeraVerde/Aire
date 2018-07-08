@@ -27,7 +27,7 @@ extension PageViewController: CLLocationManagerDelegate {
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		if Location.sharedCoordinate.isEmpty() {
+		if !Location.sharedCoordinate.isReady {
 			if let location = locations.first {
 				locationManager.stopUpdatingLocation()
 				Location.sharedCoordinate.set(coordinate: location.coordinate)

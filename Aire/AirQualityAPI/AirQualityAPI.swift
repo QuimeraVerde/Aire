@@ -23,6 +23,13 @@ class DefaultAirQualityAPI {
 	}
 
 	func report(_ coordinates: CLLocationCoordinate2D) -> Observable<AirQualityReport> {
+		let variable = Variable<AirQualityReport>(AirQualityReport())
+		var observable:Observable<AirQualityReport> {
+			return variable.asObservable()
+		}
+		if !Location.sharedCoordinate.isReady {
+			return observable
+		}
 		let escapedCoordinates = "\(coordinates.latitude);\(coordinates.longitude)"
 		guard let url = URL(string: "https://api.waqi.info/feed/geo:\(escapedCoordinates)/?token=\(AQToken)") else {
 			return Observable.error(apiError("Can't create url"))
@@ -38,8 +45,7 @@ class DefaultAirQualityAPI {
 						throw exampleError("Error getting data")
 					}
 				
-					return try AirQualityReport.parseJSON(jsonData
-					)
+					return try AirQualityReport.parseJSON(jsonData)
 			}
 			.retry(2)
 			.observeOn(MainScheduler.instance)

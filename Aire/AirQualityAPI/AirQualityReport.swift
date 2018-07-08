@@ -9,12 +9,12 @@
 import RxSwift
 import class Foundation.NSDictionary
 
-struct AirQualityReport {
-	let aqi : Double
-	let location : String
-	let timestamp : Date
-	let dominentPollutant : String
-	let pollutants : Dictionary<String,Pollutant>
+class AirQualityReport {
+	var aqi : Double = 0
+	var location : String = ""
+	var timestamp : Date = Date()
+	var dominentPollutant : String = ""
+	var pollutants : Dictionary<String,Pollutant> = Dictionary<String,Pollutant>()
 
 	// tedious parsing part
 	static func parseJSON(_ json: NSDictionary) throws -> AirQualityReport {
@@ -45,5 +45,17 @@ struct AirQualityReport {
 		}
 		
 		return AirQualityReport(aqi: aqi, location: location, timestamp: Date(), dominentPollutant: dominentPollutant, pollutants: pollutants)
+	}
+	
+	init(aqi: Double, location: String, timestamp: Date, dominentPollutant: String, pollutants: Dictionary<String, Pollutant>) {
+		self.aqi = aqi
+		self.location = location
+		self.timestamp = timestamp
+		self.dominentPollutant = dominentPollutant
+		self.pollutants = pollutants
+	}
+	
+	init() {
+		
 	}
 }

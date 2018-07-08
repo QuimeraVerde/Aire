@@ -51,19 +51,18 @@ struct Location {
 		}
 	}
 
-	struct Coordinate {
+	class Coordinate {
 		let variable = Variable<CLLocationCoordinate2D>(CLLocationCoordinate2D())
+		var isReady: Bool = false
 		var observable:Observable<CLLocationCoordinate2D> {
 			return variable.asObservable()
 		}
 		func set(coordinate: CLLocationCoordinate2D) {
+			self.isReady = true
 			variable.value = coordinate
 		}
 		func isEqual(to: CLLocationCoordinate2D) -> Bool {
 			return self.variable.value.latitude.isEqual(to: to.latitude) && self.variable.value.longitude.isEqual(to: to.longitude)
-		}
-		func isEmpty() -> Bool {
-			return self.variable.value.latitude.isZero
 		}
 	}
 }
