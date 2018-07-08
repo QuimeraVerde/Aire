@@ -69,4 +69,5 @@ fastlane/test_output
 
 Pods
 Podfile.lock
-Aire.xcodeproj/project.pbxproj
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj

@@ -12,6 +12,18 @@ import RxSwift
 import RxCocoa
 
 extension ViewController {
+	func setupLocationSubscription() {
+		setupCoordinateSubscription()
+		setupAddressSubscription()
+	}
+	func setupAddressSubscription() {
+		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
+		Location.sharedAddress.observable.subscribe(onNext:  { [weak self] address in
+			DispatchQueue.main.async {
+				self?.addressLabel.text = address
+			}
+		}).disposed(by: disposeBag)
+	}
 	func setupCoordinateSubscription() {
 		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
 		let _ = Location.sharedCoordinate.observable.map{ coord in AirQualityAPI.report(coord) }
