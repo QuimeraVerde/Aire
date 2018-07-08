@@ -46,8 +46,14 @@ extension ViewController {
         hideCard()
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.milliseconds(500), execute: {
-                self.createPollutants(pollutants: self.pollutantsInfo)
+                self.createPollutants(pollutants: self.pollutantsInfo, dominant: self.dominantPollutant)
         })
+    }
+    
+    @IBAction func ViewAqiReport(_ sender: UIButton) {
+        // if any was visible
+        hideCard()
+        showFullReport()
     }
     
 	//Method called when single tap
@@ -77,6 +83,8 @@ extension ViewController {
 			}
 		}
 	}
+    
+    
 	
 	func handleTapSingleNode(node: SCNNode){
 		// animate tap

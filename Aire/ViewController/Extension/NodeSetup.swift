@@ -14,10 +14,11 @@ import ARKit
 extension ViewController {
     
     // creates multiple nodes
-    func createPollutants(pollutants: Dictionary<String,Pollutant>){
+    func createPollutants(pollutants: Dictionary<String,Pollutant>, dominant: String){
         
         // Store pollutants in global variable
         pollutantsInfo = pollutants
+        dominantPollutant = dominant
         
         // iterate through dictionary of pollutants
         for (key, value) in pollutants {

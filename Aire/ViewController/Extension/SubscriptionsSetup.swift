@@ -20,7 +20,7 @@ extension ViewController {
 			.bind(onNext: { (aqReport) in
 				self.setAQIMeter(aqi: aqReport.aqi)
 				self.addTimestamp(timestamp: aqReport.timestamp)
-				self.createPollutants(pollutants: aqReport.pollutants)
+				self.createPollutants(pollutants: aqReport.pollutants, dominant: aqReport.dominentPollutant)
 			})
 	}
 	
