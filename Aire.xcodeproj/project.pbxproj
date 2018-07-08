@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B3FE79720F157240075D727 /* co.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE79420F157240075D727 /* co.scn */; };
-		2B3FE79820F157240075D727 /* no2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE79520F157240075D727 /* no2.scn */; };
-		2B3FE79920F157240075D727 /* so2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE79620F157240075D727 /* so2.scn */; };
 		2B3FE7A120F1888B0075D727 /* o3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7A020F1888B0075D727 /* o3.scn */; };
 		2B503E7920F143EC00E7FF53 /* molecule.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2B503E7820F143EB00E7FF53 /* molecule.gif */; };
 		2B701E8120F13D9F0087106A /* range1-9.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B701E0420F13D9F0087106A /* range1-9.png */; };
@@ -132,7 +129,7 @@
 		2B701EF620F13DA00087106A /* range5-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B701E7E20F13D9F0087106A /* range5-5.png */; };
 		2B701EF720F13DA00087106A /* range5-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B701E7F20F13D9F0087106A /* range5-7.png */; };
 		2B701EF820F13DA00087106A /* range5-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B701E8020F13D9F0087106A /* range5-6.png */; };
-		2B701EFA20F140A20087106A /* nodeSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B701EF920F140A20087106A /* nodeSetup.swift */; };
+		2B701EFA20F140A20087106A /* NodeSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B701EF920F140A20087106A /* NodeSetup.swift */; };
 		2B701EFC20F141E70087106A /* AnimatedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B701EFB20F141E70087106A /* AnimatedImage.swift */; };
 		2B97266A20EC4AA40005EA69 /* PollutantLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97266920EC4AA40005EA69 /* PollutantLabel.swift */; };
 		2B97267320ED945E0005EA69 /* ModelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97267220ED945E0005EA69 /* ModelConfiguration.swift */; };
@@ -156,7 +153,7 @@
 		FF83C5A120EE985A00CA68BC /* AirQualityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C59E20EE985900CA68BC /* AirQualityReport.swift */; };
 		FF83C5A220EE985A00CA68BC /* Pollutant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C59F20EE985900CA68BC /* Pollutant.swift */; };
 		FF83C5A320EE985A00CA68BC /* AirQualityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5A020EE985900CA68BC /* AirQualityAPI.swift */; };
-		FF83C5A720EE996200CA68BC /* HandleTapsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5A620EE996200CA68BC /* HandleTapsSetup.swift */; };
+		FF83C5A720EE996200CA68BC /* HandleGestureSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5A620EE996200CA68BC /* HandleGestureSetup.swift */; };
 		FF83C5A920EE9A8B00CA68BC /* SubscriptionsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5A820EE9A8B00CA68BC /* SubscriptionsSetup.swift */; };
 		FF83C5AB20EE9B4C00CA68BC /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5AA20EE9B4C00CA68BC /* Coordinate.swift */; };
 		FF83C5AD20EE9BF400CA68BC /* GeoLocationSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5AC20EE9BF400CA68BC /* GeoLocationSetup.swift */; };
@@ -168,9 +165,6 @@
 
 /* Begin PBXFileReference section */
 		29E217A5ED37E5CE9520CF8E /* Pods_Aire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B3FE79420F157240075D727 /* co.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = co.scn; sourceTree = "<group>"; };
-		2B3FE79520F157240075D727 /* no2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = no2.scn; sourceTree = "<group>"; };
-		2B3FE79620F157240075D727 /* so2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = so2.scn; sourceTree = "<group>"; };
 		2B3FE7A020F1888B0075D727 /* o3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = o3.scn; sourceTree = "<group>"; };
 		2B503E7820F143EB00E7FF53 /* molecule.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = molecule.gif; sourceTree = "<group>"; };
 		2B701E0420F13D9F0087106A /* range1-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "range1-9.png"; sourceTree = "<group>"; };
@@ -293,7 +287,7 @@
 		2B701E7E20F13D9F0087106A /* range5-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "range5-5.png"; sourceTree = "<group>"; };
 		2B701E7F20F13D9F0087106A /* range5-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "range5-7.png"; sourceTree = "<group>"; };
 		2B701E8020F13D9F0087106A /* range5-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "range5-6.png"; sourceTree = "<group>"; };
-		2B701EF920F140A20087106A /* nodeSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nodeSetup.swift; sourceTree = "<group>"; };
+		2B701EF920F140A20087106A /* NodeSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeSetup.swift; sourceTree = "<group>"; };
 		2B701EFB20F141E70087106A /* AnimatedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImage.swift; sourceTree = "<group>"; };
 		2B97266920EC4AA40005EA69 /* PollutantLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantLabel.swift; sourceTree = "<group>"; };
 		2B97267220ED945E0005EA69 /* ModelConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConfiguration.swift; sourceTree = "<group>"; };
@@ -320,7 +314,7 @@
 		FF83C59E20EE985900CA68BC /* AirQualityReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityReport.swift; sourceTree = "<group>"; };
 		FF83C59F20EE985900CA68BC /* Pollutant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pollutant.swift; sourceTree = "<group>"; };
 		FF83C5A020EE985900CA68BC /* AirQualityAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityAPI.swift; sourceTree = "<group>"; };
-		FF83C5A620EE996200CA68BC /* HandleTapsSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleTapsSetup.swift; sourceTree = "<group>"; };
+		FF83C5A620EE996200CA68BC /* HandleGestureSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleGestureSetup.swift; sourceTree = "<group>"; };
 		FF83C5A820EE9A8B00CA68BC /* SubscriptionsSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsSetup.swift; sourceTree = "<group>"; };
 		FF83C5AA20EE9B4C00CA68BC /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		FF83C5AC20EE9BF400CA68BC /* GeoLocationSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationSetup.swift; sourceTree = "<group>"; };
@@ -527,10 +521,7 @@
 				2B701E0220F13D8F0087106A /* Images */,
 				2B97267620EDAA730005EA69 /* pm25.scn */,
 				2BC83D1220EAEE3400777995 /* pm10.scn */,
-				2B3FE79420F157240075D727 /* co.scn */,
-				2B3FE79520F157240075D727 /* no2.scn */,
 				2B3FE7A020F1888B0075D727 /* o3.scn */,
-				2B3FE79620F157240075D727 /* so2.scn */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -628,14 +619,14 @@
 		FF83C5A520EE993200CA68BC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FF83C5A620EE996200CA68BC /* HandleTapsSetup.swift */,
+				FF83C5A620EE996200CA68BC /* HandleGestureSetup.swift */,
 				FF584F7220EF2158008ADB1C /* SceneSetup.swift */,
 				FF83C5A820EE9A8B00CA68BC /* SubscriptionsSetup.swift */,
 				FF584F6E20EF1EBB008ADB1C /* PollutantCardSetup.swift */,
 				FF584F7420EF21BA008ADB1C /* PollutantLabelSetup.swift */,
 				FF83C5AC20EE9BF400CA68BC /* GeoLocationSetup.swift */,
 				FF83C5B420EEA2B600CA68BC /* CircularProgressRingSetup.swift */,
-				2B701EF920F140A20087106A /* nodeSetup.swift */,
+				2B701EF920F140A20087106A /* NodeSetup.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -722,7 +713,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B3FE79720F157240075D727 /* co.scn in Resources */,
 				2B701EE420F13DA00087106A /* range4-11.png in Resources */,
 				2B701EBC20F13DA00087106A /* range2-13.png in Resources */,
 				2B701EDA20F13DA00087106A /* range4-2.png in Resources */,
@@ -731,7 +721,6 @@
 				2B701E9C20F13DA00087106A /* range3-12.png in Resources */,
 				2B701ED120F13DA00087106A /* range4-8.png in Resources */,
 				2B701EC820F13DA00087106A /* range6-1.png in Resources */,
-				2B3FE79920F157240075D727 /* so2.scn in Resources */,
 				2B701EA720F13DA00087106A /* range3-1.png in Resources */,
 				2B701E8320F13DA00087106A /* range1-10.png in Resources */,
 				2B701EE920F13DA00087106A /* range5-15.png in Resources */,
@@ -760,7 +749,6 @@
 				2B701E8520F13DA00087106A /* range1-13.png in Resources */,
 				2B3FE7A120F1888B0075D727 /* o3.scn in Resources */,
 				2B701EE320F13DA00087106A /* range4-5.png in Resources */,
-				2B3FE79820F157240075D727 /* no2.scn in Resources */,
 				2B701E9220F13DA00087106A /* range1-1.png in Resources */,
 				2B701E9B20F13DA00087106A /* range3-13.png in Resources */,
 				2B701E8120F13D9F0087106A /* range1-9.png in Resources */,
@@ -919,7 +907,7 @@
 				FF83C5A320EE985A00CA68BC /* AirQualityAPI.swift in Sources */,
 				FF83C5AD20EE9BF400CA68BC /* GeoLocationSetup.swift in Sources */,
 				FF83C5A920EE9A8B00CA68BC /* SubscriptionsSetup.swift in Sources */,
-				2B701EFA20F140A20087106A /* nodeSetup.swift in Sources */,
+				2B701EFA20F140A20087106A /* NodeSetup.swift in Sources */,
 				2BC83CE220DC2DB200777995 /* AppDelegate.swift in Sources */,
 				2B97266A20EC4AA40005EA69 /* PollutantLabel.swift in Sources */,
 				FF83C5AB20EE9B4C00CA68BC /* Coordinate.swift in Sources */,
@@ -932,7 +920,7 @@
 				FF584F7120EF1F12008ADB1C /* PollutantUtility.swift in Sources */,
 				FF584F6F20EF1EBB008ADB1C /* PollutantCardSetup.swift in Sources */,
 				FF584F6D20EF159F008ADB1C /* AirQualityUtility.swift in Sources */,
-				FF83C5A720EE996200CA68BC /* HandleTapsSetup.swift in Sources */,
+				FF83C5A720EE996200CA68BC /* HandleGestureSetup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
