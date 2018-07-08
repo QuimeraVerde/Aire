@@ -6,6 +6,9 @@
 //  Copyright © 2018 QuimeraVerde. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 struct PollutantContent {
     var title : String = ""
     var content: [String] = []
@@ -18,7 +21,77 @@ struct PollutantContent {
     func getContentByIndex(index: Int) -> String{
         return content[index]
     }
+	
+	func stylize() {
+		// style pm10
+		attributedPollutantsContentInfo["pm10"]![0]
+			.setColor(color: UIColor.blue, forText: "Material Particulado 10")
+		attributedPollutantsContentInfo["pm10"]![0]
+			.bold(stringValue: "Material Particulado 10", fontSize: 20)
+		attributedPollutantsContentInfo["pm10"]![1]
+			.setColor(color: UIColor.blue, forText: "Material Particulado 10")
+		attributedPollutantsContentInfo["pm10"]![1]
+			.bold(stringValue: "Material Particulado 10", fontSize: 20)
+		attributedPollutantsContentInfo["pm10"]![2]
+			.setColor(color: UIColor.blue, forText: "Material Particulado 10")
+		attributedPollutantsContentInfo["pm10"]![2]
+			.bold(stringValue: "Material Particulado 10", fontSize: 20)
+		
+		// style pm25
+		attributedPollutantsContentInfo["pm25"]![0]
+			.setColor(color: UIColor.blue, forText: "Material Particulado 10")
+		attributedPollutantsContentInfo["pm25"]![0]
+			.bold(stringValue: "Material Particulado 10", fontSize: 20)
+		attributedPollutantsContentInfo["pm25"]![1]
+			.setColor(color: UIColor.blue, forText: "Material Particulado 10")
+		attributedPollutantsContentInfo["pm25"]![1]
+			.bold(stringValue: "Material Particulado 10", fontSize: 20)
+		attributedPollutantsContentInfo["pm25"]![2]
+			.setColor(color: UIColor.blue, forText: "Material Particulado 10")
+		attributedPollutantsContentInfo["pm25"]![2]
+			.bold(stringValue: "Material Particulado 10", fontSize: 20)
+		
+		// style o3
+		attributedPollutantsContentInfo["o3"]![0]
+			.setColor(color: UIColor.blue, forText: "Material Particulado 10")
+		attributedPollutantsContentInfo["o3"]![0]
+			.bold(stringValue: "Material Particulado 10", fontSize: 20)
+		attributedPollutantsContentInfo["o3"]![1]
+			.setColor(color: UIColor.blue, forText: "Material Particulado 10")
+		attributedPollutantsContentInfo["o3"]![1]
+			.bold(stringValue: "Material Particulado 10", fontSize: 20)
+		attributedPollutantsContentInfo["o3"]![2]
+			.setColor(color: UIColor.blue, forText: "Material Particulado 10")
+		attributedPollutantsContentInfo["o3"]![2]
+			.bold(stringValue: "Material Particulado 10", fontSize: 20)
+		
+		// style so2
+		attributedPollutantsContentInfo["so2"]![0]
+			.setColor(color: UIColor.blue, forText: "Material Particulado 10")
+		attributedPollutantsContentInfo["so2"]![0]
+			.bold(stringValue: "Material Particulado 10", fontSize: 20)
+		attributedPollutantsContentInfo["so2"]![1]
+			.setColor(color: UIColor.blue, forText: "Material Particulado 10")
+		attributedPollutantsContentInfo["so2"]![1]
+			.bold(stringValue: "Material Particulado 10", fontSize: 20)
+		attributedPollutantsContentInfo["so2"]![2]
+			.setColor(color: UIColor.blue, forText: "Material Particulado 10")
+		attributedPollutantsContentInfo["so2"]![2]
+			.bold(stringValue: "Material Particulado 10", fontSize: 20)
+		//textView.font = UIFont.systemFont(ofSize: 26)
+		//textView.attributedText = attributedString
+		//self.view.addSubview(textView)
+	}
 }
+
+var attributedPollutantsContentInfo: Dictionary<String,[NSMutableAttributedString]> = [
+	"pm10": [NSMutableAttributedString(string: pollutantsContentInfo["pm10"]![0]), NSMutableAttributedString(string: pollutantsContentInfo["pm10"]![1]), NSMutableAttributedString(string: pollutantsContentInfo["pm10"]![2]), ],
+	"pm25": [NSMutableAttributedString(string: pollutantsContentInfo["pm25"]![0]), NSMutableAttributedString(string: pollutantsContentInfo["pm25"]![1]), NSMutableAttributedString(string: pollutantsContentInfo["pm25"]![2]), ],
+	"o3": [NSMutableAttributedString(string: pollutantsContentInfo["o3"]![0]), NSMutableAttributedString(string: pollutantsContentInfo["o3"]![1]), NSMutableAttributedString(string: pollutantsContentInfo["o3"]![2]), ],
+	"so2": [NSMutableAttributedString(string: pollutantsContentInfo["so2"]![0]), NSMutableAttributedString(string: pollutantsContentInfo["so2"]![1]), NSMutableAttributedString(string: pollutantsContentInfo["so2"]![2]), ],
+	"no2": [NSMutableAttributedString(string: pollutantsContentInfo["no2"]![0]), NSMutableAttributedString(string: pollutantsContentInfo["no2"]![1]), NSMutableAttributedString(string: pollutantsContentInfo["no2"]![2]), ],
+	"co": [NSMutableAttributedString(string: pollutantsContentInfo["co"]![0]), NSMutableAttributedString(string: pollutantsContentInfo["co"]![1]), NSMutableAttributedString(string: pollutantsContentInfo["co"]![2]), ]
+]
 
 let pollutantsContentInfo: Dictionary<String,[String]> = [
     "pm10": ["El Material Particulado 10 o “Particulate Matter 10” es una mezcla de sustancias sólidas o líquidas de un tamaño igual o menor a 10 micras de diámetro. Es decir, 7 veces más pequeño que un cabello humano o 9 veces más chico que un grano de arena. Estas partículas no tienden a mantenerse suspendidas en el aire tanto tiempo, por lo que no se llegan a mover tan lejos.", "Pueden ser originadas de forma primaria: polvo, asfalto y concreto de los caminos, pedacitos de llanta, carbono de combustión, pollen, erosión. De forma secundaria: las que se crean después de reacciones atmosféricas.","Limita la función de los pulmones, creación de enfermedades respiratorias y ataques de asma, muerte prematura de personas con enfermedades pulmonares y ataques de corazón. Diversos estudios concluyen que la exposición a estas partículas aumentan la mortalidad y hospitalizaciones de emergencia. Por cada 10μg/m3 de aumento en PM10, se incrementa la mortalidad respiratoria en 0.58%"],
