@@ -24,6 +24,9 @@ extension ViewController {
 	
     // load data on pollutant card and show
     func showCard(pollutant: ModelConfiguration){
+        // update selected
+        selectedPollutant = pollutant.title
+        
         // show correct title
         pollutantLabel.text = pollutant.fullName
         
@@ -49,6 +52,9 @@ extension ViewController {
         
         // animate circle
         pollutantCircleImage.startAnimating()
+        
+        // get content
+        createPollutantContent(pollutantTitle: pollutant.title)
     }
 	
 	// reset data on pollutant card and hide
@@ -66,5 +72,52 @@ extension ViewController {
 			showCard(pollutant: pollutantConfig)
 		}
 	}
-	
+    
+    func createPollutantContent(pollutantTitle: String){
+        // get content for first card
+        let content = PollutantContent(title: pollutantTitle)
+        PollutantText0.text = content.getContentByIndex(index:0)
+        
+        // hide all except first
+        PollutantText0.isHidden = false
+        PollutantText1.isHidden = true
+        PollutantText2.isHidden = true
+    }
+    
+    // change segment
+    @IBAction func changeSegment(_ sender: Any) {
+        let selectedIndex: Int = SegmentedMenu.selectedSegmentIndex
+        
+        switch selectedIndex {
+        case 0:
+            // get content for first card
+            let content = PollutantContent(title: selectedPollutant)
+            PollutantText0.text = content.getContentByIndex(index:0)
+            
+            // hide all except first
+            PollutantText0.isHidden = false
+            PollutantText1.isHidden = true
+            PollutantText2.isHidden = true
+        case 1:
+            // get content for first card
+            let content = PollutantContent(title: selectedPollutant)
+            PollutantText1.text = content.getContentByIndex(index:1)
+            
+            // hide all except first
+            PollutantText0.isHidden = true
+            PollutantText1.isHidden = false
+            PollutantText2.isHidden = true
+        case 2:
+            // get content for first card
+            let content = PollutantContent(title: selectedPollutant)
+            PollutantText2.text = content.getContentByIndex(index:2)
+            
+            // hide all except first
+            PollutantText0.isHidden = true
+            PollutantText1.isHidden = true
+            PollutantText2.isHidden = false
+        default:
+            break
+        }
+    }
 }

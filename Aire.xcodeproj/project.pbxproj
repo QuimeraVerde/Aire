@@ -153,6 +153,7 @@
 		2BC83D0520EAE75400777995 /* pm10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83D0420EAE75400777995 /* pm10.jpg */; };
 		2BC83D1320EAEE3400777995 /* pm10.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83D1220EAEE3400777995 /* pm10.scn */; };
 		2BC83D1720EBF4D600777995 /* pm25.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83D1520EBF4D500777995 /* pm25.jpg */; };
+		2BCD994220F2996800160ECB /* PollutantContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCD994120F2996800160ECB /* PollutantContent.swift */; };
 		E30B31B361D1B280877CC777 /* Pods_Aire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E217A5ED37E5CE9520CF8E /* Pods_Aire.framework */; };
 		FF0A027420EE4CEC008D9A25 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FF0A027320EE4CEC008D9A25 /* Podfile */; };
 		FF3492ED20F1B97C00656D5A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492EC20F1B97C00656D5A /* PageViewController.swift */; };
@@ -326,6 +327,7 @@
 		2BC83D0420EAE75400777995 /* pm10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pm10.jpg; sourceTree = "<group>"; };
 		2BC83D1220EAEE3400777995 /* pm10.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = pm10.scn; sourceTree = "<group>"; };
 		2BC83D1520EBF4D500777995 /* pm25.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pm25.jpg; sourceTree = "<group>"; };
+		2BCD994120F2996800160ECB /* PollutantContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantContent.swift; sourceTree = "<group>"; };
 		5E2F5C1A871038F73448C8AD /* Pods-Aire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.release.xcconfig"; sourceTree = "<group>"; };
 		6A0ED46D4408D36BDE604ED0 /* Pods-Aire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.debug.xcconfig"; sourceTree = "<group>"; };
 		FF0A027320EE4CEC008D9A25 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
@@ -575,6 +577,7 @@
 				2B97267220ED945E0005EA69 /* ModelConfiguration.swift */,
 				FF83C5AA20EE9B4C00CA68BC /* Location.swift */,
 				2B701EFB20F141E70087106A /* AnimatedImage.swift */,
+				2BCD994120F2996800160ECB /* PollutantContent.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -981,6 +984,7 @@
 				FF584F6F20EF1EBB008ADB1C /* PollutantCardSetup.swift in Sources */,
 				FF584F6D20EF159F008ADB1C /* AirQualityUtility.swift in Sources */,
 				FF83C5A720EE996200CA68BC /* HandleGestureSetup.swift in Sources */,
+				2BCD994220F2996800160ECB /* PollutantContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,12 +53,17 @@ class ViewController: UIViewController {
     @IBOutlet var pollutantRange5: UIImageView!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
     
+    @IBOutlet var PollutantText0: UITextView!
+    @IBOutlet var PollutantText1: UITextView!
+    @IBOutlet var PollutantText2: UITextView!
+
     @IBOutlet var blurEffect: UIVisualEffectView!
     
     @IBOutlet var fullReportAlert: UIView!
     
     var pollutantsInfo: Dictionary<String, Pollutant> = Dictionary<String,Pollutant>()
     var dominantPollutant: String = ""
+    var selectedPollutant: String = ""
 
 	let disposeBag = DisposeBag()
 	
