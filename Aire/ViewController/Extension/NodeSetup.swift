@@ -15,6 +15,9 @@ extension ViewController {
     
     // creates multiple nodes
     func createPollutants(pollutants: Dictionary<String,Pollutant>, dominant: String){
+        // redraw
+        cleanseLabels()
+        removePollutants()
         
         // Store pollutants in global variable
         pollutantsInfo = pollutants

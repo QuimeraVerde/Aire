@@ -7,10 +7,10 @@
 //
 
 import ARKit
-import CoreLocation
 import UIKit
 import UICircularProgressRing
 import SceneKit
+import RxSwift
 
 class ViewController: UIViewController {
     
@@ -21,11 +21,12 @@ class ViewController: UIViewController {
 	@IBOutlet var pollutantLabel: UILabel!
 	@IBOutlet var pollutantCard: UIView!
 	@IBOutlet var SegmentedMenu: UISegmentedControl!
-    
     @IBOutlet var pollutantGif: UIImageView!
     @IBOutlet var pollutantCircleImage: UIImageView!
     @IBOutlet var labelAQILevelPollutant: UILabel!
     @IBOutlet var lastUpdated: UILabel!
+	@IBOutlet var addressLabel: UILabel!
+	@IBOutlet var mapButton: UIButton!
     
     @IBOutlet var mainPollutantLabel: UILabel!
     @IBOutlet var mainPollutantLevel: UILabel!
@@ -54,15 +55,16 @@ class ViewController: UIViewController {
     @IBOutlet var blurEffect: UIVisualEffectView!
     
     @IBOutlet var fullReportAlert: UIView!
+    
     var pollutantsInfo: Dictionary<String, Pollutant> = Dictionary<String,Pollutant>()
     var dominantPollutant: String = ""
-	
-	let locationManager = CLLocationManager()
+
+	let disposeBag = DisposeBag()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-        // To get shake gesture
-        self.becomeFirstResponder()
+        self.becomeFirstResponder() // To get shake gesture
+		self.setupLocationSubscription()
 		self.setupScene()
     }
     
@@ -71,7 +73,6 @@ class ViewController: UIViewController {
         setupFullReportView()
         setupARConfiguration()
 		setupProgressRing()
-		setupCoordinateSubscription()
 		setupPollutantCard()
     }
 

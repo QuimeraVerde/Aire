@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ghJ-R6-Xq0">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Aire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Home" storyboardIdentifier="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="Aire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -320,12 +320,43 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_map" translatesAutoresizingMaskIntoConstraints="NO" id="a4a-Hf-fLf">
+                                <rect key="frame" x="954" y="20" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1C-QQ-G93">
+                                <rect key="frame" x="954" y="20" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="mapButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WrJ-wb-zZk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3t-jd-vni">
+                                <rect key="frame" x="596" y="20" width="350" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Lugar">
+                                        <attributes>
+                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="24" name="Avenir-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.4431372549" green="0.65098039220000004" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="SegmentedMenu" destination="eDD-go-Sq4" id="K0e-TG-w1E"/>
+                        <outlet property="addressLabel" destination="z3t-jd-vni" id="UTA-ag-Zbo"/>
                         <outlet property="airPollutionLevelLabel" destination="iJf-BT-6ey" id="l8D-y3-As1"/>
                         <outlet property="aqiLabel" destination="lSF-h4-DVJ" id="kyS-TQ-kBP"/>
                         <outlet property="blurEffect" destination="y6f-6z-77F" id="DHu-hk-cRK"/>
@@ -335,6 +366,7 @@
                         <outlet property="mainPollutantLabel" destination="9lq-5k-MBV" id="RjA-Yi-KXH"/>
                         <outlet property="mainPollutantLevel" destination="kiG-jD-pZV" id="qDE-P3-Bqa"/>
                         <outlet property="mainPollutantRange" destination="elZ-FT-mX2" id="7w4-eT-xJ5"/>
+                        <outlet property="mapButton" destination="c1C-QQ-G93" id="mct-n7-0WM"/>
                         <outlet property="pollutantCard" destination="VaY-en-uqg" id="tO9-WW-DSJ"/>
                         <outlet property="pollutantCircleImage" destination="pps-Pi-f3Z" id="rK4-D0-c8O"/>
                         <outlet property="pollutantGif" destination="m7f-Tc-sGb" id="Ox5-1K-rtJ"/>
@@ -363,9 +395,77 @@
             </objects>
             <point key="canvasLocation" x="136.5234375" y="132.03125"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="gtZ-OQ-BUt">
+            <objects>
+                <viewController storyboardIdentifier="Map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="etZ-r8-ZYo" customClass="MapViewController" customModule="Aire" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t4n-gU-DHG">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnn-22-Jd7">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <connections>
+                                    <outlet property="delegate" destination="etZ-r8-ZYo" id="qWh-f4-AwU"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1X-Vx-0QZ">
+                                <rect key="frame" x="775" y="688" width="229" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Elegir">
+                                            <attributes>
+                                                <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="24" name="Avenir-Roman"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectCoordinateButtonTapped:" destination="etZ-r8-ZYo" eventType="touchUpInside" id="3UZ-Rm-306"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mnn-22-Jd7" firstAttribute="trailing" secondItem="0UI-q5-d3h" secondAttribute="trailing" id="5An-6i-thL"/>
+                            <constraint firstItem="mnn-22-Jd7" firstAttribute="top" secondItem="t4n-gU-DHG" secondAttribute="top" id="abq-aJ-efo"/>
+                            <constraint firstItem="mnn-22-Jd7" firstAttribute="bottom" secondItem="0UI-q5-d3h" secondAttribute="bottom" id="vZT-PB-QIB"/>
+                            <constraint firstItem="mnn-22-Jd7" firstAttribute="leading" secondItem="0UI-q5-d3h" secondAttribute="leading" id="xQ8-Eu-57r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0UI-q5-d3h"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="mnn-22-Jd7" id="JAY-aa-Raj"/>
+                        <outlet property="selectCoordinateButton" destination="h1X-Vx-0QZ" id="Gyg-3i-nmF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7e-EX-4Rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1191" y="132"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Gc9-xS-vgg">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ghJ-R6-Xq0" customClass="PageViewController" customModule="Aire" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iM8-X8-zuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-814" y="131"/>
+        </scene>
     </scenes>
     <resources>
         <image name="aq_meter" width="212" height="212"/>
+        <image name="btn_map" width="94" height="94"/>
         <image name="range1-0.png" width="84" height="84"/>
         <image name="range1.png" width="132" height="132"/>
     </resources>

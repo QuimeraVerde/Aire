@@ -11,13 +11,6 @@ DEPENDENCIES:
   - SwiftGifOrigin (~> 1.6.1)
   - UICircularProgressRing (~> 3.0)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - RxCocoa
-    - RxSwift
-    - SwiftGifOrigin
-    - UICircularProgressRing
-
 SPEC CHECKSUMS:
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
@@ -26,4 +19,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5f9d90a576ba37a33507c8bc73261f5fb11cce04
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0
