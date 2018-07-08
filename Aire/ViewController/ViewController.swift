@@ -51,6 +51,7 @@ class ViewController: UIViewController {
     @IBOutlet var pollutantLabel5: UILabel!
     @IBOutlet var pollutantLevel5: UILabel!
     @IBOutlet var pollutantRange5: UIImageView!
+    @IBOutlet var loadingIcon: UIActivityIndicatorView!
     
     @IBOutlet var blurEffect: UIVisualEffectView!
     

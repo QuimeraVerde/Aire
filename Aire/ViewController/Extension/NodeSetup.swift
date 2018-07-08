@@ -35,10 +35,14 @@ extension ViewController {
                 }
             }
         }
+        
+        loadingIcon.stopAnimating()
     }
     
     // remove all nodes from scene view
     func removePollutants(){
+        loadingIcon.startAnimating()
+        
         sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
             node.removeFromParentNode()
         }

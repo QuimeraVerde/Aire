@@ -350,6 +350,10 @@
                                 <color key="shadowColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="o5q-Jn-vOK">
+                                <rect key="frame" x="493" y="365" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.4431372549" green="0.65098039220000004" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -363,6 +367,7 @@
                         <outlet property="fullReportAlert" destination="QkF-ar-b3U" id="Fcz-jJ-pND"/>
                         <outlet property="labelAQILevelPollutant" destination="WIG-0u-0Pn" id="kp9-fg-y6A"/>
                         <outlet property="lastUpdated" destination="tx0-SU-hSE" id="Eg5-Nc-XqJ"/>
+                        <outlet property="loadingIcon" destination="o5q-Jn-vOK" id="tf5-uQ-LTe"/>
                         <outlet property="mainPollutantLabel" destination="9lq-5k-MBV" id="RjA-Yi-KXH"/>
                         <outlet property="mainPollutantLevel" destination="kiG-jD-pZV" id="qDE-P3-Bqa"/>
                         <outlet property="mainPollutantRange" destination="elZ-FT-mX2" id="7w4-eT-xJ5"/>
