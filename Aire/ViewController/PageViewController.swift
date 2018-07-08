@@ -19,6 +19,14 @@ class PageViewController : UIPageViewController {
 			self.getViewController(withIdentifier: "Map")
 		]
 	}()
+    
+    func removeSwipeGesture(){
+        for view in self.view.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = false
+            }
+        }
+    }
 	
 	fileprivate func getViewController(withIdentifier identifier: String) -> UIViewController {
 		return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier)
@@ -32,6 +40,7 @@ class PageViewController : UIPageViewController {
 		if let firstVC = pages.first {
 			setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
 		}
+        removeSwipeGesture()
 	}
 	
 	func nextPage() {

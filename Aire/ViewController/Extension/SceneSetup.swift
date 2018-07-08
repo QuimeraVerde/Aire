@@ -16,6 +16,7 @@ extension ViewController {
 		sceneView.scene = scene
 		sceneView.autoenablesDefaultLighting = false
 	}
+
 	
 	func setupARConfiguration() {
         // UI for card
