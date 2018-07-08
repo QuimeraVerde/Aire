@@ -38,9 +38,11 @@ extension ViewController {
 	func displayAQData(aqReport: AirQualityReport) {
 		self.setAQIMeter(aqi: aqReport.aqi)
 		self.addTimestamp(timestamp: aqReport.timestamp)
-		self.createPollutants(pollutants: aqReport.pollutants, dominant: aqReport.dominentPollutant)
         
-        print(aqReport)
+        print(aqReport.location)
+        
+		self.createPollutants(pollutants: aqReport.pollutants, dominant: aqReport.dominentPollutant)
+
 	}
 	
 	func setAQIMeter(aqi: Double) {

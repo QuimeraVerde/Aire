@@ -19,6 +19,12 @@ extension ViewController {
         cleanseLabels()
         removePollutants()
         
+        print("************")
+        print("************")
+        print(pollutants)
+        print("************")
+        print("************")
+        
         // Store pollutants in global variable
         pollutantsInfo = pollutants
         dominantPollutant = dominant
