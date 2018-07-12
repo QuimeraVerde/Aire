@@ -46,15 +46,14 @@ class ViewController: UIViewController {
         self.becomeFirstResponder() // To get shake gesture
 		self.setupLocationSubscription()
 		self.setupScene()
+		self.addAirQualityMeter()
+		self.setFullReportAlert()
     }
 	
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupARConfiguration()
 		setupPollutantCard()
-		
-		self.addAirQualityMeter()
-		self.setFullReportAlert()
     }
 	
 	private func setFullReportAlert() {

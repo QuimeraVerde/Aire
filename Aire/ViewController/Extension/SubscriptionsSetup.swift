@@ -40,8 +40,7 @@ extension ViewController {
 		self.addTimestamp(timestamp: aqReport.timestamp)
         
 		self.createPollutants(pollutants: aqReport.pollutants, dominant: aqReport.dominantPollutantID)
-		self.fullReportAlert.setPollutantSummaries(pollutants: aqReport.pollutants, dominantID: aqReport.dominantPollutantID)
-
+		self.fullReportAlert.update(pollutants: aqReport.pollutants, dominantID: aqReport.dominantPollutantID)
 	}
 }
 

@@ -14,7 +14,7 @@ class PollutantSummaryView: NibView {
 	@IBOutlet var pollutantIndexLabel: UILabel!
 	@IBOutlet var pollutantLevelView: UIView!
 	
-	func setPollutantSummary(pollutant: Pollutant) {
+	func update(pollutant: Pollutant) {
 		pollutantTitleLabel.text = pollutant.title
 		pollutantIndexLabel.text = String(pollutant.aqi)
 		pollutantLevelView.layer.borderColor = AirQualityUtility.scale[pollutant.aqi].color.cgColor

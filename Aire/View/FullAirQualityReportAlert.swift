@@ -34,7 +34,7 @@ class FullAirQualityReportAlert: NibView {
 		self.isHidden = true
 	}
 	
-	func setPollutantSummaries(
+	func update(
 		pollutants: Dictionary<PollutantIdentifier, Pollutant>,
 		dominantID: PollutantIdentifier) {
 			let secondaryPollutantIDs = PollutantIdentifier.allCases
@@ -58,9 +58,9 @@ class FullAirQualityReportAlert: NibView {
 			var pollutantSummaries = self.pollutantSummariesTopContainer
 										.subviews as! [PollutantSummaryView]
 		
-			pollutantSummaries[0].setPollutantSummary(pollutant: pollutants[secondaryPollutantIDs[0]]!)
-			pollutantSummaries[1].setPollutantSummary(pollutant: pollutants[dominantID]!)
-			pollutantSummaries[2].setPollutantSummary(pollutant: pollutants[secondaryPollutantIDs[1]]!)
+			pollutantSummaries[0].update(pollutant: pollutants[secondaryPollutantIDs[0]]!)
+			pollutantSummaries[1].update(pollutant: pollutants[dominantID]!)
+			pollutantSummaries[2].update(pollutant: pollutants[secondaryPollutantIDs[1]]!)
 	}
 	
 	private func setBottomPollutantSummaries(
@@ -69,9 +69,9 @@ class FullAirQualityReportAlert: NibView {
 			var pollutantSummaries = self.pollutantSummariesBottomContainer
 										.subviews as! [PollutantSummaryView]
 		
-			pollutantSummaries[0].setPollutantSummary(pollutant: pollutants[secondaryPollutantIDs[2]]!)
-			pollutantSummaries[1].setPollutantSummary(pollutant: pollutants[secondaryPollutantIDs[3]]!)
-			pollutantSummaries[2].setPollutantSummary(pollutant: pollutants[secondaryPollutantIDs[4]]!)
+			pollutantSummaries[0].update(pollutant: pollutants[secondaryPollutantIDs[2]]!)
+			pollutantSummaries[1].update(pollutant: pollutants[secondaryPollutantIDs[3]]!)
+			pollutantSummaries[2].update(pollutant: pollutants[secondaryPollutantIDs[4]]!)
 	}
 	
 	private func addTopPollutantSummaries() {
