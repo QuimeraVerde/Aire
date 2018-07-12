@@ -25,14 +25,14 @@ extension ViewController {
     // load data on pollutant card and show
     func showCard(pollutant: ModelConfiguration){
         // update selected
-        selectedPollutant = pollutant.title
+        selectedPollutant = pollutant.id
         
         // show correct title
         pollutantLabel.text = pollutant.fullName
         
         // get aqi level from global variable
         // TODO
-        let aqiLevel: Int = Int(ceil(pollutantsInfo[pollutant.title]!.aqi))
+        let aqiLevel: Int = Int(ceil(pollutantsInfo[pollutant.id]!.aqi))
         labelAQILevelPollutant.text = String(aqiLevel)
         
         // create animation for range
@@ -54,7 +54,7 @@ extension ViewController {
         pollutantCircleImage.startAnimating()
         
         // get content
-        createPollutantContent(pollutantTitle: pollutant.title)
+        createPollutantContent(pollutantID: pollutant.id)
     }
 	
 	// reset data on pollutant card and hide
@@ -64,8 +64,8 @@ extension ViewController {
 	}
 	
 	func showPollutantInfo(pollutantName: String){
-		if (PollutantUtility.config.model[pollutantName] != nil) {
-			let pollutantConfig: ModelConfiguration = PollutantUtility.config.model[pollutantName]!
+		let pollutantID = PollutantIdentifier(rawValue: pollutantName)
+		if let pollutantConfig: ModelConfiguration = PollutantUtility.config.model[pollutantID!] {
 			pollutantLabel.text = pollutantConfig.fullName
 			
 			// unhide card
@@ -73,9 +73,9 @@ extension ViewController {
 		}
 	}
     
-    func createPollutantContent(pollutantTitle: String){
+    func createPollutantContent(pollutantID: PollutantIdentifier){
         // get content for first card
-        let content = PollutantContent(title: pollutantTitle)
+        let content = PollutantContent(id: pollutantID)
         PollutantText0.text = content.getContentByIndex(index:0)
         
         // hide all except first
@@ -91,7 +91,7 @@ extension ViewController {
         switch selectedIndex {
         case 0:
             // get content for first card
-            let content = PollutantContent(title: selectedPollutant)
+            let content = PollutantContent(id: selectedPollutant)
             PollutantText0.text = content.getContentByIndex(index:0)
             
             // hide all except first
@@ -100,7 +100,7 @@ extension ViewController {
             PollutantText2.isHidden = true
         case 1:
             // get content for first card
-            let content = PollutantContent(title: selectedPollutant)
+            let content = PollutantContent(id: selectedPollutant)
             PollutantText1.text = content.getContentByIndex(index:1)
             
             // hide all except first
@@ -109,7 +109,7 @@ extension ViewController {
             PollutantText2.isHidden = true
         case 2:
             // get content for first card
-            let content = PollutantContent(title: selectedPollutant)
+            let content = PollutantContent(id: selectedPollutant)
             PollutantText2.text = content.getContentByIndex(index:2)
             
             // hide all except first

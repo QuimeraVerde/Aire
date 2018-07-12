@@ -14,7 +14,7 @@ import ARKit
 extension ViewController {
     
     // creates multiple nodes
-    func createPollutants(pollutants: Dictionary<String,Pollutant>, dominant: String){
+    func createPollutants(pollutants: Dictionary<PollutantIdentifier,Pollutant>, dominant: PollutantIdentifier){
         // redraw
         cleanseLabels()
         removePollutants()
@@ -31,7 +31,7 @@ extension ViewController {
                 
                 // iterate through count of pollutants to add them to sceneview
                 for i in 1...value.count {
-                    addPollutant(pollutantModelName: key, index:i)
+                    addPollutant(pollutantModelID: key, index:i)
                 }
             }
         }
@@ -56,9 +56,9 @@ extension ViewController {
     }
     
     // add individual node pollutant
-    func addPollutant(pollutantModelName: String, index: Int) {
-        let pollutantModel = PollutantModel()
-        pollutantModel.loadModel(modelName:pollutantModelName)
+    func addPollutant(pollutantModelID: PollutantIdentifier, index: Int) {
+        let pollutantModel = PollutantModel()  
+        pollutantModel.loadModel(modelID:pollutantModelID)
         sceneView.scene.rootNode.addChildNode(pollutantModel)
         
         // fade in

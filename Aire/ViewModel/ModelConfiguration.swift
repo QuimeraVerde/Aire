@@ -13,10 +13,16 @@ struct ModelConfiguration {
 	var fullName: String = ""
 	var yOffset: Float = 0.0
 	var ranges = [Int]()
+	var id: PollutantIdentifier!
+	
+	init(id : PollutantIdentifier) {
+		self.id = id
+	}
 	init(title : String) {
 		self.title = title
 	}
-	init(title : String, fontSize: Float, text: String, fullName: String, yOffset: Float, ranges: [Int]) {
+	init(id: PollutantIdentifier, title: String, fontSize: Float, text: String, fullName: String, yOffset: Float, ranges: [Int]) {
+		self.id = id
 		self.title = title
 		self.fontSize = fontSize
 		self.text = text

@@ -53,7 +53,7 @@ extension ViewController {
     @IBAction func ViewAqiReport(_ sender: UIButton) {
         // if any was visible
         hideCard()
-        showFullReport()
+        self.fullReportAlert.show()
     }
     
 	//Method called when single tap
@@ -104,7 +104,7 @@ extension ViewController {
 			hideCard()
 			
 			// show label for pollutant
-			showLabel(pollutantKey: nodeName, node: node)
+			showLabel(pollutantTitle: nodeName, node: node)
 		}
 	}
 	

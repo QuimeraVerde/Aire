@@ -11,7 +11,7 @@ import SceneKit
 import ARKit
 
 extension ViewController {	
-	func showLabel(pollutantKey: String, node: SCNNode){
+	func showLabel(pollutantTitle: String, node: SCNNode){
 		let pollutantLabel = PollutantLabel()
 		var pollutantText: String = ""
 		var pollutantTitle: String = ""
@@ -19,11 +19,10 @@ extension ViewController {
 		var pollutantFont: Float = 0.0
 		
 		// if key is found
-		if (PollutantUtility.config.model[pollutantKey] != nil) {
+		let pollutantID = PollutantIdentifier(rawValue: pollutantTitle)
+		if let pollutantConfig = PollutantUtility.config.model[pollutantID!] {
 			// remove other labels
 			cleanseLabels()
-			
-			let pollutantConfig: ModelConfiguration = PollutantUtility.config.model[pollutantKey]!
 			
 			pollutantText = pollutantConfig.text
 			pollutantYOffset = pollutantConfig.yOffset

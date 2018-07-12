@@ -39,7 +39,8 @@ extension ViewController {
 		self.setAQIMeter(aqi: aqReport.aqi)
 		self.addTimestamp(timestamp: aqReport.timestamp)
         
-		self.createPollutants(pollutants: aqReport.pollutants, dominant: aqReport.dominentPollutant)
+		self.createPollutants(pollutants: aqReport.pollutants, dominant: aqReport.dominantPollutantID)
+		self.fullReportAlert.setPollutantSummaries(pollutants: aqReport.pollutants, dominantID: aqReport.dominantPollutantID)
 
 	}
 	

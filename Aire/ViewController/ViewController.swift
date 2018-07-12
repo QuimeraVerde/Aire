@@ -28,42 +28,17 @@ class ViewController: UIViewController {
 	@IBOutlet var addressLabel: UILabel!
 	@IBOutlet var mapButton: UIButton!
     
-    @IBOutlet var mainPollutantLabel: UILabel!
-    @IBOutlet var mainPollutantLevel: UILabel!
-    @IBOutlet var mainPollutantRange: UIImageView!
-    
-    @IBOutlet var pollutantLabel1: UILabel!
-    @IBOutlet var pollutantLevel1: UILabel!
-    @IBOutlet var pollutantRange1: UIImageView!
-    
-    @IBOutlet var pollutantLabel2: UILabel!
-    @IBOutlet var pollutantLevel2: UILabel!
-    @IBOutlet var pollutantRange2: UIImageView!
-    
-    @IBOutlet var pollutantLabel3: UILabel!
-    @IBOutlet var pollutantLevel3: UILabel!
-    @IBOutlet var pollutantRange3: UIImageView!
-    
-    @IBOutlet var pollutantLabel4: UILabel!
-    @IBOutlet var pollutantLevel4: UILabel!
-    @IBOutlet var pollutantRange4: UIImageView!
-    
-    @IBOutlet var pollutantLabel5: UILabel!
-    @IBOutlet var pollutantLevel5: UILabel!
-    @IBOutlet var pollutantRange5: UIImageView!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
     
     @IBOutlet var PollutantText0: UITextView!
     @IBOutlet var PollutantText1: UITextView!
     @IBOutlet var PollutantText2: UITextView!
 
-    @IBOutlet var blurEffect: UIVisualEffectView!
+	var fullReportAlert: FullAirQualityReportAlert!
     
-    @IBOutlet var fullReportAlert: UIView!
-    
-    var pollutantsInfo: Dictionary<String, Pollutant> = Dictionary<String,Pollutant>()
-    var dominantPollutant: String = ""
-    var selectedPollutant: String = ""
+    var pollutantsInfo: Dictionary<PollutantIdentifier, Pollutant> = Dictionary<PollutantIdentifier,Pollutant>()
+    var dominantPollutant: PollutantIdentifier!
+    var selectedPollutant: PollutantIdentifier!
 
 	let disposeBag = DisposeBag()
 	
@@ -73,10 +48,17 @@ class ViewController: UIViewController {
 		self.setupLocationSubscription()
 		self.setupScene()
     }
-    
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		
+		// Air quality full report
+		fullReportAlert = FullAirQualityReportAlert(frame: self.view.frame)
+		self.view.addSubview(fullReportAlert)
+	}
+	
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupFullReportView()
         setupARConfiguration()
 		setupProgressRing()
 		setupPollutantCard()

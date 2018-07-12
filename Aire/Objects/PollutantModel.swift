@@ -36,8 +36,8 @@ class PollutantModel: SCNNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func loadModel(modelName: String){
-        guard let virtualObjectScene = SCNScene(named: modelName + ".scn") else { return }
+    func loadModel(modelID: PollutantIdentifier){
+        guard let virtualObjectScene = SCNScene(named: modelID.rawValue + ".scn") else { return }
         let wrapperNode = SCNNode()
         for child in virtualObjectScene.rootNode.childNodes {
             wrapperNode.addChildNode(child)

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2B3FE7A120F1888B0075D727 /* o3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7A020F1888B0075D727 /* o3.scn */; };
-		2B3FE7A320F1AC190075D727 /* FullReportSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FE7A220F1AC190075D727 /* FullReportSetup.swift */; };
 		2B3FE7B820F1C79D0075D727 /* range1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7B220F1C79D0075D727 /* range1.png */; };
 		2B3FE7B920F1C79D0075D727 /* range3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7B320F1C79D0075D727 /* range3.png */; };
 		2B3FE7BA20F1C79D0075D727 /* range2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7B420F1C79D0075D727 /* range2.png */; };
@@ -156,6 +155,13 @@
 		2BCD994220F2996800160ECB /* PollutantContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCD994120F2996800160ECB /* PollutantContent.swift */; };
 		E30B31B361D1B280877CC777 /* Pods_Aire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E217A5ED37E5CE9520CF8E /* Pods_Aire.framework */; };
 		FF0A027420EE4CEC008D9A25 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FF0A027320EE4CEC008D9A25 /* Podfile */; };
+		FF15313120F7EC8C00B75245 /* PollutantIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313020F7EC8B00B75245 /* PollutantIdentifier.swift */; };
+		FF15313420F7ECA700B75245 /* FullAirQualityReportAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313220F7ECA700B75245 /* FullAirQualityReportAlert.swift */; };
+		FF15313520F7ECA700B75245 /* FullAirQualityReportAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF15313320F7ECA700B75245 /* FullAirQualityReportAlert.xib */; };
+		FF15313A20F7ECB300B75245 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313620F7ECB300B75245 /* NibView.swift */; };
+		FF15313B20F7ECB300B75245 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313720F7ECB300B75245 /* UIViewExtension.swift */; };
+		FF15313C20F7ECB300B75245 /* PollutantSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */; };
+		FF15313D20F7ECB300B75245 /* PollutantSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */; };
 		FF3492ED20F1B97C00656D5A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492EC20F1B97C00656D5A /* PageViewController.swift */; };
 		FF3492EF20F1B9A700656D5A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492EE20F1B9A700656D5A /* MapViewController.swift */; };
 		FF3492F120F1BB1E00656D5A /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492F020F1BB1E00656D5A /* Actions.swift */; };
@@ -181,7 +187,6 @@
 /* Begin PBXFileReference section */
 		29E217A5ED37E5CE9520CF8E /* Pods_Aire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B3FE7A020F1888B0075D727 /* o3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = o3.scn; sourceTree = "<group>"; };
-		2B3FE7A220F1AC190075D727 /* FullReportSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullReportSetup.swift; sourceTree = "<group>"; };
 		2B3FE7B220F1C79D0075D727 /* range1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = range1.png; sourceTree = "<group>"; };
 		2B3FE7B320F1C79D0075D727 /* range3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = range3.png; sourceTree = "<group>"; };
 		2B3FE7B420F1C79D0075D727 /* range2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = range2.png; sourceTree = "<group>"; };
@@ -332,6 +337,13 @@
 		5E2F5C1A871038F73448C8AD /* Pods-Aire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.release.xcconfig"; sourceTree = "<group>"; };
 		6A0ED46D4408D36BDE604ED0 /* Pods-Aire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.debug.xcconfig"; sourceTree = "<group>"; };
 		FF0A027320EE4CEC008D9A25 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		FF15313020F7EC8B00B75245 /* PollutantIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutantIdentifier.swift; sourceTree = "<group>"; };
+		FF15313220F7ECA700B75245 /* FullAirQualityReportAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullAirQualityReportAlert.swift; sourceTree = "<group>"; };
+		FF15313320F7ECA700B75245 /* FullAirQualityReportAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullAirQualityReportAlert.xib; sourceTree = "<group>"; };
+		FF15313620F7ECB300B75245 /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		FF15313720F7ECB300B75245 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PollutantSummaryView.xib; sourceTree = "<group>"; };
+		FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutantSummaryView.swift; sourceTree = "<group>"; };
 		FF3492EC20F1B97C00656D5A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		FF3492EE20F1B9A700656D5A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FF3492F020F1BB1E00656D5A /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
@@ -576,6 +588,7 @@
 		2B97266F20ED84230005EA69 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FF15313020F7EC8B00B75245 /* PollutantIdentifier.swift */,
 				2B97267220ED945E0005EA69 /* ModelConfiguration.swift */,
 				FF83C5AA20EE9B4C00CA68BC /* Location.swift */,
 				2B701EFB20F141E70087106A /* AnimatedImage.swift */,
@@ -678,7 +691,6 @@
 				FF3492F020F1BB1E00656D5A /* Actions.swift */,
 				FF83C5B420EEA2B600CA68BC /* CircularProgressRingSetup.swift */,
 				2B701EF920F140A20087106A /* NodeSetup.swift */,
-				2B3FE7A220F1AC190075D727 /* FullReportSetup.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -700,7 +712,13 @@
 			isa = PBXGroup;
 			children = (
 				2BC83CE820DC2DB300777995 /* Assets.xcassets */,
+				FF15313220F7ECA700B75245 /* FullAirQualityReportAlert.swift */,
+				FF15313320F7ECA700B75245 /* FullAirQualityReportAlert.xib */,
 				2BC83CEA20DC2DB300777995 /* LaunchScreen.storyboard */,
+				FF15313620F7ECB300B75245 /* NibView.swift */,
+				FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */,
+				FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */,
+				FF15313720F7ECB300B75245 /* UIViewExtension.swift */,
 				2BC83CE520DC2DB200777995 /* Main.storyboard */,
 			);
 			path = View;
@@ -773,6 +791,7 @@
 				2B701EB120F13DA00087106A /* range2-1.png in Resources */,
 				2B701EAA20F13DA00087106A /* range2-19.png in Resources */,
 				2B701E9C20F13DA00087106A /* range3-12.png in Resources */,
+				FF15313520F7ECA700B75245 /* FullAirQualityReportAlert.xib in Resources */,
 				2B701ED120F13DA00087106A /* range4-8.png in Resources */,
 				2B701EC820F13DA00087106A /* range6-1.png in Resources */,
 				2B701EA720F13DA00087106A /* range3-1.png in Resources */,
@@ -822,6 +841,7 @@
 				2B701EB320F13DA00087106A /* range2-2.png in Resources */,
 				2B701E8720F13DA00087106A /* range1-16.png in Resources */,
 				2BC83CEC20DC2DB300777995 /* LaunchScreen.storyboard in Resources */,
+				FF15313C20F7ECB300B75245 /* PollutantSummaryView.xib in Resources */,
 				2B701E8E20F13DA00087106A /* range1-7.png in Resources */,
 				2B701ED520F13DA00087106A /* range4-15.png in Resources */,
 				2B701E9520F13DA00087106A /* range3-8.png in Resources */,
@@ -995,15 +1015,19 @@
 				2B701EFC20F141E70087106A /* AnimatedImage.swift in Sources */,
 				FF3492ED20F1B97C00656D5A /* PageViewController.swift in Sources */,
 				FF83C5A220EE985A00CA68BC /* Pollutant.swift in Sources */,
-				2B3FE7A320F1AC190075D727 /* FullReportSetup.swift in Sources */,
 				FF83C5B720EEA2CB00CA68BC /* UIUtility.swift in Sources */,
 				2B97267320ED945E0005EA69 /* ModelConfiguration.swift in Sources */,
 				2BC83D0320EAE5E700777995 /* PollutantModel.swift in Sources */,
+				FF15313D20F7ECB300B75245 /* PollutantSummaryView.swift in Sources */,
 				FF584F7120EF1F12008ADB1C /* PollutantUtility.swift in Sources */,
+				FF15313B20F7ECB300B75245 /* UIViewExtension.swift in Sources */,
 				FF6AA98A20F2BF9000BA7BC5 /* NSMutableAttributedString.swift in Sources */,
+				FF15313420F7ECA700B75245 /* FullAirQualityReportAlert.swift in Sources */,
 				FF584F6F20EF1EBB008ADB1C /* PollutantCardSetup.swift in Sources */,
 				FF584F6D20EF159F008ADB1C /* AirQualityUtility.swift in Sources */,
+				FF15313A20F7ECB300B75245 /* NibView.swift in Sources */,
 				FF83C5A720EE996200CA68BC /* HandleGestureSetup.swift in Sources */,
+				FF15313120F7EC8C00B75245 /* PollutantIdentifier.swift in Sources */,
 				2BCD994220F2996800160ECB /* PollutantContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
