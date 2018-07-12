@@ -72,12 +72,12 @@ class ViewController: UIViewController {
 		self.view.addSubview(airQualityMeter)
 	}
 	
-	@objc private func handleTap(_: UITapGestureRecognizer? = nil) {
+	@objc private func showFullReport(_: UITapGestureRecognizer? = nil) {
 		self.fullReportAlert.show()
 	}
 	
 	private func setShowFullReportButton() {
-		let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+		let tap = UITapGestureRecognizer(target: self, action: #selector(self.showFullReport(_:)))
 		self.airQualityMeter.addGestureRecognizer(tap)
 	}
 
