@@ -36,34 +36,12 @@ extension ViewController {
 	}
 	
 	func displayAQData(aqReport: AirQualityReport) {
-		self.setAQIMeter(aqi: aqReport.aqi)
+		self.airQualityMeter.update(aqi: aqReport.aqi)
 		self.addTimestamp(timestamp: aqReport.timestamp)
         
 		self.createPollutants(pollutants: aqReport.pollutants, dominant: aqReport.dominantPollutantID)
 		self.fullReportAlert.setPollutantSummaries(pollutants: aqReport.pollutants, dominantID: aqReport.dominantPollutantID)
 
-	}
-	
-	func setAQIMeter(aqi: Double) {
-		let aqiScaleData = AirQualityUtility.scale[aqi]
-		
-		// 1. Update air quality index label
-		self.aqiLabel.text = String(Int(aqi))
-		self.aqiLabel.textColor = aqiScaleData.color
-		
-		// 2. Update air pollution level label
-		self.airPollutionLevelLabel.text = aqiScaleData.airPollutionLevel.rawValue
-		self.airPollutionLevelLabel.textColor = aqiScaleData.color
-		
-		// 3. Update air quality index progress slider
-		let aqiProgress: CGFloat
-		if(aqi > 300.0) {
-			aqiProgress = 300.0
-		}
-		else {
-			aqiProgress = CGFloat(aqi)
-		}
-		self.ringView.startProgress(to: aqiProgress, duration: 1)
 	}
 }
 

@@ -11,13 +11,11 @@ import UIKit
 import UICircularProgressRing
 import SceneKit
 import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var sceneView: ARSCNView!
-	@IBOutlet weak var aqiLabel: UILabel!
-	@IBOutlet weak var airPollutionLevelLabel: UILabel!
-	@IBOutlet weak var ringView: UICircularProgressRing!
 	@IBOutlet var pollutantLabel: UILabel!
 	@IBOutlet var pollutantCard: UIView!
 	@IBOutlet var SegmentedMenu: UISegmentedControl!
@@ -35,6 +33,7 @@ class ViewController: UIViewController {
     @IBOutlet var PollutantText2: UITextView!
 
 	var fullReportAlert: FullAirQualityReportAlert!
+	var airQualityMeter: AirQualityMeter!
     
     var pollutantsInfo: Dictionary<PollutantIdentifier, Pollutant> = Dictionary<PollutantIdentifier,Pollutant>()
     var dominantPollutant: PollutantIdentifier!
@@ -49,20 +48,39 @@ class ViewController: UIViewController {
 		self.setupScene()
     }
 	
-	override func viewDidLayoutSubviews() {
-		super.viewDidLayoutSubviews()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupARConfiguration()
+		setupPollutantCard()
 		
-		// Air quality full report
+		self.addAirQualityMeter()
+		self.setFullReportAlert()
+    }
+	
+	private func setFullReportAlert() {
+		self.addFullReportAlert()
+		self.setShowFullReportButton()
+	}
+	
+	private func addFullReportAlert() {
 		fullReportAlert = FullAirQualityReportAlert(frame: self.view.frame)
 		self.view.addSubview(fullReportAlert)
 	}
 	
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupARConfiguration()
-		setupProgressRing()
-		setupPollutantCard()
-    }
+	private func addAirQualityMeter() {
+		let aqMeterRect = CGRect(x: self.view.frame.size.width-176, y: self.view.frame.size.height-176, width: 176, height: 176)
+		airQualityMeter = AirQualityMeter(frame: aqMeterRect)
+		self.view.addSubview(airQualityMeter)
+	}
+	
+	@objc private func handleTap(_: UITapGestureRecognizer? = nil) {
+		self.fullReportAlert.show()
+	}
+	
+	private func setShowFullReportButton() {
+		let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+		self.airQualityMeter.addGestureRecognizer(tap)
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
