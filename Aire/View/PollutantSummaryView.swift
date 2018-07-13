@@ -28,24 +28,7 @@ class PollutantSummaryView: NibView {
 	
 	@IBInspectable var heading: Int = 0 {
 		didSet {
-			switch(self.heading) {
-			case 1:
-				self.pollutantTitleLabel.font = self.pollutantIndexLabel.font.withSize(24)
-			case 2:
-				self.pollutantTitleLabel.font = self.pollutantIndexLabel.font.withSize(26)
-			case 3:
-				self.pollutantTitleLabel.font = self.pollutantIndexLabel.font.withSize(28)
-			case 4:
-				self.pollutantTitleLabel.font = self.pollutantIndexLabel.font.withSize(30)
-			case 5:
-				self.pollutantTitleLabel.font = self.pollutantIndexLabel.font.withSize(32)
-			case 6:
-				self.pollutantTitleLabel.font = self.pollutantIndexLabel.font.withSize(34)
-			case 7:
-				self.pollutantTitleLabel.font = self.pollutantIndexLabel.font.withSize(36)
-			default:
-				self.pollutantTitleLabel.font = self.pollutantIndexLabel.font.withSize(22)
-			}
+			self.pollutantTitleLabel.font = self.pollutantIndexLabel.font.withSize(CGFloat(22 + (heading*2)))
 			setNeedsDisplay()
 		}
 	}

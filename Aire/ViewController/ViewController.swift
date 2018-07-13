@@ -36,12 +36,6 @@ class ViewController: UIViewController {
 	private var height: CGFloat!
 	private let margin: CGFloat = 25.0
 	
-	/*required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-		
-	}*/
-
-	
     override func viewDidLoad() {
         super.viewDidLoad()
         self.becomeFirstResponder() // To get shake gesture
