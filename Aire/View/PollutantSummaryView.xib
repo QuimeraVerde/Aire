@@ -29,21 +29,25 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVV-NT-l7i" customClass="CircleView" customModule="Aire" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50.0" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-lr-jIe">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" minimumFontSize="22" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-lr-jIe">
                                     <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
-                                    <nil key="textColor"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="AQI">
+                                            <attributes>
+                                                <font key="NSFont" size="22" name="Avenir-Roman"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="sJ5-lr-jIe" firstAttribute="top" secondItem="xVV-NT-l7i" secondAttribute="top" id="0iE-aJ-5jZ"/>
-                                <constraint firstItem="sJ5-lr-jIe" firstAttribute="width" secondItem="xVV-NT-l7i" secondAttribute="width" id="BM0-ki-kql"/>
-                                <constraint firstAttribute="bottom" secondItem="sJ5-lr-jIe" secondAttribute="bottom" id="KrD-Kw-xYS"/>
-                                <constraint firstAttribute="trailing" secondItem="sJ5-lr-jIe" secondAttribute="trailing" id="MaK-Ib-l3W"/>
-                                <constraint firstItem="sJ5-lr-jIe" firstAttribute="height" secondItem="xVV-NT-l7i" secondAttribute="height" id="aib-68-A83"/>
-                                <constraint firstItem="sJ5-lr-jIe" firstAttribute="leading" secondItem="xVV-NT-l7i" secondAttribute="leading" id="kBY-eT-hoW"/>
+                                <constraint firstAttribute="bottom" secondItem="sJ5-lr-jIe" secondAttribute="bottom" id="COP-wO-AxW"/>
+                                <constraint firstItem="sJ5-lr-jIe" firstAttribute="top" secondItem="xVV-NT-l7i" secondAttribute="top" id="DWN-6z-5mS"/>
+                                <constraint firstAttribute="trailing" secondItem="sJ5-lr-jIe" secondAttribute="trailing" id="PPV-iy-Y5I"/>
+                                <constraint firstItem="sJ5-lr-jIe" firstAttribute="leading" secondItem="xVV-NT-l7i" secondAttribute="leading" id="mXj-bK-My3"/>
                                 <constraint firstAttribute="width" secondItem="xVV-NT-l7i" secondAttribute="height" multiplier="75:76" id="voC-Ur-fFp"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>

@@ -49,33 +49,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="wb8-jR-i0k">
-                                        <rect key="frame" x="43" y="69" width="350" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rEw-nL-frT" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="150"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="rEw-nL-frT" secondAttribute="height" multiplier="1:2" id="lF1-59-FmV"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ASU-x2-aah" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                <rect key="frame" x="125" y="0.0" width="100" height="150"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="ASU-x2-aah" secondAttribute="height" multiplier="2:3" id="Alh-XY-t4f"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UN4-lm-7gY" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                <rect key="frame" x="275" y="0.0" width="75" height="150"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="UN4-lm-7gY" secondAttribute="height" multiplier="1:2" id="zB6-7T-a1N"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="bottom" spacing="62.5" translatesAutoresizingMaskIntoConstraints="NO" id="p3l-dE-7Qe">
                                         <rect key="frame" x="43" y="227" width="350" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -99,6 +72,39 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zhf-jJ-Jw1" secondAttribute="height" multiplier="1:2" id="7K8-xT-X0N"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="wb8-jR-i0k">
+                                        <rect key="frame" x="43" y="70" width="350" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rEw-nL-frT" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="150"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="rEw-nL-frT" secondAttribute="height" multiplier="1:2" id="lF1-59-FmV"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ASU-x2-aah" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
+                                                <rect key="frame" x="125" y="0.0" width="100" height="150"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ASU-x2-aah" secondAttribute="height" multiplier="2:3" id="Alh-XY-t4f"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="heading2" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="heading">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UN4-lm-7gY" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
+                                                <rect key="frame" x="275" y="0.0" width="75" height="150"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="UN4-lm-7gY" secondAttribute="height" multiplier="1:2" id="zB6-7T-a1N"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
