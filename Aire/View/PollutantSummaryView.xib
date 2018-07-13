@@ -24,12 +24,12 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vXv-DJ-nru">
-                    <rect key="frame" x="0.0" y="0.0" width="75" height="100"/>
+                    <rect key="frame" x="0.0" y="1.5" width="75" height="98.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVV-NT-l7i" customClass="CircleView" customModule="Aire" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AQI" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-lr-jIe">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50.0" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-lr-jIe">
                                     <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
                                     <nil key="textColor"/>
@@ -39,8 +39,10 @@
                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="sJ5-lr-jIe" firstAttribute="top" secondItem="xVV-NT-l7i" secondAttribute="top" id="0iE-aJ-5jZ"/>
+                                <constraint firstItem="sJ5-lr-jIe" firstAttribute="width" secondItem="xVV-NT-l7i" secondAttribute="width" id="BM0-ki-kql"/>
                                 <constraint firstAttribute="bottom" secondItem="sJ5-lr-jIe" secondAttribute="bottom" id="KrD-Kw-xYS"/>
                                 <constraint firstAttribute="trailing" secondItem="sJ5-lr-jIe" secondAttribute="trailing" id="MaK-Ib-l3W"/>
+                                <constraint firstItem="sJ5-lr-jIe" firstAttribute="height" secondItem="xVV-NT-l7i" secondAttribute="height" id="aib-68-A83"/>
                                 <constraint firstItem="sJ5-lr-jIe" firstAttribute="leading" secondItem="xVV-NT-l7i" secondAttribute="leading" id="kBY-eT-hoW"/>
                                 <constraint firstAttribute="width" secondItem="xVV-NT-l7i" secondAttribute="height" multiplier="75:76" id="voC-Ur-fFp"/>
                             </constraints>
@@ -54,7 +56,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="025-hj-GYv">
-                            <rect key="frame" x="0.0" y="75" width="75" height="25"/>
+                            <rect key="frame" x="0.0" y="75" width="75" height="23.5"/>
                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -67,7 +69,6 @@
             <constraints>
                 <constraint firstItem="ESF-n6-YY1" firstAttribute="bottom" secondItem="vXv-DJ-nru" secondAttribute="bottom" id="D0k-ZM-o2Q"/>
                 <constraint firstItem="vXv-DJ-nru" firstAttribute="leading" secondItem="ESF-n6-YY1" secondAttribute="leading" id="R8H-8z-7vK"/>
-                <constraint firstItem="vXv-DJ-nru" firstAttribute="top" secondItem="MlJ-se-WP7" secondAttribute="top" id="cgh-o9-gsG"/>
                 <constraint firstItem="vXv-DJ-nru" firstAttribute="trailing" secondItem="ESF-n6-YY1" secondAttribute="trailing" id="jBa-An-sL4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

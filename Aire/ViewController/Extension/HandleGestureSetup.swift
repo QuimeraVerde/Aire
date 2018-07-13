@@ -81,14 +81,11 @@ extension ViewController {
 				handleTapSingleNode(node:tappedNode!)
 				
 				// show card as shortcut
-				//showPollutantInfo(pollutantName: getNodePollutantName(node: tappedNode!))
 				self.pollutantCardView.update(pollutant: getNodePollutant(node: tappedNode!))
 				self.pollutantCardView.show()
 			}
 		}
 	}
-    
-    
 	
 	func handleTapSingleNode(node: SCNNode){
 		// animate tap

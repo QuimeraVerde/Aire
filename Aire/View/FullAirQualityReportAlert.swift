@@ -13,12 +13,10 @@ class FullAirQualityReportAlert: NibView {
 	@IBOutlet weak var pollutantSummariesTopContainer: UIStackView!
 	@IBOutlet weak var pollutantSummariesBottomContainer: UIStackView!
 	@IBOutlet weak var reportContainer: UIView!
-
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		self.reportContainer.center = self.center
-		addTopPollutantSummaries()
-		addBottomPollutantSummaries()
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -75,21 +73,5 @@ class FullAirQualityReportAlert: NibView {
 			pollutantSummaries[0].update(pollutant: pollutants[secondaryPollutantIDs[2]]!)
 			pollutantSummaries[1].update(pollutant: pollutants[secondaryPollutantIDs[3]]!)
 			pollutantSummaries[2].update(pollutant: pollutants[secondaryPollutantIDs[4]]!)
-	}
-	
-	private func addTopPollutantSummaries() {
-		for _ in 0...2 {
-			let pollutantSummary = PollutantSummaryView(frame: self.frame)
-			self.pollutantSummariesTopContainer
-					.addArrangedSubview(pollutantSummary)
-		}
-	}
-	
-	private func addBottomPollutantSummaries() {
-		for _ in 3...5 {
-			let pollutantSummary = PollutantSummaryView(frame: self.frame)
-			self.pollutantSummariesBottomContainer
-					.addArrangedSubview(pollutantSummary)
-		}
 	}
 }

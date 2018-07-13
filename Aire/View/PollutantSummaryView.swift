@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 
+@IBDesignable
 class PollutantSummaryView: NibView {
 	@IBOutlet var pollutantTitleLabel: UILabel!
 	@IBOutlet var pollutantIndexLabel: UILabel!
-	@IBOutlet var pollutantLevelView: UIView!
+	@IBOutlet var pollutantLevelView: CircleView!
 	
 	func update(pollutant: Pollutant) {
 		pollutantTitleLabel.text = pollutant.title

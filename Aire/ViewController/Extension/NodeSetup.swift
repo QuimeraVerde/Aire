@@ -72,28 +72,11 @@ extension ViewController {
         pollutantModel.randomPosition(objectCount:index)
     }
     
-    // shortcuts to getting the pollutant name that is hidden
-    func getNodePollutantName(node: SCNNode) -> String{
-        // grab name of node for identification purposes
-        let nodeName: String = node.name ?? "none"
-        
-        // check if label
-        if (nodeName == "label") {
-            return node.geometry?.name ?? "none"
-        }
-        
-        return nodeName
-    }
-	
 	func getNodePollutant(node: SCNNode) -> Pollutant{
 		// grab name of node for identification purposes
 		var nodeName: String = node.name ?? "none"
 		
 		// check if label
-		/*if (nodeName == "label") {
-			throws exampleError("Pollutant not found")
-		}*/
-		
 		if (nodeName == "label") {
 			// name of pollutant in geometry
 			nodeName = node.geometry?.name ?? "none"
