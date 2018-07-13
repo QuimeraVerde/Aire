@@ -16,24 +16,15 @@ import RxCocoa
 class ViewController: UIViewController {
     
     @IBOutlet weak var sceneView: ARSCNView!
-	@IBOutlet var pollutantLabel: UILabel!
-	@IBOutlet var pollutantCard: UIView!
-	@IBOutlet var SegmentedMenu: UISegmentedControl!
-    @IBOutlet var pollutantGif: UIImageView!
-    @IBOutlet var pollutantCircleImage: UIImageView!
-    @IBOutlet var labelAQILevelPollutant: UILabel!
     @IBOutlet var lastUpdated: UILabel!
 	@IBOutlet var addressLabel: UILabel!
 	@IBOutlet var mapButton: UIButton!
     
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
-    
-    @IBOutlet var PollutantText0: UITextView!
-    @IBOutlet var PollutantText1: UITextView!
-    @IBOutlet var PollutantText2: UITextView!
 
 	var fullReportAlert: FullAirQualityReportAlert!
 	var airQualityMeter: AirQualityMeter!
+	var pollutantCardView: PollutantCardView!
     
     var pollutantsInfo: Dictionary<PollutantIdentifier, Pollutant> = Dictionary<PollutantIdentifier,Pollutant>()
     var dominantPollutant: PollutantIdentifier!
@@ -41,11 +32,24 @@ class ViewController: UIViewController {
 
 	let disposeBag = DisposeBag()
 	
+	private var width: CGFloat!
+	private var height: CGFloat!
+	private let margin: CGFloat = 25.0
+	
+	/*required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		
+	}*/
+
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         self.becomeFirstResponder() // To get shake gesture
+		self.width = self.view.frame.size.width
+		self.height = self.view.frame.size.height
 		self.setupLocationSubscription()
 		self.setupScene()
+		self.addPollutantCardView()
 		self.addAirQualityMeter()
 		self.setFullReportAlert()
     }
@@ -53,7 +57,6 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupARConfiguration()
-		setupPollutantCard()
     }
 	
 	private func setFullReportAlert() {
@@ -63,11 +66,28 @@ class ViewController: UIViewController {
 	
 	private func addFullReportAlert() {
 		fullReportAlert = FullAirQualityReportAlert(frame: self.view.frame)
+		fullReportAlert.hide()
 		self.view.addSubview(fullReportAlert)
 	}
 	
+	private func addPollutantCardView() {
+		let cardWidth = (self.width / 2) - (self.margin * 2)
+		let cardHeight = self.height - (self.margin * 2)
+		let pollutantCardRect = CGRect(x: self.margin,
+									   y: self.margin,
+									   width: cardWidth,
+									   height: cardHeight)
+		
+		pollutantCardView = PollutantCardView(frame: pollutantCardRect)
+		pollutantCardView.hide()
+		self.view.addSubview(pollutantCardView)
+	}
+	
 	private func addAirQualityMeter() {
-		let aqMeterRect = CGRect(x: self.view.frame.size.width-176, y: self.view.frame.size.height-176, width: 176, height: 176)
+		let aqMeterRect = CGRect(x: self.width-176,
+								 y: self.height-176,
+								 width: 176,
+								 height: 176)
 		airQualityMeter = AirQualityMeter(frame: aqMeterRect)
 		self.view.addSubview(airQualityMeter)
 	}

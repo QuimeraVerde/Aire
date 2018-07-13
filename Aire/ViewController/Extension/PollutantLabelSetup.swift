@@ -19,25 +19,26 @@ extension ViewController {
 		var pollutantFont: Float = 0.0
 		
 		// if key is found
-		let pollutantID = PollutantIdentifier(rawValue: pollutantTitle)
-		if let pollutantConfig = PollutantUtility.config.model[pollutantID!] {
-			// remove other labels
-			cleanseLabels()
-			
-			pollutantText = pollutantConfig.text
-			pollutantYOffset = pollutantConfig.yOffset
-			pollutantFont = pollutantConfig.fontSize
-			pollutantTitle = pollutantConfig.title
-			
-			// create label model
-			pollutantLabel.loadModel(text:pollutantText, fontSize: CGFloat(pollutantFont), title: pollutantTitle)
-			sceneView.scene.rootNode.addChildNode(pollutantLabel)
-			
-			// identifier for cleaning labels
-			pollutantLabel.name = "label"
-			
-			// position label on top of model
-			pollutantLabel.positionLabel(node:node, yOffset: pollutantYOffset)
+		if let pollutantID = PollutantIdentifier(rawValue: node.name!) {
+			if let pollutantConfig = PollutantUtility.config.model[pollutantID] {
+				// remove other labels
+				cleanseLabels()
+				
+				pollutantText = pollutantConfig.text
+				pollutantYOffset = pollutantConfig.yOffset
+				pollutantFont = pollutantConfig.fontSize
+				pollutantTitle = pollutantConfig.title
+				
+				// create label model
+				pollutantLabel.loadModel(text:pollutantText, fontSize: CGFloat(pollutantFont), title: pollutantTitle)
+				sceneView.scene.rootNode.addChildNode(pollutantLabel)
+				
+				// identifier for cleaning labels
+				pollutantLabel.name = "label"
+				
+				// position label on top of model
+				pollutantLabel.positionLabel(node:node, yOffset: pollutantYOffset)
+			}
 		}
 	}
 	

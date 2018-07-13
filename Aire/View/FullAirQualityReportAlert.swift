@@ -16,7 +16,6 @@ class FullAirQualityReportAlert: NibView {
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		self.isHidden = true
 		self.reportContainer.center = self.center
 		addTopPollutantSummaries()
 		addBottomPollutantSummaries()
@@ -30,8 +29,12 @@ class FullAirQualityReportAlert: NibView {
 		self.isHidden = false
 	}
 	
-	@IBAction func hide(_ sender: Any) {
+	func hide() {
 		self.isHidden = true
+	}
+	
+	@IBAction func hide(_ sender: Any) {
+		self.hide()
 	}
 	
 	func update(

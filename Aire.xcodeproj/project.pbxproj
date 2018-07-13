@@ -162,6 +162,8 @@
 		FF15313B20F7ECB300B75245 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313720F7ECB300B75245 /* UIViewExtension.swift */; };
 		FF15313C20F7ECB300B75245 /* PollutantSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */; };
 		FF15313D20F7ECB300B75245 /* PollutantSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */; };
+		FF345F6220F817AE00ADE1A3 /* PollutantCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF345F6120F817AE00ADE1A3 /* PollutantCardView.xib */; };
+		FF345F6420F8198600ADE1A3 /* PollutantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */; };
 		FF3492ED20F1B97C00656D5A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492EC20F1B97C00656D5A /* PageViewController.swift */; };
 		FF3492EF20F1B9A700656D5A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492EE20F1B9A700656D5A /* MapViewController.swift */; };
 		FF3492F120F1BB1E00656D5A /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492F020F1BB1E00656D5A /* Actions.swift */; };
@@ -345,6 +347,8 @@
 		FF15313720F7ECB300B75245 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PollutantSummaryView.xib; sourceTree = "<group>"; };
 		FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutantSummaryView.swift; sourceTree = "<group>"; };
+		FF345F6120F817AE00ADE1A3 /* PollutantCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollutantCardView.xib; sourceTree = "<group>"; };
+		FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantCardView.swift; sourceTree = "<group>"; };
 		FF3492EC20F1B97C00656D5A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		FF3492EE20F1B9A700656D5A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FF3492F020F1BB1E00656D5A /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
@@ -723,6 +727,8 @@
 				FFC5A90920F8015800EC66B2 /* AirQualityMeter.xib */,
 				FFC5A90B20F8066C00EC66B2 /* AirQualityMeter.swift */,
 				2BC83CE520DC2DB200777995 /* Main.storyboard */,
+				FF345F6120F817AE00ADE1A3 /* PollutantCardView.xib */,
+				FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -893,6 +899,7 @@
 				2B3FE7B820F1C79D0075D727 /* range1.png in Resources */,
 				2B701EE820F13DA00087106A /* range5-14.png in Resources */,
 				2B701EEC20F13DA00087106A /* range5-10.png in Resources */,
+				FF345F6220F817AE00ADE1A3 /* PollutantCardView.xib in Resources */,
 				2B701EB820F13DA00087106A /* range2-15.png in Resources */,
 				2B701EF220F13DA00087106A /* range5-0.png in Resources */,
 				2B701EF620F13DA00087106A /* range5-5.png in Resources */,
@@ -1014,6 +1021,7 @@
 				2BC83CE220DC2DB200777995 /* AppDelegate.swift in Sources */,
 				2B97266A20EC4AA40005EA69 /* PollutantLabel.swift in Sources */,
 				FFC5A90C20F8066C00EC66B2 /* AirQualityMeter.swift in Sources */,
+				FF345F6420F8198600ADE1A3 /* PollutantCardView.swift in Sources */,
 				FF83C5AB20EE9B4C00CA68BC /* Location.swift in Sources */,
 				FF83C5A120EE985A00CA68BC /* AirQualityReport.swift in Sources */,
 				2B701EFC20F141E70087106A /* AnimatedImage.swift in Sources */,

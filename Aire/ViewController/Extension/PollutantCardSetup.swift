@@ -11,7 +11,7 @@ import UIKit
 import SwiftGifOrigin
 
 extension ViewController {
-	func setupPollutantCard() {
+	/*func setupPollutantCard() {
 		pollutantCard.layer.cornerRadius = 10
 		pollutantCard.layer.masksToBounds = true
 		SegmentedMenu.selectedSegmentIndex = 0
@@ -119,5 +119,5 @@ extension ViewController {
         default:
             break
         }
-    }
+    }*/
 }

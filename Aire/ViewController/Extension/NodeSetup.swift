@@ -18,7 +18,8 @@ extension ViewController {
         // redraw
         cleanseLabels()
         removePollutants()
-		hideCard()
+		//hideCard()
+		self.pollutantCardView.hide()
 
         // Store pollutants in global variable
         pollutantsInfo = pollutants
@@ -83,4 +84,21 @@ extension ViewController {
         
         return nodeName
     }
+	
+	func getNodePollutant(node: SCNNode) -> Pollutant{
+		// grab name of node for identification purposes
+		var nodeName: String = node.name ?? "none"
+		
+		// check if label
+		/*if (nodeName == "label") {
+			throws exampleError("Pollutant not found")
+		}*/
+		
+		if (nodeName == "label") {
+			// name of pollutant in geometry
+			nodeName = node.geometry?.name ?? "none"
+		}
+		
+		return self.pollutantsInfo[PollutantIdentifier(rawValue: nodeName)!]!
+	}
 }

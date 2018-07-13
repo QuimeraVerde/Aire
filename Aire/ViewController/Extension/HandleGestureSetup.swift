@@ -43,7 +43,8 @@ extension ViewController {
 	
     func handleShakeGesture(){
         removePollutants()
-        hideCard()
+        //hideCard()
+		self.pollutantCardView.hide()
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.milliseconds(500), execute: {
                 self.createPollutants(pollutants: self.pollutantsInfo, dominant: self.dominantPollutant)
@@ -52,7 +53,8 @@ extension ViewController {
     
     @IBAction func ViewAqiReport(_ sender: UIButton) {
         // if any was visible
-        hideCard()
+        //hideCard()
+		self.pollutantCardView.hide()
         self.fullReportAlert.show()
     }
     
@@ -79,7 +81,9 @@ extension ViewController {
 				handleTapSingleNode(node:tappedNode!)
 				
 				// show card as shortcut
-				showPollutantInfo(pollutantName: getNodePollutantName(node: tappedNode!))
+				//showPollutantInfo(pollutantName: getNodePollutantName(node: tappedNode!))
+				self.pollutantCardView.update(pollutant: getNodePollutant(node: tappedNode!))
+				self.pollutantCardView.show()
 			}
 		}
 	}
@@ -95,13 +99,18 @@ extension ViewController {
 		
 		if (nodeName == "label") {
 			// show info card for pollutant, name of pollutant in geometry
-			let pollutantId = node.geometry?.name ?? "none"
-			showPollutantInfo(pollutantName: pollutantId)
+			//let pollutantId = node.geometry?.name ?? "none"
+			let pollutantId = PollutantIdentifier(rawValue: node.geometry?.name ?? "none")
+			//showPollutantInfo(pollutantName: pollutantId)
+			if let pollutant = self.pollutantsInfo[pollutantId!] {
+				self.pollutantCardView.update(pollutant: pollutant)
+				self.pollutantCardView.show()
+			}
 		}
 			
 		else {
 			// hide card
-			hideCard()
+			self.pollutantCardView.hide()
 			
 			// show label for pollutant
 			showLabel(pollutantTitle: nodeName, node: node)
