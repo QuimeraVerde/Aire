@@ -3,20 +3,23 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
   - SwiftGifOrigin (1.6.1)
+  - SwiftyMarkdown (0.5.1)
   - UICircularProgressRing (3.0.0)
 
 DEPENDENCIES:
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
   - SwiftGifOrigin (~> 1.6.1)
+  - SwiftyMarkdown
   - UICircularProgressRing (~> 3.0)
 
 SPEC CHECKSUMS:
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+  SwiftyMarkdown: 743af3e87931391bc4836b825fec3d98785b2e3a
   UICircularProgressRing: 3b472692ffca84060fd444ea5c0b387161067c54
 
-PODFILE CHECKSUM: 5f9d90a576ba37a33507c8bc73261f5fb11cce04
+PODFILE CHECKSUM: 0c4fe260fd9b804fb52591d8c77186e12a357a22
 
 COCOAPODS: 1.4.0

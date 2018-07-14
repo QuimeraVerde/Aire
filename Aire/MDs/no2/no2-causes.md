@@ -1,0 +1,3 @@
+#  Causas
+
+Los óxidos de nitrógeno se producen de forma natural durante los incendios forestales y quema de cultivos, las tormentas eléctricas, las erupciones volcánicas, etc. Las actividades humanas contribuyen a la emisión de óxidos de nitrógeno mediante el escape de vehículos motorizados, sobre todo de tipo diesel, la combustión del carbón, petróleo o gas natural, procesos tales como la soldadura al arco, galvanoplastia, grabado de metales y la detonación de dinamita. Del conjunto de óxidos de nitrógeno emitidos a la atmósfera el más abundante es el óxido nítrico (NO) y, en menor proporción, el dióxido de nitrógeno (NO2).

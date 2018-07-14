@@ -10,6 +10,7 @@ pod 'RxSwift', '~> 4.0'
 pod 'RxCocoa', '~> 4.0'
 pod 'SwiftGifOrigin', '~> 1.6.1'
 pod 'UICircularProgressRing', '~> 3.0'
+pod 'SwiftyMarkdown'
 end
 
 post_install do |installer|
