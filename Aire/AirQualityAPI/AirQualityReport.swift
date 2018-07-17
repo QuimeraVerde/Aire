@@ -27,12 +27,12 @@ class AirQualityReport {
 		}
 		
 		var pollutants : Dictionary<PollutantIdentifier,Pollutant> = [
-			.pm10 : Pollutant(title: "PM10"),
-			.pm25 : Pollutant(title: "PM2.5"),
-			.so2  : Pollutant(title: "SO2"),
-			.co   : Pollutant(title: "CO"),
-			.o3   : Pollutant(title: "O3"),
-			.no2  : Pollutant(title: "NO2")
+            .pm10 : Pollutant(title: "PM10", id: "pm10"),
+			.pm25 : Pollutant(title: "PM2.5", id: "pm25"),
+			.so2  : Pollutant(title: "SO2", id: "so2"),
+			.co   : Pollutant(title: "CO", id: "co"),
+			.o3   : Pollutant(title: "O3", id: "o3"),
+			.no2  : Pollutant(title: "NO2", id: "no2")
 		]
 		
 		for string in pollutantsJSON {

@@ -22,12 +22,15 @@ class PollutantCardView: NibView {
 	@IBOutlet weak var contentTextView: UITextView!
 	
 	private var content: Dictionary<PollutantIdentifier, Dictionary<PollutantContentIdentifier, UITextView>>!
+    
+    private var selectedPollutant : String!
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		self.layer.cornerRadius = 10
 		self.layer.masksToBounds = true
 		self.segmentedMenu.selectedSegmentIndex = 0
+        self.selectedPollutant = ""
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -40,23 +43,40 @@ class PollutantCardView: NibView {
 	
 	func hide() {
 		self.isHidden = true
+        segmentedMenu.selectedSegmentIndex = 0
 	}
 	
 	@IBAction func hide(_ sender: Any) {
 		self.hide()
 	}
-	
+    
+    @IBAction func changeSegment(_ sender: Any) {
+        let selectedIndex: Int = segmentedMenu.selectedSegmentIndex
+        var selectedSection = ""
+        
+        switch selectedIndex {
+        case 0:
+            selectedSection = "definition"
+        case 1:
+            selectedSection = "causes"
+        case 2:
+            selectedSection = "issues"
+        default:
+            selectedSection = "definition"
+        }
+        
+        self.contentTextView.attributedText = self.getAttributedText(section: selectedSection)
+    }
+    
 	func update(pollutant: Pollutant) {
+        self.selectedPollutant = pollutant.id
 		self.pollutantSummary.update(pollutant: pollutant)
-		self.updateTextView()
+        self.contentTextView.attributedText = self.getAttributedText(section: "definition")
 	}
 	
-	private func updateTextView() {
-		self.contentTextView.attributedText = self.getAttributedText()
-	}
-	
-	private func getAttributedText() -> NSAttributedString {
-		if let url = Bundle.main.url(forResource: "pm10-definition", withExtension: "md") {
+    private func getAttributedText(section: String) -> NSAttributedString {
+        let fileName = self.selectedPollutant + "-" + section
+		if let url = Bundle.main.url(forResource: fileName, withExtension: "md") {
 			if let md = SwiftyMarkdown(url: url) {
 				md.setFontNameForAllStyles(with: "Avenir-Roman")
 				

@@ -12,8 +12,10 @@ struct Pollutant {
 	var aqi : Double = 0.0
 	var count : Int = 0
 	var title : String = ""
-	init(title : String) {
+    var id : String = ""
+    init(title : String, id : String) {
 		self.title = title
+        self.id = id
 	}
 	init(rawValue : [String: Any]) {
 		self.aqi = (rawValue["v"] as? Double)!

@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B158B8A20FEA39B00D2C5A1 /* pm10-causes.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53220FA762900DF9562 /* pm10-causes.md */; };
+		2B158B8B20FEA39E00D2C5A1 /* pm10-issues.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53120FA762400DF9562 /* pm10-issues.md */; };
+		2B158B8C20FEA3A100D2C5A1 /* pm25-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53420FA764700DF9562 /* pm25-definition.md */; };
+		2B158B8D20FEA3A100D2C5A1 /* pm25-causes.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53520FA764C00DF9562 /* pm25-causes.md */; };
+		2B158B8E20FEA3A100D2C5A1 /* pm25-issues.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53620FA765200DF9562 /* pm25-issues.md */; };
+		2B158B8F20FEA3A300D2C5A1 /* o3-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D54020FA769700DF9562 /* o3-definition.md */; };
+		2B158B9020FEA3A300D2C5A1 /* o3-causes.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D54120FA769C00DF9562 /* o3-causes.md */; };
+		2B158B9120FEA3A300D2C5A1 /* o3-issues.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D54220FA76A000DF9562 /* o3-issues.md */; };
+		2B158B9220FEA3AC00D2C5A1 /* no2-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53820FA765F00DF9562 /* no2-definition.md */; };
+		2B158B9320FEA3AC00D2C5A1 /* no2-causes.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53920FA766400DF9562 /* no2-causes.md */; };
+		2B158B9420FEA3AC00D2C5A1 /* no2-issues.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53A20FA766900DF9562 /* no2-issues.md */; };
+		2B158B9520FEA3AF00D2C5A1 /* so2-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53C20FA767800DF9562 /* so2-definition.md */; };
+		2B158B9620FEA3AF00D2C5A1 /* so2-causes.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53D20FA767E00DF9562 /* so2-causes.md */; };
+		2B158B9720FEA3AF00D2C5A1 /* so2-issues.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53E20FA768400DF9562 /* so2-issues.md */; };
+		2B158B9A20FEA3B300D2C5A1 /* co-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D52D20FA66B100DF9562 /* co-definition.md */; };
+		2B158B9B20FEA3B300D2C5A1 /* co-causes.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53020FA761C00DF9562 /* co-causes.md */; };
+		2B158B9C20FEA3B300D2C5A1 /* co-issues.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D52F20FA761400DF9562 /* co-issues.md */; };
 		2B3FE7A120F1888B0075D727 /* o3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7A020F1888B0075D727 /* o3.scn */; };
 		2B3FE7B820F1C79D0075D727 /* range1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7B220F1C79D0075D727 /* range1.png */; };
 		2B3FE7B920F1C79D0075D727 /* range3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7B320F1C79D0075D727 /* range3.png */; };
@@ -157,7 +174,6 @@
 		FF0A027420EE4CEC008D9A25 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FF0A027320EE4CEC008D9A25 /* Podfile */; };
 		FF13D51D20F96AC600DF9562 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF13D51C20F96AC600DF9562 /* CircleView.swift */; };
 		FF13D52A20FA652900DF9562 /* pm10-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D52820FA574D00DF9562 /* pm10-definition.md */; };
-		FF13D52E20FA66B100DF9562 /* co-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D52D20FA66B100DF9562 /* co-definition.md */; };
 		FF15313120F7EC8C00B75245 /* PollutantIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313020F7EC8B00B75245 /* PollutantIdentifier.swift */; };
 		FF15313420F7ECA700B75245 /* FullAirQualityReportAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313220F7ECA700B75245 /* FullAirQualityReportAlert.swift */; };
 		FF15313520F7ECA700B75245 /* FullAirQualityReportAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF15313320F7ECA700B75245 /* FullAirQualityReportAlert.xib */; };
@@ -857,7 +873,6 @@
 				2BC83CDB20DC2DB200777995 /* Frameworks */,
 				2BC83CDC20DC2DB200777995 /* Resources */,
 				EAA97FF9263428896E3538C7 /* [CP] Embed Pods Frameworks */,
-				D6F68CC28B7CF99A994F07D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -920,6 +935,7 @@
 				2B701EE920F13DA00087106A /* range5-15.png in Resources */,
 				2B701EEB20F13DA00087106A /* range5-11.png in Resources */,
 				2B701EBA20F13DA00087106A /* range2-10.png in Resources */,
+				2B158B9B20FEA3B300D2C5A1 /* co-causes.md in Resources */,
 				2B701EBF20F13DA00087106A /* range6-9.png in Resources */,
 				2B701EF320F13DA00087106A /* range5-4.png in Resources */,
 				2B701E9620F13DA00087106A /* range3-9.png in Resources */,
@@ -934,9 +950,11 @@
 				2B701EE020F13DA00087106A /* range4-12.png in Resources */,
 				2B701E9720F13DA00087106A /* range3-15.png in Resources */,
 				2B701E8D20F13DA00087106A /* range1-6.png in Resources */,
+				2B158B9420FEA3AC00D2C5A1 /* no2-issues.md in Resources */,
 				2B701E9320F13DA00087106A /* range1-3.png in Resources */,
 				2B701EC420F13DA00087106A /* range6-2.png in Resources */,
-				FF13D52E20FA66B100DF9562 /* co-definition.md in Resources */,
+				2B158B9620FEA3AF00D2C5A1 /* so2-causes.md in Resources */,
+				2B158B9C20FEA3B300D2C5A1 /* co-issues.md in Resources */,
 				2B701E9120F13DA00087106A /* range1-0.png in Resources */,
 				2B701E8A20F13DA00087106A /* range1-14.png in Resources */,
 				2B3FE7B920F1C79D0075D727 /* range3.png in Resources */,
@@ -952,9 +970,12 @@
 				2B701E9220F13DA00087106A /* range1-1.png in Resources */,
 				2B701E9B20F13DA00087106A /* range3-13.png in Resources */,
 				2B701E8120F13D9F0087106A /* range1-9.png in Resources */,
+				2B158B9020FEA3A300D2C5A1 /* o3-causes.md in Resources */,
 				2B701EE520F13DA00087106A /* range5-17.png in Resources */,
 				2BC83D1320EAEE3400777995 /* pm10.scn in Resources */,
+				2B158B8A20FEA39B00D2C5A1 /* pm10-causes.md in Resources */,
 				FFC5A90A20F8015800EC66B2 /* AirQualityMeter.xib in Resources */,
+				2B158B9220FEA3AC00D2C5A1 /* no2-definition.md in Resources */,
 				2B701ECC20F13DA00087106A /* range6-4.png in Resources */,
 				2B701EEF20F13DA00087106A /* range5-2.png in Resources */,
 				2B701ED720F13DA00087106A /* range4-0.png in Resources */,
@@ -964,6 +985,7 @@
 				2B701E8620F13DA00087106A /* range1-12.png in Resources */,
 				2B701EB320F13DA00087106A /* range2-2.png in Resources */,
 				2B701E8720F13DA00087106A /* range1-16.png in Resources */,
+				2B158B8D20FEA3A100D2C5A1 /* pm25-causes.md in Resources */,
 				2BC83CEC20DC2DB300777995 /* LaunchScreen.storyboard in Resources */,
 				FF15313C20F7ECB300B75245 /* PollutantSummaryView.xib in Resources */,
 				2B701E8E20F13DA00087106A /* range1-7.png in Resources */,
@@ -973,6 +995,7 @@
 				2B701EA120F13DA00087106A /* range3-4.png in Resources */,
 				2B503E7920F143EC00E7FF53 /* molecule.gif in Resources */,
 				2B701EF720F13DA00087106A /* range5-7.png in Resources */,
+				2B158B9120FEA3A300D2C5A1 /* o3-issues.md in Resources */,
 				2B701E9920F13DA00087106A /* range3-16.png in Resources */,
 				2B701EA320F13DA00087106A /* range3-7.png in Resources */,
 				2B701EB420F13DA00087106A /* range2-3.png in Resources */,
@@ -981,11 +1004,14 @@
 				2B701EA620F13DA00087106A /* range3-3.png in Resources */,
 				2B701EF820F13DA00087106A /* range5-6.png in Resources */,
 				2B701E8C20F13DA00087106A /* range1-18.png in Resources */,
+				2B158B9A20FEA3B300D2C5A1 /* co-definition.md in Resources */,
 				2B3FE7BC20F1C79D0075D727 /* range5.png in Resources */,
+				2B158B9320FEA3AC00D2C5A1 /* no2-causes.md in Resources */,
 				2B701ED820F13DA00087106A /* range4-14.png in Resources */,
 				2B701E8820F13DA00087106A /* range1-17.png in Resources */,
 				2BC83D0520EAE75400777995 /* pm10.jpg in Resources */,
 				2B701EA220F13DA00087106A /* range3-5.png in Resources */,
+				2B158B9520FEA3AF00D2C5A1 /* so2-definition.md in Resources */,
 				2B701EDF20F13DA00087106A /* range4-6.png in Resources */,
 				FF0A027420EE4CEC008D9A25 /* Podfile in Resources */,
 				2B701EAC20F13DA00087106A /* range2-9.png in Resources */,
@@ -1010,6 +1036,7 @@
 				2B701EE220F13DA00087106A /* range4-4.png in Resources */,
 				2B701E9A20F13DA00087106A /* range3-17.png in Resources */,
 				2B701EAF20F13DA00087106A /* range2-4.png in Resources */,
+				2B158B8F20FEA3A300D2C5A1 /* o3-definition.md in Resources */,
 				2B3FE7B820F1C79D0075D727 /* range1.png in Resources */,
 				2B701EE820F13DA00087106A /* range5-14.png in Resources */,
 				2B701EEC20F13DA00087106A /* range5-10.png in Resources */,
@@ -1020,6 +1047,8 @@
 				2B701EC220F13DA00087106A /* range6-10.png in Resources */,
 				2B701ECD20F13DA00087106A /* range6-6.png in Resources */,
 				2B701EDC20F13DA00087106A /* range4-17.png in Resources */,
+				2B158B8E20FEA3A100D2C5A1 /* pm25-issues.md in Resources */,
+				2B158B8C20FEA3A100D2C5A1 /* pm25-definition.md in Resources */,
 				2B701ECB20F13DA00087106A /* range6-17.png in Resources */,
 				2B3FE7CB20F1D9910075D727 /* co.scn in Resources */,
 				2B701ED920F13DA00087106A /* range4-16.png in Resources */,
@@ -1028,6 +1057,7 @@
 				2B701EBD20F13DA00087106A /* range6-19.png in Resources */,
 				2B701EF020F13DA00087106A /* range5-3.png in Resources */,
 				2B701E9420F13DA00087106A /* range1-2.png in Resources */,
+				2B158B8B20FEA39E00D2C5A1 /* pm10-issues.md in Resources */,
 				2B701EBE20F13DA00087106A /* range6-18.png in Resources */,
 				2B701EC720F13DA00087106A /* range6-12.png in Resources */,
 				2B701EDE20F13DA00087106A /* range4-7.png in Resources */,
@@ -1048,6 +1078,7 @@
 				2B701EC520F13DA00087106A /* range6-0.png in Resources */,
 				2B97267720EDAA730005EA69 /* pm25.scn in Resources */,
 				2B701ED220F13DA00087106A /* range4-9.png in Resources */,
+				2B158B9720FEA3AF00D2C5A1 /* so2-issues.md in Resources */,
 				2B701EB620F13DA00087106A /* range2-16.png in Resources */,
 				2B701EAD20F13DA00087106A /* range2-7.png in Resources */,
 				2B701EA520F13DA00087106A /* range3-2.png in Resources */,
@@ -1073,21 +1104,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D6F68CC28B7CF99A994F07D7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aire/Pods-Aire-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EAA97FF9263428896E3538C7 /* [CP] Embed Pods Frameworks */ = {
