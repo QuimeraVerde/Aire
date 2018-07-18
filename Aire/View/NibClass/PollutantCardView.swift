@@ -11,9 +11,9 @@ import UIKit
 import SwiftyMarkdown
 
 enum PollutantContentIdentifier: String {
-	case definition
-	case causes
-	case issues
+	case definition = "definition"
+	case causes = "causes"
+	case issues = "issues"
 }
 
 class PollutantCardView: NibView {
@@ -52,17 +52,17 @@ class PollutantCardView: NibView {
     
     @IBAction func changeSegment(_ sender: Any) {
         let selectedIndex: Int = segmentedMenu.selectedSegmentIndex
-        var selectedSection = ""
+        var selectedSection: String = PollutantContentIdentifier.definition.rawValue
         
         switch selectedIndex {
         case 0:
-            selectedSection = "definition"
+            selectedSection = PollutantContentIdentifier.definition.rawValue
         case 1:
-            selectedSection = "causes"
+            selectedSection = PollutantContentIdentifier.causes.rawValue
         case 2:
-            selectedSection = "issues"
+            selectedSection = PollutantContentIdentifier.issues.rawValue
         default:
-            selectedSection = "definition"
+            selectedSection = PollutantContentIdentifier.definition.rawValue
         }
         
         self.contentTextView.attributedText = self.getAttributedText(section: selectedSection)
@@ -71,7 +71,7 @@ class PollutantCardView: NibView {
 	func update(pollutant: Pollutant) {
         self.selectedPollutant = pollutant.id
 		self.pollutantSummary.update(pollutant: pollutant)
-        self.contentTextView.attributedText = self.getAttributedText(section: "definition")
+        self.contentTextView.attributedText = self.getAttributedText(section: PollutantContentIdentifier.definition.rawValue)
 	}
 	
     private func getAttributedText(section: String) -> NSAttributedString {
