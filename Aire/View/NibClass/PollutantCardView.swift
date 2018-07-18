@@ -10,27 +10,28 @@ import Foundation
 import UIKit
 import SwiftyMarkdown
 
-enum PollutantContentIdentifier: String {
-	case definition = "definition"
-	case causes = "causes"
-	case issues = "issues"
-}
-
 class PollutantCardView: NibView {
+	enum SectionIdentifier: String {
+		case definition
+		case causes
+		case issues
+		
+		static let allCases = [definition, causes, issues]
+	}
+	
 	@IBOutlet weak var pollutantSummary: PollutantSummaryView!
 	@IBOutlet weak var segmentedMenu: UISegmentedControl!
 	@IBOutlet weak var contentTextView: UITextView!
 	
-	private var content: Dictionary<PollutantIdentifier, Dictionary<PollutantContentIdentifier, UITextView>>!
+	private var content: Dictionary<PollutantIdentifier, Dictionary<SectionIdentifier, UITextView>>!
     
-    private var selectedPollutant : String!
+    private var selectedPollutant: PollutantIdentifier = PollutantIdentifier()
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		self.layer.cornerRadius = 10
 		self.layer.masksToBounds = true
 		self.segmentedMenu.selectedSegmentIndex = 0
-        self.selectedPollutant = ""
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -52,17 +53,13 @@ class PollutantCardView: NibView {
     
     @IBAction func changeSegment(_ sender: Any) {
         let selectedIndex: Int = segmentedMenu.selectedSegmentIndex
-        var selectedSection: String = PollutantContentIdentifier.definition.rawValue
+        var selectedSection: SectionIdentifier = .definition
         
         switch selectedIndex {
-        case 0:
-            selectedSection = PollutantContentIdentifier.definition.rawValue
-        case 1:
-            selectedSection = PollutantContentIdentifier.causes.rawValue
-        case 2:
-            selectedSection = PollutantContentIdentifier.issues.rawValue
+        case 0...2:
+			selectedSection = SectionIdentifier.allCases[selectedIndex]
         default:
-            selectedSection = PollutantContentIdentifier.definition.rawValue
+            selectedSection = .definition
         }
         
         self.contentTextView.attributedText = self.getAttributedText(section: selectedSection)
@@ -71,11 +68,11 @@ class PollutantCardView: NibView {
 	func update(pollutant: Pollutant) {
         self.selectedPollutant = pollutant.id
 		self.pollutantSummary.update(pollutant: pollutant)
-        self.contentTextView.attributedText = self.getAttributedText(section: PollutantContentIdentifier.definition.rawValue)
+        self.contentTextView.attributedText = self.getAttributedText(section: .definition)
 	}
 	
-    private func getAttributedText(section: String) -> NSAttributedString {
-        let fileName = self.selectedPollutant + "-" + section
+    private func getAttributedText(section: SectionIdentifier) -> NSAttributedString {
+        let fileName = self.selectedPollutant.rawValue + "-" + section.rawValue
 		if let url = Bundle.main.url(forResource: fileName, withExtension: "md") {
 			if let md = SwiftyMarkdown(url: url) {
 				md.setFontNameForAllStyles(with: "Avenir-Roman")

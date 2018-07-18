@@ -32,4 +32,13 @@ class PollutantSummaryView: NibView {
 			setNeedsDisplay()
 		}
 	}
+	
+	@IBInspectable
+	var animated: Bool = false {
+		didSet {
+			if(animated) {
+				self.pollutantLevelView.animate()
+			}
+		}
+	}
 }

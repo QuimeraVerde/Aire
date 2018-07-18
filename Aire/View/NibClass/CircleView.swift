@@ -42,7 +42,7 @@ class CircleView: UIView {
 							size: CGSize(width: width, height: width))
 	}
 	
-	private func animate() {
+	func animate() {
 		self.animator = UIViewPropertyAnimator(duration: .infinity,
 											   controlPoint1: CGPoint(x: 0.17, y: 0.67),
 											   controlPoint2: CGPoint(x: 0.83, y: 0.67),

@@ -12,8 +12,8 @@ struct Pollutant {
 	var aqi : Double = 0.0
 	var count : Int = 0
 	var title : String = ""
-    var id : String = ""
-    init(title : String, id : String) {
+	var id : PollutantIdentifier = PollutantIdentifier()
+    init(title : String, id : PollutantIdentifier) {
 		self.title = title
         self.id = id
 	}

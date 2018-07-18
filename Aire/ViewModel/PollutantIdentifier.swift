@@ -16,5 +16,9 @@ enum PollutantIdentifier: String {
 	case pm25
 	case so2
 	
+	init() {
+		self = .pm10
+	}
+	
 	static let allCases = [co, no2, o3, pm10, pm25, so2]
 }
