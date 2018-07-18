@@ -10,6 +10,7 @@ import UIKit
 
 @IBDesignable
 class CircleView: UIView {
+	var animator: UIViewPropertyAnimator = UIViewPropertyAnimator(duration: .infinity, timingParameters: UICubicTimingParameters(animationCurve: .linear))
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -32,11 +33,35 @@ class CircleView: UIView {
 		}
 	}
 	
-	func sharedInit() {
+	private func sharedInit() {
 		let width = self.frame.size.width
 		self.layer.cornerRadius = width/2
-		self.layer.bounds = CGRect(origin: self.bounds.origin, size: CGSize(width: width, height: width))
-		self.frame = CGRect(origin: self.frame.origin, size: CGSize(width: width, height: width))
+		self.layer.bounds = CGRect(origin: self.bounds.origin,
+								   size: CGSize(width: width, height: width))
+		self.frame = CGRect(origin: self.frame.origin,
+							size: CGSize(width: width, height: width))
+	}
+	
+	private func animate() {
+		self.animator = UIViewPropertyAnimator(duration: .infinity,
+											   controlPoint1: CGPoint(x: 0.17, y: 0.67),
+											   controlPoint2: CGPoint(x: 0.83, y: 0.67),
+											   animations: {
+			self.borderColor = self.borderColor?.adjust(by: 30)
+			self.frame.applying(CGAffineTransform(scaleX: 2.0, y: 2.0))
+			self.borderColor = self.borderColor?.adjust(by: -30)
+			self.frame.applying(CGAffineTransform(scaleX: 0.5, y: 0.5))
+		})
+		self.animator.startAnimation()
+	}
+	
+	@IBInspectable
+	var animated: Bool = false {
+		didSet {
+			if(animated) {
+				self.animate()
+			}
+		}
 	}
 	
 	@IBInspectable
@@ -55,7 +80,7 @@ class CircleView: UIView {
 			if let color = layer.borderColor {
 				return UIColor(cgColor: color)
 			}
-			return nil
+			return UIColor.white
 		}
 		set {
 			if let color = newValue {
