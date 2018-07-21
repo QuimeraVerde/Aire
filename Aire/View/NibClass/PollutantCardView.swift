@@ -40,11 +40,13 @@ class PollutantCardView: NibView {
 	
 	func show() {
 		self.isHidden = false
+		self.pollutantSummary.animate()
 	}
 	
 	func hide() {
 		self.isHidden = true
         segmentedMenu.selectedSegmentIndex = 0
+		self.pollutantSummary.stopAnimation()
 	}
 	
 	@IBAction func hide(_ sender: Any) {

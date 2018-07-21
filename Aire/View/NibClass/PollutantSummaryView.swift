@@ -14,31 +14,35 @@ class PollutantSummaryView: NibView {
 	@IBOutlet var pollutantTitleLabel: UILabel!
 	@IBOutlet var pollutantIndexLabel: UILabel!
 	@IBOutlet var pollutantLevelView: CircleView!
+	var isAnimating = false
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		self.pollutantIndexLabel.font = self.pollutantIndexLabel.font.withSize(frame.size.width * 22.0/75.0)
+		if !isAnimating {
+			self.pollutantIndexLabel.font = self.pollutantIndexLabel.font.withSize(frame.size.width * 22.0/75.0)
+		}
+	}
+	
+	func animate() {
+		isAnimating = true
+		self.pollutantLevelView.animate()
+	}
+	
+	func stopAnimation() {
+		isAnimating = false
+		self.pollutantLevelView.stopAnimation()
 	}
 	
 	func update(pollutant: Pollutant) {
 		pollutantTitleLabel.text = pollutant.title
 		pollutantIndexLabel.text = String(pollutant.aqi)
-		pollutantLevelView.layer.borderColor = AirQualityUtility.scale[pollutant.aqi].color.cgColor
+		pollutantLevelView.setBorderColor(AirQualityUtility.scale[pollutant.aqi].color)
 	}
 	
 	@IBInspectable var heading: Int = 0 {
 		didSet {
 			self.pollutantTitleLabel.font = self.pollutantIndexLabel.font.withSize(CGFloat(22 + (heading*2)))
 			setNeedsDisplay()
-		}
-	}
-	
-	@IBInspectable
-	var animated: Bool = false {
-		didSet {
-			if(animated) {
-				self.pollutantLevelView.animate()
-			}
 		}
 	}
 }

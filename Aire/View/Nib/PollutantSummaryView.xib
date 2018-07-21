@@ -26,11 +26,11 @@
                 <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vXv-DJ-nru">
                     <rect key="frame" x="0.0" y="1.5" width="75" height="98.5"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVV-NT-l7i" customClass="CircleView" customModule="Aire" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QhY-3K-v2m">
                             <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" minimumFontSize="22" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-lr-jIe">
-                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                    <rect key="frame" x="0.0" y="-1" width="75" height="75"/>
                                     <attributedString key="attributedText">
                                         <fragment content="AQI">
                                             <attributes>
@@ -41,23 +41,31 @@
                                     </attributedString>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVV-NT-l7i" customClass="CircleView" customModule="Aire" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="-1" width="75" height="75"/>
+                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="sJ5-lr-jIe" secondAttribute="bottom" id="COP-wO-AxW"/>
-                                <constraint firstItem="sJ5-lr-jIe" firstAttribute="top" secondItem="xVV-NT-l7i" secondAttribute="top" id="DWN-6z-5mS"/>
-                                <constraint firstAttribute="trailing" secondItem="sJ5-lr-jIe" secondAttribute="trailing" id="PPV-iy-Y5I"/>
-                                <constraint firstItem="sJ5-lr-jIe" firstAttribute="leading" secondItem="xVV-NT-l7i" secondAttribute="leading" id="mXj-bK-My3"/>
-                                <constraint firstAttribute="width" secondItem="xVV-NT-l7i" secondAttribute="height" multiplier="75:76" id="voC-Ur-fFp"/>
+                                <constraint firstAttribute="width" secondItem="QhY-3K-v2m" secondAttribute="height" multiplier="1:1" id="1qe-uC-XH2"/>
+                                <constraint firstItem="xVV-NT-l7i" firstAttribute="leading" secondItem="sJ5-lr-jIe" secondAttribute="leading" id="6qQ-Lz-jc4"/>
+                                <constraint firstAttribute="trailing" secondItem="xVV-NT-l7i" secondAttribute="trailing" id="9qe-Em-0NH"/>
+                                <constraint firstAttribute="bottom" secondItem="xVV-NT-l7i" secondAttribute="bottom" constant="1" id="GqQ-aZ-PoF"/>
+                                <constraint firstItem="xVV-NT-l7i" firstAttribute="trailing" secondItem="sJ5-lr-jIe" secondAttribute="trailing" id="b3P-qJ-UsP"/>
+                                <constraint firstItem="xVV-NT-l7i" firstAttribute="top" secondItem="QhY-3K-v2m" secondAttribute="top" constant="-1" id="pgO-G6-Qz4"/>
+                                <constraint firstItem="xVV-NT-l7i" firstAttribute="bottom" secondItem="sJ5-lr-jIe" secondAttribute="bottom" id="tUp-Mw-MwP"/>
+                                <constraint firstItem="xVV-NT-l7i" firstAttribute="top" secondItem="sJ5-lr-jIe" secondAttribute="top" id="tdG-kh-fM2"/>
+                                <constraint firstItem="xVV-NT-l7i" firstAttribute="leading" secondItem="QhY-3K-v2m" secondAttribute="leading" id="xKj-Cd-L5z"/>
                             </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                    <real key="value" value="7"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="025-hj-GYv">
                             <rect key="frame" x="0.0" y="75" width="75" height="23.5"/>
@@ -66,6 +74,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="QhY-3K-v2m" firstAttribute="trailing" secondItem="VVK-Qz-ibN" secondAttribute="trailing" id="5sg-aw-ao5"/>
+                        <constraint firstItem="QhY-3K-v2m" firstAttribute="leading" secondItem="VVK-Qz-ibN" secondAttribute="leading" id="9iQ-Lu-s4g"/>
+                    </constraints>
                     <viewLayoutGuide key="safeArea" id="VVK-Qz-ibN"/>
                 </stackView>
             </subviews>
