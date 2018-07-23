@@ -32,7 +32,7 @@ class CircleView: UIView {
 	}
 
 	private func sharedInit() {
-		let size = self.frame.height
+		let size = self.frame.width
 		self.layer.cornerRadius = size/2
 		self.layer.bounds = CGRect(origin: self.bounds.origin,
 								   size: CGSize(width: size, height: size))

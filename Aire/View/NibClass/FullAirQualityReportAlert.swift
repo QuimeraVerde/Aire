@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class FullAirQualityReportAlert: NibView {
-	@IBOutlet weak var pollutantSummariesTopContainer: UIStackView!
-	@IBOutlet weak var pollutantSummariesBottomContainer: UIStackView!
+	@IBOutlet weak var pollutantSummariesTopContainer: UIView!
+	@IBOutlet weak var pollutantSummariesBottomContainer: UIView!
 	@IBOutlet weak var reportContainer: UIView!
 	
 	override init(frame: CGRect) {
@@ -31,8 +31,11 @@ class FullAirQualityReportAlert: NibView {
 		self.isHidden = true
 	}
 	
-	@IBAction func hide(_ sender: Any) {
-		self.hide()
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		let touch = touches.first
+		if !(touch?.view?.isDescendant(of: self.reportContainer))! {
+			self.hide()
+		}
 	}
 	
 	func update(

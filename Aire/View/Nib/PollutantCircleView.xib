@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PollutantCircleView" customModule="Aire" customModuleProvider="target">
+            <connections>
+                <outlet property="pollutantIndexLabel" destination="L25-sN-1Qd" id="d2E-q8-cVM"/>
+                <outlet property="pollutantLevelView" destination="ZUd-NI-p1O" id="PJe-LF-TkK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleAspectFit" id="pBD-X9-RZV">
+            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L25-sN-1Qd">
+                    <rect key="frame" x="0.0" y="23" width="75" height="30.5"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" none="YES"/>
+                    </accessibility>
+                    <attributedString key="attributedText">
+                        <fragment content="AQI">
+                            <attributes>
+                                <font key="NSFont" size="22" name="Avenir-Roman"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUd-NI-p1O" customClass="CircleView" customModule="Aire" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.25" width="75" height="75"/>
+                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="7"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ZUd-NI-p1O" firstAttribute="trailing" secondItem="4UE-rz-b57" secondAttribute="trailing" id="APl-fH-jPO"/>
+                <constraint firstItem="ZUd-NI-p1O" firstAttribute="centerY" secondItem="pBD-X9-RZV" secondAttribute="centerY" id="B1g-Ya-5hz"/>
+                <constraint firstItem="ZUd-NI-p1O" firstAttribute="leading" secondItem="4UE-rz-b57" secondAttribute="leading" id="GKN-ZO-vrA"/>
+                <constraint firstItem="L25-sN-1Qd" firstAttribute="leading" secondItem="4UE-rz-b57" secondAttribute="leading" id="LKI-ql-XbL"/>
+                <constraint firstItem="ZUd-NI-p1O" firstAttribute="height" secondItem="L25-sN-1Qd" secondAttribute="height" id="LbV-tE-7rv"/>
+                <constraint firstItem="L25-sN-1Qd" firstAttribute="trailing" secondItem="4UE-rz-b57" secondAttribute="trailing" id="P3d-Ph-lvR"/>
+                <constraint firstItem="ZUd-NI-p1O" firstAttribute="width" secondItem="L25-sN-1Qd" secondAttribute="width" id="V7C-oR-J99"/>
+                <constraint firstItem="L25-sN-1Qd" firstAttribute="centerY" secondItem="pBD-X9-RZV" secondAttribute="centerY" id="a71-E2-pv0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="4UE-rz-b57"/>
+            <point key="canvasLocation" x="164.5" y="22.5"/>
+        </view>
+    </objects>
+</document>

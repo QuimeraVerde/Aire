@@ -13,7 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PollutantCardView" customModule="Aire" customModuleProvider="target">
             <connections>
                 <outlet property="contentTextView" destination="Wcc-fv-aHE" id="ca9-ey-sa9"/>
-                <outlet property="pollutantSummary" destination="30g-db-nTa" id="Iew-de-6Lw"/>
+                <outlet property="pollutantCircle" destination="aOM-bE-pU2" id="Okh-U5-PUJ"/>
+                <outlet property="pollutantTitle" destination="G0d-YG-aRq" id="ym7-JU-BOI"/>
                 <outlet property="segmentedMenu" destination="ARz-on-9xu" id="MjR-gS-oVj"/>
             </connections>
         </placeholder>
@@ -22,18 +23,6 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="692"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30g-db-nTa" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                    <rect key="frame" x="189" y="20" width="102" height="160"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="heading1" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="heading">
-                            <integer key="value" value="6"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="animated" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhf-nS-Cu6">
                     <rect key="frame" x="430" y="20" width="30" height="56"/>
                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="32"/>
@@ -63,6 +52,18 @@
                         <action selector="changeSegment:" destination="-1" eventType="valueChanged" id="CQN-YQ-hDW"/>
                     </connections>
                 </segmentedControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0d-YG-aRq">
+                    <rect key="frame" x="42" y="144" width="396" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="36"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOM-bE-pU2" customClass="PollutantCircleView" customModule="Aire" customModuleProvider="target">
+                    <rect key="frame" x="190" y="36" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>

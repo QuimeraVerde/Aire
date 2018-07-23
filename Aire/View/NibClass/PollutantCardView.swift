@@ -19,7 +19,8 @@ class PollutantCardView: NibView {
 		static let allCases = [definition, causes, issues]
 	}
 	
-	@IBOutlet weak var pollutantSummary: PollutantSummaryView!
+	@IBOutlet weak var pollutantCircle: PollutantCircleView!
+	@IBOutlet weak var pollutantTitle: UILabel!
 	@IBOutlet weak var segmentedMenu: UISegmentedControl!
 	@IBOutlet weak var contentTextView: UITextView!
 	
@@ -40,13 +41,13 @@ class PollutantCardView: NibView {
 	
 	func show() {
 		self.isHidden = false
-		self.pollutantSummary.animate()
+		self.pollutantCircle.animate()
 	}
 	
 	func hide() {
 		self.isHidden = true
         segmentedMenu.selectedSegmentIndex = 0
-		self.pollutantSummary.stopAnimation()
+		self.pollutantCircle.stopAnimation()
 	}
 	
 	@IBAction func hide(_ sender: Any) {
@@ -69,7 +70,8 @@ class PollutantCardView: NibView {
     
 	func update(pollutant: Pollutant) {
         self.selectedPollutant = pollutant.id
-		self.pollutantSummary.update(title: pollutant.extendedTitle, index: pollutant.aqi)
+		self.pollutantTitle.text = pollutant.extendedTitle
+		self.pollutantCircle.update(index: pollutant.aqi)
         self.contentTextView.attributedText = self.getAttributedText(section: .definition)
 	}
 	
