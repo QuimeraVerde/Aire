@@ -14,7 +14,27 @@ class AirQualityReport {
 	var location : String = ""
 	var timestamp : Date = Date()
 	var dominantPollutantID : PollutantIdentifier = .pm10
-	var pollutants : Dictionary<PollutantIdentifier,Pollutant> = Dictionary<PollutantIdentifier,Pollutant>()
+	var pollutants: Dictionary<PollutantIdentifier, Pollutant> = Dictionary<PollutantIdentifier, Pollutant>()
+	static private var pollutantsInit : Dictionary<PollutantIdentifier,Pollutant> = [
+		.pm10 : Pollutant(id: .pm10,
+						  title: "PM10",
+						  extendedTitle: "Partículas PM10"),
+		.pm25 : Pollutant(id: .pm25,
+						  title: "PM2.5",
+						  extendedTitle: "Partículas PM2.5"),
+		.so2  : Pollutant(id: .so2,
+						  title: "SO2",
+						  extendedTitle: "Monóxido de Carbono"),
+		.co   : Pollutant(id: .co,
+						  title: "CO",
+						  extendedTitle: "Dióxido de Azufre"),
+		.o3   : Pollutant(id: .o3,
+						  title: "O3",
+						  extendedTitle: "‎Dióxido de Nitrógeno"),
+		.no2  : Pollutant(id: .no2,
+						  title: "NO2",
+						  extendedTitle: "Moléculas de Ozono")
+	]
 
 	static func parseJSON(_ json: NSDictionary) throws -> AirQualityReport {
 		guard let aqi 				= json["aqi"] 			as? Double,
@@ -26,14 +46,7 @@ class AirQualityReport {
 				throw apiError("Error parsing air quality report")
 		}
 		
-		var pollutants : Dictionary<PollutantIdentifier,Pollutant> = [
-            .pm10 : Pollutant(title: "PM10", id: .pm10),
-			.pm25 : Pollutant(title: "PM2.5", id: .pm25),
-			.so2  : Pollutant(title: "SO2", id: .so2),
-			.co   : Pollutant(title: "CO", id: .co),
-			.o3   : Pollutant(title: "O3", id: .o3),
-			.no2  : Pollutant(title: "NO2", id: .no2)
-		]
+		var pollutants = self.pollutantsInit
 		
 		for string in pollutantsJSON {
 			if let pollutantID = PollutantIdentifier(rawValue: string.key) {

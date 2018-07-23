@@ -32,12 +32,12 @@ class CircleView: UIView {
 	}
 
 	private func sharedInit() {
-		let width = self.frame.size.width
-		self.layer.cornerRadius = width/2
+		let size = self.frame.height
+		self.layer.cornerRadius = size/2
 		self.layer.bounds = CGRect(origin: self.bounds.origin,
-								   size: CGSize(width: width, height: width))
+								   size: CGSize(width: size, height: size))
 		self.frame = CGRect(origin: self.frame.origin,
-							size: CGSize(width: width, height: width))
+							size: CGSize(width: size, height: size))
 	}
 	
 	func setBorderColor(_ color: UIColor) {

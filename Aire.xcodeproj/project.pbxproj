@@ -723,10 +723,10 @@
 		FF13D52620FA570100DF9562 /* Nib */ = {
 			isa = PBXGroup;
 			children = (
-				FF15313320F7ECA700B75245 /* FullAirQualityReportAlert.xib */,
-				FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */,
 				FFC5A90920F8015800EC66B2 /* AirQualityMeter.xib */,
+				FF15313320F7ECA700B75245 /* FullAirQualityReportAlert.xib */,
 				FF345F6120F817AE00ADE1A3 /* PollutantCardView.xib */,
+				FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */,
 			);
 			path = Nib;
 			sourceTree = "<group>";

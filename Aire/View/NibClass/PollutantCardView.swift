@@ -69,7 +69,7 @@ class PollutantCardView: NibView {
     
 	func update(pollutant: Pollutant) {
         self.selectedPollutant = pollutant.id
-		self.pollutantSummary.update(pollutant: pollutant)
+		self.pollutantSummary.update(title: pollutant.extendedTitle, index: pollutant.aqi)
         self.contentTextView.attributedText = self.getAttributedText(section: .definition)
 	}
 	

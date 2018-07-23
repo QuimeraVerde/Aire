@@ -33,6 +33,12 @@ class PollutantSummaryView: NibView {
 		self.pollutantLevelView.stopAnimation()
 	}
 	
+	func update(title: String, index: Double) {
+		pollutantTitleLabel.text = title
+		pollutantIndexLabel.text = String(index)
+		pollutantLevelView.setBorderColor(AirQualityUtility.scale[index].color)
+	}
+	
 	func update(pollutant: Pollutant) {
 		pollutantTitleLabel.text = pollutant.title
 		pollutantIndexLabel.text = String(pollutant.aqi)
