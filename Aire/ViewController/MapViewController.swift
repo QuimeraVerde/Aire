@@ -14,6 +14,7 @@ import RxSwift
 class MapViewController: UIViewController {
 	let locationManager = CLLocationManager()
 	let pointAnnotation = MKPointAnnotation()
+	private let disposeBag = DisposeBag()
 	@IBOutlet weak var mapView: MKMapView!
 	@IBOutlet weak var selectCoordinateButton: UIButton!
 	
@@ -30,8 +31,13 @@ class MapViewController: UIViewController {
 	}
 	
 	func setupGestureRecognizer() {
-		let longPress = UILongPressGestureRecognizer(target: self, action: #selector(MapViewController.mapLongPress(_:))) // colon needs to pass through info
+		let longPress = UILongPressGestureRecognizer()
 		mapView.addGestureRecognizer(longPress)
+		longPress.rx.event.bind(onNext: { recognizer in
+			let touchedAt = recognizer.location(in: self.mapView) // adds the location on the view it was pressed
+			let touchedAtCoordinate : CLLocationCoordinate2D = self.mapView.convert(touchedAt, toCoordinateFrom: self.mapView) // will get coordinates
+			self.addPinWithCoordinate(coordinate: touchedAtCoordinate)
+		}).disposed(by: disposeBag)
 	}
 	
 	func setupGeoLocation() {
@@ -39,12 +45,6 @@ class MapViewController: UIViewController {
 		locationManager.desiredAccuracy = kCLLocationAccuracyBest
 		locationManager.requestWhenInUseAuthorization()
 		locationManager.requestLocation()
-	}
-	
-	@objc func mapLongPress(_ recognizer: UIGestureRecognizer) {
-		let touchedAt = recognizer.location(in: self.mapView) // adds the location on the view it was pressed
-		let touchedAtCoordinate : CLLocationCoordinate2D = mapView.convert(touchedAt, toCoordinateFrom: self.mapView) // will get coordinates
-		addPinWithCoordinate(coordinate: touchedAtCoordinate)
 	}
 	
 	func addPinWithCoordinate(coordinate: CLLocationCoordinate2D) {
