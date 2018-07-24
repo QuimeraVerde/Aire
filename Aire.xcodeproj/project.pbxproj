@@ -264,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				FFC5A90B20F8066C00EC66B2 /* AirQualityMeter.swift */,
+				FF9915FF20FEBFB20025C6B9 /* CGColorExtension.swift */,
 				FF13D51C20F96AC600DF9562 /* CircleView.swift */,
 				FF15313220F7ECA700B75245 /* FullAirQualityReportAlert.swift */,
 				FF15313620F7ECB300B75245 /* NibView.swift */,
@@ -271,7 +272,6 @@
 				FFA6CE362105B166006BA424 /* PollutantCircleView.swift */,
 				FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */,
 				FFB740DF21062DF0009D0796 /* SceneView.swift */,
-				FF9915FF20FEBFB20025C6B9 /* CGColorExtension.swift */,
 				FF15313720F7ECB300B75245 /* UIViewExtension.swift */,
 			);
 			path = NibClass;
