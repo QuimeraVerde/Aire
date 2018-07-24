@@ -17,19 +17,19 @@ class MapViewController: UIViewController {
 	private let disposeBag = DisposeBag()
 	@IBOutlet weak var mapView: MKMapView!
 	@IBOutlet weak var selectCoordinateButton: UIButton!
-	
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupGestureRecognizer()
 		setupSelectCoordinateButton()
+		setupGeoLocation()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		selectCoordinateButton.isEnabled = false
-		setupGeoLocation()
 	}
-	
+
 	func setupSelectCoordinateButton() {
 		let _ = selectCoordinateButton.rx.tap
 			.map { _ in
@@ -48,8 +48,8 @@ class MapViewController: UIViewController {
 		let longPress = UILongPressGestureRecognizer()
 		mapView.addGestureRecognizer(longPress)
 		longPress.rx.event.bind(onNext: { recognizer in
-			let touchedAt = recognizer.location(in: self.mapView) // adds the location on the view it was pressed
-			let touchedAtCoordinate : CLLocationCoordinate2D = self.mapView.convert(touchedAt, toCoordinateFrom: self.mapView) // will get coordinates
+			let touchedAt = recognizer.location(in: self.mapView)
+			let touchedAtCoordinate : CLLocationCoordinate2D = self.mapView.convert(touchedAt, toCoordinateFrom: self.mapView)
 			self.addPinWithCoordinate(coordinate: touchedAtCoordinate)
 		}).disposed(by: disposeBag)
 	}
