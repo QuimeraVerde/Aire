@@ -18,11 +18,11 @@ class ViewController: UIViewController {
     @IBOutlet var lastUpdated: UILabel!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
 	@IBOutlet var mapButton: UIButton!
+	@IBOutlet var sceneView: SceneView!
 
 	private var airQualityMeter: AirQualityMeter!
 	private var fullReportAlert: FullAirQualityReportAlert!
 	private var pollutantCardView: PollutantCardView!
-	private var sceneView: SceneView!
 
 	private let disposeBag = DisposeBag()
 	
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
 		self.width = self.view.frame.size.width
 		self.height = self.view.frame.size.height
 		self.setupLocationSubscription()
-		self.addSceneView()
+		self.setupSceneViewSubscriptions()
 		self.addAirQualityMeter()
 		self.addFullReportAlert()
 		self.addPollutantCardView()
@@ -49,9 +49,7 @@ class ViewController: UIViewController {
 		pageViewController.nextPage()
 	}
 
-	private func addSceneView() {
-		sceneView = SceneView(frame: self.view.frame)
-		self.view.addSubview(sceneView)
+	private func setupSceneViewSubscriptions() {
 		sceneView.selectedPollutantID
 			.subscribe(onNext: { pollutantID in
 				if pollutantID != nil, let pollutant = self.pollutants[pollutantID!] {

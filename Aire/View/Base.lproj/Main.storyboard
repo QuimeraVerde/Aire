@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rP-Xp-Tn6" customClass="SceneView" customModule="Aire" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Última actualizacion: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tx0-SU-hSE">
                                 <rect key="frame" x="20" y="734" width="481" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -36,7 +40,8 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="mapButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WrJ-wb-zZk"/>
+                                    <action selector="mapButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="25N-e5-BDB"/>
+                                    <action selector="mapButtonAction:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Myz-ru-cm4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3t-jd-vni">
@@ -62,7 +67,11 @@
                         <color key="backgroundColor" red="0.4431372549" green="0.65098039220000004" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="o5q-Jn-vOK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3oN-2h-aWz"/>
+                            <constraint firstItem="8rP-Xp-Tn6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CHk-dB-JKX"/>
                             <constraint firstItem="o5q-Jn-vOK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EPs-Kb-vSQ"/>
+                            <constraint firstItem="8rP-Xp-Tn6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="QfV-Od-7JW"/>
+                            <constraint firstItem="8rP-Xp-Tn6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="g9N-lT-Xnb"/>
+                            <constraint firstItem="8rP-Xp-Tn6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="o6g-Pz-dMa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -71,6 +80,7 @@
                         <outlet property="lastUpdated" destination="tx0-SU-hSE" id="Eg5-Nc-XqJ"/>
                         <outlet property="loadingIcon" destination="o5q-Jn-vOK" id="tf5-uQ-LTe"/>
                         <outlet property="mapButton" destination="c1C-QQ-G93" id="mct-n7-0WM"/>
+                        <outlet property="sceneView" destination="8rP-Xp-Tn6" id="dU4-XN-z5N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -114,9 +124,6 @@
                                         <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="selectCoordinateButtonTapped:" destination="etZ-r8-ZYo" eventType="touchUpInside" id="3UZ-Rm-306"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

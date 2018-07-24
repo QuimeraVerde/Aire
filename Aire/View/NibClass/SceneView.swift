@@ -28,6 +28,10 @@ class SceneView: NibView {
 		self.sharedInit()
 	}
 	
+	override func prepareForInterfaceBuilder() {
+		sharedInit()
+	}
+	
 	private func sharedInit() {
 		self.selectedPollutantID = self._selectedPollutantID
 		self.loading = self._loading

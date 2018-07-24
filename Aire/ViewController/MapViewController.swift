@@ -70,10 +70,7 @@ class MapViewController: UIViewController {
 		selectCoordinateButton.alpha = 1.0
 		mapView.addAnnotation(pointAnnotation)
 	}
-	
-	@IBAction func selectCoordinateButtonTapped(_ sender: AnyObject) {
-	}
-	
+
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
