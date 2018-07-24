@@ -13,6 +13,17 @@ import UIKit
 class PageViewController : UIPageViewController {
 	let locationManager = CLLocationManager()
 	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.dataSource = self
+		self.delegate   = self
+		setupGeoLocation()
+		if let firstVC = pages.first {
+			setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+		}
+		removeSwipeGesture()
+	}
+	
 	fileprivate lazy var pages: [UIViewController] = {
 		return [
 			self.getViewController(withIdentifier: "Home"),
@@ -30,17 +41,6 @@ class PageViewController : UIPageViewController {
 	
 	fileprivate func getViewController(withIdentifier identifier: String) -> UIViewController {
 		return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier)
-	}
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		self.dataSource = self
-		self.delegate   = self
-		setupGeoLocation()
-		if let firstVC = pages.first {
-			setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
-		}
-        removeSwipeGesture()
 	}
 	
 	func nextPage() {
@@ -88,3 +88,35 @@ extension PageViewController: UIPageViewControllerDataSource {
 }
 
 extension PageViewController: UIPageViewControllerDelegate { }
+
+extension PageViewController: CLLocationManagerDelegate {
+	func setupGeoLocation() {
+		locationManager.delegate = self
+		locationManager.desiredAccuracy = kCLLocationAccuracyBest
+		locationManager.requestAlwaysAuthorization()
+		
+		if CLLocationManager.locationServicesEnabled() {
+			locationManager.startUpdatingLocation()
+		}
+	}
+	
+	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+		if status == .authorizedWhenInUse {
+			locationManager.requestLocation()
+		}
+	}
+	
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		if !Location.sharedCoordinate.isReady {
+			if let location = locations.first {
+				locationManager.stopUpdatingLocation()
+				Location.sharedCoordinate.set(coordinate: location.coordinate)
+				Location.sharedAddress.set(coordinate: location.coordinate)
+			}
+		}
+	}
+	
+	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+		print("error:: \(error)")
+	}
+}

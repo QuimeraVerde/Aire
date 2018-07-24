@@ -21,13 +21,27 @@ class MapViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupGestureRecognizer()
-		setupAPISubscription()
+		setupSelectCoordinateButton()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		selectCoordinateButton.isEnabled = false
 		setupGeoLocation()
+	}
+	
+	func setupSelectCoordinateButton() {
+		let _ = selectCoordinateButton.rx.tap
+			.map { _ in
+				Location.sharedCoordinate.set(coordinate: self.pointAnnotation.coordinate)
+				Location.sharedAddress.set(coordinate: self.pointAnnotation.coordinate)
+			}
+			.bind(onNext: { _ in
+				self.selectCoordinateButton.isEnabled = false
+				self.selectCoordinateButton.alpha = 0.0
+				let pageViewController = self.parent as! PageViewController
+				pageViewController.prevPage()
+			})
 	}
 	
 	func setupGestureRecognizer() {

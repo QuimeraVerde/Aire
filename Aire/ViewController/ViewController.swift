@@ -43,6 +43,11 @@ class ViewController: UIViewController {
 		self.addFullReportAlert()
 		self.addPollutantCardView()
     }
+	
+	@IBAction func mapButtonAction(_ sender: Any){
+		let pageViewController = self.parent as! PageViewController
+		pageViewController.nextPage()
+	}
 
 	private func addSceneView() {
 		sceneView = SceneView(frame: self.view.frame)
@@ -106,7 +111,6 @@ class ViewController: UIViewController {
 		}).disposed(by: disposeBag)
 	}
 
-	// TODO
 	private func setupLocationSubscription() {
 		setupCoordinateSubscription()
 		setupAddressSubscription()
@@ -126,11 +130,11 @@ class ViewController: UIViewController {
 			.concat()
 			.map { $0 }
 			.bind(onNext: { (aqReport: AirQualityReport) in
-				self.updateAQData(aqReport: aqReport)
+				self.updateAirQualityData(aqReport: aqReport)
 			})
 	}
 	
-	private func updateAQData(aqReport: AirQualityReport) {
+	private func updateAirQualityData(aqReport: AirQualityReport) {
 		self.pollutants = aqReport.pollutants
 		self.updateTimestamp(timestamp: aqReport.timestamp)
 		self.airQualityMeter.update(aqi: aqReport.aqi)
