@@ -14,27 +14,24 @@ import RxSwift
 import RxCocoa
 
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet var lastUpdated: UILabel!
 	@IBOutlet var addressLabel: UILabel!
 	@IBOutlet var mapButton: UIButton!
     
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
 
-	var fullReportAlert: FullAirQualityReportAlert!
-	var airQualityMeter: AirQualityMeter!
-	var pollutantCardView: PollutantCardView!
-    
-    var pollutantsInfo: Dictionary<PollutantIdentifier, Pollutant> = Dictionary<PollutantIdentifier,Pollutant>()
-    var dominantPollutant: PollutantIdentifier!
-    var selectedPollutant: PollutantIdentifier!
+	private var airQualityMeter: AirQualityMeter!
+	private var fullReportAlert: FullAirQualityReportAlert!
+	private var pollutantCardView: PollutantCardView!
+	private var sceneView: SceneView!
 
-	let disposeBag = DisposeBag()
+	private let disposeBag = DisposeBag()
 	
 	private var width: CGFloat!
 	private var height: CGFloat!
 	private let margin: CGFloat = 25.0
+	
+	private var pollutants: Dictionary<PollutantIdentifier, Pollutant>!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,20 +39,37 @@ class ViewController: UIViewController {
 		self.width = self.view.frame.size.width
 		self.height = self.view.frame.size.height
 		self.setupLocationSubscription()
-		self.setupScene()
-		self.addPollutantCardView()
+		self.addSceneView()
 		self.addAirQualityMeter()
-		self.setFullReportAlert()
-    }
-	
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupARConfiguration()
-    }
-	
-	private func setFullReportAlert() {
 		self.addFullReportAlert()
-		self.setShowFullReportButton()
+		self.addPollutantCardView()
+    }
+
+	private func addSceneView() {
+		sceneView = SceneView(frame: self.view.frame)
+		self.view.addSubview(sceneView)
+		sceneView.selectedPollutantID
+			.subscribe(onNext: { pollutantID in
+				if pollutantID != nil, let pollutant = self.pollutants[pollutantID!] {
+					self.pollutantCardView.update(pollutant: pollutant)
+					self.pollutantCardView.show()
+				}
+				else {
+					self.pollutantCardView.hide()
+				}
+			})
+			.disposed(by: disposeBag)
+		
+		sceneView.loading
+			.subscribe(onNext: { loading in
+				if loading! {
+					self.loadingIcon.startAnimating()
+				}
+				else {
+					self.loadingIcon.stopAnimating()
+				}
+			})
+			.disposed(by: disposeBag)
 	}
 	
 	private func addFullReportAlert() {
@@ -84,20 +98,51 @@ class ViewController: UIViewController {
 								 height: 176)
 		airQualityMeter = AirQualityMeter(frame: aqMeterRect)
 		self.view.addSubview(airQualityMeter)
-	}
-	
-	@objc private func showFullReport(_: UITapGestureRecognizer? = nil) {
-		self.fullReportAlert.show()
-	}
-	
-	private func setShowFullReportButton() {
-		let tap = UITapGestureRecognizer(target: self, action: #selector(self.showFullReport(_:)))
+		
+		// Set tap gesture on aq meter
+		let tap = UITapGestureRecognizer()
 		self.airQualityMeter.addGestureRecognizer(tap)
+		tap.rx.event.bind(onNext: { recognizer in
+			self.fullReportAlert.show()
+		}).disposed(by: disposeBag)
 	}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+	// TODO
+	private func setupLocationSubscription() {
+		setupCoordinateSubscription()
+		setupAddressSubscription()
+	}
+	
+	private func setupAddressSubscription() {
+		Location.sharedAddress.observable.subscribe(onNext:  { [weak self] address in
+			DispatchQueue.main.async {
+				self?.addressLabel.text = address
+			}
+		}).disposed(by: self.disposeBag)
+	}
+	
+	private func setupCoordinateSubscription() {
+		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
+		let _ = Location.sharedCoordinate.observable.map{ coord in AirQualityAPI.report(coord) }
+			.concat()
+			.map { $0 }
+			.bind(onNext: { (aqReport: AirQualityReport) in
+				self.updateAQData(aqReport: aqReport)
+			})
+	}
+	
+	private func updateAQData(aqReport: AirQualityReport) {
+		self.pollutants = aqReport.pollutants
+		self.updateTimestamp(timestamp: aqReport.timestamp)
+		self.airQualityMeter.update(aqi: aqReport.aqi)
+		self.sceneView.createPollutants(pollutants: aqReport.pollutants)
+		self.fullReportAlert.update(pollutants: aqReport.pollutants, dominantID: aqReport.dominantPollutantID)
+	}
+	
+	private func updateTimestamp(timestamp: Date){
+		let dateFormatterGet = DateFormatter()
+		dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm a"
+		lastUpdated.text?.append(dateFormatterGet.string(from: timestamp))
+	}
 }
 
