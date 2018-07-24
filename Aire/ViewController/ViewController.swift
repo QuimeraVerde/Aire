@@ -14,11 +14,10 @@ import RxSwift
 import RxCocoa
 
 class ViewController: UIViewController {
-    @IBOutlet var lastUpdated: UILabel!
 	@IBOutlet var addressLabel: UILabel!
-	@IBOutlet var mapButton: UIButton!
-    
+    @IBOutlet var lastUpdated: UILabel!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
+	@IBOutlet var mapButton: UIButton!
 
 	private var airQualityMeter: AirQualityMeter!
 	private var fullReportAlert: FullAirQualityReportAlert!
