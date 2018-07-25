@@ -17,17 +17,47 @@ class MapViewController: UIViewController {
 	private let disposeBag = DisposeBag()
 	@IBOutlet weak var mapView: MKMapView!
 	@IBOutlet weak var selectCoordinateButton: UIButton!
+	@IBOutlet weak var currentLocationButton: UIButton!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		setupGestureRecognizer()
+		mapView.addAnnotation(pointAnnotation)
+		selectLocationOnMap()
 		setupSelectCoordinateButton()
 		setupGeoLocation()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		selectCoordinateButton.isEnabled = false
+		disableButton(button: selectCoordinateButton)
+		if selectedCoordinateIsCurrent(), centerCoordinateIsCurrent() {
+			disableButton(button: currentLocationButton)
+		}
+	}
+	
+	private func disableButton(button: UIButton) {
+		button.isEnabled = false
+		button.alpha = 0.0
+	}
+	
+	private func enableButton(button: UIButton) {
+		button.isEnabled = true
+		button.alpha = 1.0
+	}
+
+	private func selectedCoordinateIsCurrent() -> Bool {
+		return Location.Coordinate.areEqual(a: pointAnnotation.coordinate,
+											b: (self.locationManager.location?.coordinate)!)
+	}
+	
+	private func centerCoordinateIsCurrent() -> Bool {
+		return Location.Coordinate.areEqual(a: mapView.centerCoordinate,
+											b: (self.locationManager.location?.coordinate)!)
+	}
+	
+	@IBAction func showCurrentLocation(_ sender: Any) {
+		locationManager.requestLocation()
+		disableButton(button: currentLocationButton)
 	}
 
 	func setupSelectCoordinateButton() {
@@ -37,20 +67,27 @@ class MapViewController: UIViewController {
 				Location.sharedAddress.set(coordinate: self.pointAnnotation.coordinate)
 			}
 			.bind(onNext: { _ in
-				self.selectCoordinateButton.isEnabled = false
-				self.selectCoordinateButton.alpha = 0.0
+				self.disableButton(button: self.selectCoordinateButton)
+				
 				let pageViewController = self.parent as! PageViewController
 				pageViewController.prevPage()
 			})
 	}
 	
-	func setupGestureRecognizer() {
+	func selectLocationOnMap() {
 		let longPress = UILongPressGestureRecognizer()
 		mapView.addGestureRecognizer(longPress)
+		
 		longPress.rx.event.bind(onNext: { recognizer in
+			
 			let touchedAt = recognizer.location(in: self.mapView)
 			let touchedAtCoordinate : CLLocationCoordinate2D = self.mapView.convert(touchedAt, toCoordinateFrom: self.mapView)
-			self.addPinWithCoordinate(coordinate: touchedAtCoordinate)
+			
+			self.pointAnnotation.coordinate = touchedAtCoordinate
+			self.enableButton(button: self.selectCoordinateButton)
+			if !self.selectedCoordinateIsCurrent() {
+				self.enableButton(button: self.currentLocationButton)
+			}
 		}).disposed(by: disposeBag)
 	}
 	
@@ -59,16 +96,6 @@ class MapViewController: UIViewController {
 		locationManager.desiredAccuracy = kCLLocationAccuracyBest
 		locationManager.requestWhenInUseAuthorization()
 		locationManager.requestLocation()
-	}
-	
-	func addPinWithCoordinate(coordinate: CLLocationCoordinate2D) {
-		pointAnnotation.coordinate = coordinate
-		if(mapView.annotations.count > 0) {
-			mapView.removeAnnotations(mapView.annotations)
-		}
-		selectCoordinateButton.isEnabled = true
-		selectCoordinateButton.alpha = 1.0
-		mapView.addAnnotation(pointAnnotation)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -89,6 +116,7 @@ extension MapViewController : CLLocationManagerDelegate {
 			let span = MKCoordinateSpanMake(0.05, 0.05)
 			let region = MKCoordinateRegion(center: location.coordinate, span: span)
 			mapView.setRegion(region, animated: true)
+			pointAnnotation.coordinate = location.coordinate
 		}
 	}
 	

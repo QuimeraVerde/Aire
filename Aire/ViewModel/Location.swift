@@ -64,6 +64,10 @@ struct Location {
 		func isEqual(to: CLLocationCoordinate2D) -> Bool {
 			return self.variable.value.latitude.isEqual(to: to.latitude) && self.variable.value.longitude.isEqual(to: to.longitude)
 		}
+		
+		static func areEqual(a: CLLocationCoordinate2D, b: CLLocationCoordinate2D) -> Bool {
+			return a.latitude.isEqual(to: b.latitude) && a.longitude.isEqual(to: b.longitude)
+		}
 	}
 }
 
