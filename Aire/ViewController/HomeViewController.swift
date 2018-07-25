@@ -13,7 +13,7 @@ import SceneKit
 import RxSwift
 import RxCocoa
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 	@IBOutlet var addressLabel: UILabel!
     @IBOutlet var lastUpdated: UILabel!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
