@@ -16,35 +16,37 @@ class MapViewController: UIViewController {
 	let pointAnnotation = MKPointAnnotation()
 	private let disposeBag = DisposeBag()
 	@IBOutlet weak var mapView: MKMapView!
-	@IBOutlet weak var selectCoordinateButton: UIButton!
-	@IBOutlet weak var currentLocationButton: UIButton!
-
+	@IBOutlet weak var selectCoordinateButton: UIImageView!
+	@IBOutlet weak var currentLocationButton: UIImageView!
+	@IBOutlet weak var backToHomeButton: UIImageView!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		mapView.addAnnotation(pointAnnotation)
 		selectLocationOnMap()
+		setupBackToHomeButton()
 		setupSelectCoordinateButton()
+		setupCurrentLocationButton()
 		setupGeoLocation()
 	}
 	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		disableButton(button: selectCoordinateButton)
-		if selectedCoordinateIsCurrent(), centerCoordinateIsCurrent() {
-			disableButton(button: currentLocationButton)
-		}
+	private func setupBackToHomeButton() {
+		let tap = UITapGestureRecognizer()
+		self.backToHomeButton.addGestureRecognizer(tap)
+		tap.rx.event.bind(onNext: { recognizer in
+			let pageViewController = self.parent as! PageViewController
+			pageViewController.prevPage()
+		}).disposed(by: disposeBag)
 	}
 	
-	private func disableButton(button: UIButton) {
-		button.isEnabled = false
-		button.alpha = 0.0
+	private func setupCurrentLocationButton() {
+		let tap = UITapGestureRecognizer()
+		self.currentLocationButton.addGestureRecognizer(tap)
+		tap.rx.event.bind(onNext: { recognizer in
+			self.locationManager.requestLocation()
+		}).disposed(by: disposeBag)
 	}
 	
-	private func enableButton(button: UIButton) {
-		button.isEnabled = true
-		button.alpha = 1.0
-	}
-
 	private func selectedCoordinateIsCurrent() -> Bool {
 		return Location.Coordinate.areEqual(a: pointAnnotation.coordinate,
 											b: (self.locationManager.location?.coordinate)!)
@@ -55,23 +57,19 @@ class MapViewController: UIViewController {
 											b: (self.locationManager.location?.coordinate)!)
 	}
 	
-	@IBAction func showCurrentLocation(_ sender: Any) {
-		locationManager.requestLocation()
-		disableButton(button: currentLocationButton)
-	}
-
 	func setupSelectCoordinateButton() {
-		let _ = selectCoordinateButton.rx.tap
+		let tap = UITapGestureRecognizer()
+		selectCoordinateButton.addGestureRecognizer(tap)
+		tap.rx.event
 			.map { _ in
 				Location.sharedCoordinate.set(coordinate: self.pointAnnotation.coordinate)
 				Location.sharedAddress.set(coordinate: self.pointAnnotation.coordinate)
 			}
 			.bind(onNext: { _ in
-				self.disableButton(button: self.selectCoordinateButton)
-				
 				let pageViewController = self.parent as! PageViewController
 				pageViewController.prevPage()
 			})
+			.disposed(by: disposeBag)
 	}
 	
 	func selectLocationOnMap() {
@@ -84,10 +82,6 @@ class MapViewController: UIViewController {
 			let touchedAtCoordinate : CLLocationCoordinate2D = self.mapView.convert(touchedAt, toCoordinateFrom: self.mapView)
 			
 			self.pointAnnotation.coordinate = touchedAtCoordinate
-			self.enableButton(button: self.selectCoordinateButton)
-			if !self.selectedCoordinateIsCurrent() {
-				self.enableButton(button: self.currentLocationButton)
-			}
 		}).disposed(by: disposeBag)
 	}
 	

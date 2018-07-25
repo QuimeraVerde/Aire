@@ -102,74 +102,55 @@
                                     <outlet property="delegate" destination="etZ-r8-ZYo" id="qWh-f4-AwU"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1X-Vx-0QZ">
-                                <rect key="frame" x="775" y="688" width="229" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aqo-YW-oSZ">
+                                <rect key="frame" x="944" y="593" width="60" height="155"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="current-location" translatesAutoresizingMaskIntoConstraints="NO" id="Ub0-hq-cDH">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="9V5-ML-1Ew" userLabel="width = 40"/>
+                                            <constraint firstAttribute="height" constant="50" id="bJ5-kK-YyE" userLabel="height = 40"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="5bR-U7-K2v">
+                                        <rect key="frame" x="0.0" y="95" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="155" id="FRn-fk-vOE" userLabel="height = 100"/>
+                                    <constraint firstAttribute="width" constant="60" id="LGX-2D-hdH" userLabel="width = 60"/>
+                                    <constraint firstItem="Ub0-hq-cDH" firstAttribute="top" secondItem="Aqo-YW-oSZ" secondAttribute="top" id="db8-6a-57R"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ub0-hq-cDH" secondAttribute="trailing" constant="10" id="gBt-P0-W5L"/>
+                                </constraints>
+                            </view>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="L1M-lC-9uf">
+                                <rect key="frame" x="20" y="20" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Elegir">
-                                            <attributes>
-                                                <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="24" name="Avenir-Roman"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Txe-1F-bdd">
-                                <rect key="frame" x="775" y="620" width="229" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Mi ubicación">
-                                            <attributes>
-                                                <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="24" name="Avenir-Roman"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="showCurrentLocation:" destination="etZ-r8-ZYo" eventType="touchUpInside" id="Nb5-Cn-lp0"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mnn-22-Jd7" firstAttribute="trailing" secondItem="0UI-q5-d3h" secondAttribute="trailing" id="5An-6i-thL"/>
+                            <constraint firstItem="0UI-q5-d3h" firstAttribute="trailing" secondItem="Aqo-YW-oSZ" secondAttribute="trailing" constant="20" id="Yfl-n8-wsQ"/>
                             <constraint firstItem="mnn-22-Jd7" firstAttribute="top" secondItem="t4n-gU-DHG" secondAttribute="top" id="abq-aJ-efo"/>
+                            <constraint firstItem="0UI-q5-d3h" firstAttribute="bottom" secondItem="Aqo-YW-oSZ" secondAttribute="bottom" constant="20" id="rwb-3o-ATb"/>
                             <constraint firstItem="mnn-22-Jd7" firstAttribute="bottom" secondItem="0UI-q5-d3h" secondAttribute="bottom" id="vZT-PB-QIB"/>
                             <constraint firstItem="mnn-22-Jd7" firstAttribute="leading" secondItem="0UI-q5-d3h" secondAttribute="leading" id="xQ8-Eu-57r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0UI-q5-d3h"/>
                     </view>
                     <connections>
-                        <outlet property="currentLocationButton" destination="Txe-1F-bdd" id="V84-Ny-OX5"/>
+                        <outlet property="backToHomeButton" destination="L1M-lC-9uf" id="Gdb-oW-REz"/>
+                        <outlet property="currentLocationButton" destination="Ub0-hq-cDH" id="nrE-wS-att"/>
                         <outlet property="mapView" destination="mnn-22-Jd7" id="JAY-aa-Raj"/>
-                        <outlet property="selectCoordinateButton" destination="h1X-Vx-0QZ" id="Gyg-3i-nmF"/>
+                        <outlet property="selectCoordinateButton" destination="5bR-U7-K2v" id="TJZ-Ix-D6U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7e-EX-4Rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="132"/>
+            <point key="canvasLocation" x="1190.625" y="131.25"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Gc9-xS-vgg">
@@ -181,6 +162,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="790" height="790"/>
         <image name="btn_map" width="94" height="94"/>
+        <image name="check" width="476" height="476"/>
+        <image name="current-location" width="790" height="790"/>
     </resources>
 </document>
