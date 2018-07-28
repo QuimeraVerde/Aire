@@ -73,20 +73,28 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvl-nH-gkd" customClass="FullAirQualityReportAlert" customModule="Aire" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.4431372549" green="0.65098039220000004" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="o5q-Jn-vOK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3oN-2h-aWz"/>
                             <constraint firstItem="bSZ-SH-KO9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="4ji-dp-aSu"/>
                             <constraint firstItem="tx0-SU-hSE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="7Bo-8R-XaR"/>
+                            <constraint firstItem="lvl-nH-gkd" firstAttribute="top" secondItem="Tck-Fe-ddY" secondAttribute="bottom" constant="-95" id="Bb8-de-u2t"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CHk-dB-JKX"/>
                             <constraint firstItem="o5q-Jn-vOK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EPs-Kb-vSQ"/>
                             <constraint firstItem="tx0-SU-hSE" firstAttribute="top" secondItem="bSZ-SH-KO9" secondAttribute="bottom" constant="25" id="HsH-QP-MeR"/>
+                            <constraint firstItem="lvl-nH-gkd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NL1-co-uCX"/>
                             <constraint firstItem="Tck-Fe-ddY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="OEa-qv-FU4"/>
+                            <constraint firstItem="lvl-nH-gkd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="PhU-My-WVM"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="QfV-Od-7JW"/>
                             <constraint firstItem="bSZ-SH-KO9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="RaS-eb-kmp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c6m-a5-7Ch" secondAttribute="trailing" constant="25" id="Rfq-Oi-Dpt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tck-Fe-ddY" secondAttribute="trailing" constant="25" id="YUv-1K-8O5"/>
+                            <constraint firstItem="lvl-nH-gkd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="cAp-vf-hch"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tx0-SU-hSE" secondAttribute="trailing" constant="20" symbolic="YES" id="dxK-Zl-n3D"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tx0-SU-hSE" secondAttribute="bottom" constant="25" id="g4z-d0-gex"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="g9N-lT-Xnb"/>
@@ -98,6 +106,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="lbl-kE-zk8" id="im9-4F-pgi"/>
                         <outlet property="airQualityMeter" destination="c6m-a5-7Ch" id="D1B-8s-1gw"/>
+                        <outlet property="fullReportAlert" destination="lvl-nH-gkd" id="Mll-Xk-Rcs"/>
                         <outlet property="lastUpdated" destination="tx0-SU-hSE" id="Eg5-Nc-XqJ"/>
                         <outlet property="loadingIcon" destination="o5q-Jn-vOK" id="tf5-uQ-LTe"/>
                         <outlet property="mapButton" destination="Tck-Fe-ddY" id="pCj-Hc-SuG"/>

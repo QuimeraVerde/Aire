@@ -16,11 +16,16 @@ class FullAirQualityReportAlert: NibView {
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		self.reportContainer.center = self.center
+		self.sharedInit()
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
+		self.sharedInit()
+	}
+	
+	private func sharedInit() {
+		self.reportContainer.center = self.center
 	}
 	
 	func show() {

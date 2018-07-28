@@ -16,13 +16,12 @@ import RxCocoa
 class HomeViewController: UIViewController {
 	@IBOutlet var addressLabel: UILabel!
 	@IBOutlet var airQualityMeter: AirQualityMeter!
+	@IBOutlet var fullReportAlert: FullAirQualityReportAlert!
     @IBOutlet var lastUpdated: UILabel!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
 	@IBOutlet var mapButton: UIView!
 	@IBOutlet var pollutantCardView: PollutantCardView!
 	@IBOutlet var sceneView: SceneView!
-	
-	private var fullReportAlert: FullAirQualityReportAlert!
 
 	private let disposeBag = DisposeBag()
 	private var pollutants: Dictionary<PollutantIdentifier, Pollutant>!
@@ -34,8 +33,7 @@ class HomeViewController: UIViewController {
 		self.setupLocationSubscription()
 		self.setupSceneViewSubscriptions()
 		self.setupAirQualityMeter()
-		self.addFullReportAlert()
-		self.setupPollutantCardView()
+		self.hideModals()
     }
 	
 	private func setupMapButton() {
@@ -73,13 +71,8 @@ class HomeViewController: UIViewController {
 			.disposed(by: disposeBag)
 	}
 	
-	private func addFullReportAlert() {
-		fullReportAlert = FullAirQualityReportAlert(frame: self.view.frame)
-		fullReportAlert.hide()
-		self.view.addSubview(fullReportAlert)
-	}
-	
-	private func setupPollutantCardView() {
+	private func hideModals() {
+		self.fullReportAlert.hide()
 		self.pollutantCardView.hide()
 	}
 	
@@ -93,26 +86,22 @@ class HomeViewController: UIViewController {
 	}
 
 	private func setupLocationSubscription() {
-		setupCoordinateSubscription()
-		setupAddressSubscription()
-	}
-	
-	private func setupAddressSubscription() {
-		Location.sharedAddress.observable.subscribe(onNext:  { [weak self] address in
+		// Address
+		Location.sharedAddress.observable
+			.subscribe(onNext:  { [weak self] address in
 			DispatchQueue.main.async {
 				self?.addressLabel.text = address
 			}
 		}).disposed(by: self.disposeBag)
-	}
-	
-	private func setupCoordinateSubscription() {
+		
+		// Coordinate
 		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
-		let _ = Location.sharedCoordinate.observable.map{ coord in AirQualityAPI.report(coord) }
+		Location.sharedCoordinate.observable.map{ coord in AirQualityAPI.report(coord) }
 			.concat()
 			.map { $0 }
 			.bind(onNext: { (aqReport: AirQualityReport) in
 				self.updateAirQualityData(aqReport: aqReport)
-			})
+			}).disposed(by: disposeBag)
 	}
 	
 	private func updateAirQualityData(aqReport: AirQualityReport) {
@@ -120,13 +109,14 @@ class HomeViewController: UIViewController {
 		self.updateTimestamp(timestamp: aqReport.timestamp)
 		self.airQualityMeter.update(aqi: aqReport.aqi)
 		self.sceneView.createPollutants(pollutants: aqReport.pollutants)
-		self.fullReportAlert.update(pollutants: aqReport.pollutants, dominantID: aqReport.dominantPollutantID)
+		self.fullReportAlert.update(pollutants: aqReport.pollutants,
+									dominantID: aqReport.dominantPollutantID)
 	}
 	
 	private func updateTimestamp(timestamp: Date){
-		let dateFormatterGet = DateFormatter()
-		dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm a"
-		lastUpdated.text?.append(dateFormatterGet.string(from: timestamp))
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm a"
+		lastUpdated.text = "Última actualizacion: " + dateFormatter.string(from: timestamp)
 	}
 }
 
