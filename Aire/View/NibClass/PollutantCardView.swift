@@ -30,13 +30,18 @@ class PollutantCardView: NibView {
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		self.layer.cornerRadius = 10
-		self.layer.masksToBounds = true
-		self.segmentedMenu.selectedSegmentIndex = 0
+		self.sharedInit()
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
+		self.sharedInit()
+	}
+	
+	func sharedInit() {
+		self.layer.cornerRadius = 10
+		self.layer.masksToBounds = true
+		self.segmentedMenu.selectedSegmentIndex = 0
 	}
 	
 	func show() {

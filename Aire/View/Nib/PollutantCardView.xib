@@ -31,17 +31,15 @@
                         <action selector="hide:" destination="-1" eventType="touchUpInside" id="B1D-VN-aTg"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wcc-fv-aHE">
-                    <rect key="frame" x="42" y="245" width="396" height="435"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wcc-fv-aHE">
+                    <rect key="frame" x="42" y="268" width="396" height="399"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ARz-on-9xu">
-                    <rect key="frame" x="42" y="202" width="396" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ARz-on-9xu">
+                    <rect key="frame" x="42" y="225" width="396" height="29"/>
                     <segments>
                         <segment title="¿Qué es?"/>
                         <segment title="Causas"/>
@@ -52,22 +50,36 @@
                         <action selector="changeSegment:" destination="-1" eventType="valueChanged" id="CQN-YQ-hDW"/>
                     </connections>
                 </segmentedControl>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0d-YG-aRq">
-                    <rect key="frame" x="42" y="144" width="396" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0d-YG-aRq">
+                    <rect key="frame" x="42" y="155" width="396" height="50"/>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="36"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOM-bE-pU2" customClass="PollutantCircleView" customModule="Aire" customModuleProvider="target">
-                    <rect key="frame" x="190" y="36" width="100" height="100"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOM-bE-pU2" customClass="PollutantCircleView" customModule="Aire" customModuleProvider="target">
+                    <rect key="frame" x="190" y="45" width="100" height="100"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="DED-ME-eBr"/>
+                        <constraint firstAttribute="height" constant="100" id="zaA-B0-Qcj"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="aOM-bE-pU2" firstAttribute="top" secondItem="7ca-dq-Xro" secondAttribute="top" constant="25" id="1Xu-Kh-4b7"/>
                 <constraint firstItem="7ca-dq-Xro" firstAttribute="trailing" secondItem="Vhf-nS-Cu6" secondAttribute="trailing" constant="20" id="2Md-2K-hCv"/>
+                <constraint firstItem="Wcc-fv-aHE" firstAttribute="centerX" secondItem="G0d-YG-aRq" secondAttribute="centerX" id="6Ru-4b-GGB"/>
+                <constraint firstItem="aOM-bE-pU2" firstAttribute="centerX" secondItem="G0d-YG-aRq" secondAttribute="centerX" id="9Hc-jd-GPn"/>
+                <constraint firstItem="Wcc-fv-aHE" firstAttribute="leading" secondItem="7ca-dq-Xro" secondAttribute="leading" constant="42" id="ADR-Ka-nd9"/>
+                <constraint firstItem="ARz-on-9xu" firstAttribute="top" secondItem="G0d-YG-aRq" secondAttribute="bottom" constant="20" id="Pqi-2J-0xa"/>
+                <constraint firstItem="Wcc-fv-aHE" firstAttribute="width" secondItem="G0d-YG-aRq" secondAttribute="width" id="UAP-ZV-qMR"/>
+                <constraint firstItem="Wcc-fv-aHE" firstAttribute="top" secondItem="ARz-on-9xu" secondAttribute="bottom" constant="15" id="aOZ-U9-4Wr"/>
+                <constraint firstItem="G0d-YG-aRq" firstAttribute="top" secondItem="aOM-bE-pU2" secondAttribute="bottom" constant="10" id="dZZ-FJ-Tg4"/>
+                <constraint firstItem="7ca-dq-Xro" firstAttribute="trailing" secondItem="Wcc-fv-aHE" secondAttribute="trailing" constant="42" id="e4s-Nf-qnH"/>
+                <constraint firstItem="ARz-on-9xu" firstAttribute="width" secondItem="G0d-YG-aRq" secondAttribute="width" id="ev9-ep-x0k"/>
+                <constraint firstItem="7ca-dq-Xro" firstAttribute="bottom" secondItem="Wcc-fv-aHE" secondAttribute="bottom" constant="25" id="gAV-vT-auq"/>
+                <constraint firstItem="ARz-on-9xu" firstAttribute="centerX" secondItem="G0d-YG-aRq" secondAttribute="centerX" id="o0D-rl-tfh"/>
                 <constraint firstItem="Vhf-nS-Cu6" firstAttribute="top" secondItem="7ca-dq-Xro" secondAttribute="top" id="tM8-2t-4Ol"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

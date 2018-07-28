@@ -15,14 +15,14 @@ import RxCocoa
 
 class HomeViewController: UIViewController {
 	@IBOutlet var addressLabel: UILabel!
+	@IBOutlet var airQualityMeter: AirQualityMeter!
     @IBOutlet var lastUpdated: UILabel!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
 	@IBOutlet var mapButton: UIView!
 	@IBOutlet var sceneView: SceneView!
-	@IBOutlet var airQualityMeter: AirQualityMeter!
 	
 	private var fullReportAlert: FullAirQualityReportAlert!
-	private var pollutantCardView: PollutantCardView!
+	@IBOutlet var pollutantCardView: PollutantCardView!
 
 	private let disposeBag = DisposeBag()
 	
@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
 		self.setupSceneViewSubscriptions()
 		self.setupAirQualityMeter()
 		self.addFullReportAlert()
-		self.addPollutantCardView()
+		self.setupPollutantCardView()
     }
 	
 	private func setupMapButton() {
@@ -86,17 +86,8 @@ class HomeViewController: UIViewController {
 		self.view.addSubview(fullReportAlert)
 	}
 	
-	private func addPollutantCardView() {
-		let cardWidth = (self.width / 2) - (self.margin * 2)
-		let cardHeight = self.height - (self.margin * 2)
-		let pollutantCardRect = CGRect(x: self.margin,
-									   y: self.margin,
-									   width: cardWidth,
-									   height: cardHeight)
-		
-		pollutantCardView = PollutantCardView(frame: pollutantCardRect)
-		pollutantCardView.hide()
-		self.view.addSubview(pollutantCardView)
+	private func setupPollutantCardView() {
+		self.pollutantCardView.hide()
 	}
 	
 	private func setupAirQualityMeter() {
