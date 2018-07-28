@@ -81,6 +81,9 @@
                         <userDefinedRuntimeAttribute type="color" keyPath="outerRingColor">
                             <color key="value" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="innerRingColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
@@ -91,6 +94,6 @@
         </view>
     </objects>
     <resources>
-        <image name="aq_meter" width="212" height="212"/>
+        <image name="aq_meter" width="204" height="204"/>
     </resources>
 </document>
