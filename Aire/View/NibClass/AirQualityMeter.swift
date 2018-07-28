@@ -22,6 +22,7 @@ class AirQualityMeter: NibView {
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
+		self.initProgressView()
 	}
 	
 	func update(aqi: Double) {

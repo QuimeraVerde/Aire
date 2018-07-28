@@ -19,8 +19,8 @@ class HomeViewController: UIViewController {
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
 	@IBOutlet var mapButton: UIView!
 	@IBOutlet var sceneView: SceneView!
-
-	private var airQualityMeter: AirQualityMeter!
+	@IBOutlet var airQualityMeter: AirQualityMeter!
+	
 	private var fullReportAlert: FullAirQualityReportAlert!
 	private var pollutantCardView: PollutantCardView!
 
@@ -40,7 +40,7 @@ class HomeViewController: UIViewController {
 		self.setupMapButton()
 		self.setupLocationSubscription()
 		self.setupSceneViewSubscriptions()
-		self.addAirQualityMeter()
+		self.setupAirQualityMeter()
 		self.addFullReportAlert()
 		self.addPollutantCardView()
     }
@@ -99,14 +99,7 @@ class HomeViewController: UIViewController {
 		self.view.addSubview(pollutantCardView)
 	}
 	
-	private func addAirQualityMeter() {
-		let aqMeterRect = CGRect(x: self.width-176,
-								 y: self.height-176,
-								 width: 176,
-								 height: 176)
-		airQualityMeter = AirQualityMeter(frame: aqMeterRect)
-		self.view.addSubview(airQualityMeter)
-		
+	private func setupAirQualityMeter() {
 		// Set tap gesture on aq meter
 		let tap = UITapGestureRecognizer()
 		self.airQualityMeter.addGestureRecognizer(tap)
