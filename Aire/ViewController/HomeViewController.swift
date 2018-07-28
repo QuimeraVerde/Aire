@@ -19,24 +19,17 @@ class HomeViewController: UIViewController {
     @IBOutlet var lastUpdated: UILabel!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
 	@IBOutlet var mapButton: UIView!
+	@IBOutlet var pollutantCardView: PollutantCardView!
 	@IBOutlet var sceneView: SceneView!
 	
 	private var fullReportAlert: FullAirQualityReportAlert!
-	@IBOutlet var pollutantCardView: PollutantCardView!
 
 	private let disposeBag = DisposeBag()
-	
-	private var width: CGFloat!
-	private var height: CGFloat!
-	private let margin: CGFloat = 25.0
-	
 	private var pollutants: Dictionary<PollutantIdentifier, Pollutant>!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
         self.becomeFirstResponder() // To get shake gesture
-		self.width = self.view.frame.size.width
-		self.height = self.view.frame.size.height
 		self.setupMapButton()
 		self.setupLocationSubscription()
 		self.setupSceneViewSubscriptions()
