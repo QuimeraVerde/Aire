@@ -77,12 +77,12 @@
                         <color key="backgroundColor" red="0.4431372549" green="0.65098039220000004" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="o5q-Jn-vOK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3oN-2h-aWz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tck-Fe-ddY" secondAttribute="bottom" constant="673" id="4V1-MF-hip"/>
                             <constraint firstItem="bSZ-SH-KO9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="4ji-dp-aSu"/>
                             <constraint firstItem="tx0-SU-hSE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="7Bo-8R-XaR"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CHk-dB-JKX"/>
                             <constraint firstItem="o5q-Jn-vOK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EPs-Kb-vSQ"/>
                             <constraint firstItem="tx0-SU-hSE" firstAttribute="top" secondItem="bSZ-SH-KO9" secondAttribute="bottom" constant="25" id="HsH-QP-MeR"/>
+                            <constraint firstItem="Tck-Fe-ddY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="OEa-qv-FU4"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="QfV-Od-7JW"/>
                             <constraint firstItem="bSZ-SH-KO9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="RaS-eb-kmp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c6m-a5-7Ch" secondAttribute="trailing" constant="25" id="Rfq-Oi-Dpt"/>
