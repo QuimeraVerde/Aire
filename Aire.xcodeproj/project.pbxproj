@@ -52,6 +52,7 @@
 		FF15313C20F7ECB300B75245 /* PollutantSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */; };
 		FF15313D20F7ECB300B75245 /* PollutantSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */; };
 		FF1E5CD02103D6660064A52F /* BorderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */; };
+		FF2DC101210BE116008CF189 /* MapButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2DC100210BE116008CF189 /* MapButton.xib */; };
 		FF345F6220F817AE00ADE1A3 /* PollutantCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF345F6120F817AE00ADE1A3 /* PollutantCardView.xib */; };
 		FF345F6420F8198600ADE1A3 /* PollutantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */; };
 		FF3492ED20F1B97C00656D5A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492EC20F1B97C00656D5A /* PageViewController.swift */; };
@@ -124,6 +125,7 @@
 		FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PollutantSummaryView.xib; sourceTree = "<group>"; };
 		FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutantSummaryView.swift; sourceTree = "<group>"; };
 		FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderAnimation.swift; sourceTree = "<group>"; };
+		FF2DC100210BE116008CF189 /* MapButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapButton.xib; sourceTree = "<group>"; };
 		FF345F6120F817AE00ADE1A3 /* PollutantCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollutantCardView.xib; sourceTree = "<group>"; };
 		FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantCardView.swift; sourceTree = "<group>"; };
 		FF3492EC20F1B97C00656D5A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		FF13D52620FA570100DF9562 /* Nib */ = {
 			isa = PBXGroup;
 			children = (
+				FF2DC100210BE116008CF189 /* MapButton.xib */,
 				FFC5A90920F8015800EC66B2 /* AirQualityMeter.xib */,
 				FF15313320F7ECA700B75245 /* FullAirQualityReportAlert.xib */,
 				FF345F6120F817AE00ADE1A3 /* PollutantCardView.xib */,
@@ -492,6 +495,7 @@
 				2BC83D1720EBF4D600777995 /* pm25.jpg in Resources */,
 				2B158B9A20FEA3B300D2C5A1 /* co-definition.md in Resources */,
 				2B158B9320FEA3AC00D2C5A1 /* no2-causes.md in Resources */,
+				FF2DC101210BE116008CF189 /* MapButton.xib in Resources */,
 				2BC83D0520EAE75400777995 /* pm10.jpg in Resources */,
 				FFE0B6362105B84F00F8D53C /* PollutantCircleView.xib in Resources */,
 				2B158B9520FEA3AF00D2C5A1 /* so2-definition.md in Resources */,

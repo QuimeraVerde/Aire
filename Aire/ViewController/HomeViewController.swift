@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
 	@IBOutlet var addressLabel: UILabel!
     @IBOutlet var lastUpdated: UILabel!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
-	@IBOutlet var mapButton: UIButton!
+	@IBOutlet var mapButton: UIView!
 	@IBOutlet var sceneView: SceneView!
 
 	private var airQualityMeter: AirQualityMeter!
@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
         self.becomeFirstResponder() // To get shake gesture
 		self.width = self.view.frame.size.width
 		self.height = self.view.frame.size.height
+		self.setupMapButton()
 		self.setupLocationSubscription()
 		self.setupSceneViewSubscriptions()
 		self.addAirQualityMeter()
@@ -44,9 +45,14 @@ class HomeViewController: UIViewController {
 		self.addPollutantCardView()
     }
 	
-	@IBAction func mapButtonAction(_ sender: Any){
-		let pageViewController = self.parent as! PageViewController
-		pageViewController.nextPage()
+	private func setupMapButton() {
+		let tap = UITapGestureRecognizer()
+		self.mapButton.addGestureRecognizer(tap)
+		tap.rx.event.bind(onNext: { _ in
+			let pageViewController = self.parent as! PageViewController
+			pageViewController.nextPage()
+		})
+		.disposed(by: disposeBag)
 	}
 
 	private func setupSceneViewSubscriptions() {

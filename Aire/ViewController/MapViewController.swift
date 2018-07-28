@@ -14,11 +14,12 @@ import RxSwift
 class MapViewController: UIViewController {
 	let locationManager = CLLocationManager()
 	let pointAnnotation = MKPointAnnotation()
+
 	private let disposeBag = DisposeBag()
-	@IBOutlet weak var mapView: MKMapView!
-	@IBOutlet weak var selectCoordinateButton: UIImageView!
-	@IBOutlet weak var currentLocationButton: UIImageView!
 	@IBOutlet weak var backToHomeButton: UIImageView!
+	@IBOutlet weak var currentLocationButton: UIImageView!
+	@IBOutlet weak var mapView: MKMapView!
+	@IBOutlet weak var selectCoordinateButton: UIView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,6 +29,11 @@ class MapViewController: UIViewController {
 		setupSelectCoordinateButton()
 		setupCurrentLocationButton()
 		setupGeoLocation()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		self.selectCoordinateButton.isHidden = true
+		self.pointAnnotation.coordinate = Location.sharedCoordinate.variable.value
 	}
 	
 	private func setupBackToHomeButton() {
@@ -77,11 +83,9 @@ class MapViewController: UIViewController {
 		mapView.addGestureRecognizer(longPress)
 		
 		longPress.rx.event.bind(onNext: { recognizer in
-			
 			let touchedAt = recognizer.location(in: self.mapView)
-			let touchedAtCoordinate : CLLocationCoordinate2D = self.mapView.convert(touchedAt, toCoordinateFrom: self.mapView)
-			
-			self.pointAnnotation.coordinate = touchedAtCoordinate
+			self.pointAnnotation.coordinate = self.mapView.convert(touchedAt, toCoordinateFrom: self.mapView)
+			self.selectCoordinateButton.isHidden = false
 		}).disposed(by: disposeBag)
 	}
 	
@@ -107,10 +111,9 @@ extension MapViewController : CLLocationManagerDelegate {
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		if let location = locations.first {
-			let span = MKCoordinateSpanMake(0.05, 0.05)
+			let span = MKCoordinateSpanMake(0.25, 0.25)
 			let region = MKCoordinateRegion(center: location.coordinate, span: span)
 			mapView.setRegion(region, animated: true)
-			pointAnnotation.coordinate = location.coordinate
 		}
 	}
 	
