@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 
 protocol AirQualityAPI {
-	func report(_ coordinates: CLLocationCoordinate2D) -> Observable<AirQualityReport>
+	func report(coordinate: CLLocationCoordinate2D) -> Observable<AirQualityReport>
 }
 
 class DefaultAirQualityAPI {
@@ -22,7 +22,7 @@ class DefaultAirQualityAPI {
 		return URLSession.shared.rx.json(url: url)
 	}
 
-	func report(_ coordinates: CLLocationCoordinate2D) -> Observable<AirQualityReport> {
+	func report(coordinate: CLLocationCoordinate2D) -> Observable<AirQualityReport> {
 		let variable = Variable<AirQualityReport>(AirQualityReport())
 		var observable:Observable<AirQualityReport> {
 			return variable.asObservable()
@@ -30,7 +30,7 @@ class DefaultAirQualityAPI {
 		if !Location.sharedCoordinate.isReady {
 			return observable
 		}
-		let escapedCoordinates = "\(coordinates.latitude);\(coordinates.longitude)"
+		let escapedCoordinates = "\(coordinate.latitude);\(coordinate.longitude)"
 		guard let url = URL(string: "https://api.waqi.info/feed/geo:\(escapedCoordinates)/?token=\(AQToken)") else {
 			return Observable.error(apiError("Can't create url"))
 		}

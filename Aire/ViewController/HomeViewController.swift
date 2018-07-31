@@ -7,6 +7,7 @@
 //
 
 import ARKit
+import CoreLocation
 import UIKit
 import UICircularProgressRing
 import SceneKit
@@ -21,6 +22,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
 	@IBOutlet var mapButton: UIView!
 	@IBOutlet var pollutantCardView: PollutantCardView!
+	@IBOutlet var refreshButton: UIView!
 	@IBOutlet var sceneView: SceneView!
 
 	private let disposeBag = DisposeBag()
@@ -30,11 +32,37 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.becomeFirstResponder() // To get shake gesture
 		self.setupMapButton()
+		self.setupRefreshButton()
 		self.setupLocationSubscription()
 		self.setupSceneViewSubscriptions()
 		self.setupAirQualityMeter()
 		self.hideModals()
     }
+	
+	private func setupRefreshButton() {
+		let tap = UITapGestureRecognizer()
+		self.refreshButton.addGestureRecognizer(tap)
+
+		tap.rx.event
+		.bind(onNext: { _ in
+			self.callApi()
+		})
+		.disposed(by: self.disposeBag)
+	}
+	
+	private func callApi() {
+		let coordinate = Location.sharedCoordinate.variable.value
+		self.callApi(coordinate: coordinate)
+	}
+	
+	private func callApi(coordinate: CLLocationCoordinate2D) {
+		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
+
+		AirQualityAPI.report(coordinate: coordinate)
+		.bind(onNext: { (aqReport: AirQualityReport) in
+			self.updateAirQualityData(aqReport: aqReport)
+		}).disposed(by: self.disposeBag)
+	}
 	
 	private func setupMapButton() {
 		let tap = UITapGestureRecognizer()
@@ -88,24 +116,18 @@ class HomeViewController: UIViewController {
 	private func setupLocationSubscription() {
 		// Address
 		Location.sharedAddress.observable
-			.subscribe(onNext:  { [weak self] address in
+		.subscribe(onNext:  { [weak self] address in
 			DispatchQueue.main.async {
 				self?.addressLabel.text = address
 			}
 		}).disposed(by: self.disposeBag)
 		
 		// Coordinate
-		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
 		Location.sharedCoordinate.observable
-			.map { coord in
-				// When coordinate changes, we make a call to the AQ API
-				AirQualityAPI.report(coord)
-			}
-			.concat()
-			.map { $0 }
-			.bind(onNext: { (aqReport: AirQualityReport) in
-				self.updateAirQualityData(aqReport: aqReport)
-			}).disposed(by: self.disposeBag)
+		.bind(onNext: { coordinate in
+			self.callApi(coordinate: coordinate)
+		})
+		.disposed(by: self.disposeBag)
 	}
 	
 	private func updateAirQualityData(aqReport: AirQualityReport) {
