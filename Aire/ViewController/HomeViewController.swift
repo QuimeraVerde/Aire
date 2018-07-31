@@ -96,24 +96,28 @@ class HomeViewController: UIViewController {
 		
 		// Coordinate
 		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
-		Location.sharedCoordinate.observable.map{ coord in AirQualityAPI.report(coord) }
+		Location.sharedCoordinate.observable
+			.map { coord in
+				// When coordinate changes, we make a call to the AQ API
+				AirQualityAPI.report(coord)
+			}
 			.concat()
 			.map { $0 }
 			.bind(onNext: { (aqReport: AirQualityReport) in
 				self.updateAirQualityData(aqReport: aqReport)
-			}).disposed(by: disposeBag)
+			}).disposed(by: self.disposeBag)
 	}
 	
 	private func updateAirQualityData(aqReport: AirQualityReport) {
 		self.pollutants = aqReport.pollutants
-		self.updateTimestamp(timestamp: aqReport.timestamp)
+		self.updateTimestamp(aqReport.timestamp)
 		self.airQualityMeter.update(aqi: aqReport.aqi)
 		self.sceneView.createPollutants(pollutants: aqReport.pollutants)
 		self.fullReportAlert.update(pollutants: aqReport.pollutants,
 									dominantID: aqReport.dominantPollutantID)
 	}
 	
-	private func updateTimestamp(timestamp: Date){
+	private func updateTimestamp(_ timestamp: Date){
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm a"
 		lastUpdated.text = "Última actualizacion: " + dateFormatter.string(from: timestamp)
