@@ -8,7 +8,7 @@ use_frameworks!
 # Pods for Aire
 pod 'RxSwift', '~> 4.0'
 pod 'RxCocoa', '~> 4.0'
-pod 'SwiftGifOrigin', '~> 1.6.1'
+pod 'ReachabilitySwift'
 pod 'UICircularProgressRing', '~> 3.0'
 pod 'SwiftyMarkdown'
 end
