@@ -6,13 +6,10 @@
 //  Copyright © 2018 QuimeraVerde. All rights reserved.
 //
 
-import ARKit
 import CoreLocation
-import UIKit
-import UICircularProgressRing
-import SceneKit
-import RxSwift
 import RxCocoa
+import RxSwift
+import UIKit
 
 class HomeViewController: UIViewController {
 	@IBOutlet var addressLabel: UILabel!
@@ -147,4 +144,3 @@ class HomeViewController: UIViewController {
 		lastUpdated.text = "Última actualizacion: " + dateFormatter.string(from: timestamp)
 	}
 }
-
