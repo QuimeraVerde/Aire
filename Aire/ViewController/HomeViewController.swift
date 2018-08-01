@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
 	
 	private func callApi(coordinate: CLLocationCoordinate2D) {
 		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
-
+		self.loadingIcon.startAnimating()
 		AirQualityAPI.report(coordinate: coordinate)
 		.bind(onNext: { (aqReport: AirQualityReport) in
 			self.updateAirQualityData(aqReport: aqReport)
