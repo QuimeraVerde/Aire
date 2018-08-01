@@ -67,10 +67,6 @@
                                     <constraint firstAttribute="width" constant="460" id="ki7-Wl-Q0J"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvl-nH-gkd" customClass="FullAirQualityReportAlert" customModule="Aire" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gK-TK-gde">
                                 <rect key="frame" x="25" y="708" width="460" height="35"/>
                                 <subviews>
@@ -101,6 +97,10 @@
                                     <constraint firstAttribute="width" constant="460" id="u89-ul-0TC"/>
                                     <constraint firstAttribute="height" constant="35" id="wGf-4A-yDJ"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvl-nH-gkd" customClass="FullAirQualityReportAlert" customModule="Aire" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.4431372549" green="0.65098039220000004" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
