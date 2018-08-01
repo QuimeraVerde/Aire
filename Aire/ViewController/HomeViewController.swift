@@ -39,17 +39,6 @@ class HomeViewController: UIViewController {
 		self.hideModals()
     }
 	
-	private func setupRefreshButton() {
-		let tap = UITapGestureRecognizer()
-		self.refreshButton.addGestureRecognizer(tap)
-
-		tap.rx.event
-		.bind(onNext: { _ in
-			self.callApi()
-		})
-		.disposed(by: self.disposeBag)
-	}
-	
 	private func callApi() {
 		let coordinate = Location.sharedCoordinate.variable.value
 		self.callApi(coordinate: coordinate)
@@ -64,41 +53,6 @@ class HomeViewController: UIViewController {
 		}).disposed(by: self.disposeBag)
 	}
 	
-	private func setupMapButton() {
-		let tap = UITapGestureRecognizer()
-		self.mapButton.addGestureRecognizer(tap)
-		tap.rx.event.bind(onNext: { _ in
-			let pageViewController = self.parent as! PageViewController
-			pageViewController.nextPage()
-		})
-		.disposed(by: disposeBag)
-	}
-
-	private func setupSceneViewSubscriptions() {
-		sceneView.selectedPollutantID
-			.subscribe(onNext: { pollutantID in
-				if pollutantID != nil, let pollutant = self.pollutants[pollutantID!] {
-					self.pollutantCardView.update(pollutant: pollutant)
-					self.pollutantCardView.show()
-				}
-				else {
-					self.pollutantCardView.hide()
-				}
-			})
-			.disposed(by: disposeBag)
-		
-		sceneView.loading
-			.subscribe(onNext: { loading in
-				if loading! {
-					self.loadingIcon.startAnimating()
-				}
-				else {
-					self.loadingIcon.stopAnimating()
-				}
-			})
-			.disposed(by: disposeBag)
-	}
-	
 	private func hideModals() {
 		self.fullReportAlert.hide()
 		self.pollutantCardView.hide()
@@ -108,7 +62,8 @@ class HomeViewController: UIViewController {
 		// Set tap gesture on aq meter
 		let tap = UITapGestureRecognizer()
 		self.airQualityMeter.addGestureRecognizer(tap)
-		tap.rx.event.bind(onNext: { recognizer in
+		tap.rx.event
+		.bind(onNext: { recognizer in
 			self.fullReportAlert.show()
 		}).disposed(by: disposeBag)
 	}
@@ -128,6 +83,53 @@ class HomeViewController: UIViewController {
 			self.callApi(coordinate: coordinate)
 		})
 		.disposed(by: self.disposeBag)
+	}
+	
+	private func setupMapButton() {
+		let tap = UITapGestureRecognizer()
+		self.mapButton.addGestureRecognizer(tap)
+		tap.rx.event
+		.bind(onNext: { _ in
+			let pageViewController = self.parent as! PageViewController
+			pageViewController.nextPage()
+		})
+		.disposed(by: disposeBag)
+	}
+	
+	private func setupRefreshButton() {
+		let tap = UITapGestureRecognizer()
+		self.refreshButton.addGestureRecognizer(tap)
+		
+		tap.rx.event
+		.bind(onNext: { _ in
+			self.callApi()
+		})
+		.disposed(by: self.disposeBag)
+	}
+	
+	private func setupSceneViewSubscriptions() {
+		sceneView.selectedPollutantID
+		.subscribe(onNext: { pollutantID in
+			if pollutantID != nil, let pollutant = self.pollutants[pollutantID!] {
+				self.pollutantCardView.update(pollutant: pollutant)
+				self.pollutantCardView.show()
+			}
+			else {
+				self.pollutantCardView.hide()
+			}
+		})
+		.disposed(by: disposeBag)
+		
+		sceneView.loading
+		.subscribe(onNext: { loading in
+			if loading! {
+				self.loadingIcon.startAnimating()
+			}
+			else {
+				self.loadingIcon.stopAnimating()
+			}
+		})
+		.disposed(by: disposeBag)
 	}
 	
 	private func updateAirQualityData(aqReport: AirQualityReport) {
