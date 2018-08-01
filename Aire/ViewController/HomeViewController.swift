@@ -33,7 +33,6 @@ class HomeViewController: UIViewController {
 		self.setupLocationSubscription()
 		self.setupSceneViewSubscriptions()
 		self.setupAirQualityMeter()
-		self.hideModals()
     }
 	
 	private func callApi() {
@@ -48,11 +47,6 @@ class HomeViewController: UIViewController {
 		.bind(onNext: { (aqReport: AirQualityReport) in
 			self.updateAirQualityData(aqReport: aqReport)
 		}).disposed(by: self.disposeBag)
-	}
-	
-	private func hideModals() {
-		self.fullReportAlert.hide()
-		self.pollutantCardView.hide()
 	}
 	
 	private func setupAirQualityMeter() {

@@ -23,7 +23,7 @@ class FullAirQualityReportAlert: NibView {
 		super.init(coder: aDecoder)
 		self.sharedInit()
 	}
-	
+
 	private func sharedInit() {
 		self.reportContainer.center = self.center
 	}

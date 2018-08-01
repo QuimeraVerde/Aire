@@ -41,7 +41,6 @@
 		2BC83D1320EAEE3400777995 /* pm10.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83D1220EAEE3400777995 /* pm10.scn */; };
 		2BC83D1720EBF4D600777995 /* pm25.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83D1520EBF4D500777995 /* pm25.jpg */; };
 		E30B31B361D1B280877CC777 /* Pods_Aire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E217A5ED37E5CE9520CF8E /* Pods_Aire.framework */; };
-		FF0A027420EE4CEC008D9A25 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FF0A027320EE4CEC008D9A25 /* Podfile */; };
 		FF13D51D20F96AC600DF9562 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF13D51C20F96AC600DF9562 /* CircleView.swift */; };
 		FF13D52A20FA652900DF9562 /* pm10-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D52820FA574D00DF9562 /* pm10-definition.md */; };
 		FF15313120F7EC8C00B75245 /* PollutantIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313020F7EC8B00B75245 /* PollutantIdentifier.swift */; };
@@ -96,7 +95,6 @@
 		2BC83D1520EBF4D500777995 /* pm25.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pm25.jpg; sourceTree = "<group>"; };
 		5E2F5C1A871038F73448C8AD /* Pods-Aire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.release.xcconfig"; sourceTree = "<group>"; };
 		6A0ED46D4408D36BDE604ED0 /* Pods-Aire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.debug.xcconfig"; sourceTree = "<group>"; };
-		FF0A027320EE4CEC008D9A25 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		FF13D51C20F96AC600DF9562 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FF13D52820FA574D00DF9562 /* pm10-definition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "pm10-definition.md"; sourceTree = "<group>"; };
 		FF13D52D20FA66B100DF9562 /* co-definition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "co-definition.md"; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 				FF83C5AE20EE9FFA00CA68BC /* Helpers */,
 				FF83C5A420EE98D000CA68BC /* ViewController */,
 				FF83C59D20EE981700CA68BC /* AirQualityAPI */,
-				FF0A027320EE4CEC008D9A25 /* Podfile */,
 				2B97266F20ED84230005EA69 /* ViewModel */,
 				2BC83CF320E403D200777995 /* Objects */,
 				2BC83CE120DC2DB200777995 /* AppDelegate.swift */,
@@ -424,6 +421,7 @@
 				2BC83CDB20DC2DB200777995 /* Frameworks */,
 				2BC83CDC20DC2DB200777995 /* Resources */,
 				EAA97FF9263428896E3538C7 /* [CP] Embed Pods Frameworks */,
+				FC6FAA5FE38D7CE0449D2A06 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -495,7 +493,6 @@
 				2BC83D0520EAE75400777995 /* pm10.jpg in Resources */,
 				FFE0B6362105B84F00F8D53C /* PollutantCircleView.xib in Resources */,
 				2B158B9520FEA3AF00D2C5A1 /* so2-definition.md in Resources */,
-				FF0A027420EE4CEC008D9A25 /* Podfile in Resources */,
 				2BC83CE920DC2DB300777995 /* Assets.xcassets in Resources */,
 				2B158B8F20FEA3A300D2C5A1 /* o3-definition.md in Resources */,
 				FF345F6220F817AE00ADE1A3 /* PollutantCardView.xib in Resources */,
@@ -539,23 +536,38 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Aire/Pods-Aire-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyMarkdown/SwiftyMarkdown.framework",
 				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyMarkdown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aire/Pods-Aire-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC6FAA5FE38D7CE0449D2A06 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aire/Pods-Aire-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
