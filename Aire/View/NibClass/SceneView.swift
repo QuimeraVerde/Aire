@@ -36,9 +36,10 @@ class SceneView: NibView {
 		self.selectedPollutantID = self._selectedPollutantID
 		self.loading = self._loading
 		let scene = SCNScene()
-		sceneView.scene = scene
-		sceneView.autoenablesDefaultLighting = false
+		self.sceneView.scene = scene
+		self.sceneView.autoenablesDefaultLighting = false
 		self.setupARConfiguration()
+		self.addTapGesture()
 	}
 	
 	// creates multiple nodes
@@ -66,8 +67,6 @@ class SceneView: NibView {
 		let configuration = ARWorldTrackingConfiguration()
 		configuration.isLightEstimationEnabled = true
 		sceneView.session.run(configuration)
-		
-		addTapGesture()
 	}
 	
 	private func addTapGesture() {
