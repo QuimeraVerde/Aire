@@ -20,11 +20,14 @@ struct Location {
 			return variable.asObservable()
 		}
 		
-		func set(coordinate: CLLocationCoordinate2D) {
+		func update() {
+			let coordinate = sharedCoordinate.variable.value
 			let location = coordinateToLocation(coordinate: coordinate)
-			lookUp(location: location, completionHandler: {
-				placemark in
-				self.variable.value = (placemark?.name)!
+			lookUp(location: location,
+				   completionHandler: { placemark in
+					if placemark != nil {
+						self.variable.value = (placemark?.name)!
+					}
 			})
 		}
 		
@@ -57,7 +60,7 @@ struct Location {
 		var observable:Observable<CLLocationCoordinate2D> {
 			return variable.asObservable()
 		}
-		func set(coordinate: CLLocationCoordinate2D) {
+		func update(coordinate: CLLocationCoordinate2D) {
 			self.isReady = true
 			variable.value = coordinate
 		}

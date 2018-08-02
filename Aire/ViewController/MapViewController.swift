@@ -68,8 +68,8 @@ class MapViewController: UIViewController {
 		selectCoordinateButton.addGestureRecognizer(tap)
 		tap.rx.event
 			.map { _ in
-				Location.sharedCoordinate.set(coordinate: self.pointAnnotation.coordinate)
-				Location.sharedAddress.set(coordinate: self.pointAnnotation.coordinate)
+				Location.sharedCoordinate.update(coordinate: self.pointAnnotation.coordinate)
+				Location.sharedAddress.update()
 			}
 			.bind(onNext: { _ in
 				let pageViewController = self.parent as! PageViewController

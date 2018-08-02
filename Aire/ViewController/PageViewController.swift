@@ -17,7 +17,7 @@ class PageViewController : UIPageViewController {
 		super.viewDidLoad()
 		self.dataSource = self
 		self.delegate   = self
-		setupGeoLocation()
+		self.setupGeoLocation()
 		if let firstVC = pages.first {
 			setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
 		}
@@ -30,7 +30,7 @@ class PageViewController : UIPageViewController {
 			self.getViewController(withIdentifier: "Map")
 		]
 	}()
-    
+
     func removeSwipeGesture(){
         for view in self.view.subviews {
             if let subView = view as? UIScrollView {
@@ -110,8 +110,10 @@ extension PageViewController: CLLocationManagerDelegate {
 		if !Location.sharedCoordinate.isReady {
 			if let location = locations.first {
 				locationManager.stopUpdatingLocation()
-				Location.sharedCoordinate.set(coordinate: location.coordinate)
-				Location.sharedAddress.set(coordinate: location.coordinate)
+				Location.sharedCoordinate.update(coordinate: location.coordinate)
+				NetworkManager.isReachable(completed: { _ in
+					Location.sharedAddress.update()
+				})
 			}
 		}
 	}
