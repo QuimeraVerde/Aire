@@ -7,6 +7,7 @@
 //
 
 import CoreLocation
+import Reachability
 import RxCocoa
 import RxSwift
 import UIKit
@@ -14,49 +15,75 @@ import UIKit
 class HomeViewController: UIViewController {
 	@IBOutlet var addressLabel: UILabel!
 	@IBOutlet var airQualityMeter: AirQualityMeter!
+	@IBOutlet var airQualityMeterButton: UIViewButton!
 	@IBOutlet var fullReportAlert: FullAirQualityReportAlert!
     @IBOutlet var lastUpdated: UILabel!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
-	@IBOutlet var mapButton: UIView!
+	@IBOutlet var mapButton: UIViewButton!
+	@IBOutlet var networkErrorButton: UIView!
 	@IBOutlet var pollutantCardView: PollutantCardView!
-	@IBOutlet var refreshButton: UIView!
+	@IBOutlet var refreshButton: UIViewButton!
 	@IBOutlet var sceneView: SceneView!
-
+	
 	private let disposeBag = DisposeBag()
 	private var pollutants: Dictionary<PollutantIdentifier, Pollutant>!
+	private var reachability: Reachability!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
         self.becomeFirstResponder() // To get shake gesture
-		self.setupMapButton()
-		self.setupRefreshButton()
+		self.setTapGestures()
 		self.setupLocationSubscription()
+		self.setupNetworkManager()
 		self.setupSceneViewSubscriptions()
-		self.setupAirQualityMeter()
     }
-	
+
 	private func callApi() {
 		let coordinate = Location.sharedCoordinate.variable.value
-		self.callApi(coordinate: coordinate)
-	}
-	
-	private func callApi(coordinate: CLLocationCoordinate2D) {
 		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
+		
 		self.loadingIcon.startAnimating()
+		
 		AirQualityAPI.report(coordinate: coordinate)
 		.bind(onNext: { (aqReport: AirQualityReport) in
 			self.updateAirQualityData(aqReport: aqReport)
 		}).disposed(by: self.disposeBag)
 	}
 	
-	private func setupAirQualityMeter() {
-		// Set tap gesture on aq meter
-		let tap = UITapGestureRecognizer()
-		self.airQualityMeter.addGestureRecognizer(tap)
-		tap.rx.event
-		.bind(onNext: { recognizer in
+	private func setupNetworkManager() {
+		let network = NetworkManager.shared
+		network.reachability.whenUnreachable = { _ in
+			self.networkErrorButton.isHidden = false
+			
+			self.mapButton.enabled = false
+			self.refreshButton.enabled = false
+		}
+		network.reachability.whenReachable = { _ in
+			self.networkErrorButton.isHidden = true
+			Location.sharedAddress.update()
+			self.callApi()
+			
+			self.mapButton.enabled = true
+			self.refreshButton.enabled = true
+		}
+	}
+
+	private func setTapGestures() {
+		// Map button
+		self.mapButton.onTap = { _ in
+			let pageViewController = self.parent as! PageViewController
+			pageViewController.nextPage()
+		}
+		
+		// Refresh button
+		self.refreshButton.onTap = { _ in
+			self.callApi()
+		}
+		
+		// AQ Meter button
+		self.airQualityMeterButton.onTap = { _ in
 			self.fullReportAlert.show()
-		}).disposed(by: disposeBag)
+		}
 	}
 
 	private func setupLocationSubscription() {
@@ -70,34 +97,14 @@ class HomeViewController: UIViewController {
 		
 		// Coordinate
 		Location.sharedCoordinate.observable
-		.bind(onNext: { coordinate in
-			self.callApi(coordinate: coordinate)
+		.bind(onNext: { _ in
+			NetworkManager.isReachable(completed: { _ in
+				self.callApi()
+			})
 		})
 		.disposed(by: self.disposeBag)
 	}
-	
-	private func setupMapButton() {
-		let tap = UITapGestureRecognizer()
-		self.mapButton.addGestureRecognizer(tap)
-		tap.rx.event
-		.bind(onNext: { _ in
-			let pageViewController = self.parent as! PageViewController
-			pageViewController.nextPage()
-		})
-		.disposed(by: disposeBag)
-	}
-	
-	private func setupRefreshButton() {
-		let tap = UITapGestureRecognizer()
-		self.refreshButton.addGestureRecognizer(tap)
-		
-		tap.rx.event
-		.bind(onNext: { _ in
-			self.callApi()
-		})
-		.disposed(by: self.disposeBag)
-	}
-	
+
 	private func setupSceneViewSubscriptions() {
 		sceneView.selectedPollutantID
 		.subscribe(onNext: { pollutantID in
