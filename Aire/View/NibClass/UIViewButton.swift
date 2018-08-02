@@ -14,8 +14,6 @@ import UIKit
 class UIViewButton: UIView {
 	
 	private let disposeBag = DisposeBag()
-	private var originalBackgroundColor: UIColor?
-	private var originalTintColors: [UIColor] = []
 	private var tapRecognizer: UITapGestureRecognizer?
 	
 	var onTap: (UIGestureRecognizer) -> Void {
@@ -24,13 +22,13 @@ class UIViewButton: UIView {
 		}
 		set {
 			self.setTapGesture(newValue)
-			self.enabled = true
+			self.isEnabled = true
 		}
 	}
 	
-	var enabled: Bool {
+	var isEnabled: Bool {
 		get {
-			return self.enabled
+			return self.isEnabled
 		}
 		set {
 			if newValue {
