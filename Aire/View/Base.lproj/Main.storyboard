@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-Fe-ddY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-Fe-ddY" customClass="UIViewButton" customModule="Aire" customModuleProvider="target">
                                 <rect key="frame" x="725" y="45" width="274" height="50"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map-marker" translatesAutoresizingMaskIntoConstraints="NO" id="f8U-X0-rOa">
@@ -49,15 +49,51 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bku-4o-hJo">
+                                <rect key="frame" x="25" y="45" width="274" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alert" translatesAutoresizingMaskIntoConstraints="NO" id="coi-2E-EPx">
+                                        <rect key="frame" x="26" y="12" width="30" height="26.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Falta de conexión" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de7-MB-RTH">
+                                        <rect key="frame" x="65" y="8" width="179" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
+                                        <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="274" id="IWG-mE-sGU"/>
+                                    <constraint firstAttribute="height" constant="50" id="mqc-yy-4KQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="o5q-Jn-vOK">
                                 <rect key="frame" x="493" y="365" width="37" height="37"/>
                             </activityIndicatorView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-a5-7Ch" customClass="AirQualityMeter" customModule="Aire" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJv-GS-vXT" customClass="UIViewButton" customModule="Aire" customModuleProvider="target">
                                 <rect key="frame" x="823" y="567" width="176" height="176"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-a5-7Ch" customClass="AirQualityMeter" customModule="Aire" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="176"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="HHH-7t-ytb"/>
-                                    <constraint firstAttribute="height" constant="176" id="jIa-aU-Yhl"/>
+                                    <constraint firstAttribute="trailing" secondItem="c6m-a5-7Ch" secondAttribute="trailing" id="EUh-N1-VJU"/>
+                                    <constraint firstItem="c6m-a5-7Ch" firstAttribute="top" secondItem="EJv-GS-vXT" secondAttribute="top" id="OtA-v6-RMf"/>
+                                    <constraint firstAttribute="width" constant="176" id="ciB-0o-Qn9"/>
+                                    <constraint firstItem="c6m-a5-7Ch" firstAttribute="leading" secondItem="EJv-GS-vXT" secondAttribute="leading" id="jrR-nz-Dr1"/>
+                                    <constraint firstAttribute="height" constant="176" id="p5u-bH-1O1"/>
+                                    <constraint firstAttribute="bottom" secondItem="c6m-a5-7Ch" secondAttribute="bottom" id="rDL-xz-900"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSZ-SH-KO9" customClass="PollutantCardView" customModule="Aire" customModuleProvider="target">
@@ -67,7 +103,7 @@
                                     <constraint firstAttribute="width" constant="460" id="ki7-Wl-Q0J"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gK-TK-gde">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gK-TK-gde" customClass="UIViewButton" customModule="Aire" customModuleProvider="target">
                                 <rect key="frame" x="25" y="708" width="460" height="35"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refresh" translatesAutoresizingMaskIntoConstraints="NO" id="iTU-gc-VTU">
@@ -107,7 +143,7 @@
                         <constraints>
                             <constraint firstItem="o5q-Jn-vOK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3oN-2h-aWz"/>
                             <constraint firstItem="bSZ-SH-KO9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="4ji-dp-aSu"/>
-                            <constraint firstItem="lvl-nH-gkd" firstAttribute="top" secondItem="Tck-Fe-ddY" secondAttribute="bottom" constant="-95" id="Bb8-de-u2t"/>
+                            <constraint firstItem="lvl-nH-gkd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AFF-ox-VP6"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CHk-dB-JKX"/>
                             <constraint firstItem="o5q-Jn-vOK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EPs-Kb-vSQ"/>
                             <constraint firstItem="7gK-TK-gde" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="N65-8t-vhh"/>
@@ -117,23 +153,27 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7gK-TK-gde" secondAttribute="bottom" constant="25" id="QfK-hh-RxN"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="QfV-Od-7JW"/>
                             <constraint firstItem="bSZ-SH-KO9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="RaS-eb-kmp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c6m-a5-7Ch" secondAttribute="trailing" constant="25" id="Rfq-Oi-Dpt"/>
                             <constraint firstItem="7gK-TK-gde" firstAttribute="top" secondItem="bSZ-SH-KO9" secondAttribute="bottom" constant="10" id="Wd8-f2-5Vk"/>
+                            <constraint firstItem="Bku-4o-hJo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="Xpi-oo-lWO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tck-Fe-ddY" secondAttribute="trailing" constant="25" id="YUv-1K-8O5"/>
                             <constraint firstItem="lvl-nH-gkd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="cAp-vf-hch"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EJv-GS-vXT" secondAttribute="bottom" constant="25" id="d5U-Ob-bcr"/>
+                            <constraint firstItem="Bku-4o-hJo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="eKh-Q1-rlA"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="g9N-lT-Xnb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EJv-GS-vXT" secondAttribute="trailing" constant="25" id="i8L-Ov-Vz7"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="o6g-Pz-dMa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c6m-a5-7Ch" secondAttribute="bottom" constant="25" id="oqE-6R-sbh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="lbl-kE-zk8" id="im9-4F-pgi"/>
                         <outlet property="airQualityMeter" destination="c6m-a5-7Ch" id="D1B-8s-1gw"/>
+                        <outlet property="airQualityMeterButton" destination="EJv-GS-vXT" id="fCL-zm-2yU"/>
                         <outlet property="fullReportAlert" destination="lvl-nH-gkd" id="Mll-Xk-Rcs"/>
                         <outlet property="lastUpdated" destination="tx0-SU-hSE" id="Eg5-Nc-XqJ"/>
                         <outlet property="loadingIcon" destination="o5q-Jn-vOK" id="tf5-uQ-LTe"/>
                         <outlet property="mapButton" destination="Tck-Fe-ddY" id="pCj-Hc-SuG"/>
+                        <outlet property="networkErrorButton" destination="Bku-4o-hJo" id="6Yp-eS-Rfs"/>
                         <outlet property="pollutantCardView" destination="bSZ-SH-KO9" id="RPH-7l-aIw"/>
                         <outlet property="refreshButton" destination="7gK-TK-gde" id="KsS-rm-ac8"/>
                         <outlet property="sceneView" destination="8rP-Xp-Tn6" id="dU4-XN-z5N"/>
@@ -235,6 +275,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="alert" width="30" height="27"/>
         <image name="back" width="780" height="780"/>
         <image name="check" width="196" height="172"/>
         <image name="current-location" width="780" height="780"/>
