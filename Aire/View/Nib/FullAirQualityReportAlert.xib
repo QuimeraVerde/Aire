@@ -30,30 +30,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxU-YD-46K">
-                                <rect key="frame" x="285.5" y="168" width="454.5" height="432"/>
+                                <rect key="frame" x="285" y="168" width="454" height="432"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reporte Completo de Calidad de Aire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ia-ka-qdI">
-                                        <rect key="frame" x="54" y="24" width="346" height="27"/>
+                                        <rect key="frame" x="54" y="24" width="345.5" height="27"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAU-Rg-0ct">
-                                        <rect key="frame" x="54" y="102" width="346.5" height="280"/>
+                                        <rect key="frame" x="54" y="102" width="346" height="280"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxf-Vp-w4X">
-                                                <rect key="frame" x="0.0" y="171" width="346.5" height="111"/>
+                                                <rect key="frame" x="0.0" y="171" width="346" height="111"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEf-Qj-fnc" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="75.5" height="111"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93O-7T-xPe" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                        <rect key="frame" x="135.5" y="0.0" width="75.5" height="111"/>
+                                                        <rect key="frame" x="135.5" y="0.0" width="75" height="111"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82B-Lv-HQW" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                        <rect key="frame" x="271" y="0.0" width="75.5" height="111"/>
+                                                        <rect key="frame" x="270.5" y="0.0" width="75.5" height="111"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
@@ -74,14 +74,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epz-dD-IHg">
-                                                <rect key="frame" x="0.0" y="0.0" width="346.5" height="141"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="346" height="141"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iex-kd-e9q" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="30" width="75" height="111"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oth-15-Bhe" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                        <rect key="frame" x="126" y="0.0" width="94.5" height="141"/>
+                                                        <rect key="frame" x="126" y="0.0" width="94" height="141"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="heading">
@@ -90,7 +90,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bea-e2-tHK" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                        <rect key="frame" x="271.5" y="30" width="75" height="111"/>
+                                                        <rect key="frame" x="271" y="30" width="75" height="111"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>

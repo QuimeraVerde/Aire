@@ -51,6 +51,8 @@
 		FF15313C20F7ECB300B75245 /* PollutantSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */; };
 		FF15313D20F7ECB300B75245 /* PollutantSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */; };
 		FF1E5CD02103D6660064A52F /* BorderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */; };
+		FF27132B2112AEF1002078E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF27132A2112AEF1002078E3 /* NetworkManager.swift */; };
+		FF27132D211365DE002078E3 /* UIViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF27132C211365DE002078E3 /* UIViewButton.swift */; };
 		FF345F6220F817AE00ADE1A3 /* PollutantCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF345F6120F817AE00ADE1A3 /* PollutantCardView.xib */; };
 		FF345F6420F8198600ADE1A3 /* PollutantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */; };
 		FF3492ED20F1B97C00656D5A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492EC20F1B97C00656D5A /* PageViewController.swift */; };
@@ -122,6 +124,8 @@
 		FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PollutantSummaryView.xib; sourceTree = "<group>"; };
 		FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutantSummaryView.swift; sourceTree = "<group>"; };
 		FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderAnimation.swift; sourceTree = "<group>"; };
+		FF27132A2112AEF1002078E3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FF27132C211365DE002078E3 /* UIViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewButton.swift; sourceTree = "<group>"; };
 		FF345F6120F817AE00ADE1A3 /* PollutantCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollutantCardView.xib; sourceTree = "<group>"; };
 		FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantCardView.swift; sourceTree = "<group>"; };
 		FF3492EC20F1B97C00656D5A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 				FFA6CE362105B166006BA424 /* PollutantCircleView.swift */,
 				FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */,
 				FFB740DF21062DF0009D0796 /* SceneView.swift */,
+				FF27132C211365DE002078E3 /* UIViewButton.swift */,
 				FF15313720F7ECB300B75245 /* UIViewExtension.swift */,
 			);
 			path = NibClass;
@@ -387,6 +392,7 @@
 		FF83C5AE20EE9FFA00CA68BC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FF27132A2112AEF1002078E3 /* NetworkManager.swift */,
 				FF83C5AF20EEA00300CA68BC /* Request.swift */,
 				FF83C5B120EEA01A00CA68BC /* APIKeys.swift */,
 				FF584F6C20EF159F008ADB1C /* AirQualityUtility.swift */,
@@ -587,10 +593,12 @@
 				2B97266A20EC4AA40005EA69 /* PollutantLabel.swift in Sources */,
 				FFC5A90C20F8066C00EC66B2 /* AirQualityMeter.swift in Sources */,
 				FF345F6420F8198600ADE1A3 /* PollutantCardView.swift in Sources */,
+				FF27132D211365DE002078E3 /* UIViewButton.swift in Sources */,
 				FF83C5AB20EE9B4C00CA68BC /* Location.swift in Sources */,
 				FF83C5A120EE985A00CA68BC /* AirQualityReport.swift in Sources */,
 				FF3492ED20F1B97C00656D5A /* PageViewController.swift in Sources */,
 				FF83C5A220EE985A00CA68BC /* Pollutant.swift in Sources */,
+				FF27132B2112AEF1002078E3 /* NetworkManager.swift in Sources */,
 				FF83C5B720EEA2CB00CA68BC /* UIUtility.swift in Sources */,
 				2B97267320ED945E0005EA69 /* ModelConfiguration.swift in Sources */,
 				FF99160020FEBFB20025C6B9 /* CGColorExtension.swift in Sources */,

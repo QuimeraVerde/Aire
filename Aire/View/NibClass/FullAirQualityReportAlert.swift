@@ -14,20 +14,6 @@ class FullAirQualityReportAlert: NibView {
 	@IBOutlet weak var pollutantSummariesBottomContainer: UIView!
 	@IBOutlet weak var reportContainer: UIView!
 	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		self.sharedInit()
-	}
-	
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-		self.sharedInit()
-	}
-
-	private func sharedInit() {
-		self.reportContainer.center = self.center
-	}
-	
 	func show() {
 		self.isHidden = false
 	}
