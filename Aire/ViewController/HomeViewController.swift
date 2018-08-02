@@ -13,16 +13,15 @@ import RxSwift
 import UIKit
 
 class HomeViewController: UIViewController {
-	@IBOutlet var addressLabel: UILabel!
 	@IBOutlet var airQualityMeter: AirQualityMeter!
 	@IBOutlet var airQualityMeterButton: UIViewButton!
 	@IBOutlet var fullReportAlert: FullAirQualityReportAlert!
     @IBOutlet var lastUpdated: UILabel!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
-	@IBOutlet var mapButton: UIViewButton!
-	@IBOutlet var networkErrorButton: UIView!
+	@IBOutlet var mapButton: UIButton!
+	@IBOutlet var networkErrorButton: UIButton!
 	@IBOutlet var pollutantCardView: PollutantCardView!
-	@IBOutlet var refreshButton: UIViewButton!
+	@IBOutlet var refreshButton: UIButton!
 	@IBOutlet var sceneView: SceneView!
 	
 	private let disposeBag = DisposeBag()
@@ -55,31 +54,29 @@ class HomeViewController: UIViewController {
 		network.reachability.whenUnreachable = { _ in
 			self.networkErrorButton.isHidden = false
 			
-			self.mapButton.enabled = false
-			self.refreshButton.enabled = false
+			self.mapButton.isEnabled = false
+			self.refreshButton.isEnabled = false
 		}
 		network.reachability.whenReachable = { _ in
 			self.networkErrorButton.isHidden = true
 			Location.sharedAddress.update()
 			self.callApi()
 			
-			self.mapButton.enabled = true
-			self.refreshButton.enabled = true
+			self.mapButton.isEnabled = true
+			self.refreshButton.isEnabled = true
 		}
+	}
+	
+	@IBAction func goToMap(_ sender: Any) {
+		let pageViewController = self.parent as! PageViewController
+		pageViewController.nextPage()
+	}
+	
+	@IBAction func refresh(_ sender: Any) {
+		self.callApi()
 	}
 
 	private func setTapGestures() {
-		// Map button
-		self.mapButton.onTap = { _ in
-			let pageViewController = self.parent as! PageViewController
-			pageViewController.nextPage()
-		}
-		
-		// Refresh button
-		self.refreshButton.onTap = { _ in
-			self.callApi()
-		}
-		
 		// AQ Meter button
 		self.airQualityMeterButton.onTap = { _ in
 			self.fullReportAlert.show()
@@ -89,10 +86,8 @@ class HomeViewController: UIViewController {
 	private func setupLocationSubscription() {
 		// Address
 		Location.sharedAddress.observable
-		.subscribe(onNext:  { [weak self] address in
-			DispatchQueue.main.async {
-				self?.addressLabel.text = address
-			}
+			.bind(onNext: { address in
+				self.mapButton.setTitle(address, for: .normal)
 		}).disposed(by: self.disposeBag)
 		
 		// Coordinate

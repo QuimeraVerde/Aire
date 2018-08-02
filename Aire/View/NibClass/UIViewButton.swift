@@ -14,6 +14,8 @@ import UIKit
 class UIViewButton: UIView {
 	
 	private let disposeBag = DisposeBag()
+	private var originalBackgroundColor: UIColor?
+	private var originalTintColors: [UIColor] = []
 	private var tapRecognizer: UITapGestureRecognizer?
 	
 	var onTap: (UIGestureRecognizer) -> Void {

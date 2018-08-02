@@ -23,58 +23,47 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-Fe-ddY" customClass="UIViewButton" customModule="Aire" customModuleProvider="target">
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddX-Am-sSP">
                                 <rect key="frame" x="725" y="45" width="274" height="50"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map-marker" translatesAutoresizingMaskIntoConstraints="NO" id="f8U-X0-rOa">
-                                        <rect key="frame" x="26" y="9" width="23" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-kE-zk8">
-                                        <rect key="frame" x="65" y="8" width="179" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
-                                        <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="274" id="bgI-Ub-cd2"/>
-                                    <constraint firstAttribute="height" constant="50" id="pTH-c0-QUS"/>
+                                    <constraint firstAttribute="height" constant="50" id="fZx-eL-02E"/>
+                                    <constraint firstAttribute="width" constant="274" id="kDi-wJ-ACb"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
+                                <color key="tintColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="25" minY="10" maxX="225" maxY="10"/>
+                                <state key="normal" title="Address" image="map-marker"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bku-4o-hJo">
+                                <connections>
+                                    <action selector="goToMap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fSu-K4-3G9"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="center" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpm-2D-qCf">
                                 <rect key="frame" x="25" y="45" width="274" height="50"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alert" translatesAutoresizingMaskIntoConstraints="NO" id="coi-2E-EPx">
-                                        <rect key="frame" x="26" y="12" width="30" height="26.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Falta de conexión" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de7-MB-RTH">
-                                        <rect key="frame" x="65" y="8" width="179" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
-                                        <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="274" id="IWG-mE-sGU"/>
-                                    <constraint firstAttribute="height" constant="50" id="mqc-yy-4KQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="6KM-8p-mfJ"/>
+                                    <constraint firstAttribute="width" constant="274" id="Hod-4W-m2z"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
+                                <color key="tintColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="25" minY="10" maxX="220" maxY="10"/>
+                                <state key="normal" title="Falta de conexión" image="alert">
+                                    <color key="titleColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </view>
+                            </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="o5q-Jn-vOK">
                                 <rect key="frame" x="493" y="365" width="37" height="37"/>
                             </activityIndicatorView>
@@ -105,36 +94,34 @@
                                     <constraint firstAttribute="width" constant="460" id="ki7-Wl-Q0J"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gK-TK-gde" customClass="UIViewButton" customModule="Aire" customModuleProvider="target">
-                                <rect key="frame" x="25" y="693" width="50" height="50"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refresh" translatesAutoresizingMaskIntoConstraints="NO" id="iTU-gc-VTU">
-                                        <rect key="frame" x="12.5" y="12.5" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="PgL-xt-53b"/>
-                                            <constraint firstAttribute="width" constant="25" id="bJc-gT-R1t"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="iTU-gc-VTU" firstAttribute="centerY" secondItem="7gK-TK-gde" secondAttribute="centerY" id="fyF-fK-MDf"/>
-                                    <constraint firstAttribute="width" constant="50" id="g5K-TX-hrZ"/>
-                                    <constraint firstItem="iTU-gc-VTU" firstAttribute="centerX" secondItem="7gK-TK-gde" secondAttribute="centerX" id="hpp-TN-nxF"/>
-                                    <constraint firstAttribute="height" constant="50" id="p6Q-D9-27y"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Última actualizacion: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tx0-SU-hSE">
                                 <rect key="frame" x="85" y="721" width="400" height="22"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDF-pa-VCs">
+                                <rect key="frame" x="25" y="693" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="H72-aL-oTo"/>
+                                    <constraint firstAttribute="width" constant="50" id="xZv-Pb-3fN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
+                                <color key="tintColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                <state key="normal" image="refresh">
+                                    <color key="titleColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FQV-fj-rDK"/>
+                                </connections>
+                            </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvl-nH-gkd" customClass="FullAirQualityReportAlert" customModule="Aire" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,43 +129,42 @@
                         </subviews>
                         <color key="backgroundColor" red="0.4431372549" green="0.65098039220000004" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="tx0-SU-hSE" firstAttribute="leading" secondItem="7gK-TK-gde" secondAttribute="trailing" constant="10" id="2pJ-1g-51W"/>
                             <constraint firstItem="o5q-Jn-vOK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3oN-2h-aWz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ddX-Am-sSP" secondAttribute="trailing" constant="25" id="4RP-EK-v8N"/>
+                            <constraint firstItem="tx0-SU-hSE" firstAttribute="bottom" secondItem="FDF-pa-VCs" secondAttribute="bottom" id="4VQ-Vt-0hw"/>
                             <constraint firstItem="bSZ-SH-KO9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="4ji-dp-aSu"/>
+                            <constraint firstItem="FDF-pa-VCs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="5Zm-6H-mCJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FDF-pa-VCs" secondAttribute="bottom" constant="25" id="9y9-un-TzC"/>
                             <constraint firstItem="lvl-nH-gkd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AFF-ox-VP6"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CHk-dB-JKX"/>
                             <constraint firstItem="o5q-Jn-vOK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EPs-Kb-vSQ"/>
-                            <constraint firstItem="7gK-TK-gde" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="N65-8t-vhh"/>
                             <constraint firstItem="lvl-nH-gkd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NL1-co-uCX"/>
-                            <constraint firstItem="Tck-Fe-ddY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="OEa-qv-FU4"/>
                             <constraint firstItem="lvl-nH-gkd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="PhU-My-WVM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7gK-TK-gde" secondAttribute="bottom" constant="25" id="QfK-hh-RxN"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="QfV-Od-7JW"/>
                             <constraint firstItem="bSZ-SH-KO9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="RaS-eb-kmp"/>
-                            <constraint firstItem="tx0-SU-hSE" firstAttribute="bottom" secondItem="7gK-TK-gde" secondAttribute="bottom" id="TyW-Nn-ir8"/>
-                            <constraint firstItem="Bku-4o-hJo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="Xpi-oo-lWO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tck-Fe-ddY" secondAttribute="trailing" constant="25" id="YUv-1K-8O5"/>
+                            <constraint firstItem="Fpm-2D-qCf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="SJp-2I-6Cn"/>
                             <constraint firstItem="lvl-nH-gkd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="cAp-vf-hch"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EJv-GS-vXT" secondAttribute="bottom" constant="25" id="d5U-Ob-bcr"/>
-                            <constraint firstItem="Bku-4o-hJo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="eKh-Q1-rlA"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="g9N-lT-Xnb"/>
+                            <constraint firstItem="Fpm-2D-qCf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="gmg-Xa-3Cf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EJv-GS-vXT" secondAttribute="trailing" constant="25" id="i8L-Ov-Vz7"/>
                             <constraint firstItem="tx0-SU-hSE" firstAttribute="trailing" secondItem="bSZ-SH-KO9" secondAttribute="trailing" id="lNe-Md-Cg9"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="o6g-Pz-dMa"/>
+                            <constraint firstItem="tx0-SU-hSE" firstAttribute="leading" secondItem="FDF-pa-VCs" secondAttribute="trailing" constant="10" id="uvj-ck-USV"/>
+                            <constraint firstItem="ddX-Am-sSP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="vDp-cc-E30"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="addressLabel" destination="lbl-kE-zk8" id="im9-4F-pgi"/>
                         <outlet property="airQualityMeter" destination="c6m-a5-7Ch" id="D1B-8s-1gw"/>
                         <outlet property="airQualityMeterButton" destination="EJv-GS-vXT" id="fCL-zm-2yU"/>
                         <outlet property="fullReportAlert" destination="lvl-nH-gkd" id="Mll-Xk-Rcs"/>
                         <outlet property="lastUpdated" destination="tx0-SU-hSE" id="Eg5-Nc-XqJ"/>
                         <outlet property="loadingIcon" destination="o5q-Jn-vOK" id="tf5-uQ-LTe"/>
-                        <outlet property="mapButton" destination="Tck-Fe-ddY" id="pCj-Hc-SuG"/>
-                        <outlet property="networkErrorButton" destination="Bku-4o-hJo" id="6Yp-eS-Rfs"/>
+                        <outlet property="mapButton" destination="ddX-Am-sSP" id="88z-Ll-dyW"/>
+                        <outlet property="networkErrorButton" destination="Fpm-2D-qCf" id="6YJ-Ni-4h8"/>
                         <outlet property="pollutantCardView" destination="bSZ-SH-KO9" id="RPH-7l-aIw"/>
-                        <outlet property="refreshButton" destination="7gK-TK-gde" id="KsS-rm-ac8"/>
+                        <outlet property="refreshButton" destination="FDF-pa-VCs" id="SZc-tX-aCL"/>
                         <outlet property="sceneView" destination="8rP-Xp-Tn6" id="dU4-XN-z5N"/>
                     </connections>
                 </viewController>
