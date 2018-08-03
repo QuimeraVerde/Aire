@@ -26,47 +26,32 @@ class HomeViewController: UIViewController {
 	
 	private let disposeBag = DisposeBag()
 	private var pollutants: Dictionary<PollutantIdentifier, Pollutant>!
-	private var reachability: Reachability!
+	private var isConnected: Bool = false {
+		didSet {
+			if self.isConnected {
+				self.networkErrorButton.isHidden = true
+				self.mapButton.isEnabled = true
+				self.refreshButton.isEnabled = true
+			}
+			else {
+				self.networkErrorButton.isHidden = false
+				self.mapButton.isEnabled = false
+				self.refreshButton.isEnabled = false
+			}
+		}
+	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
         self.becomeFirstResponder() // To get shake gesture
+		self.initIsConnected()
+		self.setLocationSubscription()
+		self.setNetworkReachabilitySubscription()
+		self.setSceneViewSubscriptions()
 		self.setTapGestures()
-		self.setupLocationSubscription()
-		self.setupNetworkManager()
-		self.setupSceneViewSubscriptions()
     }
-
-	private func callApi() {
-		let coordinate = Location.sharedCoordinate.variable.value
-		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
-		
-		self.loadingIcon.startAnimating()
-		
-		AirQualityAPI.report(coordinate: coordinate)
-		.bind(onNext: { (aqReport: AirQualityReport) in
-			self.updateAirQualityData(aqReport: aqReport)
-		}).disposed(by: self.disposeBag)
-	}
 	
-	private func setupNetworkManager() {
-		let network = NetworkManager.shared
-		network.reachability.whenUnreachable = { _ in
-			self.networkErrorButton.isHidden = false
-			
-			self.mapButton.isEnabled = false
-			self.refreshButton.isEnabled = false
-		}
-		network.reachability.whenReachable = { _ in
-			self.networkErrorButton.isHidden = true
-			Location.sharedAddress.update()
-			self.callApi()
-			
-			self.mapButton.isEnabled = true
-			self.refreshButton.isEnabled = true
-		}
-	}
-	
+	// IBActions
 	@IBAction func goToMap(_ sender: Any) {
 		let pageViewController = self.parent as! PageViewController
 		pageViewController.nextPage()
@@ -75,54 +60,18 @@ class HomeViewController: UIViewController {
 	@IBAction func refresh(_ sender: Any) {
 		self.callApi()
 	}
-
-	private func setTapGestures() {
-		// AQ Meter button
-		self.airQualityMeterButton.onTap = { _ in
-			self.fullReportAlert.show()
-		}
-	}
-
-	private func setupLocationSubscription() {
-		// Address
-		Location.sharedAddress.observable
-			.bind(onNext: { address in
-				self.mapButton.setTitle(address, for: .normal)
-		}).disposed(by: self.disposeBag)
+	
+	// Action functions
+	private func callApi() {
+		let coordinate = Location.sharedCoordinate.variable.value
+		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
 		
-		// Coordinate
-		Location.sharedCoordinate.observable
-		.bind(onNext: { _ in
-			NetworkManager.isReachable(completed: { _ in
-				self.callApi()
-			})
-		})
-		.disposed(by: self.disposeBag)
-	}
-
-	private func setupSceneViewSubscriptions() {
-		sceneView.selectedPollutantID
-		.subscribe(onNext: { pollutantID in
-			if pollutantID != nil, let pollutant = self.pollutants[pollutantID!] {
-				self.pollutantCardView.update(pollutant: pollutant)
-				self.pollutantCardView.show()
-			}
-			else {
-				self.pollutantCardView.hide()
-			}
-		})
-		.disposed(by: disposeBag)
+		self.loadingIcon.startAnimating()
 		
-		sceneView.loading
-		.subscribe(onNext: { loading in
-			if loading! {
-				self.loadingIcon.startAnimating()
-			}
-			else {
-				self.loadingIcon.stopAnimating()
-			}
-		})
-		.disposed(by: disposeBag)
+		AirQualityAPI.report(coordinate: coordinate)
+			.bind(onNext: { (aqReport: AirQualityReport) in
+				self.updateAirQualityData(aqReport: aqReport)
+			}).disposed(by: self.disposeBag)
 	}
 	
 	private func updateAirQualityData(aqReport: AirQualityReport) {
@@ -138,5 +87,75 @@ class HomeViewController: UIViewController {
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm a"
 		lastUpdated.text = "Última actualizacion: " + dateFormatter.string(from: timestamp)
+	}
+
+	// Setup functions
+	private func initIsConnected() {
+		NetworkManager.isReachable(completed: { _ in
+			self.isConnected = true
+		})
+	}
+	
+	private func setLocationSubscription() {
+		// Address
+		Location.sharedAddress.observable
+			.bind(onNext: { address in
+				self.mapButton.setTitle(address, for: .normal)
+			}).disposed(by: self.disposeBag)
+		
+		// Coordinate
+		Location.sharedCoordinate.observable
+			.bind(onNext: { _ in
+				if self.isConnected {
+					self.callApi()
+				}
+			})
+			.disposed(by: self.disposeBag)
+	}
+	
+	private func setNetworkReachabilitySubscription() {
+		let network = NetworkManager.shared
+		network.reachability.whenUnreachable = { _ in
+			self.isConnected = false
+		}
+		network.reachability.whenReachable = { _ in
+			self.isConnected = true
+			Location.sharedAddress.update()
+			self.callApi()
+		}
+	}
+	
+	private func setSceneViewSubscriptions() {
+		// Listen for a selected pollutant
+		sceneView.selectedPollutantID
+			.subscribe(onNext: { pollutantID in
+				if pollutantID != nil, let pollutant = self.pollutants[pollutantID!] {
+					self.pollutantCardView.update(pollutant: pollutant)
+					self.pollutantCardView.show()
+				}
+				else {
+					self.pollutantCardView.hide()
+				}
+			})
+			.disposed(by: disposeBag)
+		
+		// Listen for when loading stops
+		sceneView.loading
+			.subscribe(onNext: { loading in
+				if loading! {
+					self.loadingIcon.startAnimating()
+				}
+				else {
+					self.loadingIcon.stopAnimating()
+				}
+			})
+			.disposed(by: disposeBag)
+	}
+	
+	private func setTapGestures() {
+		// AQ Meter button
+		self.airQualityMeterButton.onTap = { _ in
+			self.fullReportAlert.show()
+		}
 	}
 }
