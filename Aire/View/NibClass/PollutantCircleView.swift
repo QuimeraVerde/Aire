@@ -33,7 +33,8 @@ class PollutantCircleView: NibView {
 	}
 	
 	func update(index: Double) {
-		pollutantIndexLabel.text = String(index)
+		print(ceil(index))
+		pollutantIndexLabel.text = String(Int(ceil(index)))
 		pollutantLevelView.setBorderColor(AirQualityUtility.scale[index].color)
 	}
 	
