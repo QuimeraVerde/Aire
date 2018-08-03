@@ -47,14 +47,23 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEf-Qj-fnc" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="75.5" height="111"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="NO2"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93O-7T-xPe" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
                                                         <rect key="frame" x="135.5" y="0.0" width="75" height="111"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="SO2"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82B-Lv-HQW" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
                                                         <rect key="frame" x="270.5" y="0.0" width="75.5" height="111"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="CO"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,6 +88,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iex-kd-e9q" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="30" width="75" height="111"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="PM10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oth-15-Bhe" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
                                                         <rect key="frame" x="126" y="0.0" width="94" height="141"/>
@@ -87,11 +99,15 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="heading">
                                                                 <integer key="value" value="3"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="PM2.5"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bea-e2-tHK" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
                                                         <rect key="frame" x="271" y="30" width="75" height="111"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="O3"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

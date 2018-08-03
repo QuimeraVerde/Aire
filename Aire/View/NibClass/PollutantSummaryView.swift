@@ -29,4 +29,10 @@ class PollutantSummaryView: NibView {
 			setNeedsDisplay()
 		}
 	}
+	
+	@IBInspectable var pollutantTitle: String = "" {
+		didSet {
+			self.pollutantTitleLabel.text = self.pollutantTitle
+		}
+	}
 }

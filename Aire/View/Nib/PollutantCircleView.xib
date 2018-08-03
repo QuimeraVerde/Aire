@@ -27,7 +27,7 @@
                         <accessibilityTraits key="traits" none="YES"/>
                     </accessibility>
                     <attributedString key="attributedText">
-                        <fragment content="AQI">
+                        <fragment content="0">
                             <attributes>
                                 <font key="NSFont" size="22" name="Avenir-Roman"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
