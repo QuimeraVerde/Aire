@@ -61,16 +61,8 @@ class PollutantCardView: NibView {
     
     @IBAction func changeSegment(_ sender: Any) {
         let selectedIndex: Int = segmentedMenu.selectedSegmentIndex
-        var selectedSection: SectionIdentifier = .definition
-        
-        switch selectedIndex {
-        case 0...2:
-			selectedSection = SectionIdentifier.allCases[selectedIndex]
-        default:
-            selectedSection = .definition
-        }
-        
-        self.contentTextView.attributedText = self.getAttributedText(section: selectedSection)
+		let selectedSection = SectionIdentifier.allCases[selectedIndex]
+		self.contentTextView.attributedText = self.getAttributedText(section: selectedSection)
     }
     
 	func update(pollutant: Pollutant) {
