@@ -25,7 +25,9 @@ class PollutantSummaryView: NibView {
 	
 	@IBInspectable var heading: Int = 0 {
 		didSet {
-			self.pollutantTitleLabel.font = self.pollutantTitleLabel.font.withSize(CGFloat(22 + (heading*2)))
+			let newFont = self.pollutantTitleLabel.font.withSize(CGFloat(22 + (heading*2)))
+			self.pollutantTitleLabel.font = newFont
+			self.pollutantCircle.heading = self.heading
 			setNeedsDisplay()
 		}
 	}

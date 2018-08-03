@@ -15,13 +15,14 @@ class PollutantCircleView: NibView {
 	@IBOutlet var pollutantLevelView: CircleView!
 	var isAnimating = false
 	
-	override func awakeFromNib() {
-		super.awakeFromNib()
-		if !isAnimating {
-			self.pollutantIndexLabel.font = self.pollutantIndexLabel.font.withSize(frame.size.width * 22.0/75.0)
+	@IBInspectable var heading: Int = 0 {
+		didSet {
+			let newFont = self.pollutantIndexLabel.font.withSize(CGFloat(22 + (heading*2)))
+			self.pollutantIndexLabel.font = newFont
+			setNeedsDisplay()
 		}
 	}
-	
+
 	func animate() {
 		isAnimating = true
 		self.pollutantLevelView.animate()
