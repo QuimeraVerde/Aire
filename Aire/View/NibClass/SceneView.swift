@@ -208,31 +208,25 @@ class SceneView: NibView {
 	
 	private func showLabel(node: SCNNode){
 		let pollutantLabel = PollutantLabel()
-		var pollutantText: String = ""
-		var pollutantTitle: String = ""
-		var pollutantYOffset: Float = 0.0
-		var pollutantFont: Float = 0.0
-		
+
 		// if key is found
 		if let pollutantID = PollutantIdentifier(rawValue: node.name!) {
 			if let pollutantConfig = PollutantUtility.config.model[pollutantID] {
 				// remove other labels
 				cleanseLabels()
-				
-				pollutantText = pollutantConfig.text
-				pollutantYOffset = pollutantConfig.yOffset
-				pollutantFont = pollutantConfig.fontSize
-				pollutantTitle = pollutantConfig.title
-				
+
 				// create label model
-				pollutantLabel.loadModel(text:pollutantText, fontSize: CGFloat(pollutantFont), title: pollutantTitle)
+				pollutantLabel.loadModel(text: pollutantConfig.text,
+										 fontSize: CGFloat(pollutantConfig.fontSize),
+										 id: pollutantConfig.id)
 				sceneView.scene.rootNode.addChildNode(pollutantLabel)
 				
 				// identifier for cleaning labels
 				pollutantLabel.name = "label"
 				
 				// position label on top of model
-				pollutantLabel.positionLabel(node:node, yOffset: pollutantYOffset)
+				pollutantLabel.positionLabel(node: node,
+											 yOffset: pollutantConfig.yOffset)
 			}
 		}
 	}

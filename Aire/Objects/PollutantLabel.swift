@@ -14,7 +14,7 @@ class PollutantLabel: SCNNode {
 	let kRotationRadianPerLoop: CGFloat = 0.2
 	let kAnimationDurationMoving: TimeInterval = 0.2
 	
-    func loadModel(text: String, fontSize: CGFloat, title: String){
+    func loadModel(text: String, fontSize: CGFloat, id: PollutantIdentifier){
         // text
         let textLabel = SCNText(string: text, extrusionDepth: 0.4)
         let material = SCNMaterial()
@@ -23,13 +23,13 @@ class PollutantLabel: SCNNode {
         textLabel.materials = [material]
         textLabel.flatness = 0
         textLabel.font = UIFont(name:"Avenir-Roman", size: fontSize)
-        textLabel.name = title
-        
+        textLabel.name = id.rawValue
+		
         // node to handle text
         let wrapperNode = SCNNode()
         wrapperNode.name = "label"
         wrapperNode.geometry = textLabel
-        addChildNode(wrapperNode)
+        self.addChildNode(wrapperNode)
     }
 	
 	func positionLabel(node: SCNNode, yOffset: Float){

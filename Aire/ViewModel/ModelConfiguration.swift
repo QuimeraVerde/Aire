@@ -8,7 +8,6 @@
 
 struct ModelConfiguration {
 	var fontSize : Float = 0.0
-	var title : String = ""
 	var text : String = ""
 	var fullName: String = ""
 	var yOffset: Float = 0.0
@@ -18,12 +17,9 @@ struct ModelConfiguration {
 	init(id : PollutantIdentifier) {
 		self.id = id
 	}
-	init(title : String) {
-		self.title = title
-	}
-	init(id: PollutantIdentifier, title: String, fontSize: Float, text: String, fullName: String, yOffset: Float, ranges: [Int]) {
+
+	init(id: PollutantIdentifier, fontSize: Float, text: String, fullName: String, yOffset: Float, ranges: [Int]) {
 		self.id = id
-		self.title = title
 		self.fontSize = fontSize
 		self.text = text
 		self.yOffset = yOffset
