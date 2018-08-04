@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var lastUpdated: UILabel!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
 	@IBOutlet var mapButton: UIButton!
-	@IBOutlet var networkErrorButton: UIButton!
+	@IBOutlet var networkErrorAlert: UIView!
 	@IBOutlet var pollutantCardView: PollutantCardView!
 	@IBOutlet var refreshButton: UIButton!
 	@IBOutlet var sceneView: SceneView!
@@ -29,12 +29,12 @@ class HomeViewController: UIViewController {
 	private var isConnected: Bool = false {
 		didSet {
 			if self.isConnected {
-				self.networkErrorButton.isHidden = true
+				self.networkErrorAlert.isHidden = true
 				self.mapButton.isEnabled = true
 				self.refreshButton.isEnabled = true
 			}
 			else {
-				self.networkErrorButton.isHidden = false
+				self.networkErrorAlert.isHidden = false
 				self.mapButton.isEnabled = false
 				self.refreshButton.isEnabled = false
 			}

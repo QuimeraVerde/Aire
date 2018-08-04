@@ -43,26 +43,37 @@
                                     <action selector="goToMap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fSu-K4-3G9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpm-2D-qCf">
+                            <view alpha="0.75" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="avf-1e-KKe">
                                 <rect key="frame" x="25" y="45" width="274" height="50"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Falta de conexión" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnq-le-Jy1">
+                                        <rect key="frame" x="70" y="0.0" width="204" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alert" translatesAutoresizingMaskIntoConstraints="NO" id="Xx3-Wl-CTy">
+                                        <rect key="frame" x="25" y="11" width="30" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="6KM-8p-mfJ"/>
-                                    <constraint firstAttribute="width" constant="274" id="Hod-4W-m2z"/>
+                                    <constraint firstAttribute="height" constant="50" id="tiJ-Td-Bye"/>
+                                    <constraint firstAttribute="width" constant="274" id="vUj-mY-xcq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
-                                <color key="tintColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="25" minY="10" maxX="220" maxY="10"/>
-                                <state key="normal" title="Falta de conexión" image="alert">
-                                    <color key="titleColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
+                                        <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </button>
+                            </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="o5q-Jn-vOK">
                                 <rect key="frame" x="493" y="365" width="37" height="37"/>
                             </activityIndicatorView>
@@ -139,16 +150,16 @@
                             <constraint firstItem="o5q-Jn-vOK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EPs-Kb-vSQ"/>
                             <constraint firstItem="lvl-nH-gkd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NL1-co-uCX"/>
                             <constraint firstItem="lvl-nH-gkd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="PhU-My-WVM"/>
+                            <constraint firstItem="avf-1e-KKe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="QfA-5O-JP2"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="QfV-Od-7JW"/>
                             <constraint firstItem="bSZ-SH-KO9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="RaS-eb-kmp"/>
-                            <constraint firstItem="Fpm-2D-qCf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="SJp-2I-6Cn"/>
                             <constraint firstItem="lvl-nH-gkd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="cAp-vf-hch"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EJv-GS-vXT" secondAttribute="bottom" constant="25" id="d5U-Ob-bcr"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="g9N-lT-Xnb"/>
-                            <constraint firstItem="Fpm-2D-qCf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="gmg-Xa-3Cf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EJv-GS-vXT" secondAttribute="trailing" constant="25" id="i8L-Ov-Vz7"/>
                             <constraint firstItem="tx0-SU-hSE" firstAttribute="trailing" secondItem="bSZ-SH-KO9" secondAttribute="trailing" id="lNe-Md-Cg9"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="o6g-Pz-dMa"/>
+                            <constraint firstItem="avf-1e-KKe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="sxu-kY-wWJ"/>
                             <constraint firstItem="tx0-SU-hSE" firstAttribute="leading" secondItem="FDF-pa-VCs" secondAttribute="trailing" constant="10" id="uvj-ck-USV"/>
                             <constraint firstItem="ddX-Am-sSP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="vDp-cc-E30"/>
                         </constraints>
@@ -161,7 +172,7 @@
                         <outlet property="lastUpdated" destination="tx0-SU-hSE" id="Eg5-Nc-XqJ"/>
                         <outlet property="loadingIcon" destination="o5q-Jn-vOK" id="tf5-uQ-LTe"/>
                         <outlet property="mapButton" destination="ddX-Am-sSP" id="88z-Ll-dyW"/>
-                        <outlet property="networkErrorButton" destination="Fpm-2D-qCf" id="6YJ-Ni-4h8"/>
+                        <outlet property="networkErrorAlert" destination="avf-1e-KKe" id="clx-0E-Izw"/>
                         <outlet property="pollutantCardView" destination="bSZ-SH-KO9" id="RPH-7l-aIw"/>
                         <outlet property="refreshButton" destination="FDF-pa-VCs" id="SZc-tX-aCL"/>
                         <outlet property="sceneView" destination="8rP-Xp-Tn6" id="dU4-XN-z5N"/>
@@ -286,4 +297,5 @@
         <image name="map-marker" width="34" height="45"/>
         <image name="refresh" width="359" height="359"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
