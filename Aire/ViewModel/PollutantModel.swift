@@ -29,12 +29,16 @@ class PollutantModel: SCNNode {
     
     override init(){
         super.init()
-        self.opacity = 0.0
+        self.sharedInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.sharedInit()
     }
+	
+	func sharedInit() {
+		self.opacity = 0.0
+	}
     
     func loadModel(modelID: PollutantIdentifier){
         guard let virtualObjectScene = SCNScene(named: modelID.rawValue + ".scn") else { return }
@@ -112,10 +116,6 @@ class PollutantModel: SCNNode {
         })
     }
     
-    func addLabel(){
-        
-    }
-    
     func generateRandomVector(count: Int) -> SCNVector3 {
         // create random distance for normal radius
         let randomX = Float.random(min: -(xRadius), max: xRadius)
@@ -134,28 +134,5 @@ class PollutantModel: SCNNode {
         let randomVector =  SCNVector3(randomX, randomY, randomZ)
         
         return randomVector
-    }
-}
-
-// randomizer
-public extension Float {
-    
-    // Returns a random floating point number between 0.0 and 1.0, inclusive.
-    
-    public static var random:Float {
-        get {
-            return Float(arc4random()) / 0xFFFFFFFF
-        }
-    }
-    /*
-     Create a random num Float
-     
-     - parameter min: Float
-     - parameter max: Float
-     
-     - returns: Float
-     */
-    public static func random(min: Float, max: Float) -> Float {
-        return Float.random * (max - min) + min
     }
 }
