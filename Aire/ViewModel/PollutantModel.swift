@@ -33,6 +33,7 @@ class PollutantModel: SCNNode {
     }
     
     required init?(coder aDecoder: NSCoder) {
+		super.init()
         self.sharedInit()
     }
 	
