@@ -4,7 +4,9 @@ Augmented reality Swift application for iOS to visualize current pollutants in t
 To run this project locally, you'll need to have installed Xcode and Cocoapods. Xcode will let you run the app on the iOS simulator or on your iPad, and Cocoapods will let you install the libraries used on this project. 
 
 To install Xcode, just look for it on the App Store.
-To install Cocoapods, open your preferred terminal app and run `$ sudo gem install cocoapods`. For more information, visit https://cocoapods.org
+To install Cocoapods, open your preferred terminal app and run 
+```$ sudo gem install cocoapods```
+For more information, visit https://cocoapods.org
 
 Once you got Xcode and Cocopoads, you'll need to follow these instructions to setup your work environment:
 
