@@ -1,14 +1,16 @@
 # Aire
 Augmented reality Swift application for iOS to visualize current pollutants in the air using the [World Air Quality Index](http://aqicn.org/)'s API to help create awareness of the rising air pollution in any given location.
 
-To run this project locally, you'll need to have installed Xcode and Cocoapods. Xcode will let you run the app on the iOS simulator or on your iPad, and Cocoapods will let you install the libraries used on this project. 
+To run this project locally, you'll need to have Xcode and Cocoapods installed. Xcode will let you run the app on the iOS simulator or on your iPad, and Cocoapods will let you install the libraries used on this project. 
 
 To install Xcode, just look for it on the App Store.
 To install Cocoapods, open your preferred terminal app and run 
-```$ sudo gem install cocoapods```
+```
+$ sudo gem install cocoapods
+```
 For more information, visit https://cocoapods.org
 
-Once you got Xcode and Cocopoads, you'll need to follow these instructions to setup your work environment:
+Once you've got Xcode and Cocopoads, you'll need to follow these instructions to setup your work environment:
 
 1. Run 
 ```
@@ -27,7 +29,7 @@ $ pod install
 $ open Aire.xcworkspace
 ```
 5. You can close your terminal app, from now on you'll use Xcode.
-6. On the left panel, click on root folder named **Aire** with the blue icon.
+6. On the left panel, click on the root folder named **Aire**, the one with the blue icon.
 7. Change the **Team** to match your developer account.
 8. It'll show you an error because you'll be using a Bundle Id that's already in use. Change it and click on **Try again** until the app shows you no more errors. 
 
