@@ -33,11 +33,6 @@ class HomeViewController: UIViewController {
 				self.mapButton.isEnabled = true
 				self.refreshButton.isEnabled = true
 			}
-			else {
-				self.networkErrorAlert.isHidden = false
-				self.mapButton.isEnabled = false
-				self.refreshButton.isEnabled = false
-			}
 		}
 	}
 	
@@ -68,10 +63,15 @@ class HomeViewController: UIViewController {
 		
 		self.loadingIcon.startAnimating()
 		
-		AirQualityAPI.report(coordinate: coordinate)
-			.bind(onNext: { (aqReport: AirQualityReport) in
-				self.updateAirQualityData(aqReport: aqReport)
-			}).disposed(by: self.disposeBag)
+		if self.isConnected {
+			AirQualityAPI.report(coordinate: coordinate)
+				.bind(onNext: { (aqReport: AirQualityReport) in
+					self.updateAirQualityData(aqReport: aqReport)
+				}).disposed(by: self.disposeBag)
+		}
+		else {
+			self.updateAirQualityData(aqReport: AirQualityReportTest())
+		}
 	}
 	
 	private func updateAirQualityData(aqReport: AirQualityReport) {

@@ -15,7 +15,7 @@ class AirQualityReport {
 	var timestamp : Date = Date()
 	var dominantPollutantID : PollutantIdentifier = .pm10
 	var pollutants: Dictionary<PollutantIdentifier, Pollutant> = Dictionary<PollutantIdentifier, Pollutant>()
-	static private var pollutantsInit : Dictionary<PollutantIdentifier,Pollutant> = [
+	static internal let pollutantsInit : Dictionary<PollutantIdentifier,Pollutant> = [
 		.pm10 : Pollutant(id: .pm10,
 						  title: "PM10",
 						  extendedTitle: "Partículas PM10"),
@@ -67,7 +67,5 @@ class AirQualityReport {
 		self.pollutants = pollutants
 	}
 	
-	init() {
-		
-	}
+	init() { }
 }

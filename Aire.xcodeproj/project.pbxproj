@@ -50,6 +50,8 @@
 		FF15313B20F7ECB300B75245 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313720F7ECB300B75245 /* UIViewExtension.swift */; };
 		FF15313C20F7ECB300B75245 /* PollutantSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */; };
 		FF15313D20F7ECB300B75245 /* PollutantSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */; };
+		FF1AE57521273110008C5F8C /* SCNNodeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1AE57421273110008C5F8C /* SCNNodeAnimation.swift */; };
+		FF1AE5772127A9EE008C5F8C /* AirQualityReportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1AE5762127A9EE008C5F8C /* AirQualityReportTest.swift */; };
 		FF1E5CD02103D6660064A52F /* BorderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */; };
 		FF23D4E421163E35006BC193 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF23D4E321163E35006BC193 /* FloatExtension.swift */; };
 		FF27132B2112AEF1002078E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF27132A2112AEF1002078E3 /* NetworkManager.swift */; };
@@ -124,6 +126,8 @@
 		FF15313720F7ECB300B75245 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PollutantSummaryView.xib; sourceTree = "<group>"; };
 		FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutantSummaryView.swift; sourceTree = "<group>"; };
+		FF1AE57421273110008C5F8C /* SCNNodeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNNodeAnimation.swift; sourceTree = "<group>"; };
+		FF1AE5762127A9EE008C5F8C /* AirQualityReportTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityReportTest.swift; sourceTree = "<group>"; };
 		FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderAnimation.swift; sourceTree = "<group>"; };
 		FF23D4E321163E35006BC193 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		FF27132A2112AEF1002078E3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -358,6 +362,7 @@
 		FF1E5CCE2103D65C0064A52F /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				FF1AE57421273110008C5F8C /* SCNNodeAnimation.swift */,
 				FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */,
 			);
 			path = Animations;
@@ -368,6 +373,7 @@
 			children = (
 				FF83C5A020EE985900CA68BC /* AirQualityAPI.swift */,
 				FF83C59E20EE985900CA68BC /* AirQualityReport.swift */,
+				FF1AE5762127A9EE008C5F8C /* AirQualityReportTest.swift */,
 				FF83C59F20EE985900CA68BC /* Pollutant.swift */,
 			);
 			path = AirQualityAPI;
@@ -594,6 +600,7 @@
 				FF3492ED20F1B97C00656D5A /* PageViewController.swift in Sources */,
 				FF83C5A220EE985A00CA68BC /* Pollutant.swift in Sources */,
 				FF27132B2112AEF1002078E3 /* NetworkManager.swift in Sources */,
+				FF1AE5772127A9EE008C5F8C /* AirQualityReportTest.swift in Sources */,
 				FF83C5B720EEA2CB00CA68BC /* UIUtility.swift in Sources */,
 				2B97267320ED945E0005EA69 /* ModelConfiguration.swift in Sources */,
 				FF99160020FEBFB20025C6B9 /* CGColorExtension.swift in Sources */,
@@ -605,6 +612,7 @@
 				FF13D51D20F96AC600DF9562 /* CircleView.swift in Sources */,
 				FFA6CE372105B166006BA424 /* PollutantCircleView.swift in Sources */,
 				FF15313420F7ECA700B75245 /* FullAirQualityReportAlert.swift in Sources */,
+				FF1AE57521273110008C5F8C /* SCNNodeAnimation.swift in Sources */,
 				FF584F6D20EF159F008ADB1C /* AirQualityUtility.swift in Sources */,
 				FFB740E021062DF0009D0796 /* SceneView.swift in Sources */,
 				FF15313A20F7ECB300B75245 /* NibView.swift in Sources */,

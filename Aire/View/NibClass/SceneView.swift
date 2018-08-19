@@ -17,6 +17,8 @@ class SceneView: NibView {
 	private let _loading = PublishSubject<Bool?>()
 	private let _selectedPollutantID = PublishSubject<PollutantIdentifier?>()
 	private let disposeBag = DisposeBag()
+	// At least these n individual pollutants should be close to viewer
+	private let nClosePollutants: Int = 20
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -56,7 +58,7 @@ class SceneView: NibView {
 				
 				// iterate through count of pollutants to add them to sceneview
 				for i in 1...value.count {
-					addPollutant(pollutantModelID: key, index:i)
+					addPollutant(pollutantModelID: key, pollutantCount:i)
 				}
 			}
 		}
@@ -71,12 +73,10 @@ class SceneView: NibView {
 	
 	private func addTapGesture() {
 		//Create TapGesture Recognizer
-		//let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap(rec:)))
 		let singleTap = UITapGestureRecognizer()
 		singleTap.numberOfTapsRequired = 1
 		
 		//Create TapGesture Recognizer
-		//let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(rec:)))
 		let doubleTap = UITapGestureRecognizer()
 		doubleTap.numberOfTapsRequired = 2
 		
@@ -122,99 +122,15 @@ class SceneView: NibView {
 		}
 	}
 	
-	private func handleTapSingleNode(node: SCNNode){
-		// animate tap
-		animateTap(node:node)
-		
-		// grab name of node for identification purposes
-		let nodeName: String = node.name ?? "none"
-		
-		if (nodeName == "label") {
-			// show info card for pollutant, name of pollutant in geometry
-			
-			let pollutantId = PollutantIdentifier(rawValue: node.geometry?.name ?? "none")
-			self._selectedPollutantID.onNext(pollutantId!)
-		}
-			
-		else {
-			self._selectedPollutantID.onNext(nil)
-			
-			// show label for pollutant
-			showLabel(node: node)
-		}
-	}
-	
-	private func animateTap(node: SCNNode){
-		let prevScale = node.scale
-		node.scale = SCNVector3(0.01, 0.01, 0.01)
-		
-		let scaleAction = SCNAction.scale(to: CGFloat(prevScale.x), duration: 0.5)
-		scaleAction.timingMode = .linear
-		
-		// Use a custom timing function
-		scaleAction.timingFunction = { (p: Float) in
-			return self.easeOutElastic(p)
-		}
-		
-		node.runAction(scaleAction, forKey: "scaleAction")
-	}
-	
-	// timing function
-	private func easeOutElastic(_ t: Float) -> Float {
-		let p: Float = 0.3
-		let newValue: Float = ( t - p )
-		let sinValue: Float = ( newValue / 4.0) * (2.0 * Float.pi) / p
-		let result = pow(2.0, -10.0 * t) * sin(sinValue) + 1.0
-		return result
-	}
-	
-	// remove all nodes from scene view
-	private func removePollutants(){
-		self._loading.onNext(true)
-		
-		sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
-			node.removeFromParentNode()
-		}
-	}
-
-	// add individual node pollutant
-	private func addPollutant(pollutantModelID: PollutantIdentifier, index: Int) {
-		let pollutantModel = PollutantModel()
-		pollutantModel.loadModel(modelID:pollutantModelID)
-		sceneView.scene.rootNode.addChildNode(pollutantModel)
-		
-		// fade in
-		pollutantModel.fadeInAction()
-		
-		// animate pollutant
-		pollutantModel.animate(objectCount:index)
-		
-		// randomize position
-		pollutantModel.randomPosition(objectCount:index)
-	}
-	
-	private func getNodePollutantID(node: SCNNode) -> PollutantIdentifier {
-		// grab name of node for identification purposes
-		var nodeName: String = node.name ?? "none"
-		
-		// check if label
-		if (nodeName == "label") {
-			// name of pollutant in geometry
-			nodeName = node.geometry?.name ?? "none"
-		}
-		
-		return PollutantIdentifier(rawValue: nodeName)!
-	}
-	
 	private func showLabel(node: SCNNode){
 		let pollutantLabel = PollutantLabel()
-
+		
 		// if key is found
 		if let pollutantID = PollutantIdentifier(rawValue: node.name!) {
 			if let pollutantConfig = PollutantUtility.config.model[pollutantID] {
 				// remove other labels
 				cleanseLabels()
-
+				
 				// create label model
 				pollutantLabel.loadModel(text: pollutantConfig.text,
 										 fontSize: CGFloat(pollutantConfig.fontSize),
@@ -229,6 +145,72 @@ class SceneView: NibView {
 											 yOffset: pollutantConfig.yOffset)
 			}
 		}
+	}
+	
+	private func handleTapSingleNode(node: SCNNode){
+		// animate tap
+		SCNNodeAnimation.pulse(node: node)
+		
+		// grab name of node for identification purposes
+		if let nodeName = node.name {
+			if nodeName == "label" {
+				// show info card for pollutant, name of pollutant in geometry
+				let pollutantId = PollutantIdentifier(rawValue: (node.geometry?.name)!)
+				self._selectedPollutantID.onNext(pollutantId!)
+			}
+			else {
+				self._selectedPollutantID.onNext(nil)
+				
+				// show label for pollutant
+				showLabel(node: node)
+			}
+		}
+	}
+	
+	// remove all nodes from scene view
+	private func removePollutants(){
+		self._loading.onNext(true)
+		
+		sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+			node.removeFromParentNode()
+		}
+	}
+
+	// add individual node pollutant
+	private func addPollutant(pollutantModelID: PollutantIdentifier,
+							  pollutantCount: Int) {
+		
+		let pollutantModel = PollutantModel()
+		pollutantModel.loadModel(modelID:pollutantModelID)
+		sceneView.scene.rootNode.addChildNode(pollutantModel)
+		
+		// fade in
+		SCNNodeAnimation.fadeIn(pollutantModel)
+		
+		// animate pollutant
+		SCNNodeAnimation.rotateRandomly(pollutantModel)
+		
+		// position pollutant
+		if (pollutantCount < nClosePollutants) {
+			pollutantModel.setPositionNear()
+		}
+		else {
+			pollutantModel.setPositionAnywhere()
+		}
+	}
+	
+	private func getNodePollutantID(node: SCNNode) -> PollutantIdentifier {
+		// grab name of node for identification purposes
+		var pollutantID = PollutantIdentifier()
+		if let nodeName = node.name {
+			if nodeName == "label" {
+				pollutantID = PollutantIdentifier(rawValue: (node.geometry?.name)!)!
+			}
+			else {
+				pollutantID = PollutantIdentifier(rawValue: nodeName)!
+			}
+		}
+		return pollutantID
 	}
 	
 	// remove all labels from scene view
