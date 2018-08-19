@@ -37,8 +37,11 @@ class AirQualityReport {
 	]
 
 	static func parseJSON(_ json: NSDictionary) throws -> AirQualityReport {
+		var dominantPollutantID = PollutantIdentifier()
+		if json["dominentpol"] != nil {
+			dominantPollutantID = PollutantIdentifier(rawValue: (json["dominentpol"] as? String)!)!
+		}
 		guard let aqi 				= json["aqi"] 			as? Double,
-			let dominantPollutantID 	= PollutantIdentifier(rawValue: (json["dominentpol"] as? String)!),
 			let locationJSON 		= json["city"] 			as? [String: Any],
 			let location 			= locationJSON["name"]	as? String,
 			let pollutantsJSON 		= json["iaqi"] 			as? [String: [String: Double]]
