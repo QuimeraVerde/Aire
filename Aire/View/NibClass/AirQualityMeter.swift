@@ -26,13 +26,13 @@ class AirQualityMeter: NibView {
 	}
 	
 	func update(aqi: Double) {
-		let aqiScaleData = AirQualityUtility.scale[aqi]
+		let aqiLevel = AirQualityUtility.generalAQILevel[aqi]
 		
 		self.indexLabel.text = String(Int(aqi))
-		self.indexLabel.textColor = aqiScaleData.color
+		self.indexLabel.textColor = aqiLevel.color
 		
-		self.levelLabel.text = aqiScaleData.airPollutionLevel.rawValue
-		self.levelLabel.textColor = aqiScaleData.color
+		self.levelLabel.text = aqiLevel.title.rawValue
+		self.levelLabel.textColor = aqiLevel.color
 		
 		let aqiProgress: CGFloat
 		if(aqi > 300.0) {

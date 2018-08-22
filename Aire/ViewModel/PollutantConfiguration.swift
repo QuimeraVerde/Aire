@@ -26,15 +26,15 @@ struct PollutantConfiguration {
 		self.extendedTitle = extendedTitle
 		self.ranges = ranges
 	}
-	// gets range of color level for visualization of aqi
-	func getRange(aqiValue: Int) -> String{
+
+	func getLevel(aqiValue: Double) -> Int{
 		// aqiValue is not negative
 		for i in 0..<ranges.count {
-			if aqiValue < ranges[i] {
-				return String(i)
+			if aqiValue < Double(ranges[i]) {
+				return i-1
 			}
 		}
 		// reached end of array and did not find a situable range (out of range)
-		return String(ranges.count)
+		return ranges.count-1
 	}
 }

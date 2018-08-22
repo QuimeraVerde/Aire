@@ -1,4 +1,4 @@
-//
+ //
 //  AirQualityUtility.swift
 //  Aire
 //
@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 struct AirQualityUtility {
-	static let scale = Scale()
-	
 	enum AirPollutionLevel: String {
 		case Good = "Bueno"
 		case Moderate = "Moderado"
@@ -21,56 +19,59 @@ struct AirQualityUtility {
 		case Hazardous = "Peligroso"
 	}
 	
-	struct Scale {
-		struct Level {
-			let range: CountableClosedRange<Int>
-			let airPollutionLevel: AirPollutionLevel
-			let color: UIColor
-		}
+	struct Level {
+		let title: AirPollutionLevel
+		let color: UIColor
+	}
+	
+	private static let level: [Level] = [
+		Level(title: AirPollutionLevel.Good,
+			  color: UIUtility.color.green),
 		
-		private static let level: [Level] = [
-			Level(range: 0...50,
-				  airPollutionLevel: AirPollutionLevel.Good,
-				  color: UIUtility.color.green),
-			
-			Level(range: 51...100,
-				  airPollutionLevel: AirPollutionLevel.Moderate,
-				  color: UIUtility.color.yellow),
-			
-			Level(range: 101...150,
-				  airPollutionLevel: AirPollutionLevel.UnhealthyForSensitiveGroups,
-				  color: UIUtility.color.orange),
-			
-			Level(range: 151...200,
-				  airPollutionLevel: AirPollutionLevel.Unhealthy,
-				  color: UIUtility.color.red),
-			
-			Level(range: 201...300,
-				  airPollutionLevel: AirPollutionLevel.VeryUnhealthy,
-				  color: UIUtility.color.purple),
-			
-			Level(range: 300...500,
-				  airPollutionLevel: AirPollutionLevel.Hazardous,
-				  color: UIUtility.color.crimson)
-		]
+		Level(title: AirPollutionLevel.Moderate,
+			  color: UIUtility.color.yellow),
 		
+		Level(title: AirPollutionLevel.UnhealthyForSensitiveGroups,
+			  color: UIUtility.color.orange),
+		
+		Level(title: AirPollutionLevel.Unhealthy,
+			  color: UIUtility.color.red),
+		
+		Level(title: AirPollutionLevel.VeryUnhealthy,
+			  color: UIUtility.color.purple),
+		
+		Level(title: AirPollutionLevel.Hazardous,
+			  color: UIUtility.color.crimson)
+	]
+	
+	static func getPollutantAQILevel(pollutant: Pollutant) -> Level {
+		let pollutantConfig = PollutantUtility.config.model[pollutant.id]!
+		let levelIndex = pollutantConfig.getLevel(aqiValue: pollutant.aqi)
+		
+		return self.level[levelIndex]
+	}
+	
+	static let generalAQILevel = GeneralAQILevel()
+	
+	struct GeneralAQILevel {
 		subscript(index: Double) -> Level {
 			get {
 				switch index {
 				case 0...50:
-					return AirQualityUtility.Scale.level[0]
+					return AirQualityUtility.level[0]
 				case 51...100:
-					return AirQualityUtility.Scale.level[1]
+					return AirQualityUtility.level[1]
 				case 101...150:
-					return AirQualityUtility.Scale.level[2]
+					return AirQualityUtility.level[2]
 				case 151...200:
-					return AirQualityUtility.Scale.level[3]
+					return AirQualityUtility.level[3]
 				case 201...300:
-					return AirQualityUtility.Scale.level[4]
+					return AirQualityUtility.level[4]
 				default:
-					return AirQualityUtility.Scale.level[5]
+					return AirQualityUtility.level[5]
 				}
 			}
 		}
 	}
 }
+

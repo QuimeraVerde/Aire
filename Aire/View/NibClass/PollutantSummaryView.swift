@@ -14,14 +14,10 @@ class PollutantSummaryView: NibView {
 	@IBOutlet var pollutantTitleLabel: UILabel!
 	@IBOutlet var pollutantCircle: PollutantCircleView!
 
-	func update(title: String, index: Double) {
-		self.pollutantTitleLabel.text = title
-		self.pollutantCircle.update(index: index)
-	}
-	
 	func update(pollutant: Pollutant) {
 		let pollutantModel = PollutantUtility.config.model[pollutant.id]!
-		self.update(title: pollutantModel.title, index: pollutant.aqi)
+		self.pollutantTitleLabel.text = pollutantModel.title
+		self.pollutantCircle.update(pollutant: pollutant)
 	}
 	
 	@IBInspectable var heading: Int = 0 {
