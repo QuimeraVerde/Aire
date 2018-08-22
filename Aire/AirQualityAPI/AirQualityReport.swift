@@ -13,7 +13,7 @@ class AirQualityReport {
 	var aqi : Double = 0
 	var location : String = ""
 	var timestamp : Date = Date()
-	var dominantPollutantID : PollutantIdentifier = .pm10
+	var dominantPollutantID : PollutantIdentifier = PollutantIdentifier()
 	var pollutants: Dictionary<PollutantIdentifier, Pollutant> = Dictionary<PollutantIdentifier, Pollutant>()
 	static internal let pollutantsInit : Dictionary<PollutantIdentifier,Pollutant> = [
 		.pm10 : Pollutant(id: .pm10,
@@ -37,10 +37,7 @@ class AirQualityReport {
 	]
 
 	static func parseJSON(_ json: NSDictionary) throws -> AirQualityReport {
-		var dominantPollutantID = PollutantIdentifier()
-		if json["dominentpol"] != nil {
-			dominantPollutantID = PollutantIdentifier(rawValue: (json["dominentpol"] as? String)!)!
-		}
+		// get general info from json
 		guard let aqi 				= json["aqi"] 			as? Double,
 			let locationJSON 		= json["city"] 			as? [String: Any],
 			let location 			= locationJSON["name"]	as? String,
@@ -49,6 +46,7 @@ class AirQualityReport {
 				throw apiError("Error parsing air quality report")
 		}
 		
+		// create pollutants dictionary
 		var pollutants = self.pollutantsInit
 		
 		for string in pollutantsJSON {
@@ -57,6 +55,18 @@ class AirQualityReport {
 				pollutants[pollutantID]?.aqi = pollutant.aqi
 				pollutants[pollutantID]?.count = pollutant.count
 			}
+		}
+		
+		// try and get dominant pollutant from json, if it's not present, assign the first pollutant that matches the aqi
+		var dominantPollutantID: PollutantIdentifier
+		
+		if let dominantPollutant = json["dominentpol"] {
+			dominantPollutantID = PollutantIdentifier(rawValue: dominantPollutant as! String)!
+		}
+		else {
+			dominantPollutantID = (pollutants.filter { (pollutantID, pollutant) -> Bool in
+				pollutant.aqi == aqi
+				}.first?.key)!
 		}
 		
 		return AirQualityReport(aqi: aqi, location: location, timestamp: Date(), dominantPollutantID: dominantPollutantID, pollutants: pollutants)
