@@ -17,6 +17,7 @@ class SceneView: NibView {
 	private let _loading = PublishSubject<Bool?>()
 	private let _selectedPollutantID = PublishSubject<PollutantIdentifier?>()
 	private let disposeBag = DisposeBag()
+	private let aqiToCountMultiplier = 1.5
 	// At least these n individual pollutants should be close to viewer
 	private let nClosePollutants: Int = 20
 	
@@ -54,11 +55,12 @@ class SceneView: NibView {
 		// iterate through dictionary of pollutants
 		for (key, value) in pollutants {
 			// make sure there is data in pollutant
-			if (value.count > 0){
+			let pollutantCount = Int(ceil(value.aqi) * self.aqiToCountMultiplier)
+			if (pollutantCount > 0){
 				
 				// iterate through count of pollutants to add them to sceneview
-				for i in 1...value.count {
-					addPollutant(pollutantModelID: key, pollutantCount:i)
+				for i in 1...pollutantCount {
+					self.addPollutant(pollutantModelID: key, pollutantCount:i)
 				}
 			}
 		}
@@ -132,7 +134,7 @@ class SceneView: NibView {
 				cleanseLabels()
 				
 				// create label model
-				pollutantLabel.loadModel(text: pollutantConfig.text,
+				pollutantLabel.loadModel(text: pollutantConfig.title,
 										 fontSize: CGFloat(pollutantConfig.fontSize),
 										 id: pollutantConfig.id)
 				sceneView.scene.rootNode.addChildNode(pollutantLabel)

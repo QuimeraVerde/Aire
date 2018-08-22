@@ -29,7 +29,7 @@
 		2B3FE7CD20F1D9990075D727 /* no2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7CC20F1D9990075D727 /* no2.scn */; };
 		2B3FE7CF20F1D9A30075D727 /* so2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7CE20F1D9A30075D727 /* so2.scn */; };
 		2B97266A20EC4AA40005EA69 /* PollutantLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97266920EC4AA40005EA69 /* PollutantLabel.swift */; };
-		2B97267320ED945E0005EA69 /* ModelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97267220ED945E0005EA69 /* ModelConfiguration.swift */; };
+		2B97267320ED945E0005EA69 /* PollutantConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97267220ED945E0005EA69 /* PollutantConfiguration.swift */; };
 		2B97267720EDAA730005EA69 /* pm25.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B97267620EDAA730005EA69 /* pm25.scn */; };
 		2BC83CE220DC2DB200777995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC83CE120DC2DB200777995 /* AppDelegate.swift */; };
 		2BC83CE420DC2DB200777995 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC83CE320DC2DB200777995 /* HomeViewController.swift */; };
@@ -85,7 +85,7 @@
 		2B3FE7CC20F1D9990075D727 /* no2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = no2.scn; sourceTree = "<group>"; };
 		2B3FE7CE20F1D9A30075D727 /* so2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = so2.scn; sourceTree = "<group>"; };
 		2B97266920EC4AA40005EA69 /* PollutantLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantLabel.swift; sourceTree = "<group>"; };
-		2B97267220ED945E0005EA69 /* ModelConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConfiguration.swift; sourceTree = "<group>"; };
+		2B97267220ED945E0005EA69 /* PollutantConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantConfiguration.swift; sourceTree = "<group>"; };
 		2B97267620EDAA730005EA69 /* pm25.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = pm25.scn; sourceTree = "<group>"; };
 		2BC83CDE20DC2DB200777995 /* Aire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC83CE120DC2DB200777995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				FF83C5AA20EE9B4C00CA68BC /* Location.swift */,
-				2B97267220ED945E0005EA69 /* ModelConfiguration.swift */,
+				2B97267220ED945E0005EA69 /* PollutantConfiguration.swift */,
 				FF15313020F7EC8B00B75245 /* PollutantIdentifier.swift */,
 				2B97266920EC4AA40005EA69 /* PollutantLabel.swift */,
 				2BC83D0220EAE5E700777995 /* PollutantModel.swift */,
@@ -602,7 +602,7 @@
 				FF27132B2112AEF1002078E3 /* NetworkManager.swift in Sources */,
 				FF1AE5772127A9EE008C5F8C /* AirQualityReportTest.swift in Sources */,
 				FF83C5B720EEA2CB00CA68BC /* UIUtility.swift in Sources */,
-				2B97267320ED945E0005EA69 /* ModelConfiguration.swift in Sources */,
+				2B97267320ED945E0005EA69 /* PollutantConfiguration.swift in Sources */,
 				FF99160020FEBFB20025C6B9 /* CGColorExtension.swift in Sources */,
 				FF23D4E421163E35006BC193 /* FloatExtension.swift in Sources */,
 				2BC83D0320EAE5E700777995 /* PollutantModel.swift in Sources */,
@@ -768,7 +768,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Quimera.Aire;
+				PRODUCT_BUNDLE_IDENTIFIER = Quimera.AirePau;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -787,7 +787,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Quimera.Aire;
+				PRODUCT_BUNDLE_IDENTIFIER = Quimera.AirePau;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

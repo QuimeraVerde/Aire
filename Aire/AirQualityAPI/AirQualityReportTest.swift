@@ -19,7 +19,6 @@ class AirQualityReportTest: AirQualityReport {
 		
 		for (pollutantID, _) in self.pollutants {
 			self.pollutants[pollutantID]?.aqi = 5
-			self.pollutants[pollutantID]?.count = Int(50 * 1.5)
 		}
 		self.timestamp = Date()
 	}

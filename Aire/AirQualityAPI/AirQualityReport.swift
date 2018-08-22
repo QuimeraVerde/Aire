@@ -16,24 +16,12 @@ class AirQualityReport {
 	var dominantPollutantID : PollutantIdentifier = PollutantIdentifier()
 	var pollutants: Dictionary<PollutantIdentifier, Pollutant> = Dictionary<PollutantIdentifier, Pollutant>()
 	static internal let pollutantsInit : Dictionary<PollutantIdentifier,Pollutant> = [
-		.pm10 : Pollutant(id: .pm10,
-						  title: "PM10",
-						  extendedTitle: "Partículas PM10"),
-		.pm25 : Pollutant(id: .pm25,
-						  title: "PM2.5",
-						  extendedTitle: "Partículas PM2.5"),
-		.so2  : Pollutant(id: .so2,
-						  title: "SO2",
-						  extendedTitle: "Monóxido de Carbono"),
-		.co   : Pollutant(id: .co,
-						  title: "CO",
-						  extendedTitle: "Dióxido de Azufre"),
-		.o3   : Pollutant(id: .o3,
-						  title: "O3",
-						  extendedTitle: "‎Dióxido de Nitrógeno"),
-		.no2  : Pollutant(id: .no2,
-						  title: "NO2",
-						  extendedTitle: "Moléculas de Ozono")
+		.pm10 : Pollutant(id: .pm10),
+		.pm25 : Pollutant(id: .pm25),
+		.so2  : Pollutant(id: .so2),
+		.co   : Pollutant(id: .co),
+		.o3   : Pollutant(id: .o3),
+		.no2  : Pollutant(id: .no2)
 	]
 
 	static func parseJSON(_ json: NSDictionary) throws -> AirQualityReport {
@@ -53,7 +41,6 @@ class AirQualityReport {
 			if let pollutantID = PollutantIdentifier(rawValue: string.key) {
 				let pollutant = Pollutant(rawValue: string.value)
 				pollutants[pollutantID]?.aqi = pollutant.aqi
-				pollutants[pollutantID]?.count = pollutant.count
 			}
 		}
 		

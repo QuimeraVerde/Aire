@@ -6,10 +6,10 @@
 //  Copyright © 2018 QuimeraVerde. All rights reserved.
 //
 
-struct ModelConfiguration {
+struct PollutantConfiguration {
 	var fontSize : Float = 0.0
-	var text : String = ""
-	var fullName: String = ""
+	var title : String = ""
+	var extendedTitle: String = ""
 	var yOffset: Float = 0.0
 	var ranges = [Int]()
 	var id: PollutantIdentifier!
@@ -18,12 +18,12 @@ struct ModelConfiguration {
 		self.id = id
 	}
 
-	init(id: PollutantIdentifier, fontSize: Float, text: String, fullName: String, yOffset: Float, ranges: [Int]) {
+	init(id: PollutantIdentifier, fontSize: Float, title: String, extendedTitle: String, yOffset: Float, ranges: [Int]) {
 		self.id = id
 		self.fontSize = fontSize
-		self.text = text
+		self.title = title
 		self.yOffset = yOffset
-		self.fullName = fullName
+		self.extendedTitle = extendedTitle
 		self.ranges = ranges
 	}
 	// gets range of color level for visualization of aqi

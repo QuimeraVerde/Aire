@@ -10,17 +10,11 @@ import Foundation
 
 struct Pollutant {
 	var aqi: Double = 0.0
-	var count: Int = 0
-	var title: String = ""
-	var extendedTitle: String = ""
 	var id: PollutantIdentifier = PollutantIdentifier()
-	init(id: PollutantIdentifier, title: String, extendedTitle: String) {
+	init(id: PollutantIdentifier) {
         self.id = id
-		self.title = title
-		self.extendedTitle = extendedTitle
 	}
 	init(rawValue : [String: Any]) {
 		self.aqi = (rawValue["v"] as? Double)!
-		self.count = Int(ceil(self.aqi) * 1.5)
 	}
 }

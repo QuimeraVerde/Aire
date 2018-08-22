@@ -20,7 +20,8 @@ class PollutantSummaryView: NibView {
 	}
 	
 	func update(pollutant: Pollutant) {
-		self.update(title: pollutant.title, index: pollutant.aqi)
+		let pollutantModel = PollutantUtility.config.model[pollutant.id]!
+		self.update(title: pollutantModel.title, index: pollutant.aqi)
 	}
 	
 	@IBInspectable var heading: Int = 0 {
