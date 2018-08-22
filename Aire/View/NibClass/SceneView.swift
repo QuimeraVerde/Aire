@@ -168,7 +168,7 @@ class SceneView: NibView {
 	}
 	
 	// remove all nodes from scene view
-	private func removePollutants(){
+	func removePollutants(){
 		self._loading.onNext(true)
 		
 		sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
