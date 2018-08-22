@@ -151,6 +151,29 @@ class HomeViewController: UIViewController {
 			})
 			.disposed(by: disposeBag)
 	}
+    
+    // We are willing to become first responder to get shake motion
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    
+    // Enable detection of shake motion
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            self.handleShakeGesture()
+        }
+    }
+    
+    func handleShakeGesture(){
+        self.sceneView.removePollutants()
+        self.pollutantCardView.hide()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.milliseconds(500), execute: {
+            self.sceneView.createPollutants(pollutants: self.pollutants)
+        })
+    }
 	
 	private func setTapGestures() {
 		// AQ Meter button
