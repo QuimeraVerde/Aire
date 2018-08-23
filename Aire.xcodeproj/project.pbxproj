@@ -60,8 +60,8 @@
 		FF345F6420F8198600ADE1A3 /* PollutantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */; };
 		FF3492ED20F1B97C00656D5A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492EC20F1B97C00656D5A /* PageViewController.swift */; };
 		FF3492EF20F1B9A700656D5A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492EE20F1B9A700656D5A /* MapViewController.swift */; };
-		FF584F6D20EF159F008ADB1C /* AirQualityUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF584F6C20EF159F008ADB1C /* AirQualityUtility.swift */; };
-		FF584F7120EF1F12008ADB1C /* PollutantUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF584F7020EF1F12008ADB1C /* PollutantUtility.swift */; };
+		FF584F6D20EF159F008ADB1C /* AirQualityScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF584F6C20EF159F008ADB1C /* AirQualityScale.swift */; };
+		FF584F7120EF1F12008ADB1C /* PollutantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF584F7020EF1F12008ADB1C /* PollutantView.swift */; };
 		FF83C5A120EE985A00CA68BC /* AirQualityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C59E20EE985900CA68BC /* AirQualityReport.swift */; };
 		FF83C5A220EE985A00CA68BC /* Pollutant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C59F20EE985900CA68BC /* Pollutant.swift */; };
 		FF83C5A320EE985A00CA68BC /* AirQualityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5A020EE985900CA68BC /* AirQualityAPI.swift */; };
@@ -136,8 +136,8 @@
 		FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantCardView.swift; sourceTree = "<group>"; };
 		FF3492EC20F1B97C00656D5A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		FF3492EE20F1B9A700656D5A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		FF584F6C20EF159F008ADB1C /* AirQualityUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityUtility.swift; sourceTree = "<group>"; };
-		FF584F7020EF1F12008ADB1C /* PollutantUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantUtility.swift; sourceTree = "<group>"; };
+		FF584F6C20EF159F008ADB1C /* AirQualityScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityScale.swift; sourceTree = "<group>"; };
+		FF584F7020EF1F12008ADB1C /* PollutantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantView.swift; sourceTree = "<group>"; };
 		FF83C59E20EE985900CA68BC /* AirQualityReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityReport.swift; sourceTree = "<group>"; };
 		FF83C59F20EE985900CA68BC /* Pollutant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pollutant.swift; sourceTree = "<group>"; };
 		FF83C5A020EE985900CA68BC /* AirQualityAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityAPI.swift; sourceTree = "<group>"; };
@@ -392,11 +392,11 @@
 		FF83C5AE20EE9FFA00CA68BC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				FF584F6C20EF159F008ADB1C /* AirQualityUtility.swift */,
+				FF584F6C20EF159F008ADB1C /* AirQualityScale.swift */,
 				FF83C5B120EEA01A00CA68BC /* APIKeys.swift */,
 				FF23D4E321163E35006BC193 /* FloatExtension.swift */,
 				FF27132A2112AEF1002078E3 /* NetworkManager.swift */,
-				FF584F7020EF1F12008ADB1C /* PollutantUtility.swift */,
+				FF584F7020EF1F12008ADB1C /* PollutantView.swift */,
 				FF83C5AF20EEA00300CA68BC /* Request.swift */,
 				FF83C5B620EEA2CB00CA68BC /* UIUtility.swift */,
 			);
@@ -607,13 +607,13 @@
 				FF23D4E421163E35006BC193 /* FloatExtension.swift in Sources */,
 				2BC83D0320EAE5E700777995 /* PollutantModel.swift in Sources */,
 				FF15313D20F7ECB300B75245 /* PollutantSummaryView.swift in Sources */,
-				FF584F7120EF1F12008ADB1C /* PollutantUtility.swift in Sources */,
+				FF584F7120EF1F12008ADB1C /* PollutantView.swift in Sources */,
 				FF15313B20F7ECB300B75245 /* UIViewExtension.swift in Sources */,
 				FF13D51D20F96AC600DF9562 /* CircleView.swift in Sources */,
 				FFA6CE372105B166006BA424 /* PollutantCircleView.swift in Sources */,
 				FF15313420F7ECA700B75245 /* FullAirQualityReportAlert.swift in Sources */,
 				FF1AE57521273110008C5F8C /* SCNNodeAnimation.swift in Sources */,
-				FF584F6D20EF159F008ADB1C /* AirQualityUtility.swift in Sources */,
+				FF584F6D20EF159F008ADB1C /* AirQualityScale.swift in Sources */,
 				FFB740E021062DF0009D0796 /* SceneView.swift in Sources */,
 				FF15313A20F7ECB300B75245 /* NibView.swift in Sources */,
 				FF15313120F7EC8C00B75245 /* PollutantIdentifier.swift in Sources */,
@@ -762,13 +762,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N555D649WJ;
+				DEVELOPMENT_TEAM = PF8D5W2TTX;
 				INFOPLIST_FILE = Aire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Quimera.AirePau;
+				PRODUCT_BUNDLE_IDENTIFIER = Quimera.AireNaty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -781,13 +781,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N555D649WJ;
+				DEVELOPMENT_TEAM = PF8D5W2TTX;
 				INFOPLIST_FILE = Aire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Quimera.AirePau;
+				PRODUCT_BUNDLE_IDENTIFIER = Quimera.AireNaty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

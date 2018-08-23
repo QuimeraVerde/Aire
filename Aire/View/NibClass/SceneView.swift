@@ -129,7 +129,7 @@ class SceneView: NibView {
 		
 		// if key is found
 		if let pollutantID = PollutantIdentifier(rawValue: node.name!) {
-			if let pollutantConfig = PollutantUtility.config.model[pollutantID] {
+			if let pollutantConfig = PollutantView.config[pollutantID] {
 				// remove other labels
 				cleanseLabels()
 				

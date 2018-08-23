@@ -33,8 +33,8 @@ class PollutantCircleView: NibView {
 		self.pollutantLevelView.stopAnimation()
 	}
 
-	func update(pollutant: Pollutant) {
-		pollutantIndexLabel.text = String(Int(ceil(pollutant.aqi)))
-		pollutantLevelView.setBorderColor(AirQualityUtility.getPollutantAQILevel(pollutant: pollutant).color)
+	func update(aqi: Double) {
+		pollutantIndexLabel.text = String(Int(ceil(aqi)))
+		pollutantLevelView.setBorderColor(AirQualityScale.getLevelForIndex(index: aqi).color)
 	}
 }

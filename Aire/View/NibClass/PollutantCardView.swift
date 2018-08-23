@@ -66,10 +66,9 @@ class PollutantCardView: NibView {
     }
     
 	func update(pollutant: Pollutant) {
-		let pollutantModel = PollutantUtility.config.model[pollutant.id]!
         self.selectedPollutant = pollutant.id
-		self.pollutantTitle.text = pollutantModel.extendedTitle
-		self.pollutantCircle.update(pollutant: pollutant)
+		self.pollutantTitle.text = PollutantView.config[pollutant.id]!.extendedTitle
+		self.pollutantCircle.update(aqi: pollutant.aqi)
         self.contentTextView.attributedText = self.getAttributedText(section: .definition)
 	}
 	

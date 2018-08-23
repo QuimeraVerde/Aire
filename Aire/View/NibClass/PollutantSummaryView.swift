@@ -15,9 +15,8 @@ class PollutantSummaryView: NibView {
 	@IBOutlet var pollutantCircle: PollutantCircleView!
 
 	func update(pollutant: Pollutant) {
-		let pollutantModel = PollutantUtility.config.model[pollutant.id]!
-		self.pollutantTitleLabel.text = pollutantModel.title
-		self.pollutantCircle.update(pollutant: pollutant)
+		self.pollutantTitleLabel.text = PollutantView.config[pollutant.id]!.title
+		self.pollutantCircle.update(aqi: pollutant.aqi)
 	}
 	
 	@IBInspectable var heading: Int = 0 {

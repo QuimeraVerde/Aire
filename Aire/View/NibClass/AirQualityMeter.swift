@@ -26,7 +26,7 @@ class AirQualityMeter: NibView {
 	}
 	
 	func update(aqi: Double) {
-		let aqiLevel = AirQualityUtility.generalAQILevel[aqi]
+		let aqiLevel = AirQualityScale.getLevelForIndex(index: aqi)
 		
 		self.indexLabel.text = String(Int(aqi))
 		self.indexLabel.textColor = aqiLevel.color
