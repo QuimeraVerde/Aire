@@ -26,14 +26,17 @@
                     <rect key="frame" x="0.0" y="0.0" width="75" height="110"/>
                     <subviews>
                         <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="wlJ-YF-ZG8" customClass="PollutantCircleView" customModule="Aire" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="75" height="76.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="wlJ-YF-ZG8" secondAttribute="height" multiplier="75:76" id="Gi5-wy-wX0"/>
+                                <constraint firstAttribute="width" secondItem="wlJ-YF-ZG8" secondAttribute="height" multiplier="1:1" id="Gi5-wy-wX0"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="75" translatesAutoresizingMaskIntoConstraints="NO" id="025-hj-GYv">
-                            <rect key="frame" x="0.0" y="86.5" width="75" height="23.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" preferredMaxLayoutWidth="75" translatesAutoresizingMaskIntoConstraints="NO" id="025-hj-GYv">
+                            <rect key="frame" x="0.0" y="85" width="75" height="25"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                            </accessibility>
                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -42,6 +45,7 @@
                     <constraints>
                         <constraint firstItem="wlJ-YF-ZG8" firstAttribute="trailing" secondItem="VVK-Qz-ibN" secondAttribute="trailing" id="9Sm-f2-B4p"/>
                         <constraint firstItem="wlJ-YF-ZG8" firstAttribute="leading" secondItem="VVK-Qz-ibN" secondAttribute="leading" id="QTC-JE-9wO"/>
+                        <constraint firstItem="025-hj-GYv" firstAttribute="width" secondItem="wlJ-YF-ZG8" secondAttribute="width" id="e0O-q9-WpX"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="VVK-Qz-ibN"/>
                 </stackView>
@@ -55,7 +59,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="ESF-n6-YY1"/>
-            <point key="canvasLocation" x="48.5" y="86"/>
+            <point key="canvasLocation" x="45" y="96"/>
         </view>
     </objects>
 </document>

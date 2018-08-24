@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,133 +31,136 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxU-YD-46K">
-                                <rect key="frame" x="285" y="168" width="454" height="432"/>
+                                <rect key="frame" x="286" y="179" width="452" height="430"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reporte Completo de Calidad de Aire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ia-ka-qdI">
-                                        <rect key="frame" x="54" y="24" width="345.5" height="27"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reporte Completo de Calidad de Aire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ia-ka-qdI">
+                                        <rect key="frame" x="22.5" y="0.0" width="407" height="64.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAU-Rg-0ct">
-                                        <rect key="frame" x="54" y="102" width="346" height="280"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2l-C4-3N4">
+                                        <rect key="frame" x="0.0" y="64.5" width="452" height="365.5"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxf-Vp-w4X">
-                                                <rect key="frame" x="0.0" y="171" width="346" height="111"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAU-Rg-0ct">
+                                                <rect key="frame" x="56.5" y="28" width="339" height="311"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEf-Qj-fnc" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="75.5" height="111"/>
+                                                    <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Jxf-Vp-w4X">
+                                                        <rect key="frame" x="0.0" y="171" width="339" height="140"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEf-Qj-fnc" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="3.5" width="75" height="136.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="NO2"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93O-7T-xPe" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
+                                                                <rect key="frame" x="132.5" y="3.5" width="74.5" height="136.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="SO2"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82B-Lv-HQW" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
+                                                                <rect key="frame" x="264" y="3.5" width="75" height="136.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="CO"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="NO2"/>
-                                                        </userDefinedRuntimeAttributes>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="82B-Lv-HQW" secondAttribute="trailing" id="DEj-Xo-XlI"/>
+                                                            <constraint firstAttribute="bottom" secondItem="aEf-Qj-fnc" secondAttribute="bottom" id="HuD-KZ-yf1"/>
+                                                            <constraint firstAttribute="bottom" secondItem="82B-Lv-HQW" secondAttribute="bottom" id="U5P-7S-thl"/>
+                                                            <constraint firstItem="93O-7T-xPe" firstAttribute="centerX" secondItem="Jxf-Vp-w4X" secondAttribute="centerX" id="XHL-ix-xhK"/>
+                                                            <constraint firstItem="aEf-Qj-fnc" firstAttribute="leading" secondItem="Jxf-Vp-w4X" secondAttribute="leading" id="pGl-Dp-Ex9"/>
+                                                            <constraint firstAttribute="bottom" secondItem="93O-7T-xPe" secondAttribute="bottom" id="ppO-Ra-yCK"/>
+                                                        </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93O-7T-xPe" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                        <rect key="frame" x="135.5" y="0.0" width="75" height="111"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epz-dD-IHg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="339" height="171"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bea-e2-tHK" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
+                                                                <rect key="frame" x="264" y="35" width="75" height="136"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="O3"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oth-15-Bhe" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
+                                                                <rect key="frame" x="118.5" y="-0.5" width="101.5" height="171"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="heading">
+                                                                        <integer key="value" value="3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="PM2.5"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iex-kd-e9q" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="35" width="75" height="136"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="PM10"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="SO2"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82B-Lv-HQW" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                        <rect key="frame" x="270.5" y="0.0" width="75.5" height="111"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="CO"/>
-                                                        </userDefinedRuntimeAttributes>
+                                                        <constraints>
+                                                            <constraint firstItem="bea-e2-tHK" firstAttribute="width" secondItem="iex-kd-e9q" secondAttribute="width" id="5kx-QF-FVM"/>
+                                                            <constraint firstAttribute="trailing" secondItem="bea-e2-tHK" secondAttribute="trailing" id="AOP-c7-LzX"/>
+                                                            <constraint firstAttribute="bottom" secondItem="iex-kd-e9q" secondAttribute="bottom" id="H4g-Ux-4z0"/>
+                                                            <constraint firstItem="iex-kd-e9q" firstAttribute="leading" secondItem="epz-dD-IHg" secondAttribute="leading" id="aGZ-BX-tMJ"/>
+                                                            <constraint firstItem="iex-kd-e9q" firstAttribute="height" secondItem="epz-dD-IHg" secondAttribute="height" multiplier="0.8" id="cEU-x4-Z4d"/>
+                                                            <constraint firstItem="iex-kd-e9q" firstAttribute="width" secondItem="epz-dD-IHg" secondAttribute="width" multiplier="0.22" id="fH3-0b-7He"/>
+                                                            <constraint firstAttribute="bottom" secondItem="bea-e2-tHK" secondAttribute="bottom" id="sdN-NM-HzX"/>
+                                                            <constraint firstItem="bea-e2-tHK" firstAttribute="height" secondItem="iex-kd-e9q" secondAttribute="height" id="vNV-TA-dRa"/>
+                                                        </constraints>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="aEf-Qj-fnc" firstAttribute="leading" secondItem="Jxf-Vp-w4X" secondAttribute="leading" id="35W-9I-d9K"/>
-                                                    <constraint firstItem="82B-Lv-HQW" firstAttribute="leading" secondItem="93O-7T-xPe" secondAttribute="trailing" constant="60" id="Au1-rM-I0D"/>
-                                                    <constraint firstItem="aEf-Qj-fnc" firstAttribute="bottom" secondItem="93O-7T-xPe" secondAttribute="bottom" id="BMb-ja-UR8"/>
-                                                    <constraint firstItem="93O-7T-xPe" firstAttribute="centerX" secondItem="Jxf-Vp-w4X" secondAttribute="centerX" id="JDm-8F-cBI"/>
-                                                    <constraint firstItem="aEf-Qj-fnc" firstAttribute="top" secondItem="Jxf-Vp-w4X" secondAttribute="top" id="JiP-3B-0MF"/>
-                                                    <constraint firstItem="93O-7T-xPe" firstAttribute="leading" secondItem="Jxf-Vp-w4X" secondAttribute="leading" constant="135" id="LD7-Yg-bYh"/>
-                                                    <constraint firstAttribute="trailing" secondItem="82B-Lv-HQW" secondAttribute="trailing" id="Q9w-L4-LCJ"/>
-                                                    <constraint firstItem="93O-7T-xPe" firstAttribute="top" secondItem="Jxf-Vp-w4X" secondAttribute="top" id="g7K-36-UYR"/>
-                                                    <constraint firstItem="93O-7T-xPe" firstAttribute="leading" secondItem="aEf-Qj-fnc" secondAttribute="trailing" constant="60" id="ivd-Oq-lK6"/>
-                                                    <constraint firstItem="82B-Lv-HQW" firstAttribute="top" secondItem="Jxf-Vp-w4X" secondAttribute="top" id="m9d-eP-eUX"/>
-                                                    <constraint firstItem="93O-7T-xPe" firstAttribute="bottom" secondItem="82B-Lv-HQW" secondAttribute="bottom" id="okE-QE-79r"/>
-                                                    <constraint firstAttribute="bottom" secondItem="aEf-Qj-fnc" secondAttribute="bottom" id="osE-xH-FQF"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epz-dD-IHg">
-                                                <rect key="frame" x="0.0" y="0.0" width="346" height="141"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iex-kd-e9q" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="30" width="75" height="111"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="PM10"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oth-15-Bhe" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                        <rect key="frame" x="126" y="0.0" width="94" height="141"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="heading">
-                                                                <integer key="value" value="3"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="PM2.5"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bea-e2-tHK" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
-                                                        <rect key="frame" x="271" y="30" width="75" height="111"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="pollutantTitle" value="O3"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="bea-e2-tHK" firstAttribute="leading" secondItem="oth-15-Bhe" secondAttribute="trailing" constant="51" id="0lR-fD-HGN"/>
-                                                    <constraint firstItem="iex-kd-e9q" firstAttribute="leading" secondItem="epz-dD-IHg" secondAttribute="leading" id="D8f-pC-rvc"/>
-                                                    <constraint firstItem="bea-e2-tHK" firstAttribute="height" secondItem="iex-kd-e9q" secondAttribute="height" id="Mj1-FG-ZBF"/>
-                                                    <constraint firstItem="iex-kd-e9q" firstAttribute="top" secondItem="bea-e2-tHK" secondAttribute="top" id="NYy-Q9-FFC"/>
-                                                    <constraint firstItem="oth-15-Bhe" firstAttribute="leading" secondItem="epz-dD-IHg" secondAttribute="leading" constant="126" id="PMl-TJ-Nv2"/>
-                                                    <constraint firstAttribute="trailing" secondItem="bea-e2-tHK" secondAttribute="trailing" id="V4e-6v-s28"/>
-                                                    <constraint firstAttribute="bottom" secondItem="oth-15-Bhe" secondAttribute="bottom" id="acW-JH-xCo"/>
-                                                    <constraint firstItem="oth-15-Bhe" firstAttribute="leading" secondItem="iex-kd-e9q" secondAttribute="trailing" constant="51" id="agY-Ar-UQp"/>
-                                                    <constraint firstAttribute="bottom" secondItem="iex-kd-e9q" secondAttribute="bottom" id="jl3-ji-E00"/>
-                                                    <constraint firstItem="oth-15-Bhe" firstAttribute="top" secondItem="epz-dD-IHg" secondAttribute="top" id="l1C-mc-mB5"/>
-                                                    <constraint firstItem="iex-kd-e9q" firstAttribute="top" secondItem="epz-dD-IHg" secondAttribute="top" constant="30" id="s5Y-xV-HSF"/>
-                                                    <constraint firstItem="oth-15-Bhe" firstAttribute="centerX" secondItem="epz-dD-IHg" secondAttribute="centerX" id="xlK-mg-z9I"/>
-                                                    <constraint firstItem="bea-e2-tHK" firstAttribute="width" secondItem="iex-kd-e9q" secondAttribute="width" id="xqq-qJ-DdR"/>
-                                                    <constraint firstAttribute="bottom" secondItem="bea-e2-tHK" secondAttribute="bottom" id="znA-Q9-7mD"/>
+                                                    <constraint firstItem="epz-dD-IHg" firstAttribute="top" secondItem="cAU-Rg-0ct" secondAttribute="top" id="2In-9O-cia"/>
+                                                    <constraint firstItem="82B-Lv-HQW" firstAttribute="width" secondItem="iex-kd-e9q" secondAttribute="width" id="COd-V4-QGs"/>
+                                                    <constraint firstItem="Jxf-Vp-w4X" firstAttribute="width" secondItem="cAU-Rg-0ct" secondAttribute="width" id="DC1-AI-vWM"/>
+                                                    <constraint firstItem="82B-Lv-HQW" firstAttribute="height" secondItem="iex-kd-e9q" secondAttribute="height" id="HDf-pe-boX"/>
+                                                    <constraint firstItem="epz-dD-IHg" firstAttribute="height" secondItem="cAU-Rg-0ct" secondAttribute="height" multiplier="0.55" id="Iup-BA-bpZ"/>
+                                                    <constraint firstItem="93O-7T-xPe" firstAttribute="width" secondItem="iex-kd-e9q" secondAttribute="width" id="KQ5-Hs-Des"/>
+                                                    <constraint firstItem="93O-7T-xPe" firstAttribute="height" secondItem="iex-kd-e9q" secondAttribute="height" id="LZt-FW-gQL"/>
+                                                    <constraint firstAttribute="width" secondItem="cAU-Rg-0ct" secondAttribute="height" multiplier="339:311" id="PlZ-b0-lpW"/>
+                                                    <constraint firstItem="Jxf-Vp-w4X" firstAttribute="leading" secondItem="cAU-Rg-0ct" secondAttribute="leading" id="ZOh-6x-Ehd"/>
+                                                    <constraint firstItem="epz-dD-IHg" firstAttribute="leading" secondItem="cAU-Rg-0ct" secondAttribute="leading" id="dTp-hP-EUj"/>
+                                                    <constraint firstItem="epz-dD-IHg" firstAttribute="width" secondItem="cAU-Rg-0ct" secondAttribute="width" id="t9z-kK-ERH"/>
+                                                    <constraint firstItem="Jxf-Vp-w4X" firstAttribute="height" secondItem="cAU-Rg-0ct" secondAttribute="height" multiplier="0.45" id="uKx-n7-rAg"/>
+                                                    <constraint firstItem="aEf-Qj-fnc" firstAttribute="width" secondItem="iex-kd-e9q" secondAttribute="width" id="uow-RW-IZy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Jxf-Vp-w4X" secondAttribute="bottom" id="wic-Fr-bRD"/>
+                                                    <constraint firstItem="aEf-Qj-fnc" firstAttribute="height" secondItem="iex-kd-e9q" secondAttribute="height" id="wpT-MC-IBi"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Jxf-Vp-w4X" secondAttribute="trailing" id="0Lc-sM-pz3"/>
-                                            <constraint firstItem="epz-dD-IHg" firstAttribute="top" secondItem="cAU-Rg-0ct" secondAttribute="top" id="5YH-We-olQ"/>
-                                            <constraint firstItem="82B-Lv-HQW" firstAttribute="height" secondItem="iex-kd-e9q" secondAttribute="height" id="EeE-Uf-vCx"/>
-                                            <constraint firstItem="aEf-Qj-fnc" firstAttribute="height" secondItem="iex-kd-e9q" secondAttribute="height" id="HLq-XI-vGe"/>
-                                            <constraint firstItem="Jxf-Vp-w4X" firstAttribute="top" secondItem="cAU-Rg-0ct" secondAttribute="top" constant="171" id="Rdu-Cb-4xI"/>
-                                            <constraint firstItem="93O-7T-xPe" firstAttribute="height" secondItem="iex-kd-e9q" secondAttribute="height" id="T3K-wt-dMt"/>
-                                            <constraint firstAttribute="trailing" secondItem="epz-dD-IHg" secondAttribute="trailing" id="Tc8-JA-7Pl"/>
-                                            <constraint firstItem="Jxf-Vp-w4X" firstAttribute="leading" secondItem="cAU-Rg-0ct" secondAttribute="leading" id="UBI-K2-PYu"/>
-                                            <constraint firstItem="epz-dD-IHg" firstAttribute="leading" secondItem="cAU-Rg-0ct" secondAttribute="leading" id="o7T-yT-aN6"/>
-                                            <constraint firstItem="aEf-Qj-fnc" firstAttribute="width" secondItem="iex-kd-e9q" secondAttribute="width" id="riY-4i-AjM"/>
-                                            <constraint firstItem="93O-7T-xPe" firstAttribute="width" secondItem="iex-kd-e9q" secondAttribute="width" id="vH5-qK-jsf"/>
-                                            <constraint firstItem="82B-Lv-HQW" firstAttribute="width" secondItem="iex-kd-e9q" secondAttribute="width" id="wPC-OB-IeQ"/>
-                                            <constraint firstItem="Jxf-Vp-w4X" firstAttribute="top" secondItem="epz-dD-IHg" secondAttribute="bottom" constant="30" id="xRC-da-lcl"/>
+                                            <constraint firstItem="cAU-Rg-0ct" firstAttribute="centerX" secondItem="k2l-C4-3N4" secondAttribute="centerX" id="f2a-bg-lqR"/>
+                                            <constraint firstItem="cAU-Rg-0ct" firstAttribute="centerY" secondItem="k2l-C4-3N4" secondAttribute="centerY" id="jlT-cC-waI"/>
+                                            <constraint firstItem="cAU-Rg-0ct" firstAttribute="height" secondItem="k2l-C4-3N4" secondAttribute="height" multiplier="0.85" id="qE9-jo-RYC"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="cAU-Rg-0ct" firstAttribute="top" secondItem="nxU-YD-46K" secondAttribute="top" constant="102" id="2lc-E5-K3N"/>
-                                    <constraint firstItem="cAU-Rg-0ct" firstAttribute="leading" secondItem="nxU-YD-46K" secondAttribute="leading" constant="54" id="7fY-Zi-3cU"/>
-                                    <constraint firstItem="cAU-Rg-0ct" firstAttribute="top" secondItem="9ia-ka-qdI" secondAttribute="bottom" constant="51" id="7rh-ct-xYg"/>
-                                    <constraint firstItem="cAU-Rg-0ct" firstAttribute="leading" secondItem="9ia-ka-qdI" secondAttribute="leading" id="9Fm-g0-M7t"/>
-                                    <constraint firstItem="cAU-Rg-0ct" firstAttribute="trailing" secondItem="9ia-ka-qdI" secondAttribute="trailing" id="PxA-rG-ebH"/>
-                                    <constraint firstItem="cAU-Rg-0ct" firstAttribute="centerX" secondItem="nxU-YD-46K" secondAttribute="centerX" id="f7Q-fd-3T8"/>
-                                    <constraint firstAttribute="width" secondItem="nxU-YD-46K" secondAttribute="height" multiplier="227:216" id="gPq-ur-x5L"/>
-                                    <constraint firstAttribute="bottom" secondItem="cAU-Rg-0ct" secondAttribute="bottom" constant="50" id="nge-Sk-92e"/>
+                                    <constraint firstAttribute="trailing" secondItem="k2l-C4-3N4" secondAttribute="trailing" id="2e1-xE-oxw"/>
+                                    <constraint firstAttribute="width" secondItem="nxU-YD-46K" secondAttribute="height" multiplier="227:216" id="6Au-nR-ces"/>
+                                    <constraint firstItem="k2l-C4-3N4" firstAttribute="leading" secondItem="nxU-YD-46K" secondAttribute="leading" id="HXQ-7z-uO6"/>
+                                    <constraint firstItem="9ia-ka-qdI" firstAttribute="top" secondItem="nxU-YD-46K" secondAttribute="top" id="LE0-uI-LT7"/>
+                                    <constraint firstItem="9ia-ka-qdI" firstAttribute="height" secondItem="nxU-YD-46K" secondAttribute="height" multiplier="0.15" id="Vdf-uz-t9J"/>
+                                    <constraint firstItem="9ia-ka-qdI" firstAttribute="width" secondItem="nxU-YD-46K" secondAttribute="width" multiplier="0.9" id="huL-P9-0BW"/>
+                                    <constraint firstItem="9ia-ka-qdI" firstAttribute="centerX" secondItem="nxU-YD-46K" secondAttribute="centerX" id="kX1-6M-3YI"/>
+                                    <constraint firstItem="k2l-C4-3N4" firstAttribute="height" secondItem="nxU-YD-46K" secondAttribute="height" multiplier="0.85" id="rZJ-Ov-5sZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="k2l-C4-3N4" secondAttribute="bottom" id="s7o-9e-eUL"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -166,23 +170,22 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="nxU-YD-46K" firstAttribute="centerX" secondItem="Og4-bh-aRP" secondAttribute="centerX" id="TU0-JQ-SoC"/>
-                            <constraint firstItem="nxU-YD-46K" firstAttribute="centerY" secondItem="Og4-bh-aRP" secondAttribute="centerY" id="qYT-IP-nfy"/>
-                        </constraints>
                     </view>
                     <blurEffect style="dark"/>
                 </visualEffectView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="D2x-3B-Ym7" firstAttribute="leading" secondItem="EBw-zh-M0f" secondAttribute="leading" id="E4N-2o-QGm"/>
-                <constraint firstItem="D2x-3B-Ym7" firstAttribute="trailing" secondItem="EBw-zh-M0f" secondAttribute="trailing" id="Zud-Wh-SSM"/>
-                <constraint firstItem="D2x-3B-Ym7" firstAttribute="bottom" secondItem="EBw-zh-M0f" secondAttribute="bottom" id="mbu-35-R93"/>
-                <constraint firstItem="D2x-3B-Ym7" firstAttribute="top" secondItem="FY4-SH-3hN" secondAttribute="top" id="qq3-DD-jCk"/>
+                <constraint firstItem="D2x-3B-Ym7" firstAttribute="leading" secondItem="FY4-SH-3hN" secondAttribute="leading" id="D4v-Ov-gT6"/>
+                <constraint firstItem="nxU-YD-46K" firstAttribute="centerY" secondItem="EBw-zh-M0f" secondAttribute="centerY" id="MGd-ZV-JUu"/>
+                <constraint firstAttribute="bottom" secondItem="D2x-3B-Ym7" secondAttribute="bottom" id="bhQ-Up-aKo"/>
+                <constraint firstAttribute="trailing" secondItem="D2x-3B-Ym7" secondAttribute="trailing" id="iTk-Hw-QiN"/>
+                <constraint firstItem="nxU-YD-46K" firstAttribute="height" secondItem="FY4-SH-3hN" secondAttribute="height" multiplier="0.56" id="nP4-OQ-CEP"/>
+                <constraint firstItem="D2x-3B-Ym7" firstAttribute="top" secondItem="FY4-SH-3hN" secondAttribute="top" id="sbH-Ss-nfE"/>
+                <constraint firstItem="nxU-YD-46K" firstAttribute="centerX" secondItem="EBw-zh-M0f" secondAttribute="centerX" id="zH1-Rj-oJD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="EBw-zh-M0f"/>
-            <point key="canvasLocation" x="-226" y="-157"/>
+            <point key="canvasLocation" x="-227" y="-158"/>
         </view>
     </objects>
 </document>
