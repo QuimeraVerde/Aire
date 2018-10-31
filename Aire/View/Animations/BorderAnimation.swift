@@ -43,7 +43,7 @@ struct BorderAnimation {
 		setAnimation(for: &initialAnimation,
 					 from: initialValue,
 					 to: finalValue)
-		initialAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+		initialAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
 		
 		// Final animation will go back to initial value
 		var finalAnimation = CABasicAnimation(keyPath: layerProperty.rawValue)
@@ -51,7 +51,7 @@ struct BorderAnimation {
 					 from: finalValue,
 					 to: initialValue)
 		finalAnimation.beginTime = initialAnimation.beginTime + initialAnimation.duration
-		finalAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+		finalAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
 		
 		return [initialAnimation, finalAnimation]
 	}
@@ -62,7 +62,7 @@ struct BorderAnimation {
 		animation.fromValue = fromValue
 		animation.toValue = toValue
 		animation.duration = 1.0
-		animation.fillMode = kCAFillModeForwards
+		animation.fillMode = CAMediaTimingFillMode.forwards
 	}
 	
 	private static func groupAnimations(_ animations: [CABasicAnimation],
@@ -72,8 +72,8 @@ struct BorderAnimation {
 		animation.duration = duration
 		animation.repeatCount = Float.infinity
 		animation.isRemovedOnCompletion = false
-		animation.fillMode = kCAFillModeForwards
-		animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+		animation.fillMode = CAMediaTimingFillMode.forwards
+		animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
 		return animation
 	}
 }

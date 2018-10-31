@@ -160,7 +160,7 @@ class HomeViewController: UIViewController {
     }
     
     // Enable detection of shake motion
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             self.handleShakeGesture()
         }
