@@ -13,16 +13,32 @@ import UIKit
 class PollutantSummaryView: NibView {
 	@IBOutlet var pollutantTitleLabel: UILabel!
 	@IBOutlet var pollutantCircle: PollutantCircleView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.sharedInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.sharedInit()
+    }
+    
+    private func sharedInit() {
+        let newSize = 0.28*self.pollutantCircle.frame.width
+        let newFont = self.pollutantTitleLabel.font.withSize(newSize + CGFloat(self.heading*2))
+        self.pollutantTitleLabel.font = newFont
+    }
 
 	func update(pollutant: Pollutant) {
+        self.sharedInit()
 		self.pollutantTitleLabel.text = PollutantView.config[pollutant.id]!.title
 		self.pollutantCircle.update(aqi: pollutant.aqi)
 	}
 	
 	@IBInspectable var heading: Int = 0 {
 		didSet {
-			let newFont = self.pollutantTitleLabel.font.withSize(CGFloat(22 + (heading*2)))
-			self.pollutantTitleLabel.font = newFont
+			sharedInit()
 			self.pollutantCircle.heading = self.heading
 			setNeedsDisplay()
 		}

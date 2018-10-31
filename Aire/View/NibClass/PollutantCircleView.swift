@@ -17,11 +17,16 @@ class PollutantCircleView: NibView {
 	
 	@IBInspectable var heading: Int = 0 {
 		didSet {
-			let newFont = self.pollutantIndexLabel.font.withSize(CGFloat(22 + (heading*2)))
-			self.pollutantIndexLabel.font = newFont
+			self.sharedInit()
 			setNeedsDisplay()
 		}
 	}
+    
+    private func sharedInit() {
+        let newSize = 0.28*self.pollutantLevelView.frame.width
+        let newFont = self.pollutantIndexLabel.font.withSize(newSize + CGFloat(self.heading*2))
+        self.pollutantIndexLabel.font = newFont
+    }
 
 	func animate() {
 		isAnimating = true
@@ -34,6 +39,7 @@ class PollutantCircleView: NibView {
 	}
 
 	func update(aqi: Double) {
+        self.sharedInit()
 		pollutantIndexLabel.text = String(Int(ceil(aqi)))
 		pollutantLevelView.setBorderColor(AirQualityScale.getLevelForIndex(index: aqi).color)
 	}
