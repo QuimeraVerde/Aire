@@ -52,7 +52,7 @@ class FullAirQualityReportAlert: NibView {
 		secondaryPollutantIDs: [PollutantIdentifier]) {
 			var pollutantSummaries = self.pollutantSummariesTopContainer
 										.subviews as! [PollutantSummaryView]
-		
+        
 			pollutantSummaries[0].update(pollutant: pollutants[secondaryPollutantIDs[0]]!)
 			pollutantSummaries[1].update(pollutant: pollutants[dominantID]!)
 			pollutantSummaries[2].update(pollutant: pollutants[secondaryPollutantIDs[1]]!)

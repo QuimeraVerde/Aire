@@ -6,10 +6,10 @@ target 'Aire' do
 use_frameworks!
 
 # Pods for Aire
-pod 'RxSwift', '~> 4.0'
-pod 'RxCocoa', '~> 4.0'
+pod 'RxSwift'
+pod 'RxCocoa'
 pod 'ReachabilitySwift'
-pod 'UICircularProgressRing', '~> 3.0'
+pod 'UICircularProgressRing'
 pod 'SwiftyMarkdown'
 end
 

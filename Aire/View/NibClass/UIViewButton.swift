@@ -16,22 +16,16 @@ class UIViewButton: UIView {
 	private let disposeBag = DisposeBag()
 	private var tapRecognizer: UITapGestureRecognizer?
 	
-	var onTap: (UIGestureRecognizer) -> Void {
-		get {
-			return self.onTap
-		}
-		set {
-			self.setTapGesture(newValue)
+	var onTap: ((UIGestureRecognizer) -> Void )? {
+		didSet {
+			self.setTapGesture(onTap!)
 			self.isEnabled = true
 		}
 	}
 	
-	var isEnabled: Bool {
-		get {
-			return self.isEnabled
-		}
-		set {
-			if newValue {
+	var isEnabled: Bool? {
+		didSet {
+			if isEnabled! {
 				self.addTapGesture()
 				self.alpha = 1.0
 			}
