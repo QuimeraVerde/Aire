@@ -104,18 +104,25 @@ extension PageViewController: CLLocationManagerDelegate {
 		if status == .authorizedWhenInUse {
 			locationManager.requestLocation()
 		}
+		else {
+			updateSharedLocation(coordinate: CLLocationCoordinate2D(latitude: 25.6515697, longitude: -100.2917287))
+		}
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		if !Location.sharedCoordinate.isReady {
 			if let location = locations.first {
 				locationManager.stopUpdatingLocation()
-				Location.sharedCoordinate.update(coordinate: location.coordinate)
-				NetworkManager.isReachable(completed: { _ in
-					Location.sharedAddress.update()
-				})
+				updateSharedLocation(coordinate: location.coordinate)
 			}
 		}
+	}
+	
+	func updateSharedLocation(coordinate: CLLocationCoordinate2D) {
+		Location.sharedCoordinate.update(coordinate: coordinate)
+		NetworkManager.isReachable(completed: { _ in
+			Location.sharedAddress.update()
+		})
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
