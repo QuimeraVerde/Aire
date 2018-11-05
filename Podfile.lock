@@ -1,8 +1,10 @@
 PODS:
   - ReachabilitySwift (4.3.0)
-  - RxCocoa (4.3.1):
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
     - RxSwift (~> 4.0)
-  - RxSwift (4.3.1)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
   - SwiftyMarkdown (0.6.0)
   - UICircularProgressRing (4.1.0)
 
@@ -11,23 +13,20 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SwiftyMarkdown
-  - UICircularProgressRing
+  - UICircularProgressRing (from `~/Documents/GitRepos/UICircularProgressRing/`)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - ReachabilitySwift
-    - RxCocoa
-    - RxSwift
-    - SwiftyMarkdown
-    - UICircularProgressRing
+EXTERNAL SOURCES:
+  UICircularProgressRing:
+    :path: ~/Documents/GitRepos/UICircularProgressRing/
 
 SPEC CHECKSUMS:
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
-  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
-  RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SwiftyMarkdown: 698fe6b283dddac69747f4e08ed0d067c18e0356
-  UICircularProgressRing: 5a32c01f54474571b1e66e8fa050c0f83d6d981b
+  UICircularProgressRing: 854fa1bf1e40767f2b5b157b2ab0b1c4f3297611
 
-PODFILE CHECKSUM: a15b6016ef54acc9547d6058ff25cefa35b9b26b
+PODFILE CHECKSUM: 6252dc5f33d8c240d2508a1e22b1cd34f18ea514
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0

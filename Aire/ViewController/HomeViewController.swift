@@ -44,7 +44,15 @@ class HomeViewController: UIViewController {
 		self.setNetworkReachabilitySubscription()
 		self.setSceneViewSubscriptions()
 		self.setTapGestures()
+		self.setIphoneSpecific()
     }
+	
+	func setIphoneSpecific() {
+		if(self.view.frame.width < 768) {
+			self.lastUpdated.isHidden = true
+			(UIApplication.shared.delegate as! AppDelegate).enableOrientation = false
+		}
+	}
 	
 	// IBActions
 	@IBAction func goToMap(_ sender: Any) {

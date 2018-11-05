@@ -9,7 +9,7 @@ use_frameworks!
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'ReachabilitySwift'
-pod 'UICircularProgressRing'
+pod 'UICircularProgressRing', :git => 'https://github.com/QuimeraVerde/UICircularProgressRing.git'
 pod 'SwiftyMarkdown'
 end
 
