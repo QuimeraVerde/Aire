@@ -28,8 +28,8 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5ay-rX-JuW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JoL-hr-Htt"/>
                             <constraint firstItem="5ay-rX-JuW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TgG-3g-dBo"/>
-                            <constraint firstItem="5ay-rX-JuW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="lXW-Bq-8bN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

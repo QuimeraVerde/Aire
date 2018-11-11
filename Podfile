@@ -11,6 +11,7 @@ pod 'RxCocoa'
 pod 'ReachabilitySwift'
 pod 'UICircularProgressRing', :git => 'https://github.com/QuimeraVerde/UICircularProgressRing.git'
 pod 'SwiftyMarkdown'
+pod 'RevealingSplashView'
 end
 
 post_install do |installer|

@@ -11,6 +11,7 @@ import Reachability
 import RxCocoa
 import RxSwift
 import UIKit
+import RevealingSplashView
 
 class HomeViewController: UIViewController {
 	@IBOutlet var airQualityMeter: AirQualityMeter!
@@ -39,6 +40,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.becomeFirstResponder() // To get shake gesture
+        self.startSplashScreen()
 		self.initIsConnected()
 		self.setLocationSubscription()
 		self.setNetworkReachabilitySubscription()
@@ -132,6 +134,20 @@ class HomeViewController: UIViewController {
 			self.callApi()
 		}
 	}
+    
+    private func startSplashScreen(){
+        //Initialize a revealing Splash with with the iconImage, the initial size and the background color
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "launch_screen")!,iconInitialSize: CGSize(width: 100, height: 100), backgroundColor: UIColor.groupTableViewBackground)
+    
+        revealingSplashView.animationType = SplashAnimationType.squeezeAndZoomOut
+        //Adds the revealing splash view as a sub view
+        self.view.addSubview(revealingSplashView)
+    
+        //Starts animation
+        revealingSplashView.startAnimation(){
+        print("Completed")
+        }
+    }
 	
 	private func setSceneViewSubscriptions() {
 		// Listen for a selected pollutant
