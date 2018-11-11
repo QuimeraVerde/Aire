@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="width" secondItem="ddX-Am-sSP" secondAttribute="height" multiplier="137:25" id="8An-FK-4D9"/>
                                     <constraint firstAttribute="height" constant="50" id="fZx-eL-02E"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                 <color key="tintColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="25" minY="10" maxX="225" maxY="10"/>
