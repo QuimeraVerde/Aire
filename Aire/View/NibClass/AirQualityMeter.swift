@@ -15,7 +15,8 @@ class AirQualityMeter: NibView {
 	@IBOutlet var progressView: UICircularProgressRing!
 	@IBOutlet var levelLabel: UILabel!
 	
-	override init(frame: CGRect) {
+    @IBOutlet var smallIndexLabel: UILabel!
+    override init(frame: CGRect) {
 		super.init(frame: frame)
 		self.initProgressView()
 	}
@@ -30,6 +31,8 @@ class AirQualityMeter: NibView {
 		
 		self.indexLabel.text = String(Int(aqi))
 		self.indexLabel.textColor = aqiLevel.color
+        self.smallIndexLabel.text = String(Int(aqi))
+        self.smallIndexLabel.textColor = aqiLevel.color
 		
 		self.levelLabel.text = aqiLevel.title.rawValue
 		self.levelLabel.textColor = aqiLevel.color
@@ -45,6 +48,19 @@ class AirQualityMeter: NibView {
 	}
 	
 	private func initProgressView() {
+        
+        if(self.view.frame.width < 768) {
+            self.levelLabel.isHidden = true
+            self.indexLabel.isHidden = true
+            self.smallIndexLabel.isHidden = false
+        }
+        
+        else {
+            self.levelLabel.isHidden = false
+            self.indexLabel.isHidden = false
+            self.smallIndexLabel.isHidden = true
+        }
+        
 		//values
 		self.progressView.minValue = 0
 		self.progressView.maxValue = 300

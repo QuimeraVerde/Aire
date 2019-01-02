@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,6 +15,7 @@
                 <outlet property="indexLabel" destination="T2C-mc-1zY" id="ABd-uS-bWm"/>
                 <outlet property="levelLabel" destination="ijg-P9-DNZ" id="iVK-oE-nFT"/>
                 <outlet property="progressView" destination="ue9-ur-sIW" id="G5O-Nu-uqP"/>
+                <outlet property="smallIndexLabel" destination="axc-Lb-orU" id="sZJ-sa-QNC"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -24,15 +26,21 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ue9-ur-sIW" customClass="UICircularProgressRing" customModule="UICircularProgressRing">
                     <rect key="frame" x="0.0" y="0.0" width="317" height="317"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2C-mc-1zY">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2C-mc-1zY">
                             <rect key="frame" x="51" y="60.5" width="125" height="55"/>
-                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="36"/>
+                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="30"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axc-Lb-orU" userLabel="Small Index Label">
+                            <rect key="frame" x="61" y="80.5" width="125" height="55"/>
+                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="30"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nivel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="ijg-P9-DNZ">
                             <rect key="frame" x="51" y="121.5" width="125" height="54.5"/>
-                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
+                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="23"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -91,12 +99,16 @@
             <constraints>
                 <constraint firstItem="ijg-P9-DNZ" firstAttribute="trailing" secondItem="F7o-Nq-M6F" secondAttribute="trailing" id="0nB-hk-GfM"/>
                 <constraint firstItem="ue9-ur-sIW" firstAttribute="top" secondItem="hOo-xl-0VB" secondAttribute="top" id="1mi-6Z-ki9"/>
+                <constraint firstItem="axc-Lb-orU" firstAttribute="height" secondItem="F7o-Nq-M6F" secondAttribute="height" multiplier="0.31" id="3CF-Mi-mvE"/>
                 <constraint firstItem="ue9-ur-sIW" firstAttribute="height" secondItem="hOo-xl-0VB" secondAttribute="height" multiplier="1.8" id="4Zj-TK-6dK"/>
+                <constraint firstItem="axc-Lb-orU" firstAttribute="centerY" secondItem="F7o-Nq-M6F" secondAttribute="centerY" constant="20" id="4kI-0z-9yT"/>
                 <constraint firstItem="ijg-P9-DNZ" firstAttribute="bottom" secondItem="F7o-Nq-M6F" secondAttribute="bottom" id="6IL-AD-IAc"/>
+                <constraint firstItem="axc-Lb-orU" firstAttribute="trailing" secondItem="F7o-Nq-M6F" secondAttribute="trailing" constant="10" id="6qp-TX-LHN"/>
                 <constraint firstItem="T2C-mc-1zY" firstAttribute="width" secondItem="F7o-Nq-M6F" secondAttribute="width" multiplier="0.71" id="CsS-YI-bMI"/>
                 <constraint firstItem="T2C-mc-1zY" firstAttribute="centerY" secondItem="F7o-Nq-M6F" secondAttribute="centerY" id="H3X-hj-L2W"/>
                 <constraint firstItem="ue9-ur-sIW" firstAttribute="leading" secondItem="hOo-xl-0VB" secondAttribute="leading" id="JER-il-tmN"/>
                 <constraint firstItem="T2C-mc-1zY" firstAttribute="trailing" secondItem="F7o-Nq-M6F" secondAttribute="trailing" id="T22-LG-sEQ"/>
+                <constraint firstItem="axc-Lb-orU" firstAttribute="width" secondItem="F7o-Nq-M6F" secondAttribute="width" multiplier="0.71" id="gKO-EM-5sW"/>
                 <constraint firstItem="T2C-mc-1zY" firstAttribute="height" secondItem="F7o-Nq-M6F" secondAttribute="height" multiplier="0.31" id="t3M-Td-utM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
