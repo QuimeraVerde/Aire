@@ -63,7 +63,9 @@ class HomeViewController: UIViewController {
 	}
 	
 	@IBAction func refresh(_ sender: Any) {
-		self.callApi()
+        if self.isConnected {
+            self.callApi()
+        }
 	}
 	
 	// Action functions

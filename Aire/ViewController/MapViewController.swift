@@ -62,10 +62,12 @@ class MapViewController: UIViewController {
 	}
 	
 	func selectLocationOnMap() {
-		let longPress = UILongPressGestureRecognizer()
-		mapView.addGestureRecognizer(longPress)
+		//let longPress = UILongPressGestureRecognizer()
+        let doubleTap = UITapGestureRecognizer()
+        doubleTap.numberOfTapsRequired = 1
+		mapView.addGestureRecognizer(doubleTap)
 		
-		longPress.rx.event.bind(onNext: { recognizer in
+		doubleTap.rx.event.bind(onNext: { recognizer in
 			let touchedAt = recognizer.location(in: self.mapView)
 			self.pointAnnotation.coordinate = self.mapView.convert(touchedAt, toCoordinateFrom: self.mapView)
 			self.selectLocationButton.isHidden = false

@@ -101,10 +101,12 @@ extension PageViewController: CLLocationManagerDelegate {
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-		if status == .authorizedWhenInUse {
+        //locationManager.requestLocation()
+		if status == .authorizedAlways || status == .authorizedWhenInUse {
 			locationManager.requestLocation()
 		}
 		else {
+            // Default coordinates MTY
 			updateSharedLocation(coordinate: CLLocationCoordinate2D(latitude: 25.6515697, longitude: -100.2917287))
 		}
 	}
