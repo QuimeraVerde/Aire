@@ -52,8 +52,12 @@ class HomeViewController: UIViewController {
 	func setIphoneSpecific() {
 		if(self.view.frame.width < 768) {
 			self.lastUpdated.isHidden = true
+            self.airQualityMeter.changeToIphone()
 			(UIApplication.shared.delegate as! AppDelegate).enableOrientation = false
 		}
+        else{
+            self.airQualityMeter.changeToIpad()
+        }
 	}
 	
 	// IBActions

@@ -46,21 +46,20 @@ class AirQualityMeter: NibView {
 		}
 		self.progressView.startProgress(to: aqiProgress, duration: 1)
 	}
+    
+    func changeToIphone() {
+        self.levelLabel.isHidden = true
+        self.indexLabel.isHidden = true
+        self.smallIndexLabel.isHidden = false
+    }
+    
+    func changeToIpad() {
+        self.levelLabel.isHidden = false
+        self.indexLabel.isHidden = false
+        self.smallIndexLabel.isHidden = true
+    }
 	
 	private func initProgressView() {
-        
-        if(self.view.frame.width < 768) {
-            self.levelLabel.isHidden = true
-            self.indexLabel.isHidden = true
-            self.smallIndexLabel.isHidden = false
-        }
-        
-        else {
-            self.levelLabel.isHidden = false
-            self.indexLabel.isHidden = false
-            self.smallIndexLabel.isHidden = true
-        }
-        
 		//values
 		self.progressView.minValue = 0
 		self.progressView.maxValue = 300
