@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PollutantCardView" customModule="Aire" customModuleProvider="target">
             <connections>
+                <outlet property="closeButton" destination="ZtZ-bP-3OO" id="tjg-dO-E4f"/>
                 <outlet property="contentTextView" destination="Wcc-fv-aHE" id="ca9-ey-sa9"/>
                 <outlet property="pollutantCircle" destination="aOM-bE-pU2" id="Okh-U5-PUJ"/>
                 <outlet property="pollutantTitle" destination="G0d-YG-aRq" id="ym7-JU-BOI"/>
@@ -23,14 +24,6 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="692"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhf-nS-Cu6">
-                    <rect key="frame" x="430" y="20" width="30" height="56"/>
-                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="32"/>
-                    <state key="normal" title="x"/>
-                    <connections>
-                        <action selector="hide:" destination="-1" eventType="touchUpInside" id="B1D-VN-aTg"/>
-                    </connections>
-                </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wcc-fv-aHE">
                     <rect key="frame" x="42" y="268" width="396" height="399"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,27 +62,55 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZtZ-bP-3OO" customClass="UIViewButton" customModule="Aire" customModuleProvider="target">
+                    <rect key="frame" x="429" y="20.5" width="30" height="30"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="faX-Uu-VjK">
+                            <rect key="frame" x="6" y="6" width="18" height="18"/>
+                            <color key="tintColor" red="0.33464897999999998" green="0.33464897999999998" blue="0.33464897999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="faX-Uu-VjK" secondAttribute="height" multiplier="1:1" id="FGs-dw-ftm"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                    <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ZtZ-bP-3OO" secondAttribute="height" multiplier="1:1" id="7Kw-h7-fDY"/>
+                        <constraint firstAttribute="width" constant="30" id="B3B-rA-qAd"/>
+                        <constraint firstItem="faX-Uu-VjK" firstAttribute="centerY" secondItem="ZtZ-bP-3OO" secondAttribute="centerY" id="WfB-yH-hYb"/>
+                        <constraint firstItem="faX-Uu-VjK" firstAttribute="centerX" secondItem="ZtZ-bP-3OO" secondAttribute="centerX" id="XUp-JL-Xem"/>
+                        <constraint firstItem="faX-Uu-VjK" firstAttribute="width" secondItem="ZtZ-bP-3OO" secondAttribute="width" multiplier="0.6" id="gkm-QV-HRt"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="aOM-bE-pU2" firstAttribute="top" secondItem="7ca-dq-Xro" secondAttribute="top" constant="25" id="1Xu-Kh-4b7"/>
-                <constraint firstItem="7ca-dq-Xro" firstAttribute="trailing" secondItem="Vhf-nS-Cu6" secondAttribute="trailing" constant="20" id="2Md-2K-hCv"/>
                 <constraint firstItem="Wcc-fv-aHE" firstAttribute="centerX" secondItem="G0d-YG-aRq" secondAttribute="centerX" id="6Ru-4b-GGB"/>
                 <constraint firstItem="aOM-bE-pU2" firstAttribute="centerX" secondItem="G0d-YG-aRq" secondAttribute="centerX" id="9Hc-jd-GPn"/>
                 <constraint firstItem="Wcc-fv-aHE" firstAttribute="leading" secondItem="7ca-dq-Xro" secondAttribute="leading" constant="42" id="ADR-Ka-nd9"/>
+                <constraint firstItem="ZtZ-bP-3OO" firstAttribute="centerY" secondItem="7ca-dq-Xro" secondAttribute="centerY" multiplier="0.1" id="Kto-IH-gkY"/>
                 <constraint firstItem="ARz-on-9xu" firstAttribute="top" secondItem="G0d-YG-aRq" secondAttribute="bottom" constant="20" id="Pqi-2J-0xa"/>
                 <constraint firstItem="Wcc-fv-aHE" firstAttribute="width" secondItem="G0d-YG-aRq" secondAttribute="width" id="UAP-ZV-qMR"/>
                 <constraint firstItem="Wcc-fv-aHE" firstAttribute="top" secondItem="ARz-on-9xu" secondAttribute="bottom" constant="15" id="aOZ-U9-4Wr"/>
+                <constraint firstItem="ZtZ-bP-3OO" firstAttribute="centerX" secondItem="7ca-dq-Xro" secondAttribute="centerX" multiplier="1.85" id="aSZ-gJ-vkH"/>
                 <constraint firstItem="G0d-YG-aRq" firstAttribute="top" secondItem="aOM-bE-pU2" secondAttribute="bottom" constant="10" id="dZZ-FJ-Tg4"/>
                 <constraint firstItem="7ca-dq-Xro" firstAttribute="trailing" secondItem="Wcc-fv-aHE" secondAttribute="trailing" constant="42" id="e4s-Nf-qnH"/>
                 <constraint firstItem="ARz-on-9xu" firstAttribute="width" secondItem="G0d-YG-aRq" secondAttribute="width" id="ev9-ep-x0k"/>
                 <constraint firstItem="7ca-dq-Xro" firstAttribute="bottom" secondItem="Wcc-fv-aHE" secondAttribute="bottom" constant="25" id="gAV-vT-auq"/>
                 <constraint firstItem="ARz-on-9xu" firstAttribute="centerX" secondItem="G0d-YG-aRq" secondAttribute="centerX" id="o0D-rl-tfh"/>
-                <constraint firstItem="Vhf-nS-Cu6" firstAttribute="top" secondItem="7ca-dq-Xro" secondAttribute="top" id="tM8-2t-4Ol"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="7ca-dq-Xro"/>
             <point key="canvasLocation" x="-89" y="-70"/>
         </view>
     </objects>
+    <resources>
+        <image name="close" width="36" height="36"/>
+    </resources>
 </document>

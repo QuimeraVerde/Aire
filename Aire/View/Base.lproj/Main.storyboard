@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ghJ-R6-Xq0">
-    <device id="ipad9_7" orientation="landscape">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,15 +15,15 @@
             <objects>
                 <viewController restorationIdentifier="Home" storyboardIdentifier="Home" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Aire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rP-Xp-Tn6" customClass="SceneView" customModule="Aire" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="center" enabled="NO" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddX-Am-sSP">
-                                <rect key="frame" x="731.5" y="45" width="267.5" height="41"/>
+                                <rect key="frame" x="121.66666666666666" y="69" width="267.33333333333337" height="41"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ddX-Am-sSP" secondAttribute="height" multiplier="150:23" id="8An-FK-4D9"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <view alpha="0.75" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="avf-1e-KKe">
-                                <rect key="frame" x="25" y="45" width="274" height="50"/>
+                                <rect key="frame" x="25" y="69" width="274" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Falta de conexión" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnq-le-Jy1">
                                         <rect key="frame" x="70" y="0.0" width="204" height="50"/>
@@ -75,13 +75,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="o5q-Jn-vOK">
-                                <rect key="frame" x="493.5" y="365.5" width="37" height="37"/>
+                                <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJv-GS-vXT" customClass="UIViewButton" customModule="Aire" customModuleProvider="target">
-                                <rect key="frame" x="823" y="567" width="176" height="176"/>
+                                <rect key="frame" x="285.66666666666669" y="733.66666666666663" width="103.33333333333331" height="103.33333333333337"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-a5-7Ch" customClass="AirQualityMeter" customModule="Aire" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="176" height="176"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="103.33333333333333"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -96,7 +96,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSZ-SH-KO9" customClass="PollutantCardView" customModule="Aire" customModuleProvider="target">
-                                <rect key="frame" x="25" y="45" width="430" height="653"/>
+                                <rect key="frame" x="25" y="69" width="364" height="685"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="999" constant="430" id="3Zz-QX-mzK"/>
@@ -110,7 +110,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDF-pa-VCs">
-                                <rect key="frame" x="25" y="701" width="42" height="42"/>
+                                <rect key="frame" x="25" y="795" width="42" height="42"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="H72-aL-oTo"/>
@@ -132,7 +132,7 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvl-nH-gkd" customClass="FullAirQualityReportAlert" customModule="Aire" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -142,7 +142,7 @@
                             <constraint firstItem="tx0-SU-hSE" firstAttribute="bottom" secondItem="FDF-pa-VCs" secondAttribute="bottom" id="4VQ-Vt-0hw"/>
                             <constraint firstItem="bSZ-SH-KO9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="4ji-dp-aSu"/>
                             <constraint firstItem="FDF-pa-VCs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="5Zm-6H-mCJ"/>
-                            <constraint firstItem="bSZ-SH-KO9" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-70" id="8XV-nL-aC5"/>
+                            <constraint firstItem="bSZ-SH-KO9" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-90" id="8XV-nL-aC5"/>
                             <constraint firstItem="o5q-Jn-vOK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EPs-Kb-vSQ"/>
                             <constraint firstItem="8rP-Xp-Tn6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Fna-1K-NhF"/>
                             <constraint firstItem="lvl-nH-gkd" firstAttribute="centerY" secondItem="8rP-Xp-Tn6" secondAttribute="centerY" id="JLb-HR-a5o"/>
@@ -189,11 +189,11 @@
             <objects>
                 <viewController storyboardIdentifier="Map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="etZ-r8-ZYo" customClass="MapViewController" customModule="Aire" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t4n-gU-DHG">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnn-22-Jd7">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <connections>
                                     <outlet property="delegate" destination="etZ-r8-ZYo" id="qWh-f4-AwU"/>
                                 </connections>
@@ -238,7 +238,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLr-gZ-IkJ">
-                                <rect key="frame" x="25" y="45" width="50" height="50"/>
+                                <rect key="frame" x="25" y="69" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3RV-7e-FuX"/>
@@ -259,12 +259,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zLr-gZ-IkJ" firstAttribute="top" secondItem="0UI-q5-d3h" secondAttribute="top" constant="25" id="3Ls-Cu-gsp"/>
-                            <constraint firstItem="mnn-22-Jd7" firstAttribute="trailing" secondItem="0UI-q5-d3h" secondAttribute="trailing" id="5An-6i-thL"/>
+                            <constraint firstItem="mnn-22-Jd7" firstAttribute="trailing" secondItem="t4n-gU-DHG" secondAttribute="trailing" id="5An-6i-thL"/>
                             <constraint firstItem="mnn-22-Jd7" firstAttribute="top" secondItem="t4n-gU-DHG" secondAttribute="top" id="abq-aJ-efo"/>
                             <constraint firstItem="0UI-q5-d3h" firstAttribute="bottom" secondItem="UaY-Hg-00U" secondAttribute="bottom" constant="25" id="cIO-df-cT4"/>
                             <constraint firstItem="vxT-ku-fgX" firstAttribute="leading" secondItem="UaY-Hg-00U" secondAttribute="trailing" constant="20" id="pYt-9M-uiM"/>
-                            <constraint firstItem="mnn-22-Jd7" firstAttribute="bottom" secondItem="0UI-q5-d3h" secondAttribute="bottom" id="vZT-PB-QIB"/>
-                            <constraint firstItem="mnn-22-Jd7" firstAttribute="leading" secondItem="0UI-q5-d3h" secondAttribute="leading" id="xQ8-Eu-57r"/>
+                            <constraint firstItem="mnn-22-Jd7" firstAttribute="bottom" secondItem="t4n-gU-DHG" secondAttribute="bottom" id="vZT-PB-QIB"/>
+                            <constraint firstItem="mnn-22-Jd7" firstAttribute="leading" secondItem="t4n-gU-DHG" secondAttribute="leading" id="xQ8-Eu-57r"/>
                             <constraint firstItem="0UI-q5-d3h" firstAttribute="bottom" secondItem="vxT-ku-fgX" secondAttribute="bottom" constant="25" id="xu2-Cj-UNP"/>
                             <constraint firstItem="0UI-q5-d3h" firstAttribute="trailing" secondItem="vxT-ku-fgX" secondAttribute="trailing" constant="25" id="yRh-ur-EKA"/>
                             <constraint firstItem="zLr-gZ-IkJ" firstAttribute="leading" secondItem="0UI-q5-d3h" secondAttribute="leading" constant="25" id="zCu-H1-z3v"/>

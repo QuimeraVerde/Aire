@@ -23,8 +23,9 @@ class PollutantCardView: NibView {
 	@IBOutlet weak var pollutantTitle: UILabel!
 	@IBOutlet weak var segmentedMenu: UISegmentedControl!
 	@IBOutlet weak var contentTextView: UITextView!
-	
-	private var content: Dictionary<PollutantIdentifier, Dictionary<SectionIdentifier, UITextView>>!
+    @IBOutlet var closeButton: UIViewButton!
+    
+    private var content: Dictionary<PollutantIdentifier, Dictionary<SectionIdentifier, UITextView>>!
     
     private var selectedPollutant: PollutantIdentifier = PollutantIdentifier()
 	
@@ -42,6 +43,9 @@ class PollutantCardView: NibView {
 		self.layer.cornerRadius = 10
 		self.layer.masksToBounds = true
 		self.segmentedMenu.selectedSegmentIndex = 0
+        self.closeButton.onTap = { _ in
+            self.hide()
+        }
 	}
 	
 	func show() {
