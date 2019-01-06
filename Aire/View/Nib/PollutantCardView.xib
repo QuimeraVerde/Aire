@@ -25,14 +25,14 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wcc-fv-aHE">
-                    <rect key="frame" x="42" y="268" width="396" height="399"/>
+                    <rect key="frame" x="42" y="262.5" width="396" height="404.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ARz-on-9xu">
-                    <rect key="frame" x="42" y="225" width="396" height="29"/>
+                    <rect key="frame" x="42" y="219.5" width="396" height="29"/>
                     <segments>
                         <segment title="¿Qué es?"/>
                         <segment title="Causas"/>
@@ -43,8 +43,8 @@
                         <action selector="changeSegment:" destination="-1" eventType="valueChanged" id="CQN-YQ-hDW"/>
                     </connections>
                 </segmentedControl>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="G0d-YG-aRq">
-                    <rect key="frame" x="42" y="155" width="396" height="50"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" minimumFontSize="16" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G0d-YG-aRq">
+                    <rect key="frame" x="42" y="150" width="396" height="49.5"/>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="36"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -99,11 +99,12 @@
                 <constraint firstItem="Wcc-fv-aHE" firstAttribute="width" secondItem="G0d-YG-aRq" secondAttribute="width" id="UAP-ZV-qMR"/>
                 <constraint firstItem="Wcc-fv-aHE" firstAttribute="top" secondItem="ARz-on-9xu" secondAttribute="bottom" constant="15" id="aOZ-U9-4Wr"/>
                 <constraint firstItem="ZtZ-bP-3OO" firstAttribute="centerX" secondItem="7ca-dq-Xro" secondAttribute="centerX" multiplier="1.85" id="aSZ-gJ-vkH"/>
-                <constraint firstItem="G0d-YG-aRq" firstAttribute="top" secondItem="aOM-bE-pU2" secondAttribute="bottom" constant="10" id="dZZ-FJ-Tg4"/>
+                <constraint firstItem="G0d-YG-aRq" firstAttribute="top" secondItem="aOM-bE-pU2" secondAttribute="bottom" constant="5" id="dZZ-FJ-Tg4"/>
                 <constraint firstItem="7ca-dq-Xro" firstAttribute="trailing" secondItem="Wcc-fv-aHE" secondAttribute="trailing" constant="42" id="e4s-Nf-qnH"/>
                 <constraint firstItem="ARz-on-9xu" firstAttribute="width" secondItem="G0d-YG-aRq" secondAttribute="width" id="ev9-ep-x0k"/>
                 <constraint firstItem="7ca-dq-Xro" firstAttribute="bottom" secondItem="Wcc-fv-aHE" secondAttribute="bottom" constant="25" id="gAV-vT-auq"/>
                 <constraint firstItem="ARz-on-9xu" firstAttribute="centerX" secondItem="G0d-YG-aRq" secondAttribute="centerX" id="o0D-rl-tfh"/>
+                <constraint firstItem="G0d-YG-aRq" firstAttribute="width" secondItem="ARz-on-9xu" secondAttribute="width" id="pe5-2a-jQN"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="7ca-dq-Xro"/>

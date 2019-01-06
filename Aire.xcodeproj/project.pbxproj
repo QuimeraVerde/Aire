@@ -101,7 +101,7 @@
 		5E2F5C1A871038F73448C8AD /* Pods-Aire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.release.xcconfig"; sourceTree = "<group>"; };
 		6A0ED46D4408D36BDE604ED0 /* Pods-Aire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.debug.xcconfig"; sourceTree = "<group>"; };
 		FF13D51C20F96AC600DF9562 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		FF13D52820FA574D00DF9562 /* pm10-definition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "pm10-definition.md"; sourceTree = "<group>"; };
+		FF13D52820FA574D00DF9562 /* pm10-definition.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "pm10-definition.md"; sourceTree = "<group>"; };
 		FF13D52D20FA66B100DF9562 /* co-definition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "co-definition.md"; sourceTree = "<group>"; };
 		FF13D52F20FA761400DF9562 /* co-issues.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "co-issues.md"; sourceTree = "<group>"; };
 		FF13D53020FA761C00DF9562 /* co-causes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "co-causes.md"; sourceTree = "<group>"; };
