@@ -1,4 +1,12 @@
-#  Causas
+## Pueden ser originadas por diferentes actividades humanas como el uso de carros o uso de parrillas
 
-Pueden ser originadas de forma primaria: polvo, asfalto y concreto de los caminos, pedacitos de llanta, carbono de combustión, pollen, erosión. De forma secundaria: las que se crean después de reacciones atmosféricas.
+Otras fuentes incluyen:
+● polvo
+● asfalto y concreto de los caminos
+● pedacitos de llanta
+● emisiones de carros
+● polen
+● erosión
+
+También se crean después de reacciones atmosféricas.
 

@@ -1,3 +1,10 @@
-#  Causas
+## El ozono en la capa más cercana a la tierra, se crea principalmente por las emisiones del tráfico
 
-El ozono estratosférico es generado naturalmente cuando la radiación de los rayos ultravioleta del sol interactúan con el oxígeno molecular. El ozono troposférico se forma principalmente por reacciones químicas que involucran la luz solar y dos tipos de contaminantes muy importantes: VOC y NOx. Esto significa que durante el verano las concentraciones de O3 es más alta. El ozono contribuye muchísimo a lo que llamamos “neblina” por contaminación.
+Las principales fuentes vienen a ser:
+● centrales eléctricas
+● escape de los vehículos automotores
+● los vapores de la gasolina
+● los solventes químicos 
+● plantas químicas
+
+Estos factores crean dos contaminantes que cuando se exponen al sol se crea el ozono. Durante el verano las concentraciones de O3 son más altas y se hace la “neblina” por contaminación.

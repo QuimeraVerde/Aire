@@ -1,3 +1,3 @@
-#  Qué es
+## El dióxido de nitrógeno es un gas tóxico e irritante
 
-Es un gas formado por la combinación de oxígeno y nitrógeno. Es un gas tóxico e irritante
+Se crea por la combinación de oxígeno y nitrógeno.

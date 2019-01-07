@@ -1,4 +1,12 @@
-#  Cómo me afecta
+##  Las partículas son tan pequeñas que llegan a comportarse como un gas
 
-Limita la función de los pulmones, creación de enfermedades respiratorias y ataques de asma, muerte prematura de personas con enfermedades pulmonares y ataques de corazón. Diversos estudios concluyen que la exposición a estas partículas aumentan la mortalidad y hospitalizaciones de emergencia. Por cada 10μg/m3 de aumento en PM10, se incrementa la mortalidad respiratoria en 0.58%
+Efectos a la salud incluyen:
+● Mal funcionamiento de los pulmones
+● Enfermedades respiratorias
+● Ataques de asma
+● Muerte prematura de personas con enfermedades pulmonares 
+● Ataques de corazón
+● Problemas en el embarazo
+
+Diversos estudios concluyen que la exposición a estas partículas **aumentan la mortalidad** y hospitalizaciones de emergencia. Un incremento de estas particulas lleva a un incremento en los casos de cáncer de pulmon.
 
