@@ -1,3 +1,3 @@
-## Cómo me afecta
-
-Puede provocar lesiones en las vías respiratorias y en los pulmones, ocasionando una reducción de la capacidad pulmonar y una mayor sensibilidad a los alérgenos. Por otro lado, es causante de lluvia ácida.
+## Es común ver más casos de tos, gripe, bronquitis y 
+ 
+Puede causar problemas**respiratorios**, inflamación de los pulmones y mayor sensibilidad a alergias. Puede llegar a ser peligroso para personas que tienen asma. Por otro lado, es causante de lluvia ácida.
