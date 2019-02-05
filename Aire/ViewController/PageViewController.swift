@@ -96,7 +96,10 @@ extension PageViewController: CLLocationManagerDelegate {
 		locationManager.requestAlwaysAuthorization()
 		
 		if CLLocationManager.locationServicesEnabled() {
-			locationManager.startUpdatingLocation()
+            let status = CLLocationManager.authorizationStatus()
+            if status == .authorizedAlways || status == .authorizedWhenInUse  {
+                locationManager.startUpdatingLocation()
+            }
 		}
 	}
 	
@@ -107,8 +110,26 @@ extension PageViewController: CLLocationManagerDelegate {
 		}
 		else {
             // Default coordinates MTY
-			updateSharedLocation(coordinate: CLLocationCoordinate2D(latitude: 25.6515697, longitude: -100.2917287))
-		}
+			// UpdateSharedLocation(coordinate: CLLocationCoordinate2D(latitude: 25.6515697, longitude: -100.2917287))
+            // Ask for location input
+            let alert = UIAlertController(title: "Aire necesita tu ubicación", message: "También puedes escoger cualquier lugar del mundo usando nuestro mapa", preferredStyle: .alert)
+            
+            let settingsAction = UIAlertAction(title: "Ir a preferencias", style: .default) { (_) -> Void in
+                
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    return
+                }
+                
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        print("Settings opened: \(success)") // Prints true
+                    })
+                }
+            }
+            alert.addAction(settingsAction)
+            alert.addAction(UIAlertAction(title: "Seguir sin mi ubicación", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

@@ -7,4 +7,4 @@ Las actividades humanas contribuyen a la emisión de óxidos de nitrógeno media
 ● Tráfico en ciudades
 ● La combustión del carbón, petróleo o gas natural
 
-La mayoria del dióxido de nitrógeno en el aire es creado por actividad humana
+La mayoria del dióxido de nitrógeno en el aire es creado por actividad humana.

@@ -1,3 +1,5 @@
-## Cómo me afecta
+## En pequeñas concentraciones, puede dar lugar a confusión mental, vértigo, dolor de cabeza, náuseas, debilidad y pérdida del conocimiento.
 
-En pequeñas concentraciones, puede dar lugar a confusión mental, vértigo, dolor de cabeza, náuseas, debilidad y pérdida del conocimiento. Si se produce una exposición prolongada ó continua, pueden verse afectados el sistema nervioso y el sistema cardiovascular, dando lugar a alteraciones neurológicas y cardiacas.En cuanto a su impacto en el medio ambiente, se trata de una sustancia extremadamente inflamable que reacciona vigorosamente con oxígeno, acetileno, cloro, flúor y óxidos nitrosos, pudiendo provocar humos tóxicos e incendios si existen focos de calentamiento. Es un precursor de ozono, es decir, al combinarse con otros contaminantes atmosféricos forma ozono troposférico (próximo a la superficie terrestre) que provoca quemaduras importantes en el ser humano y es dañino para la flora y fauna autóctona.
+Si alguien inhala el gas constantemente, pueden verse afectados el sistema nervioso y el sistema cardiovascular, dando lugar a **complicaciones neurológicas y cardiacas**.
+
+En cuanto a su impacto en el medio ambiente, se trata de una sustancia extremadamente inflamable que reacciona con oxígeno, acetileno, cloro, flúor y óxidos nitrosos, provocando humos tóxicos e incendios si existen focos de calentamiento. Al combinarse con otros contaminantes, forma ozono que provoca quemaduras importantes en el ser humano y es dañino para la flora y fauna autóctona.
