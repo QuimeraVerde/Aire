@@ -13,7 +13,9 @@ import UIKit
 class PageViewController : UIPageViewController {
 	let locationManager = CLLocationManager()
 	
-	override func viewDidLoad() {
+    @IBOutlet weak var loadingIcon: UIActivityIndicatorView!
+    
+    override func viewDidLoad() {
 		super.viewDidLoad()
 		self.dataSource = self
 		self.delegate   = self

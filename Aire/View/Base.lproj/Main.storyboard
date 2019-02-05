@@ -182,7 +182,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="oMW-2f-Wvm" customClass="SCNScene"/>
+                <customObject id="oMW-2f-Wvm" customClass="SCNScene">
+                    <connections>
+                        <outlet property="loadingIcon" destination="o5q-Jn-vOK" id="wsc-by-FUM"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="135.19999999999999" y="131.52709359605913"/>
         </scene>

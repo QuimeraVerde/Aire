@@ -200,9 +200,17 @@ class HomeViewController: UIViewController {
         self.sceneView.removePollutants()
         self.pollutantCardView.hide()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.milliseconds(500), execute: {
-            self.sceneView.createPollutants(pollutants: self.pollutants)
-        })
+        _ = CLLocationManager()
+        
+        let status = CLLocationManager.authorizationStatus()
+        if status == .authorizedAlways || status == .authorizedWhenInUse {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.milliseconds(500), execute: {
+                self.sceneView.createPollutants(pollutants: self.pollutants)
+            })
+        }
+        else {
+            self.loadingIcon.stopAnimating()
+        }
     }
 	
 	private func setTapGestures() {
