@@ -98,21 +98,22 @@ extension PageViewController: CLLocationManagerDelegate {
 		locationManager.requestAlwaysAuthorization()
 		
 		if CLLocationManager.locationServicesEnabled() {
-            let status = CLLocationManager.authorizationStatus()
-            if status == .authorizedAlways || status == .authorizedWhenInUse  {
                 locationManager.startUpdatingLocation()
-            }
 		}
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         //locationManager.requestLocation()
-		if status == .authorizedAlways || status == .authorizedWhenInUse {
-			locationManager.requestLocation()
-		}
-		else {
+        
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            // Request when-in-use authorization initially
+            locationManager.requestWhenInUseAuthorization()
+            break
+            
+        case .restricted, .denied:
             // Default coordinates MTY
-			// UpdateSharedLocation(coordinate: CLLocationCoordinate2D(latitude: 25.6515697, longitude: -100.2917287))
+            // UpdateSharedLocation(coordinate: CLLocationCoordinate2D(latitude: 25.6515697, longitude: -100.2917287))
             // Ask for location input
             let alert = UIAlertController(title: "Aire necesita tu ubicación", message: "También puedes escoger cualquier lugar del mundo usando nuestro mapa", preferredStyle: .alert)
             
@@ -131,6 +132,12 @@ extension PageViewController: CLLocationManagerDelegate {
             alert.addAction(settingsAction)
             alert.addAction(UIAlertAction(title: "Seguir sin mi ubicación", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            break
+            
+        case .authorizedWhenInUse,.authorizedAlways:
+            // Enable any of your app's location features
+            locationManager.requestLocation()
+            break
         }
 	}
 	
