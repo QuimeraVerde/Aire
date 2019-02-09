@@ -1,0 +1,49 @@
+PODS:
+  - ReachabilitySwift (4.3.0)
+  - RevealingSplashView (0.6.0)
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - SwiftyMarkdown (0.6.0)
+  - UICircularProgressRing (4.1.0)
+
+DEPENDENCIES:
+  - ReachabilitySwift
+  - RevealingSplashView
+  - RxCocoa
+  - RxSwift
+  - SwiftyMarkdown
+  - UICircularProgressRing (from `https://github.com/QuimeraVerde/UICircularProgressRing.git`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ReachabilitySwift
+    - RevealingSplashView
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
+    - SwiftyMarkdown
+
+EXTERNAL SOURCES:
+  UICircularProgressRing:
+    :git: https://github.com/QuimeraVerde/UICircularProgressRing.git
+
+CHECKOUT OPTIONS:
+  UICircularProgressRing:
+    :commit: 917db2120652f6cc2909831aca4a707de99e129f
+    :git: https://github.com/QuimeraVerde/UICircularProgressRing.git
+
+SPEC CHECKSUMS:
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  SwiftyMarkdown: 698fe6b283dddac69747f4e08ed0d067c18e0356
+  UICircularProgressRing: 0a0b5b10aa12cb33b2ad4657abafd3e55676e74e
+
+PODFILE CHECKSUM: 8207e85e25eb35233405bc64b8f46fa1c085a448
+
+COCOAPODS: 1.5.3

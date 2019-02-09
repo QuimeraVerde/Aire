@@ -1,0 +1,811 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B158B8A20FEA39B00D2C5A1 /* pm10-causes.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53220FA762900DF9562 /* pm10-causes.md */; };
+		2B158B8B20FEA39E00D2C5A1 /* pm10-issues.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53120FA762400DF9562 /* pm10-issues.md */; };
+		2B158B8C20FEA3A100D2C5A1 /* pm25-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53420FA764700DF9562 /* pm25-definition.md */; };
+		2B158B8D20FEA3A100D2C5A1 /* pm25-causes.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53520FA764C00DF9562 /* pm25-causes.md */; };
+		2B158B8E20FEA3A100D2C5A1 /* pm25-issues.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53620FA765200DF9562 /* pm25-issues.md */; };
+		2B158B8F20FEA3A300D2C5A1 /* o3-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D54020FA769700DF9562 /* o3-definition.md */; };
+		2B158B9020FEA3A300D2C5A1 /* o3-causes.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D54120FA769C00DF9562 /* o3-causes.md */; };
+		2B158B9120FEA3A300D2C5A1 /* o3-issues.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D54220FA76A000DF9562 /* o3-issues.md */; };
+		2B158B9220FEA3AC00D2C5A1 /* no2-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53820FA765F00DF9562 /* no2-definition.md */; };
+		2B158B9320FEA3AC00D2C5A1 /* no2-causes.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53920FA766400DF9562 /* no2-causes.md */; };
+		2B158B9420FEA3AC00D2C5A1 /* no2-issues.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53A20FA766900DF9562 /* no2-issues.md */; };
+		2B158B9520FEA3AF00D2C5A1 /* so2-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53C20FA767800DF9562 /* so2-definition.md */; };
+		2B158B9620FEA3AF00D2C5A1 /* so2-causes.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53D20FA767E00DF9562 /* so2-causes.md */; };
+		2B158B9720FEA3AF00D2C5A1 /* so2-issues.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53E20FA768400DF9562 /* so2-issues.md */; };
+		2B158B9A20FEA3B300D2C5A1 /* co-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D52D20FA66B100DF9562 /* co-definition.md */; };
+		2B158B9B20FEA3B300D2C5A1 /* co-causes.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D53020FA761C00DF9562 /* co-causes.md */; };
+		2B158B9C20FEA3B300D2C5A1 /* co-issues.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D52F20FA761400DF9562 /* co-issues.md */; };
+		2B3FE7A120F1888B0075D727 /* o3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7A020F1888B0075D727 /* o3.scn */; };
+		2B3FE7CB20F1D9910075D727 /* co.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7CA20F1D9910075D727 /* co.scn */; };
+		2B3FE7CD20F1D9990075D727 /* no2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7CC20F1D9990075D727 /* no2.scn */; };
+		2B3FE7CF20F1D9A30075D727 /* so2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FE7CE20F1D9A30075D727 /* so2.scn */; };
+		2B97266A20EC4AA40005EA69 /* PollutantLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97266920EC4AA40005EA69 /* PollutantLabel.swift */; };
+		2B97267320ED945E0005EA69 /* PollutantConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97267220ED945E0005EA69 /* PollutantConfiguration.swift */; };
+		2B97267720EDAA730005EA69 /* pm25.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2B97267620EDAA730005EA69 /* pm25.scn */; };
+		2BC83CE220DC2DB200777995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC83CE120DC2DB200777995 /* AppDelegate.swift */; };
+		2BC83CE420DC2DB200777995 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC83CE320DC2DB200777995 /* HomeViewController.swift */; };
+		2BC83CE720DC2DB200777995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83CE520DC2DB200777995 /* Main.storyboard */; };
+		2BC83CE920DC2DB300777995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83CE820DC2DB300777995 /* Assets.xcassets */; };
+		2BC83CEC20DC2DB300777995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83CEA20DC2DB300777995 /* LaunchScreen.storyboard */; };
+		2BC83D0320EAE5E700777995 /* PollutantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC83D0220EAE5E700777995 /* PollutantModel.swift */; };
+		2BC83D0520EAE75400777995 /* pm10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83D0420EAE75400777995 /* pm10.jpg */; };
+		2BC83D1320EAEE3400777995 /* pm10.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83D1220EAEE3400777995 /* pm10.scn */; };
+		2BC83D1720EBF4D600777995 /* pm25.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83D1520EBF4D500777995 /* pm25.jpg */; };
+		E30B31B361D1B280877CC777 /* Pods_Aire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E217A5ED37E5CE9520CF8E /* Pods_Aire.framework */; };
+		FF13D51D20F96AC600DF9562 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF13D51C20F96AC600DF9562 /* CircleView.swift */; };
+		FF13D52A20FA652900DF9562 /* pm10-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D52820FA574D00DF9562 /* pm10-definition.md */; };
+		FF15313120F7EC8C00B75245 /* PollutantIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313020F7EC8B00B75245 /* PollutantIdentifier.swift */; };
+		FF15313420F7ECA700B75245 /* FullAirQualityReportAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313220F7ECA700B75245 /* FullAirQualityReportAlert.swift */; };
+		FF15313520F7ECA700B75245 /* FullAirQualityReportAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF15313320F7ECA700B75245 /* FullAirQualityReportAlert.xib */; };
+		FF15313A20F7ECB300B75245 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313620F7ECB300B75245 /* NibView.swift */; };
+		FF15313B20F7ECB300B75245 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313720F7ECB300B75245 /* UIViewExtension.swift */; };
+		FF15313C20F7ECB300B75245 /* PollutantSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */; };
+		FF15313D20F7ECB300B75245 /* PollutantSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */; };
+		FF1AE57521273110008C5F8C /* SCNNodeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1AE57421273110008C5F8C /* SCNNodeAnimation.swift */; };
+		FF1AE5772127A9EE008C5F8C /* AirQualityReportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1AE5762127A9EE008C5F8C /* AirQualityReportTest.swift */; };
+		FF1E5CD02103D6660064A52F /* BorderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */; };
+		FF23D4E421163E35006BC193 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF23D4E321163E35006BC193 /* FloatExtension.swift */; };
+		FF27132B2112AEF1002078E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF27132A2112AEF1002078E3 /* NetworkManager.swift */; };
+		FF27132D211365DE002078E3 /* UIViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF27132C211365DE002078E3 /* UIViewButton.swift */; };
+		FF345F6220F817AE00ADE1A3 /* PollutantCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF345F6120F817AE00ADE1A3 /* PollutantCardView.xib */; };
+		FF345F6420F8198600ADE1A3 /* PollutantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */; };
+		FF3492ED20F1B97C00656D5A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492EC20F1B97C00656D5A /* PageViewController.swift */; };
+		FF3492EF20F1B9A700656D5A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3492EE20F1B9A700656D5A /* MapViewController.swift */; };
+		FF584F6D20EF159F008ADB1C /* AirQualityScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF584F6C20EF159F008ADB1C /* AirQualityScale.swift */; };
+		FF584F7120EF1F12008ADB1C /* PollutantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF584F7020EF1F12008ADB1C /* PollutantView.swift */; };
+		FF83C5A120EE985A00CA68BC /* AirQualityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C59E20EE985900CA68BC /* AirQualityReport.swift */; };
+		FF83C5A220EE985A00CA68BC /* Pollutant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C59F20EE985900CA68BC /* Pollutant.swift */; };
+		FF83C5A320EE985A00CA68BC /* AirQualityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5A020EE985900CA68BC /* AirQualityAPI.swift */; };
+		FF83C5AB20EE9B4C00CA68BC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5AA20EE9B4C00CA68BC /* Location.swift */; };
+		FF83C5B020EEA00300CA68BC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5AF20EEA00300CA68BC /* Request.swift */; };
+		FF83C5B220EEA01A00CA68BC /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5B120EEA01A00CA68BC /* APIKeys.swift */; };
+		FF83C5B720EEA2CB00CA68BC /* UIUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C5B620EEA2CB00CA68BC /* UIUtility.swift */; };
+		FF99160020FEBFB20025C6B9 /* CGColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9915FF20FEBFB20025C6B9 /* CGColorExtension.swift */; };
+		FFA6CE372105B166006BA424 /* PollutantCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA6CE362105B166006BA424 /* PollutantCircleView.swift */; };
+		FFB740DE21062CE9009D0796 /* SceneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB740DD21062CE9009D0796 /* SceneView.xib */; };
+		FFB740E021062DF0009D0796 /* SceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB740DF21062DF0009D0796 /* SceneView.swift */; };
+		FFC5A90A20F8015800EC66B2 /* AirQualityMeter.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC5A90920F8015800EC66B2 /* AirQualityMeter.xib */; };
+		FFC5A90C20F8066C00EC66B2 /* AirQualityMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC5A90B20F8066C00EC66B2 /* AirQualityMeter.swift */; };
+		FFE0B6362105B84F00F8D53C /* PollutantCircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA6CE342105B0F2006BA424 /* PollutantCircleView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		29E217A5ED37E5CE9520CF8E /* Pods_Aire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B3FE7A020F1888B0075D727 /* o3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = o3.scn; sourceTree = "<group>"; };
+		2B3FE7CA20F1D9910075D727 /* co.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = co.scn; sourceTree = "<group>"; };
+		2B3FE7CC20F1D9990075D727 /* no2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = no2.scn; sourceTree = "<group>"; };
+		2B3FE7CE20F1D9A30075D727 /* so2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = so2.scn; sourceTree = "<group>"; };
+		2B97266920EC4AA40005EA69 /* PollutantLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantLabel.swift; sourceTree = "<group>"; };
+		2B97267220ED945E0005EA69 /* PollutantConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantConfiguration.swift; sourceTree = "<group>"; };
+		2B97267620EDAA730005EA69 /* pm25.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = pm25.scn; sourceTree = "<group>"; };
+		2BC83CDE20DC2DB200777995 /* Aire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BC83CE120DC2DB200777995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2BC83CE320DC2DB200777995 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2BC83CE620DC2DB200777995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BC83CE820DC2DB300777995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BC83CEB20DC2DB300777995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2BC83CED20DC2DB300777995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BC83D0220EAE5E700777995 /* PollutantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantModel.swift; sourceTree = "<group>"; };
+		2BC83D0420EAE75400777995 /* pm10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pm10.jpg; sourceTree = "<group>"; };
+		2BC83D1220EAEE3400777995 /* pm10.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = pm10.scn; sourceTree = "<group>"; };
+		2BC83D1520EBF4D500777995 /* pm25.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pm25.jpg; sourceTree = "<group>"; };
+		5E2F5C1A871038F73448C8AD /* Pods-Aire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.release.xcconfig"; sourceTree = "<group>"; };
+		6A0ED46D4408D36BDE604ED0 /* Pods-Aire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.debug.xcconfig"; sourceTree = "<group>"; };
+		FF13D51C20F96AC600DF9562 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		FF13D52820FA574D00DF9562 /* pm10-definition.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "pm10-definition.md"; sourceTree = "<group>"; };
+		FF13D52D20FA66B100DF9562 /* co-definition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "co-definition.md"; sourceTree = "<group>"; };
+		FF13D52F20FA761400DF9562 /* co-issues.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "co-issues.md"; sourceTree = "<group>"; };
+		FF13D53020FA761C00DF9562 /* co-causes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "co-causes.md"; sourceTree = "<group>"; };
+		FF13D53120FA762400DF9562 /* pm10-issues.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "pm10-issues.md"; sourceTree = "<group>"; };
+		FF13D53220FA762900DF9562 /* pm10-causes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "pm10-causes.md"; sourceTree = "<group>"; };
+		FF13D53420FA764700DF9562 /* pm25-definition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "pm25-definition.md"; sourceTree = "<group>"; };
+		FF13D53520FA764C00DF9562 /* pm25-causes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "pm25-causes.md"; sourceTree = "<group>"; };
+		FF13D53620FA765200DF9562 /* pm25-issues.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "pm25-issues.md"; sourceTree = "<group>"; };
+		FF13D53820FA765F00DF9562 /* no2-definition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "no2-definition.md"; sourceTree = "<group>"; };
+		FF13D53920FA766400DF9562 /* no2-causes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "no2-causes.md"; sourceTree = "<group>"; };
+		FF13D53A20FA766900DF9562 /* no2-issues.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "no2-issues.md"; sourceTree = "<group>"; };
+		FF13D53C20FA767800DF9562 /* so2-definition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "so2-definition.md"; sourceTree = "<group>"; };
+		FF13D53D20FA767E00DF9562 /* so2-causes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "so2-causes.md"; sourceTree = "<group>"; };
+		FF13D53E20FA768400DF9562 /* so2-issues.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "so2-issues.md"; sourceTree = "<group>"; };
+		FF13D54020FA769700DF9562 /* o3-definition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "o3-definition.md"; sourceTree = "<group>"; };
+		FF13D54120FA769C00DF9562 /* o3-causes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "o3-causes.md"; sourceTree = "<group>"; };
+		FF13D54220FA76A000DF9562 /* o3-issues.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "o3-issues.md"; sourceTree = "<group>"; };
+		FF15313020F7EC8B00B75245 /* PollutantIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutantIdentifier.swift; sourceTree = "<group>"; };
+		FF15313220F7ECA700B75245 /* FullAirQualityReportAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullAirQualityReportAlert.swift; sourceTree = "<group>"; };
+		FF15313320F7ECA700B75245 /* FullAirQualityReportAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullAirQualityReportAlert.xib; sourceTree = "<group>"; };
+		FF15313620F7ECB300B75245 /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		FF15313720F7ECB300B75245 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PollutantSummaryView.xib; sourceTree = "<group>"; };
+		FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutantSummaryView.swift; sourceTree = "<group>"; };
+		FF1AE57421273110008C5F8C /* SCNNodeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNNodeAnimation.swift; sourceTree = "<group>"; };
+		FF1AE5762127A9EE008C5F8C /* AirQualityReportTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityReportTest.swift; sourceTree = "<group>"; };
+		FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderAnimation.swift; sourceTree = "<group>"; };
+		FF23D4E321163E35006BC193 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
+		FF27132A2112AEF1002078E3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FF27132C211365DE002078E3 /* UIViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewButton.swift; sourceTree = "<group>"; };
+		FF345F6120F817AE00ADE1A3 /* PollutantCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollutantCardView.xib; sourceTree = "<group>"; };
+		FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantCardView.swift; sourceTree = "<group>"; };
+		FF3492EC20F1B97C00656D5A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		FF3492EE20F1B9A700656D5A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FF584F6C20EF159F008ADB1C /* AirQualityScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityScale.swift; sourceTree = "<group>"; };
+		FF584F7020EF1F12008ADB1C /* PollutantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantView.swift; sourceTree = "<group>"; };
+		FF83C59E20EE985900CA68BC /* AirQualityReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityReport.swift; sourceTree = "<group>"; };
+		FF83C59F20EE985900CA68BC /* Pollutant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pollutant.swift; sourceTree = "<group>"; };
+		FF83C5A020EE985900CA68BC /* AirQualityAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityAPI.swift; sourceTree = "<group>"; };
+		FF83C5AA20EE9B4C00CA68BC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		FF83C5AF20EEA00300CA68BC /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		FF83C5B120EEA01A00CA68BC /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		FF83C5B620EEA2CB00CA68BC /* UIUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtility.swift; sourceTree = "<group>"; };
+		FF9915FF20FEBFB20025C6B9 /* CGColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGColorExtension.swift; sourceTree = "<group>"; };
+		FFA6CE342105B0F2006BA424 /* PollutantCircleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollutantCircleView.xib; sourceTree = "<group>"; };
+		FFA6CE362105B166006BA424 /* PollutantCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutantCircleView.swift; sourceTree = "<group>"; };
+		FFB740DD21062CE9009D0796 /* SceneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneView.xib; sourceTree = "<group>"; };
+		FFB740DF21062DF0009D0796 /* SceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneView.swift; sourceTree = "<group>"; };
+		FFC5A90920F8015800EC66B2 /* AirQualityMeter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirQualityMeter.xib; sourceTree = "<group>"; };
+		FFC5A90B20F8066C00EC66B2 /* AirQualityMeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityMeter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2BC83CDB20DC2DB200777995 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E30B31B361D1B280877CC777 /* Pods_Aire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B701E0220F13D8F0087106A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2BC83D0420EAE75400777995 /* pm10.jpg */,
+				2BC83D1520EBF4D500777995 /* pm25.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		2B97266820EC45680005EA69 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				2B701E0220F13D8F0087106A /* Images */,
+				2B97267620EDAA730005EA69 /* pm25.scn */,
+				2BC83D1220EAEE3400777995 /* pm10.scn */,
+				2B3FE7A020F1888B0075D727 /* o3.scn */,
+				2B3FE7CA20F1D9910075D727 /* co.scn */,
+				2B3FE7CC20F1D9990075D727 /* no2.scn */,
+				2B3FE7CE20F1D9A30075D727 /* so2.scn */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		2B97266F20ED84230005EA69 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF83C5AA20EE9B4C00CA68BC /* Location.swift */,
+				2B97267220ED945E0005EA69 /* PollutantConfiguration.swift */,
+				FF15313020F7EC8B00B75245 /* PollutantIdentifier.swift */,
+				2B97266920EC4AA40005EA69 /* PollutantLabel.swift */,
+				2BC83D0220EAE5E700777995 /* PollutantModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BC83CD520DC2DB200777995 = {
+			isa = PBXGroup;
+			children = (
+				2BC83CE020DC2DB200777995 /* Aire */,
+				2BC83CDF20DC2DB200777995 /* Products */,
+				CB265E86A742F240970BB4CE /* Pods */,
+				76D941007E0A5308E3DE58E5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2BC83CDF20DC2DB200777995 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BC83CDE20DC2DB200777995 /* Aire.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2BC83CE020DC2DB200777995 /* Aire */ = {
+			isa = PBXGroup;
+			children = (
+				FF13D52720FA572000DF9562 /* MDs */,
+				FF83C5B320EEA13200CA68BC /* View */,
+				FF83C5AE20EE9FFA00CA68BC /* Helpers */,
+				FF83C5A420EE98D000CA68BC /* ViewController */,
+				FF83C59D20EE981700CA68BC /* AirQualityAPI */,
+				2B97266F20ED84230005EA69 /* ViewModel */,
+				2B97266820EC45680005EA69 /* Media */,
+				2BC83CE120DC2DB200777995 /* AppDelegate.swift */,
+				2BC83CED20DC2DB300777995 /* Info.plist */,
+			);
+			path = Aire;
+			sourceTree = "<group>";
+		};
+		76D941007E0A5308E3DE58E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29E217A5ED37E5CE9520CF8E /* Pods_Aire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB265E86A742F240970BB4CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A0ED46D4408D36BDE604ED0 /* Pods-Aire.debug.xcconfig */,
+				5E2F5C1A871038F73448C8AD /* Pods-Aire.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF13D52520FA56CB00DF9562 /* NibClass */ = {
+			isa = PBXGroup;
+			children = (
+				FFC5A90B20F8066C00EC66B2 /* AirQualityMeter.swift */,
+				FF9915FF20FEBFB20025C6B9 /* CGColorExtension.swift */,
+				FF13D51C20F96AC600DF9562 /* CircleView.swift */,
+				FF15313220F7ECA700B75245 /* FullAirQualityReportAlert.swift */,
+				FF15313620F7ECB300B75245 /* NibView.swift */,
+				FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */,
+				FFA6CE362105B166006BA424 /* PollutantCircleView.swift */,
+				FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */,
+				FFB740DF21062DF0009D0796 /* SceneView.swift */,
+				FF27132C211365DE002078E3 /* UIViewButton.swift */,
+				FF15313720F7ECB300B75245 /* UIViewExtension.swift */,
+			);
+			path = NibClass;
+			sourceTree = "<group>";
+		};
+		FF13D52620FA570100DF9562 /* Nib */ = {
+			isa = PBXGroup;
+			children = (
+				FFC5A90920F8015800EC66B2 /* AirQualityMeter.xib */,
+				FF15313320F7ECA700B75245 /* FullAirQualityReportAlert.xib */,
+				FF345F6120F817AE00ADE1A3 /* PollutantCardView.xib */,
+				FFA6CE342105B0F2006BA424 /* PollutantCircleView.xib */,
+				FF15313820F7ECB300B75245 /* PollutantSummaryView.xib */,
+				FFB740DD21062CE9009D0796 /* SceneView.xib */,
+			);
+			path = Nib;
+			sourceTree = "<group>";
+		};
+		FF13D52720FA572000DF9562 /* MDs */ = {
+			isa = PBXGroup;
+			children = (
+				FF13D52B20FA666C00DF9562 /* pm10 */,
+				FF13D53320FA763400DF9562 /* pm25 */,
+				FF13D53F20FA768E00DF9562 /* o3 */,
+				FF13D53720FA765700DF9562 /* no2 */,
+				FF13D53B20FA767000DF9562 /* so2 */,
+				FF13D52C20FA669200DF9562 /* co */,
+			);
+			path = MDs;
+			sourceTree = "<group>";
+		};
+		FF13D52B20FA666C00DF9562 /* pm10 */ = {
+			isa = PBXGroup;
+			children = (
+				FF13D52820FA574D00DF9562 /* pm10-definition.md */,
+				FF13D53220FA762900DF9562 /* pm10-causes.md */,
+				FF13D53120FA762400DF9562 /* pm10-issues.md */,
+			);
+			path = pm10;
+			sourceTree = "<group>";
+		};
+		FF13D52C20FA669200DF9562 /* co */ = {
+			isa = PBXGroup;
+			children = (
+				FF13D52D20FA66B100DF9562 /* co-definition.md */,
+				FF13D53020FA761C00DF9562 /* co-causes.md */,
+				FF13D52F20FA761400DF9562 /* co-issues.md */,
+			);
+			name = co;
+			path = o3;
+			sourceTree = "<group>";
+		};
+		FF13D53320FA763400DF9562 /* pm25 */ = {
+			isa = PBXGroup;
+			children = (
+				FF13D53420FA764700DF9562 /* pm25-definition.md */,
+				FF13D53520FA764C00DF9562 /* pm25-causes.md */,
+				FF13D53620FA765200DF9562 /* pm25-issues.md */,
+			);
+			path = pm25;
+			sourceTree = "<group>";
+		};
+		FF13D53720FA765700DF9562 /* no2 */ = {
+			isa = PBXGroup;
+			children = (
+				FF13D53820FA765F00DF9562 /* no2-definition.md */,
+				FF13D53920FA766400DF9562 /* no2-causes.md */,
+				FF13D53A20FA766900DF9562 /* no2-issues.md */,
+			);
+			path = no2;
+			sourceTree = "<group>";
+		};
+		FF13D53B20FA767000DF9562 /* so2 */ = {
+			isa = PBXGroup;
+			children = (
+				FF13D53C20FA767800DF9562 /* so2-definition.md */,
+				FF13D53D20FA767E00DF9562 /* so2-causes.md */,
+				FF13D53E20FA768400DF9562 /* so2-issues.md */,
+			);
+			path = so2;
+			sourceTree = "<group>";
+		};
+		FF13D53F20FA768E00DF9562 /* o3 */ = {
+			isa = PBXGroup;
+			children = (
+				FF13D54020FA769700DF9562 /* o3-definition.md */,
+				FF13D54120FA769C00DF9562 /* o3-causes.md */,
+				FF13D54220FA76A000DF9562 /* o3-issues.md */,
+			);
+			name = o3;
+			path = co;
+			sourceTree = "<group>";
+		};
+		FF1E5CCE2103D65C0064A52F /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				FF1AE57421273110008C5F8C /* SCNNodeAnimation.swift */,
+				FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		FF83C59D20EE981700CA68BC /* AirQualityAPI */ = {
+			isa = PBXGroup;
+			children = (
+				FF83C5A020EE985900CA68BC /* AirQualityAPI.swift */,
+				FF83C59E20EE985900CA68BC /* AirQualityReport.swift */,
+				FF1AE5762127A9EE008C5F8C /* AirQualityReportTest.swift */,
+				FF83C59F20EE985900CA68BC /* Pollutant.swift */,
+			);
+			path = AirQualityAPI;
+			sourceTree = "<group>";
+		};
+		FF83C5A420EE98D000CA68BC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BC83CE320DC2DB200777995 /* HomeViewController.swift */,
+				FF3492EC20F1B97C00656D5A /* PageViewController.swift */,
+				FF3492EE20F1B9A700656D5A /* MapViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FF83C5AE20EE9FFA00CA68BC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FF584F6C20EF159F008ADB1C /* AirQualityScale.swift */,
+				FF83C5B120EEA01A00CA68BC /* APIKeys.swift */,
+				FF23D4E321163E35006BC193 /* FloatExtension.swift */,
+				FF27132A2112AEF1002078E3 /* NetworkManager.swift */,
+				FF584F7020EF1F12008ADB1C /* PollutantView.swift */,
+				FF83C5AF20EEA00300CA68BC /* Request.swift */,
+				FF83C5B620EEA2CB00CA68BC /* UIUtility.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FF83C5B320EEA13200CA68BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF1E5CCE2103D65C0064A52F /* Animations */,
+				2BC83CE820DC2DB300777995 /* Assets.xcassets */,
+				FF13D52520FA56CB00DF9562 /* NibClass */,
+				FF13D52620FA570100DF9562 /* Nib */,
+				2BC83CE520DC2DB200777995 /* Main.storyboard */,
+				2BC83CEA20DC2DB300777995 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BC83CDD20DC2DB200777995 /* Aire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BC83CF020DC2DB300777995 /* Build configuration list for PBXNativeTarget "Aire" */;
+			buildPhases = (
+				45FE23754DC529AFCEB4ADFD /* [CP] Check Pods Manifest.lock */,
+				2BC83CDA20DC2DB200777995 /* Sources */,
+				2BC83CDB20DC2DB200777995 /* Frameworks */,
+				2BC83CDC20DC2DB200777995 /* Resources */,
+				EAA97FF9263428896E3538C7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Aire;
+			productName = Aire;
+			productReference = 2BC83CDE20DC2DB200777995 /* Aire.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2BC83CD620DC2DB200777995 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = QuimeraVerde;
+				TargetAttributes = {
+					2BC83CDD20DC2DB200777995 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
+					};
+				};
+			};
+			buildConfigurationList = 2BC83CD920DC2DB200777995 /* Build configuration list for PBXProject "Aire" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2BC83CD520DC2DB200777995;
+			productRefGroup = 2BC83CDF20DC2DB200777995 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BC83CDD20DC2DB200777995 /* Aire */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BC83CDC20DC2DB200777995 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF15313520F7ECA700B75245 /* FullAirQualityReportAlert.xib in Resources */,
+				2B158B9B20FEA3B300D2C5A1 /* co-causes.md in Resources */,
+				FF13D52A20FA652900DF9562 /* pm10-definition.md in Resources */,
+				2B158B9420FEA3AC00D2C5A1 /* no2-issues.md in Resources */,
+				2B158B9620FEA3AF00D2C5A1 /* so2-causes.md in Resources */,
+				2B158B9C20FEA3B300D2C5A1 /* co-issues.md in Resources */,
+				2B3FE7A120F1888B0075D727 /* o3.scn in Resources */,
+				2B3FE7CF20F1D9A30075D727 /* so2.scn in Resources */,
+				2B158B9020FEA3A300D2C5A1 /* o3-causes.md in Resources */,
+				2BC83D1320EAEE3400777995 /* pm10.scn in Resources */,
+				2B158B8A20FEA39B00D2C5A1 /* pm10-causes.md in Resources */,
+				FFC5A90A20F8015800EC66B2 /* AirQualityMeter.xib in Resources */,
+				2B158B9220FEA3AC00D2C5A1 /* no2-definition.md in Resources */,
+				2B158B8D20FEA3A100D2C5A1 /* pm25-causes.md in Resources */,
+				2BC83CEC20DC2DB300777995 /* LaunchScreen.storyboard in Resources */,
+				FF15313C20F7ECB300B75245 /* PollutantSummaryView.xib in Resources */,
+				2B158B9120FEA3A300D2C5A1 /* o3-issues.md in Resources */,
+				2BC83D1720EBF4D600777995 /* pm25.jpg in Resources */,
+				2B158B9A20FEA3B300D2C5A1 /* co-definition.md in Resources */,
+				2B158B9320FEA3AC00D2C5A1 /* no2-causes.md in Resources */,
+				2BC83D0520EAE75400777995 /* pm10.jpg in Resources */,
+				FFE0B6362105B84F00F8D53C /* PollutantCircleView.xib in Resources */,
+				2B158B9520FEA3AF00D2C5A1 /* so2-definition.md in Resources */,
+				2BC83CE920DC2DB300777995 /* Assets.xcassets in Resources */,
+				2B158B8F20FEA3A300D2C5A1 /* o3-definition.md in Resources */,
+				FF345F6220F817AE00ADE1A3 /* PollutantCardView.xib in Resources */,
+				2B158B8E20FEA3A100D2C5A1 /* pm25-issues.md in Resources */,
+				2B158B8C20FEA3A100D2C5A1 /* pm25-definition.md in Resources */,
+				2B3FE7CB20F1D9910075D727 /* co.scn in Resources */,
+				2B158B8B20FEA39E00D2C5A1 /* pm10-issues.md in Resources */,
+				FFB740DE21062CE9009D0796 /* SceneView.xib in Resources */,
+				2BC83CE720DC2DB200777995 /* Main.storyboard in Resources */,
+				2B3FE7CD20F1D9990075D727 /* no2.scn in Resources */,
+				2B97267720EDAA730005EA69 /* pm25.scn in Resources */,
+				2B158B9720FEA3AF00D2C5A1 /* so2-issues.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45FE23754DC529AFCEB4ADFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aire-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAA97FF9263428896E3538C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Aire/Pods-Aire-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyMarkdown/SwiftyMarkdown.framework",
+				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyMarkdown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aire/Pods-Aire-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BC83CDA20DC2DB200777995 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC83CE420DC2DB200777995 /* HomeViewController.swift in Sources */,
+				FF1E5CD02103D6660064A52F /* BorderAnimation.swift in Sources */,
+				FF83C5B020EEA00300CA68BC /* Request.swift in Sources */,
+				FF83C5B220EEA01A00CA68BC /* APIKeys.swift in Sources */,
+				FF83C5A320EE985A00CA68BC /* AirQualityAPI.swift in Sources */,
+				FF3492EF20F1B9A700656D5A /* MapViewController.swift in Sources */,
+				2BC83CE220DC2DB200777995 /* AppDelegate.swift in Sources */,
+				2B97266A20EC4AA40005EA69 /* PollutantLabel.swift in Sources */,
+				FFC5A90C20F8066C00EC66B2 /* AirQualityMeter.swift in Sources */,
+				FF345F6420F8198600ADE1A3 /* PollutantCardView.swift in Sources */,
+				FF27132D211365DE002078E3 /* UIViewButton.swift in Sources */,
+				FF83C5AB20EE9B4C00CA68BC /* Location.swift in Sources */,
+				FF83C5A120EE985A00CA68BC /* AirQualityReport.swift in Sources */,
+				FF3492ED20F1B97C00656D5A /* PageViewController.swift in Sources */,
+				FF83C5A220EE985A00CA68BC /* Pollutant.swift in Sources */,
+				FF27132B2112AEF1002078E3 /* NetworkManager.swift in Sources */,
+				FF1AE5772127A9EE008C5F8C /* AirQualityReportTest.swift in Sources */,
+				FF83C5B720EEA2CB00CA68BC /* UIUtility.swift in Sources */,
+				2B97267320ED945E0005EA69 /* PollutantConfiguration.swift in Sources */,
+				FF99160020FEBFB20025C6B9 /* CGColorExtension.swift in Sources */,
+				FF23D4E421163E35006BC193 /* FloatExtension.swift in Sources */,
+				2BC83D0320EAE5E700777995 /* PollutantModel.swift in Sources */,
+				FF15313D20F7ECB300B75245 /* PollutantSummaryView.swift in Sources */,
+				FF584F7120EF1F12008ADB1C /* PollutantView.swift in Sources */,
+				FF15313B20F7ECB300B75245 /* UIViewExtension.swift in Sources */,
+				FF13D51D20F96AC600DF9562 /* CircleView.swift in Sources */,
+				FFA6CE372105B166006BA424 /* PollutantCircleView.swift in Sources */,
+				FF15313420F7ECA700B75245 /* FullAirQualityReportAlert.swift in Sources */,
+				FF1AE57521273110008C5F8C /* SCNNodeAnimation.swift in Sources */,
+				FF584F6D20EF159F008ADB1C /* AirQualityScale.swift in Sources */,
+				FFB740E021062DF0009D0796 /* SceneView.swift in Sources */,
+				FF15313A20F7ECB300B75245 /* NibView.swift in Sources */,
+				FF15313120F7EC8C00B75245 /* PollutantIdentifier.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2BC83CE520DC2DB200777995 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BC83CE620DC2DB200777995 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2BC83CEA20DC2DB300777995 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BC83CEB20DC2DB300777995 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2BC83CEE20DC2DB300777995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2BC83CEF20DC2DB300777995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2BC83CF120DC2DB300777995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A0ED46D4408D36BDE604ED0 /* Pods-Aire.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AD2WA2ZN6K;
+				INFOPLIST_FILE = Aire/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = QuimeraVerde.Application;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BC83CF220DC2DB300777995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E2F5C1A871038F73448C8AD /* Pods-Aire.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AD2WA2ZN6K;
+				INFOPLIST_FILE = Aire/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = QuimeraVerde.Application;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BC83CD920DC2DB200777995 /* Build configuration list for PBXProject "Aire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BC83CEE20DC2DB300777995 /* Debug */,
+				2BC83CEF20DC2DB300777995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BC83CF020DC2DB300777995 /* Build configuration list for PBXNativeTarget "Aire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BC83CF120DC2DB300777995 /* Debug */,
+				2BC83CF220DC2DB300777995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2BC83CD620DC2DB200777995 /* Project object */;
+}

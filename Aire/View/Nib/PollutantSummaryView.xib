@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PollutantSummaryView" customModule="Aire" customModuleProvider="target">
+            <connections>
+                <outlet property="pollutantCircle" destination="wlJ-YF-ZG8" id="wFi-8N-BT1"/>
+                <outlet property="pollutantTitleLabel" destination="025-hj-GYv" id="AVk-Ua-03t"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="MlJ-se-WP7">
+            <rect key="frame" x="0.0" y="0.0" width="75" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vXv-DJ-nru">
+                    <rect key="frame" x="0.0" y="0.0" width="75" height="110"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="wlJ-YF-ZG8" customClass="PollutantCircleView" customModule="Aire" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="wlJ-YF-ZG8" secondAttribute="height" multiplier="1:1" id="Gi5-wy-wX0"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" preferredMaxLayoutWidth="75" translatesAutoresizingMaskIntoConstraints="NO" id="025-hj-GYv">
+                            <rect key="frame" x="0.0" y="85" width="75" height="25"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="wlJ-YF-ZG8" firstAttribute="trailing" secondItem="VVK-Qz-ibN" secondAttribute="trailing" id="9Sm-f2-B4p"/>
+                        <constraint firstItem="wlJ-YF-ZG8" firstAttribute="leading" secondItem="VVK-Qz-ibN" secondAttribute="leading" id="QTC-JE-9wO"/>
+                        <constraint firstItem="025-hj-GYv" firstAttribute="width" secondItem="wlJ-YF-ZG8" secondAttribute="width" id="e0O-q9-WpX"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="VVK-Qz-ibN"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vXv-DJ-nru" firstAttribute="trailing" secondItem="ESF-n6-YY1" secondAttribute="trailing" id="7Br-kQ-fae"/>
+                <constraint firstItem="vXv-DJ-nru" firstAttribute="bottom" secondItem="ESF-n6-YY1" secondAttribute="bottom" id="7gb-VC-0Z8"/>
+                <constraint firstItem="vXv-DJ-nru" firstAttribute="leading" secondItem="ESF-n6-YY1" secondAttribute="leading" id="7pn-qF-0fm"/>
+                <constraint firstItem="vXv-DJ-nru" firstAttribute="top" secondItem="MlJ-se-WP7" secondAttribute="top" id="evL-Kv-umx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ESF-n6-YY1"/>
+            <point key="canvasLocation" x="45" y="96"/>
+        </view>
+    </objects>
+</document>
