@@ -73,7 +73,7 @@ class HomeViewController: UIViewController {
 	}
 	
 	// Action functions
-	private func callApi() {
+    private func callApi() {
 		let coordinate = Location.sharedCoordinate.variable.value
 		let AirQualityAPI = DefaultAirQualityAPI.sharedAPI
 		

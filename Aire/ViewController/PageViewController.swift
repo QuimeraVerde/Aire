@@ -10,7 +10,7 @@ import CoreLocation
 import Foundation
 import UIKit
 
-class PageViewController : UIPageViewController {
+class PageViewController : UIPageViewController, UIPageViewControllerDelegate {
 	let locationManager = CLLocationManager()
 	
     @IBOutlet weak var loadingIcon: UIActivityIndicatorView!
@@ -18,7 +18,7 @@ class PageViewController : UIPageViewController {
     override func viewDidLoad() {
 		super.viewDidLoad()
 		self.dataSource = self
-		self.delegate   = self
+        self.delegate   = self
 		self.setupGeoLocation()
 		if let firstVC = pages.first {
 			setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
@@ -88,8 +88,6 @@ extension PageViewController: UIPageViewControllerDataSource {
 		return pages[nextIndex]
 	}
 }
-
-extension PageViewController: UIPageViewControllerDelegate { }
 
 extension PageViewController: CLLocationManagerDelegate {
 	func setupGeoLocation() {

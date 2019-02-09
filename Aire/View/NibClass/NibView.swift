@@ -25,7 +25,6 @@ class NibView: UIView {
 private extension NibView {
 	
 	func xibSetup() {
-		backgroundColor = UIColor.clear
 		view = loadNib()
 		// use bounds not frame or it'll be offset
 		view.frame = bounds
