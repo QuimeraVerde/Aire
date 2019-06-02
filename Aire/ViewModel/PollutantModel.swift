@@ -24,13 +24,9 @@ class PollutantModel: SCNNode {
 	}
     
     func loadModel(modelID: PollutantIdentifier){
-        guard let virtualObjectScene = SCNScene(named: modelID.rawValue + ".scn") else { return }
-        let wrapperNode = SCNNode()
-        for child in virtualObjectScene.rootNode.childNodes {
-            wrapperNode.addChildNode(child)
-        }
-        wrapperNode.name = modelID.rawValue
-        self.addChildNode(wrapperNode)
+        let wrapperNode = PollutantCache.shared.getSceneNode(id: modelID) ?? PollutantCache.shared.setSceneNode(id: modelID)
+        
+        self.addChildNode(wrapperNode.clone())
     }
 
 	func setPositionNear() {
