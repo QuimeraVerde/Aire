@@ -14,7 +14,7 @@ class NetworkManager: NSObject {
 	var reachability: Reachability!
 	
 	// Create a singleton instance
-	static let shared: NetworkManager = { return NetworkManager() }()
+	static let shared: NetworkManager = NetworkManager()
 	
 	override init() {
 		super.init()
