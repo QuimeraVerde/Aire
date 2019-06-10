@@ -42,6 +42,7 @@
 		2BC83D1720EBF4D600777995 /* pm25.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83D1520EBF4D500777995 /* pm25.jpg */; };
 		E30B31B361D1B280877CC777 /* Pods_Aire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E217A5ED37E5CE9520CF8E /* Pods_Aire.framework */; };
 		FF103B8422AE14380078E6A0 /* SceneSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF103B8322AE14380078E6A0 /* SceneSession.swift */; };
+		FF103B8622AE16050078E6A0 /* PollutantCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF103B8522AE16050078E6A0 /* PollutantCache.swift */; };
 		FF13D51D20F96AC600DF9562 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF13D51C20F96AC600DF9562 /* CircleView.swift */; };
 		FF13D52A20FA652900DF9562 /* pm10-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D52820FA574D00DF9562 /* pm10-definition.md */; };
 		FF15313120F7EC8C00B75245 /* PollutantIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313020F7EC8B00B75245 /* PollutantIdentifier.swift */; };
@@ -102,6 +103,7 @@
 		5E2F5C1A871038F73448C8AD /* Pods-Aire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.release.xcconfig"; sourceTree = "<group>"; };
 		6A0ED46D4408D36BDE604ED0 /* Pods-Aire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.debug.xcconfig"; sourceTree = "<group>"; };
 		FF103B8322AE14380078E6A0 /* SceneSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneSession.swift; path = /Users/nataliagarcia/Documents/GitRepos/Aire/Aire/View/NibClass/SceneSession.swift; sourceTree = "<absolute>"; };
+		FF103B8522AE16050078E6A0 /* PollutantCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutantCache.swift; sourceTree = "<group>"; };
 		FF13D51C20F96AC600DF9562 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FF13D52820FA574D00DF9562 /* pm10-definition.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "pm10-definition.md"; sourceTree = "<group>"; };
 		FF13D52D20FA66B100DF9562 /* co-definition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "co-definition.md"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				FF83C5AA20EE9B4C00CA68BC /* Location.swift */,
+				FF103B8522AE16050078E6A0 /* PollutantCache.swift */,
 				2B97267220ED945E0005EA69 /* PollutantConfiguration.swift */,
 				FF15313020F7EC8B00B75245 /* PollutantIdentifier.swift */,
 				2B97266920EC4AA40005EA69 /* PollutantLabel.swift */,
@@ -615,6 +618,7 @@
 				FF23D4E421163E35006BC193 /* FloatExtension.swift in Sources */,
 				2BC83D0320EAE5E700777995 /* PollutantModel.swift in Sources */,
 				FF15313D20F7ECB300B75245 /* PollutantSummaryView.swift in Sources */,
+				FF103B8622AE16050078E6A0 /* PollutantCache.swift in Sources */,
 				FF584F7120EF1F12008ADB1C /* PollutantView.swift in Sources */,
 				FF15313B20F7ECB300B75245 /* UIViewExtension.swift in Sources */,
 				FF13D51D20F96AC600DF9562 /* CircleView.swift in Sources */,
