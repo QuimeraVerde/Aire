@@ -41,6 +41,7 @@
 		2BC83D1320EAEE3400777995 /* pm10.scn in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83D1220EAEE3400777995 /* pm10.scn */; };
 		2BC83D1720EBF4D600777995 /* pm25.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC83D1520EBF4D500777995 /* pm25.jpg */; };
 		E30B31B361D1B280877CC777 /* Pods_Aire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E217A5ED37E5CE9520CF8E /* Pods_Aire.framework */; };
+		FF103B8422AE14380078E6A0 /* SceneSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF103B8322AE14380078E6A0 /* SceneSession.swift */; };
 		FF13D51D20F96AC600DF9562 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF13D51C20F96AC600DF9562 /* CircleView.swift */; };
 		FF13D52A20FA652900DF9562 /* pm10-definition.md in Resources */ = {isa = PBXBuildFile; fileRef = FF13D52820FA574D00DF9562 /* pm10-definition.md */; };
 		FF15313120F7EC8C00B75245 /* PollutantIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313020F7EC8B00B75245 /* PollutantIdentifier.swift */; };
@@ -100,6 +101,7 @@
 		2BC83D1520EBF4D500777995 /* pm25.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pm25.jpg; sourceTree = "<group>"; };
 		5E2F5C1A871038F73448C8AD /* Pods-Aire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.release.xcconfig"; sourceTree = "<group>"; };
 		6A0ED46D4408D36BDE604ED0 /* Pods-Aire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aire/Pods-Aire.debug.xcconfig"; sourceTree = "<group>"; };
+		FF103B8322AE14380078E6A0 /* SceneSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneSession.swift; path = /Users/nataliagarcia/Documents/GitRepos/Aire/Aire/View/NibClass/SceneSession.swift; sourceTree = "<absolute>"; };
 		FF13D51C20F96AC600DF9562 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FF13D52820FA574D00DF9562 /* pm10-definition.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "pm10-definition.md"; sourceTree = "<group>"; };
 		FF13D52D20FA66B100DF9562 /* co-definition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "co-definition.md"; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				FF345F6320F8198600ADE1A3 /* PollutantCardView.swift */,
 				FFA6CE362105B166006BA424 /* PollutantCircleView.swift */,
 				FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */,
+				FF103B8322AE14380078E6A0 /* SceneSession.swift */,
 				FFB740DF21062DF0009D0796 /* SceneView.swift */,
 				FF27132C211365DE002078E3 /* UIViewButton.swift */,
 				FF15313720F7ECB300B75245 /* UIViewExtension.swift */,
@@ -427,6 +430,7 @@
 				2BC83CDB20DC2DB200777995 /* Frameworks */,
 				2BC83CDC20DC2DB200777995 /* Resources */,
 				EAA97FF9263428896E3538C7 /* [CP] Embed Pods Frameworks */,
+				E958900F56C67D993D4180AB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -535,6 +539,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E958900F56C67D993D4180AB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aire/Pods-Aire-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EAA97FF9263428896E3538C7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,6 +605,7 @@
 				FF83C5AB20EE9B4C00CA68BC /* Location.swift in Sources */,
 				FF83C5A120EE985A00CA68BC /* AirQualityReport.swift in Sources */,
 				FF3492ED20F1B97C00656D5A /* PageViewController.swift in Sources */,
+				FF103B8422AE14380078E6A0 /* SceneSession.swift in Sources */,
 				FF83C5A220EE985A00CA68BC /* Pollutant.swift in Sources */,
 				FF27132B2112AEF1002078E3 /* NetworkManager.swift in Sources */,
 				FF1AE5772127A9EE008C5F8C /* AirQualityReportTest.swift in Sources */,

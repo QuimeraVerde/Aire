@@ -17,15 +17,6 @@ DEPENDENCIES:
   - SwiftyMarkdown
   - UICircularProgressRing (from `https://github.com/QuimeraVerde/UICircularProgressRing.git`)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - ReachabilitySwift
-    - RevealingSplashView
-    - RxAtomic
-    - RxCocoa
-    - RxSwift
-    - SwiftyMarkdown
-
 EXTERNAL SOURCES:
   UICircularProgressRing:
     :git: https://github.com/QuimeraVerde/UICircularProgressRing.git
@@ -46,4 +37,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 8207e85e25eb35233405bc64b8f46fa1c085a448
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0

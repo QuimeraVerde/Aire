@@ -20,6 +20,7 @@ class SceneView: NibView {
 	private let aqiToCountMultiplier = 1.5
 	// At least these n individual pollutants should be close to viewer
 	private let nClosePollutants: Int = 20
+	private let sceneDelegate = SceneSession()
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -38,8 +39,8 @@ class SceneView: NibView {
 	private func sharedInit() {
 		self.selectedPollutantID = self._selectedPollutantID
 		self.loading = self._loading
-		let scene = SCNScene()
-		self.sceneView.scene = scene
+		self.sceneView.scene = SCNScene()
+		self.sceneView.session.delegate = sceneDelegate
 		self.sceneView.autoenablesDefaultLighting = false
 		self.setupARConfiguration()
 		self.addTapGesture()
