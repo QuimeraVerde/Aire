@@ -11,7 +11,7 @@ import ARKit
 import RxSwift
 
 class SceneView: NibView {
-	@IBOutlet weak var sceneView: ARSCNView!
+	@IBOutlet weak var sceneView: AireSceneView!
 	var selectedPollutantID: Observable<PollutantIdentifier?>!
 	var loading: Observable<Bool?>!
 	private let _loading = PublishSubject<Bool?>()
@@ -20,7 +20,6 @@ class SceneView: NibView {
 	private let aqiToCountMultiplier = 1.5
 	// At least these n individual pollutants should be close to viewer
 	private let nClosePollutants: Int = 20
-	private let sceneDelegate = SceneSession()
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -40,7 +39,6 @@ class SceneView: NibView {
 		self.selectedPollutantID = self._selectedPollutantID
 		self.loading = self._loading
 		self.sceneView.scene = SCNScene()
-		self.sceneView.session.delegate = sceneDelegate
 		self.sceneView.autoenablesDefaultLighting = false
 		self.setupARConfiguration()
 		self.addTapGesture()
@@ -184,6 +182,10 @@ class SceneView: NibView {
 							  pollutantCount: Int) {
 		
 		let pollutantModel = PollutantModel()
+		pollutantModel.delegate = self.sceneView
+		pollutantModel.sceneView = self.sceneView
+		pollutantModel.subscribe(pointOfView: self.sceneView.observable)
+		
 		pollutantModel.loadModel(modelID:pollutantModelID)
 		sceneView.scene.rootNode.addChildNode(pollutantModel)
 		
@@ -194,11 +196,14 @@ class SceneView: NibView {
 		SCNNodeAnimation.rotateRandomly(pollutantModel)
 		
 		// position pollutant
-		if (pollutantCount < nClosePollutants) {
-			pollutantModel.setPositionNear()
-		}
-		else {
-			pollutantModel.setPositionAnywhere()
+//		if (pollutantCount < nClosePollutants) {
+//			pollutantModel.setPositionNear()
+//		}
+//		else {
+//			pollutantModel.setPositionAnywhere()
+//		}
+		if let pov = self.sceneView.pointOfView {
+			pollutantModel.setPositionInPointOfView(pointOfView: pov)
 		}
 	}
 	

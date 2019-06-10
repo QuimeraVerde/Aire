@@ -7,9 +7,14 @@
 //
 
 import ARKit
+import RxSwift
 
 class PollutantModel: SCNNode {
-    override init(){
+	let disposeBag: DisposeBag = DisposeBag()
+	var delegate: PollutantUpdaterDelegate?
+	var sceneView: ARSCNView?
+	
+    override init() {
         super.init()
         self.sharedInit()
     }
@@ -22,12 +27,36 @@ class PollutantModel: SCNNode {
 	private func sharedInit() {
 		self.opacity = 0.0
 	}
+
+	func subscribe(pointOfView: Observable<SCNNode>) {
+		pointOfView.bind(onNext: { pov in
+			if (!self.inFrustum(pov)) {
+				if let d = self.delegate {
+					d.outOfFrame(pollutant: self)
+				}
+			}
+		}).disposed(by: self.disposeBag)
+	}
+	
+	func inFrustum(_ pointOfView: SCNNode) -> Bool {
+		if let s = self.sceneView {
+			return s.isNode(self, insideFrustumOf: pointOfView)
+		}
+		return false
+	}
     
     func loadModel(modelID: PollutantIdentifier){
         let wrapperNode = PollutantCache.shared.getSceneNode(id: modelID) ?? PollutantCache.shared.setSceneNode(id: modelID)
         
         self.addChildNode(wrapperNode.clone())
     }
+	
+	func setPositionInPointOfView(pointOfView: SCNNode) {
+		let localPosition = generateRandomVector(xRadius: 1, yRadius: 1, zRadius: 2)
+		let scenePosition = pointOfView.convertPosition(localPosition, to: nil)
+		// to: nil is automatically scene space
+		self.position = scenePosition
+	}
 
 	func setPositionNear() {
 		self.position = generateRandomVector(xRadius: 1, yRadius: 1, zRadius: 2)
