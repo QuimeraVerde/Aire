@@ -12,8 +12,10 @@ import RxCocoa
 import RxSwift
 import UIKit
 import RevealingSplashView
+import SceneKit
+import ARKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController  {
 	@IBOutlet var airQualityMeter: AirQualityMeter!
 	@IBOutlet var airQualityMeterButton: UIViewButton!
 	@IBOutlet var fullReportAlert: FullAirQualityReportAlert!
