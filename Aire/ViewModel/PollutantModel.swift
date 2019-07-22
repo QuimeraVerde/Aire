@@ -60,7 +60,7 @@ class PollutantModel: SCNNode {
         return randomVector
     }
     
-    func proximityCheck(cameraPos: SCNVector3, sceneView: ARSCNView, pollutantLabel: String, arCameraCurrent: ARCamera, inView : Bool ) {
+    func proximityCheck(cameraPos: SCNVector3, inView : Bool ) {
         // cameraPos is camera location
         let nodePosition = self.position
         let distanceToTarget = cameraPos.distance(receiver: nodePosition)
