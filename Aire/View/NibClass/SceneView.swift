@@ -24,8 +24,10 @@ class SceneView: NibView, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         if let camera = sceneView.session.currentFrame?.camera {
             let transform = camera.transform
+            // position of camera
+            guard let pointOfView = sceneView.pointOfView else { return }
             let position = SCNVector3(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
-            self.makeUpdateCameraPos(towards: position)
+            self.makeUpdateCameraPos(towards: position, arCamera: camera, pov: pointOfView)
         }
     }
     
@@ -259,12 +261,15 @@ class SceneView: NibView, ARSCNViewDelegate {
 	}
     
     // camera position for adding labels
-    func makeUpdateCameraPos(towards: SCNVector3) {
+    func makeUpdateCameraPos(towards: SCNVector3, arCamera: ARCamera, pov: SCNNode) {
         sceneView.scene.rootNode.enumerateChildNodes({ (node, _) in
             if let pollutant = node as? PollutantModel {
+                let node : SCNNode = pollutant.childNodes.first!
                 
                 let currentLabelVisibleState = pollutant.labelVisible
-                pollutant.proximityCheck(targetPos: towards)
+                let inFustrum = sceneView.isNode(node, insideFrustumOf: pov)
+                
+                pollutant.proximityCheck(cameraPos: towards, sceneView: sceneView, pollutantLabel: node.name ?? "LABEL", arCameraCurrent: arCamera, inView: inFustrum)
                 let newLabelVisibleState = pollutant.labelVisible
                 
                 if (newLabelVisibleState != currentLabelVisibleState) && newLabelVisibleState {
