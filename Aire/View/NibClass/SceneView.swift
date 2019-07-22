@@ -192,6 +192,7 @@ class SceneView: NibView, ARSCNViewDelegate {
         
         // animate tap
         SCNNodeAnimation.pulse(node: node)
+        
         // grab name of node for identification purposes
         if let nodeName = node.name {
             if nodeName == "label" {
@@ -270,12 +271,14 @@ class SceneView: NibView, ARSCNViewDelegate {
         sceneView.scene.rootNode.enumerateChildNodes({ (node, _) in
             if let pollutant = node as? PollutantModel {
                 let node : SCNNode = pollutant.childNodes.first!
+                // previous visibility state
                 let currentLabelVisibleState = pollutant.labelVisible
                 
                 // is node in view
                 let inFustrum = sceneView.isNode(node, insideFrustumOf: pov)
-                // is node close enough
-                pollutant.proximityCheck(cameraPos: towards, inView: inFustrum)
+                
+                // pollutant should be in view and close enough
+                pollutant.updateLabelVisibility(cameraPos: towards, inView: inFustrum)
                 
                 // handles state of node
                 let newLabelVisibleState = pollutant.labelVisible
