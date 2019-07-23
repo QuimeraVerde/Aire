@@ -9,6 +9,16 @@
 import ARKit
 
 class PollutantModel: SCNNode {
+    let nearXRadius: Float = 1
+    let nearYRadius: Float = 1
+    let nearZRadius: Float = 2
+    let regularXRadius: Float = 4
+    let regularYRadius: Float = 3
+    let regularZRadius: Float = 4
+    let patrolDistanceNear: Float = 0.3
+    let patrolDistanceFar: Float = 0.35
+    var labelVisible = false
+    
     override init(){
         super.init()
         self.sharedInit()
@@ -30,11 +40,11 @@ class PollutantModel: SCNNode {
     }
 
 	func setPositionNear() {
-		self.position = generateRandomVector(xRadius: 1, yRadius: 1, zRadius: 2)
+		self.position = generateRandomVector(xRadius: nearXRadius, yRadius: nearYRadius, zRadius: nearZRadius)
 	}
 	
 	func setPositionAnywhere() {
-		self.position = generateRandomVector(xRadius: 4, yRadius: 3, zRadius: 4)
+		self.position = generateRandomVector(xRadius: regularXRadius, yRadius: regularYRadius, zRadius: regularZRadius)
 	}
 	
 	private func generateRandomVector(xRadius: Float, yRadius: Float, zRadius: Float) -> SCNVector3 {
@@ -44,5 +54,22 @@ class PollutantModel: SCNNode {
         let randomVector =  SCNVector3(randomX, randomY, randomZ)
         
         return randomVector
+    }
+    
+    // Label is visible if node inside patrol distance and is in view of camera
+    func updateLabelVisibilityIfInProximity(cameraPos: SCNVector3, inView : Bool ) {
+        // cameraPos is camera location
+        let nodePosition = self.position
+        let distanceToTarget = cameraPos.distance(receiver: nodePosition)
+        
+        if distanceToTarget < patrolDistanceNear && !labelVisible && inView{
+            // add label
+            labelVisible = true
+        }
+        
+        if distanceToTarget > patrolDistanceFar && labelVisible && !inView{
+            // remove label
+            labelVisible = false
+        }
     }
 }

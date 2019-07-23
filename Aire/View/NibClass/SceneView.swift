@@ -10,7 +10,7 @@ import Foundation
 import ARKit
 import RxSwift
 
-class SceneView: NibView {
+class SceneView: NibView, ARSCNViewDelegate {
 	@IBOutlet weak var sceneView: ARSCNView!
 	var selectedPollutantID: Observable<PollutantIdentifier?>!
 	var loading: Observable<Bool?>!
@@ -20,10 +20,25 @@ class SceneView: NibView {
 	private let aqiToCountMultiplier = 1.5
 	// At least these n individual pollutants should be close to viewer
 	private let nClosePollutants: Int = 20
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        if let camera = sceneView.session.currentFrame?.camera {
+            // position of camera
+            let transformMatrix = camera.transform
+            let position = SCNVector3(transformMatrix.columns.3.x, transformMatrix.columns.3.y, transformMatrix.columns.3.z)
+            
+            // pov of scene view for camera field of view
+            guard let pointOfView = sceneView.pointOfView else { return }
+            
+            self.updateNodesInProximity(towards: position, pov: pointOfView)
+        }
+    }
+    
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		self.sharedInit()
+    
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -36,6 +51,9 @@ class SceneView: NibView {
 	}
 	
 	private func sharedInit() {
+        // Set the view's delegate
+        sceneView.delegate = self
+        
 		self.selectedPollutantID = self._selectedPollutantID
 		self.loading = self._loading
 		let scene = SCNScene()
@@ -44,7 +62,7 @@ class SceneView: NibView {
 		self.setupARConfiguration()
 		self.addTapGesture()
 	}
-	
+    
 	// creates multiple nodes
 	func createPollutants(pollutants: Dictionary<PollutantIdentifier,Pollutant>){
 		// redraw
@@ -168,6 +186,28 @@ class SceneView: NibView {
 			}
 		}
 	}
+    
+    private func handleCloseProximity(nodePollutant: PollutantModel){
+        let node : SCNNode = nodePollutant.childNodes.first!
+        
+        // animate tap
+        SCNNodeAnimation.pulse(node: node)
+        
+        // grab name of node for identification purposes
+        if let nodeName = node.name {
+            if nodeName == "label" {
+                // show info card for pollutant, name of pollutant in geometry
+                let pollutantId = PollutantIdentifier(rawValue: (node.geometry?.name)!)
+                self._selectedPollutantID.onNext(pollutantId!)
+            }
+            else {
+                self._selectedPollutantID.onNext(nil)
+                
+                // show label for pollutant
+                showLabel(node: node)
+            }
+        }
+    }
 	
 	// remove all nodes from scene view
 	func removePollutants(){
@@ -223,4 +263,32 @@ class SceneView: NibView {
 			}
 		}
 	}
+    
+    // camera position for adding labels
+    func updateNodesInProximity(towards: SCNVector3, pov: SCNNode) {
+        // for any node in scene view
+        sceneView.scene.rootNode.enumerateChildNodes({ (node, stop) in
+            if let pollutant = node as? PollutantModel {
+                let node : SCNNode = pollutant.childNodes.first!
+                // previous visibility state
+                let currentLabelVisibleState = pollutant.labelVisible
+                
+                // is node in view
+                let inFustrum = sceneView.isNode(node, insideFrustumOf: pov)
+                
+                // pollutant should be in view and close enough
+                pollutant.updateLabelVisibilityIfInProximity(cameraPos: towards, inView: inFustrum)
+                
+                // handles state of node
+                let newLabelVisibleState = pollutant.labelVisible
+                
+                if (newLabelVisibleState != currentLabelVisibleState) && newLabelVisibleState {
+                    // stop enumerating
+                    stop.pointee = true
+                    // update node
+                    handleCloseProximity(nodePollutant: pollutant)
+                }
+            }
+        })
+    }
 }
