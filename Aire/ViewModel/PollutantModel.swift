@@ -61,7 +61,7 @@ class PollutantModel: SCNNode {
     }
     
     // Label is visible if node inside patrol distance and is in view of camera
-    func updateLabelVisibility(cameraPos: SCNVector3, inView : Bool ) {
+    func updateLabelVisibilityIfInProximity(cameraPos: SCNVector3, inView : Bool ) {
         // cameraPos is camera location
         let nodePosition = self.position
         let distanceToTarget = cameraPos.distance(receiver: nodePosition)

@@ -24,13 +24,13 @@ class SceneView: NibView, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         if let camera = sceneView.session.currentFrame?.camera {
             // position of camera
-            let transform = camera.transform
-            let position = SCNVector3(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
+            let transformMatrix = camera.transform
+            let position = SCNVector3(transformMatrix.columns.3.x, transformMatrix.columns.3.y, transformMatrix.columns.3.z)
             
             // pov of scene view for camera field of view
             guard let pointOfView = sceneView.pointOfView else { return }
             
-            self.makeUpdateCameraPos(towards: position, pov: pointOfView)
+            self.updateNodesInProximity(towards: position, pov: pointOfView)
         }
     }
     
@@ -265,10 +265,9 @@ class SceneView: NibView, ARSCNViewDelegate {
 	}
     
     // camera position for adding labels
-    func makeUpdateCameraPos(towards: SCNVector3, pov: SCNNode) {
-        
+    func updateNodesInProximity(towards: SCNVector3, pov: SCNNode) {
         // for any node in scene view
-        sceneView.scene.rootNode.enumerateChildNodes({ (node, _) in
+        sceneView.scene.rootNode.enumerateChildNodes({ (node, stop) in
             if let pollutant = node as? PollutantModel {
                 let node : SCNNode = pollutant.childNodes.first!
                 // previous visibility state
@@ -278,12 +277,14 @@ class SceneView: NibView, ARSCNViewDelegate {
                 let inFustrum = sceneView.isNode(node, insideFrustumOf: pov)
                 
                 // pollutant should be in view and close enough
-                pollutant.updateLabelVisibility(cameraPos: towards, inView: inFustrum)
+                pollutant.updateLabelVisibilityIfInProximity(cameraPos: towards, inView: inFustrum)
                 
                 // handles state of node
                 let newLabelVisibleState = pollutant.labelVisible
                 
                 if (newLabelVisibleState != currentLabelVisibleState) && newLabelVisibleState {
+                    // stop enumerating
+                    stop.pointee = true
                     // update node
                     handleCloseProximity(nodePollutant: pollutant)
                 }
