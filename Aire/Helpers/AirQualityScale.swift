@@ -11,12 +11,12 @@ import UIKit
 
 struct AirQualityScale {
 	enum LevelTitle: String {
-		case Good = "Bueno"
-		case Moderate = "Moderado"
-		case UnhealthyForSensitiveGroups = "Dañino a la salud para grupos sensibles"
-		case Unhealthy = "Dañino a la salud"
-		case VeryUnhealthy = "Muy dañino a la salud"
-		case Hazardous = "Peligroso"
+		case Good = "Good"
+		case Moderate = "Moderate"
+		case UnhealthyForSensitiveGroups = "Unhealthy for Sensitive Groups"
+		case Unhealthy = "Unhealthy"
+		case VeryUnhealthy = "Very Unhealthy"
+		case Hazardous = "Hazardous"
 	}
 	
 	struct Level {

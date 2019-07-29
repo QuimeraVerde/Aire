@@ -211,10 +211,10 @@
                                     <constraint firstAttribute="width" constant="210" id="EC7-gf-0qp"/>
                                     <constraint firstAttribute="height" constant="42" id="OrH-CP-Ksc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                 <inset key="titleEdgeInsets" minX="-165" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="27" minY="12" maxX="172" maxY="12"/>
-                                <state key="normal" title="Seleccionar" image="check"/>
+                                <state key="normal" title="Choose Location" image="check"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="22"/>

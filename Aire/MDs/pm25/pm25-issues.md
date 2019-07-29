@@ -1,3 +1,3 @@
-## Las PM2.5 son tan pequeñas que penetran nuestro sistema respiratorio y se quedan en nuestros pulmones. 
+## PM2.5 particles are so small that they can enter the respiratory system and stay inside the lungs.
 
-**Esto les da oportunidad de llegar a nuestra sangre.** Diversos estudios concluyen que la exposición a estas partículas aumentan la mortalidad y hospitalizaciones de emergencia. El aumento de PM2.5 llega a incrementar la mortalidad cardiopulmonar.
+**Some may even enter the bloodstream.** Several studies state that exposure to these particles can increase mortality and hospital admissions, as well as emergency visits. The increase of PM2.5 can increase the mortality rate of cardiovascular diseases.
