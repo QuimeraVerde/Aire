@@ -54,7 +54,7 @@
 		FF15313D20F7ECB300B75245 /* PollutantSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */; };
 		FF1AE57521273110008C5F8C /* SCNNodeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1AE57421273110008C5F8C /* SCNNodeAnimation.swift */; };
 		FF1AE5772127A9EE008C5F8C /* AirQualityReportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1AE5762127A9EE008C5F8C /* AirQualityReportTest.swift */; };
-		FF1E5CD02103D6660064A52F /* ç+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E5CCF2103D6660064A52F /* ç+.swift */; };
+		FF1E5CD02103D6660064A52F /* BorderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */; };
 		FF23D4E421163E35006BC193 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF23D4E321163E35006BC193 /* FloatExtension.swift */; };
 		FF27132B2112AEF1002078E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF27132A2112AEF1002078E3 /* NetworkManager.swift */; };
 		FF27132D211365DE002078E3 /* UIViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF27132C211365DE002078E3 /* UIViewButton.swift */; };
@@ -132,7 +132,7 @@
 		FF15313920F7ECB300B75245 /* PollutantSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutantSummaryView.swift; sourceTree = "<group>"; };
 		FF1AE57421273110008C5F8C /* SCNNodeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNNodeAnimation.swift; sourceTree = "<group>"; };
 		FF1AE5762127A9EE008C5F8C /* AirQualityReportTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityReportTest.swift; sourceTree = "<group>"; };
-		FF1E5CCF2103D6660064A52F /* ç+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ç+.swift"; sourceTree = "<group>"; };
+		FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderAnimation.swift; sourceTree = "<group>"; };
 		FF23D4E321163E35006BC193 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		FF27132A2112AEF1002078E3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FF27132C211365DE002078E3 /* UIViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewButton.swift; sourceTree = "<group>"; };
@@ -367,7 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				FF1AE57421273110008C5F8C /* SCNNodeAnimation.swift */,
-				FF1E5CCF2103D6660064A52F /* ç+.swift */,
+				FF1E5CCF2103D6660064A52F /* BorderAnimation.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -579,7 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BC83CE420DC2DB200777995 /* HomeViewController.swift in Sources */,
-				FF1E5CD02103D6660064A52F /* ç+.swift in Sources */,
+				FF1E5CD02103D6660064A52F /* BorderAnimation.swift in Sources */,
 				FF83C5B020EEA00300CA68BC /* Request.swift in Sources */,
 				FF83C5B220EEA01A00CA68BC /* APIKeys.swift in Sources */,
 				FF83C5A320EE985A00CA68BC /* AirQualityAPI.swift in Sources */,
