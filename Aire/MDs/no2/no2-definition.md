@@ -1,3 +1,3 @@
-## El dióxido de nitrógeno es un gas tóxico e irritante
+## Nitrogen dioxide is a highly reactive gas that can be toxic and irritating to humans
 
-Se crea por la combinación de oxígeno y nitrógeno.
+It is created by the combination of oxygen and nitrogen

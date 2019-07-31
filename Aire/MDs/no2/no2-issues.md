@@ -1,3 +1,3 @@
-## Es común ver más casos de tos, gripe y bronquitis
+## It is common to see more cases of coughing, flu, and bronchitis
  
-Puede causar problemas **respiratorios**, inflamación de los pulmones y mayor sensibilidad a alergias. Puede llegar a ser peligroso para personas que tienen asma. Por otro lado, es causante de lluvia ácida.
+It can cause **respiratory** problems like lung inflammation and increased allergy sensitivity. It can be dangerous for people with asthma and can even cause acid rain.
