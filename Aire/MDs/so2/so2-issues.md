@@ -1,5 +1,5 @@
-## Afecta de un modo inmediato, irritando las vías respiratorias. Ocasionando tos, falta de aliento y sensación de compresión en el pecho.
+## It has a very immediate effect, irritating the respiratory system. It causes coughing, shortness of breath, and a tight feeling around the chest.
 
-**Los efectos son rápidos** y se sienten a 10-15 minutos de respirarlo. Las reacciones del SO2 en el aire pueden llevarlo a formar partículas y contribuir a la contaminación de PM2.5 y PM10.
+**Effects are quick** and can be felt after only 10-15 minutes of exposure. SO2 chemical reactions in the air can actually generate particles and contribute to PM2.5 and PM10 levels.
 
-Las personas con más riesgo de sufrir problemas son aquellas con asma o condiciones similares. En la presencia de luz solar, puede llegar a ser causa de lluvía ácida, ocasionando daño al medio ambiente.
+People with asthma and similar respiratory diseases have an increased risk of developing symptoms. In the presence of sunlight, it can cause acid rain and cause damage to the environment.

@@ -1,4 +1,5 @@
-## El Material Particulado 2.5 o “Particulate Matter 2.5” es una mezcla de sustancias sólidas o líquidas de un tamaño igual o menor a 2.5 micras de diámetro.
+## Particulate Matter 2.5 is a mix of solid and liquid substances that are generally 2.5 micrometers or smaller.
 
-Es decir, **28 veces más pequeño que un cabello humano**. Su tamaño permite que se mantengan en el aire por largos periodos de tiempo y que viajen distancias largas y entren a nuestros pulmones.
+In other words, **28 times smaller than a human hair**. Their size allows them to stay in the air for long periods of time and travel for very long distances. They're so small that they can actually enter the lungs.
+
 

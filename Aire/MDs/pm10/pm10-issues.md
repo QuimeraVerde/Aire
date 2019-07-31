@@ -1,12 +1,12 @@
-##  Las partículas son tan pequeñas que llegan a comportarse como un gas
+## The particles are so small they can behave like gas particles.
 
-Efectos a la salud incluyen:
-● Mal funcionamiento de los pulmones
-● Enfermedades respiratorias
-● Ataques de asma
-● Muerte prematura de personas con enfermedades pulmonares 
-● Ataques de corazón
-● Problemas en el embarazo
+Effects on human health:
+● Reduced lung function
+● Respiratory diseases
+● Asthma attacks
+● Premature death of people with lung disease
+● Heart attacks
+● Pregnancy complications
 
-Diversos estudios concluyen que la exposición a estas partículas **aumentan la mortalidad** y hospitalizaciones de emergencia. Un incremento de estas particulas lleva a un incremento en los casos de cáncer de pulmon.
+Several studies state that exposure to these particles can **increase mortality** and hospital admissions. An increase of these particles in the air can lead to an increase in cases of lung cancer.
 

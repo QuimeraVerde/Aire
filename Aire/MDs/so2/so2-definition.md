@@ -1,3 +1,3 @@
-## Es un gas invisible y con un olor fuerte.
+## It is an invisible, toxic gas with a strong odor.
 
-Reacciona con otras sustancias y **puede crear mucho daño**. Es un componente que causa muchas preocupaciones y es muy irritante.
+It reacts with other substances and **can be really harmful**. It is a gas that contributes greatly to respiratory illness.

@@ -1,12 +1,12 @@
-## Pueden ser originadas por diferentes actividades humanas como el uso de carros o uso de parrillas
+## They can be caused by different human activities, like the use of cars and grills (cooking).
 
-Otras fuentes incluyen:
-● polvo
-● asfalto y concreto de los caminos
-● pedacitos de llanta
-● emisiones de carros
-● polen
-● erosión
+Other sources include:
+● Dust
+● Concrete on roads
+● Tire pieces
+● Car emissions
+● Pollen
+● Erosion
 
-También se crean después de reacciones atmosféricas.
+They can also be generated after atmospheric reactions. 
 

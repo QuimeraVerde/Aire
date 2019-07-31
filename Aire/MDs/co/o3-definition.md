@@ -1,7 +1,7 @@
-## El ozono es un compuesto que se forma y reacciona gracias a la luz solar. 
+## Ozone is a highly reactive gas that is formed naturally by sunlight and oxygen.
 
-Se encuentra en dos capas de la atmósfera:
+It can be found in two layers of the atmosphere:
 
-● En la más cercana a la tierra: se le considera contaminante ya que trae muchas repercusiones a la salud humana
+● The layer closest to earth (troposphere): ozone is considered a pollutant in this layer and has effects on health
 
-● En una de las más alejadas de la tierra: sirve como filtro solar y protege la tierra de los rayos ultravioleta
+● Ozone layer: ozone works as a solar filter in this layer and protects earth from UV rays

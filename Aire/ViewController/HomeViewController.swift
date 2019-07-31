@@ -102,7 +102,7 @@ class HomeViewController: UIViewController {
 	private func updateTimestamp(_ timestamp: Date){
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm a"
-		lastUpdated.text = "Última actualizacion: " + dateFormatter.string(from: timestamp)
+		lastUpdated.text = "Last Update: " + dateFormatter.string(from: timestamp)
 	}
 
 	// Setup functions

@@ -1,3 +1,3 @@
-## El monóxido de carbono es un gas tóxico, no tiene color ni olor.
+## Carbon monoxide is a colorless, odorless, toxic gas.
 
-Este gas no es irritante por lo que **su exposición pasa desapercibida**, pero puede llegar a ser peligroso si se respiran cantidades altas.
+This gas is not irritating so its presence **typically goes unnoticed**, but it can be dangerous when inhaled in large quantities.

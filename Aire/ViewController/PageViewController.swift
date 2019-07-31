@@ -113,9 +113,9 @@ extension PageViewController: CLLocationManagerDelegate {
             // Default coordinates MTY
             // UpdateSharedLocation(coordinate: CLLocationCoordinate2D(latitude: 25.6515697, longitude: -100.2917287))
             // Ask for location input
-            let alert = UIAlertController(title: "Aire necesita tu ubicación", message: "También puedes escoger cualquier lugar del mundo usando nuestro mapa", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Aire needs your location", message: "You can also visualize air pollution anywhere in the world", preferredStyle: .alert)
             
-            let settingsAction = UIAlertAction(title: "Ir a preferencias", style: .default) { (_) -> Void in
+            let settingsAction = UIAlertAction(title: "Go to Settings", style: .default) { (_) -> Void in
                 
                 guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                     return
@@ -128,7 +128,7 @@ extension PageViewController: CLLocationManagerDelegate {
                 }
             }
             alert.addAction(settingsAction)
-            alert.addAction(UIAlertAction(title: "Seguir sin mi ubicación", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Do not use my location", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             break
             
@@ -156,6 +156,6 @@ extension PageViewController: CLLocationManagerDelegate {
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-		print("error:: \(error)")
+		print("Error:: \(error)")
 	}
 }
