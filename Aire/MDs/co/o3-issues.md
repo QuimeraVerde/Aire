@@ -1,8 +1,9 @@
-## El ozono entra al cuerpo humano por las vías respiratorias e irrita los tejidos pulmonares conllevando a la tos, dolores de cabeza e irritación de ojos. 
+## Ozone enters the human body through the respiratory system and irritate the lungs, causing cough, headaches, and eye irritation.
 
-Después de periodos largos de exposición, provoca enfermedades como:
-● cataratas
-● ceguera
-● cáncer de piel
+After long term exposure, it can cause diseases like:
+● Cataracts
+● Blindness
+● Skin cancer
+● Other effects on the immune system
 
-Y otros efectos en el sistema inmunológico. Además, detiene el crecimiento de las plantas y afecta al proceso de fotosíntesis.
+Ozone also slows down plant growth and affects the natural photosynthesis process.
