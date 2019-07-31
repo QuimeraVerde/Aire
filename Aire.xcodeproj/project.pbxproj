@@ -756,7 +756,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6A0ED46D4408D36BDE604ED0 /* Pods-Aire.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AD2WA2ZN6K;
 				INFOPLIST_FILE = Aire/Info.plist;
@@ -765,7 +765,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.quimeraverde.aire;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quimeraverde.aire1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -776,7 +776,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E2F5C1A871038F73448C8AD /* Pods-Aire.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AD2WA2ZN6K;
 				INFOPLIST_FILE = Aire/Info.plist;
@@ -785,7 +785,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.quimeraverde.aire;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quimeraverde.aire1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
