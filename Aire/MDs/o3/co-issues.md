@@ -1,5 +1,5 @@
-## En pequeñas concentraciones, puede dar lugar a confusión mental, vértigo, dolor de cabeza, náuseas, debilidad y pérdida del conocimiento.
+## In concentrated areas, exposure can lead to vertigo, headaches, nausea, weakness, and memory loss.
 
-Si alguien inhala el gas constantemente, pueden verse afectados el sistema nervioso y el sistema cardiovascular, dando lugar a **complicaciones neurológicas y cardiacas**.
+Constant exposure can have long term effects in the nervous and cardiovascular systems.
 
-En cuanto a su impacto en el medio ambiente, se trata de una sustancia extremadamente inflamable que reacciona con oxígeno, acetileno, cloro, flúor y óxidos nitrosos, provocando humos tóxicos e incendios si existen focos de calentamiento. Al combinarse con otros contaminantes, forma ozono que provoca quemaduras importantes en el ser humano y es dañino para la flora y fauna autóctona.
+Carbon monoxide can react with oxygen, chloride, and other nitrous oxides and have major repercussions on the environment. It can cause toxic gases and fires if there are any heat accelerators. It can combine with other pollutants and generate ozone, which is also a main pollutant.
